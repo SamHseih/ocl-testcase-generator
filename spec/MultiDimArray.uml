@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_72CpUBXHEfC1HL2Ktj1siw" name="MultiDimArray">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_73O8IBXHEfC1HL2Ktj1siw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9QPWcBXHEfC1HL2Ktj1siw" name="MultiDimArray" visibility="public">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_T4ptwBXIEfC1HL2Ktj1siw" name="dimension" visibility="private" type="_9LqI0BbBEfCc84UDNele2w"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fVJmQBXIEfC1HL2Ktj1siw" name="dimensionSizes" visibility="private" type="_9LqI0BbBEfCc84UDNele2w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DJlaQBj7EfCkuu2vytGR7A" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uimA0BXIEfC1HL2Ktj1siw" name="elements" visibility="private" type="_9LqI0BbBEfCc84UDNele2w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e8V0sBjpEfCkuu2vytGR7A" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_38K_UBXIEfC1HL2Ktj1siw" name="MultiDimArray">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="__LMKwBXIEfC1HL2Ktj1siw" name="dimension" type="_9LqI0BbBEfCc84UDNele2w"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_FSlm0BXJEfC1HL2Ktj1siw" name="dimensionSizes" type="_9LqI0BbBEfCc84UDNele2w">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TRTkcBXJEfC1HL2Ktj1siw" value="*"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EKNVUBjxEfCkuu2vytGR7A" name="inputArray" type="_9LqI0BbBEfCc84UDNele2w">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FrVJ0BjxEfCkuu2vytGR7A" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_gG4vwBXJEfC1HL2Ktj1siw" name="add">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kEhqABXJEfC1HL2Ktj1siw" name="arg" type="_9QPWcBXHEfC1HL2Ktj1siw"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Vz1IUBj6EfCkuu2vytGR7A" type="_9QPWcBXHEfC1HL2Ktj1siw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_wrOr0BXJEfC1HL2Ktj1siw" name="update">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0kYHoBXJEfC1HL2Ktj1siw" name="value" type="_9LqI0BbBEfCc84UDNele2w"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pdfdcBazEfC1HL2Ktj1siw" name="indices" type="_9LqI0BbBEfCc84UDNele2w">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qI7nIBazEfC1HL2Ktj1siw" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Bolk0BXKEfC1HL2Ktj1siw" name="retrieve">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_woCYkBazEfC1HL2Ktj1siw" name="indices" type="_9LqI0BbBEfCc84UDNele2w"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_M37yIBXKEfC1HL2Ktj1siw" type="_9LqI0BbBEfCc84UDNele2w" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DNZQYBXTEfC1HL2Ktj1siw" name="getDimension">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_P6RLoBXTEfC1HL2Ktj1siw" type="_9LqI0BbBEfCc84UDNele2w" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5P0GsBazEfC1HL2Ktj1siw" name="value" type="_9LqI0BbBEfCc84UDNele2w"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_5IpIgBj0EfCkuu2vytGR7A" name="getDimensionSizes">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_9H_6ABj0EfCkuu2vytGR7A" type="_9LqI0BbBEfCc84UDNele2w" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XLQF8BXTEfC1HL2Ktj1siw" name="toString">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZT0U8BXTEfC1HL2Ktj1siw" type="_C7s00BbCEfCc84UDNele2w" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HMC4QBXIEfC1HL2Ktj1siw" name="Primitive">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_9LqI0BbBEfCc84UDNele2w" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_C7s00BbCEfCc84UDNele2w" name="String"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_EBW1UBbCEfCc84UDNele2w" name="Boolean"/>
+  </packagedElement>
+</uml:Model>
