@@ -1,25 +1,24 @@
 package ccu.pllab.tcgen3.symboltable.type;
 
-import ccu.pllab.tcgen3.symboltable.BaseSymbol;
-
 /** Set this Type from UML multiplicity 0..1, 0..* */
-public class MultiplicityListType extends BaseSymbol implements Type{
+public class MultiplicityListType extends ArrayTypeClassSymbol{
 	private int size;
 	private final Type elementType;
 	
-	public MultiplicityListType(Type elementType, String umlID) {
-		super("MultiplicityListType",umlID);
-		this.elementType = elementType;
-
-	}
+//	public MultiplicityListType(Type elementType, String umlID) {
+//		super("MultiplicityListType",umlID);
+//		this.elementType = elementType;
+//	}
+//	
+//	public MultiplicityListType(String name,Type elementType) {
+//		super(name, name+"MultiplicityListType");
+//		this.elementType = elementType;
+//	}
 	
-	public MultiplicityListType(String name,Type elementType) {
-		super(name+"MultiplicityListType");
-		this.elementType = elementType;
-	}
-	
+	//For UML Builded  name = ClassName::attributeName
+	//umlID is UML upperValue ID
 	public MultiplicityListType(String name,Type elementType,String umlID) {
-		super(name+"MultiplicityListType",umlID);
+		super(name,umlID);
 		this.elementType = elementType;
 	}
 
@@ -30,7 +29,7 @@ public class MultiplicityListType extends BaseSymbol implements Type{
 	
 	@Override
 	public String getTypeID() {
-		return umlId;
+		return this.umlID;
 	};
 
 	@Override
@@ -44,6 +43,15 @@ public class MultiplicityListType extends BaseSymbol implements Type{
 	}
 	public int getSize() {
 		return size;
+	}
+	
+	public Type getElementType() {
+		return this.elementType;
+	}
+	
+	@Override
+	public String toString() {
+		return this.umlID;
 	}
 	
 	

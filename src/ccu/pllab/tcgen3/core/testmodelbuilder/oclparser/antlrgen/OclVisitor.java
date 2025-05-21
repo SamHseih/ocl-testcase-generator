@@ -31,12 +31,12 @@ public interface OclVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassifierContextDecl(OclParser.ClassifierContextDeclContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code NoRturnTypeAlt}
+	 * Visit a parse tree produced by the {@code NoReturnTypeAlt}
 	 * labeled alternative in {@link OclParser#operationContextDecl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNoRturnTypeAlt(OclParser.NoRturnTypeAltContext ctx);
+	T visitNoReturnTypeAlt(OclParser.NoReturnTypeAltContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code HasRturnTypeAlt}
 	 * labeled alternative in {@link OclParser#operationContextDecl}.
@@ -280,31 +280,23 @@ public interface OclVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArrayLiteralPartsCS(OclParser.ArrayLiteralPartsCSContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link OclParser#untypedCollectionLiteralExpCS}.
+	 * Visit a parse tree produced by {@link OclParser#collectionLiteralExpCS}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitUntypedCollectionLiteralExpCS(OclParser.UntypedCollectionLiteralExpCSContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code NormoalSequenceLiteral}
-	 * labeled alternative in {@link OclParser#collectionLiteralExpCS}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNormoalSequenceLiteral(OclParser.NormoalSequenceLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code RangeSequenceLiteral}
-	 * labeled alternative in {@link OclParser#collectionLiteralExpCS}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRangeSequenceLiteral(OclParser.RangeSequenceLiteralContext ctx);
+	T visitCollectionLiteralExpCS(OclParser.CollectionLiteralExpCSContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link OclParser#collectionLiteralPartsCS}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitCollectionLiteralPartsCS(OclParser.CollectionLiteralPartsCSContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link OclParser#collectionitem}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCollectionitem(OclParser.CollectionitemContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link OclParser#collectionRangeCS}.
 	 * @param ctx the parse tree
@@ -342,12 +334,6 @@ public interface OclVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBooleanLiteralExpCS(OclParser.BooleanLiteralExpCSContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link OclParser#arrayAccessCS}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArrayAccessCS(OclParser.ArrayAccessCSContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link OclParser#callExpCS}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -377,6 +363,18 @@ public interface OclVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitArgumentsCS(OclParser.ArgumentsCSContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link OclParser#arrayAccessCS}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayAccessCS(OclParser.ArrayAccessCSContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link OclParser#indexExpCS}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIndexExpCS(OclParser.IndexExpCSContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link OclParser#loopExpCS}.
 	 * @param ctx the parse tree

@@ -55,13 +55,13 @@ public class OclBaseListener implements OclListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNoRturnTypeAlt(OclParser.NoRturnTypeAltContext ctx) { }
+	@Override public void enterNoReturnTypeAlt(OclParser.NoReturnTypeAltContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNoRturnTypeAlt(OclParser.NoRturnTypeAltContext ctx) { }
+	@Override public void exitNoReturnTypeAlt(OclParser.NoReturnTypeAltContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -523,37 +523,13 @@ public class OclBaseListener implements OclListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUntypedCollectionLiteralExpCS(OclParser.UntypedCollectionLiteralExpCSContext ctx) { }
+	@Override public void enterCollectionLiteralExpCS(OclParser.CollectionLiteralExpCSContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUntypedCollectionLiteralExpCS(OclParser.UntypedCollectionLiteralExpCSContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNormoalSequenceLiteral(OclParser.NormoalSequenceLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNormoalSequenceLiteral(OclParser.NormoalSequenceLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterRangeSequenceLiteral(OclParser.RangeSequenceLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitRangeSequenceLiteral(OclParser.RangeSequenceLiteralContext ctx) { }
+	@Override public void exitCollectionLiteralExpCS(OclParser.CollectionLiteralExpCSContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -566,6 +542,18 @@ public class OclBaseListener implements OclListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCollectionLiteralPartsCS(OclParser.CollectionLiteralPartsCSContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCollectionitem(OclParser.CollectionitemContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCollectionitem(OclParser.CollectionitemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -643,18 +631,6 @@ public class OclBaseListener implements OclListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArrayAccessCS(OclParser.ArrayAccessCSContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArrayAccessCS(OclParser.ArrayAccessCSContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterCallExpCS(OclParser.CallExpCSContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -710,6 +686,30 @@ public class OclBaseListener implements OclListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitArgumentsCS(OclParser.ArgumentsCSContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayAccessCS(OclParser.ArrayAccessCSContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayAccessCS(OclParser.ArrayAccessCSContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIndexExpCS(OclParser.IndexExpCSContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIndexExpCS(OclParser.IndexExpCSContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

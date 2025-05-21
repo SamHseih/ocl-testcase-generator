@@ -9,29 +9,37 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclBaseVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.AdditiveExpressionContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.AdditiveOperatorContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ArgumentsCSContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ArrayAccessCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.CallExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ClassArrayAccessAltContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ClassFeatureCallAltContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ClassifierContextDeclContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.CollectionDeclAltContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.CollectionLiteralExpCSContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.CollectionRangeCSContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.CollectionitemContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ContextContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ContextDeclContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.FeatureCallExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.HasRturnTypeAltContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.IfExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ImpliciteOpCallAltContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.IndexExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.IterateCallAltContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.LetExprCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.LiteralExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.LogicalExpressionContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.LogicalOperatorContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.LoopExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.MultiplicativeExpressionContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.MultiplicativeOperatorContext;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.NoRturnTypeAltContext;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.NormoalSequenceLiteralContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.NoReturnTypeAltContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.NonCallExpContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.OperationCallExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PackageDeclarationCSContext;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PostfixExpressionContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PrimitiveLiteralExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PropertyCallExpCSContext;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.RangeSequenceLiteralContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.RelationalExpressionContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.RelationalOperatorContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.ResultArrayAccessAltContext;
@@ -46,12 +54,15 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ClassifierContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextExpAST;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.InvalidExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.OperationContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.PackageDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.ArrayRefExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BinaryExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BooleanLiteralExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionItem;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionLiteralExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionRange;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.FeatureCallExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IfExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IntegerLiteralExp;
@@ -68,13 +79,16 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.letExp;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.FieldSymbol;
+import ccu.pllab.tcgen3.symboltable.FunctionSymbol;
 import ccu.pllab.tcgen3.symboltable.MethodSymbol;
+import ccu.pllab.tcgen3.symboltable.ParameterSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 import ccu.pllab.tcgen3.symboltable.VariableSymbol;
 import ccu.pllab.tcgen3.symboltable.scope.BaseScope;
 import ccu.pllab.tcgen3.symboltable.scope.GlobalScope;
 import ccu.pllab.tcgen3.symboltable.scope.LocalScope;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
+import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
 import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
@@ -195,7 +209,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         Symbol s = currentScope().resolve(className);
         if (!(s instanceof ClassSymbol)) {
         	recordError("ContestDecl Error: UnDefined classifier " + className, tok);
-        	return null;
         	}
         enterScope((ClassSymbol)s);
         /* inject implicit 'self' variable , type Class*/
@@ -216,7 +229,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	 * ;
 	 * =====================================================*/
 	@Override
-	public ASTree visitNoRturnTypeAlt(NoRturnTypeAltContext ctx) {
+	public ASTree visitNoReturnTypeAlt(NoReturnTypeAltContext ctx) {
 		String clsName = ctx.pathNameCS().getText();
         String opName  = ctx.ID().getText();
         Token  tok     = ctx.getStart();
@@ -272,7 +285,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 
         Symbol clsSym = currentScope().resolve(clsName);
         if (!(clsSym instanceof ClassSymbol)) {
-            recordError("ContestDecl Error: UnDefined classifier " + clsName, tok);
+            recordError("OperationContestDecl Error: UnDefined classifier " + clsName, tok);
             return null;
         }
         enterScope((Scope) clsSym); // 進入 class scope
@@ -280,7 +293,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         ClassSymbol clazz   = (ClassSymbol) clsSym;
         MethodSymbol method = clazz.resolveMethod(opName);
         if (method == null) {
-           recordError("ContestDecl Error: UnDefined operation " + opName, tok);
+           recordError("OperationContestDecl Error: UnDefined operation " + opName, tok);
            return null;
         }
 
@@ -308,19 +321,26 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
                 }
             }
         }
-        OperationContextDeclAST decl = new OperationContextDeclAST(params, opName, clsName);
+        OperationContextDeclAST opdeclast = new OperationContextDeclAST(params, opName, clsName);
         
         
         //set return type
         String ret = ctx.type().getText();
-        Type returntype  = currentScope().resolveType(ret);
+        Token rtk = ctx.type().getStart();
+        FunctionSymbol f = (FunctionSymbol) currentScope();
+        Type returntype  = f.getType();
         if (returntype == null) {
-			recordError("ContestDecl Error: UnDefined return type " + ret, tok);
+			recordError("OperationContestDecl Error: UnDefined return type " + ret, rtk);
 			return null;
 		}
-        decl.setReturnType(returntype);
+        if(ret.contains("[]")) {
+        	if(!(returntype instanceof ArrayTypeClassSymbol)) {
+        		recordError("OperationContestDecl Error: UML or Ocl defined different return type " + ret, rtk);
+        	}
+        }
+        opdeclast.setReturnType(returntype);
         
-        return decl; // pop 一層留給 visitContextDecl
+        return opdeclast; // pop 一層留給 visitContextDecl
 	}
 	/* ===================================================== 
 	 * context  
@@ -350,6 +370,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	/* =====================================================
      *  Variable declarations
      * ===================================================== */
+
 	@Override
 	public ASTree visitVariableDeclAlt(VariableDeclAltContext ctx) {
 		//ID is a method generated to correspond to the token ID in the source grammar.
@@ -359,14 +380,27 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         String typeName = ctx.type().getText();
 
         Type typeSym = currentScope().resolveType(typeName);
-
+  
+        if(typeName.contains("[]")) {
+        	Symbol sym = currentScope().resolve(varName);
+        	if(sym == null | !(sym instanceof ParameterSymbol)) {
+        		recordError("VariableDecl Error: UnDefined Parameter '" + varName + "'", idToken);
+        	} else if(sym instanceof ParameterSymbol p){
+        		typeSym = p.getType();
+        	}	
+        }
+        
+        if(typeSym == null) {
+    		recordError("VariableDecl Error: UnDefined Type '" + varName +":"+ typeName+"'", idToken);
+        }
+        
         
         if(currentScope() instanceof LocalScope) {
         	if (currentScope().resolve(varName) != null) {
-            recordError("VariableDecl Error: Duplicate declaration of variable '" + varName + "'", idToken);
+        		recordError("VariableDecl Error: Duplicate declaration of variable '" + varName + "'", idToken);
         	}
             if (typeSym == null || !(typeSym instanceof Type)) {
-            recordError("VariableDecl Error: Unknown type '" + typeName + "'", idToken);
+            	recordError("VariableDecl Error: Unknown type '" + typeName + "'", idToken);
             }
             
             // Create a new VariableSymbol and add it to the current scope
@@ -395,85 +429,119 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		return new VariableDeclExp(List.of(),varName, (Type)typeSym);
 	}
 	
+	//Only for LocalScope
+	@Override
+	public ASTree visitCollectionDeclAlt(CollectionDeclAltContext ctx) {
+		Token idToken = ctx.getStart();
+        String collectionName = ctx.collectionTypeIdentifierCS().getText();
+        String typeName = ctx.type().getText();
+        
+        Type typeSym = currentScope().resolveType(typeName);
+
+        
+        if(currentScope() instanceof LocalScope) {
+        	if (currentScope().resolve(collectionName) != null) {
+            recordError("VariableDecl Error: Duplicate declaration of variable '" + collectionName + "'", idToken);
+        	}
+            if (typeSym == null || !(typeSym instanceof Type)) {
+            recordError("VariableDecl Error: Unknown type '" + typeName + "'", idToken);
+            }
+            
+            // Create a new VariableSymbol and add it to the current scope
+            VariableSymbol varSym = new VariableSymbol(collectionName, "localVar"); // id not needed here
+            varSym.setType((Type) typeSym);
+            currentScope().define(varSym);
+            
+        }else {
+			recordError("CollectionDecl Error: CollectionDecl only for LocalScope'" + collectionName + "'", idToken);
+			return null;
+        }
+        return new VariableDeclExp(List.of(),collectionName, (Type)typeSym);
+	}
+
+	
 	/* =====================================================
      *  OCL EXPRESSIONS - BinaryExp 
      * ===================================================== */
 	
+
+	
+
 	@Override
 	public ASTree visitLogicalExpression(LogicalExpressionContext ctx) {	
-		List<RelationalExpressionContext> terms = ctx.relationalExpression();        // 至少 1 個
-	    List<LogicalOperatorContext> ops        = ctx.logicalOperator();      // 可能 0 個
-
-	    if (ops.isEmpty()) {
-	        return visit(terms.get(0));
-	    }
-		
-		ASTree left = visit(ctx.relationalExpression(0));
-		for (int i = 0; i < ops.size(); i++) {
-			String op = ctx.logicalOperator(i).getText();
-			ASTree right = visit(ctx.relationalExpression(i + 1));
-			left = new BinaryExp(List.of(left, right), op);
+		List<RelationalExpressionContext> terms = ctx.relationalExpression();        
+		if(ctx.logicalOperator() != null) {
+		    List<LogicalOperatorContext> ops    = ctx.logicalOperator();      
+		    
+			ASTree left = visit(ctx.relationalExpression(0));
+			for (int i = 0; i < ops.size(); i++) {
+				String op = ctx.logicalOperator(i).getText();
+				ASTree right = visit(ctx.relationalExpression(i + 1));
+				left = new BinaryExp(List.of(left, right), op);
+			}
+			
+			return left;
+		} else {
+			return visit(terms.get(0));
 		}
-		
-		return left;
 	}
 
 	@Override
 	public ASTree visitRelationalExpression(RelationalExpressionContext ctx) {
-		List<AdditiveExpressionContext> terms = ctx.additiveExpression();        // 至少 1 個
-	    List<RelationalOperatorContext> ops        = ctx.relationalOperator();      // 可能 0 個
+		List<AdditiveExpressionContext> terms = ctx.additiveExpression();        // at least 1 
 
-	    if (ops.isEmpty()) {
-	        return visit(terms.get(0));
+	    if(ctx.relationalOperator() != null) {
+			List<RelationalOperatorContext> ops        = ctx.relationalOperator();  
+			ASTree left = visit(ctx.additiveExpression(0));
+			for (int i = 0; i < ops.size(); i++) {
+				String op = ctx.relationalOperator(i).getText();
+				ASTree right = visit(ctx.additiveExpression(i + 1));
+				left = new BinaryExp(List.of(left, right), op);
+			}
+			
+			return left;
+	    } else {
+	    	return visit(terms.get(0));
 	    }
-		
-		ASTree left = visit(ctx.additiveExpression(0));
-		for (int i = 0; i < ops.size(); i++) {
-			String op = ctx.relationalOperator(i).getText();
-			ASTree right = visit(ctx.additiveExpression(i + 1));
-			left = new BinaryExp(List.of(left, right), op);
-		}
-		
-		return left;
 	}
 
 	@Override
 	public ASTree visitAdditiveExpression(AdditiveExpressionContext ctx) {
 		List<MultiplicativeExpressionContext> terms = ctx.multiplicativeExpression();        // 至少 1 個
-	    List<AdditiveOperatorContext> ops        = ctx.additiveOperator();      // 可能 0 個
-
-	    if (ops.isEmpty()) {
-	        return visit(terms.get(0));
+	    
+	    if(ctx.additiveOperator() != null) {
+	    	List<AdditiveOperatorContext> ops        = ctx.additiveOperator();      // at least 1
+			
+			ASTree left = visit(terms.get(0));
+			for (int i = 0; i < ops.size(); i++) {
+				String op = ctx.additiveOperator(i).getText();
+				ASTree right = visit(ctx.multiplicativeExpression(i + 1));
+				left = new BinaryExp(List.of(left, right), op);
+			}
+			return left;
+	    } else {
+	    	return visit(terms.get(0));
 	    }
-		
-		ASTree left = visit(terms.get(0));
-		for (int i = 0; i < ops.size(); i++) {
-			String op = ctx.additiveOperator(i).getText();
-			ASTree right = visit(ctx.multiplicativeExpression(i + 1));
-			left = new BinaryExp(List.of(left, right), op);
-		}
-		
-		return left;
 	}
 
 	@Override
 	public ASTree visitMultiplicativeExpression(MultiplicativeExpressionContext ctx) {
-		List<UnaryExpressionContext> terms = ctx.unaryExpression();        // 至少 1 個
-	    List<MultiplicativeOperatorContext> ops        = ctx.multiplicativeOperator();      // 可能 0 個
-
-	    // 沒有乘除 => 直接回傳唯一運算元
-	    if (ops.isEmpty()) {
-	        return visit(terms.get(0));
-	    }
-	    
-		ASTree left = visit(terms.get(0));
-		for (int i = 0; i < ops.size(); i++) {
-			String op = ctx.multiplicativeOperator(i).getText();
-			ASTree right = visit(ctx.unaryExpression(i + 1));
-			left = new BinaryExp(List.of(left, right), op);
-		}
+		List<UnaryExpressionContext> terms = ctx.unaryExpression(); // at least 1 
 		
-		return left;
+	    if(ctx.multiplicativeOperator() != null) {
+			List<MultiplicativeOperatorContext> ops    = ctx.multiplicativeOperator();     
+		   
+			ASTree left = visit(terms.get(0));
+			for (int i = 0; i < ops.size(); i++) {
+				String op = ctx.multiplicativeOperator(i).getText();
+				ASTree right = visit(ctx.unaryExpression(i + 1));
+				left = new BinaryExp(List.of(left, right), op);
+			}
+			
+			return left;
+	    }else {
+	    	return visit( terms.get(0) );
+		}
 	}
 
 	@Override
@@ -482,30 +550,43 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
             String op = ctx.unaryOperator().getText();
             ASTree operand = visit(ctx.postfixExpression());
             return new UnaryExp(List.of(operand), op);
+        }else if(ctx.postfixExpression() != null){
+        	return visit(ctx.postfixExpression());
+        }else {
+			recordError("Variable FeatureError: Wrong OCL Spec'" , ctx.getStop());
+        	return new InvalidExp();
         }
-        return visit(ctx.postfixExpression());
+        	
+		
 	}
 
 	/*------------------------------------------------------------------
 	 * OCL EXPRESSIONS -PostfixExpression And CallExpCS
 	 *------------------------------------------------------------------*/
+	@Override
+	public ASTree visitNonCallExp(NonCallExpContext ctx) {
+		return visit(ctx.primaryExpression());
+	}
 	
+	//Variable CallExp include <CollectionVar>->iterateCall
 	@Override
 	public ASTree visitVarFeatureCallAlt(VarFeatureCallAltContext ctx) {
 		boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
 		String varname = ctx.variableExpCS().ID().getText();
-		
+		if (isPre && !insidePost) {
+	        recordError("@pre can only be used inside postconditions", ctx.variableExpCS().isMarkedPreCS().stop);
+	    }
 		Symbol sym =  currentScope().resolve(varname);
 		if (sym == null) {
 			recordError("Variable FeatureError: UnDefined variable '" + varname + "'", ctx.variableExpCS().getStart());
-			return null;
+			return new InvalidExp();
 		}
 		
 		ASTree current = new VariableExp(varname, isPre, sym);
 		
 		/* recursive callExp*/
 	    for (CallExpCSContext callCtx : ctx.callExpCS()) {
-	    	current = buildFeatureCall(callCtx, current);
+	    	current = buildCallExp(callCtx, current);
 	        if (current == null) {             // build 失敗即提早終止
 	            recordError("Variable FeatureError: fail to build feature call", callCtx.getStart());
 	            break;
@@ -514,45 +595,24 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    return current;
 	}
 	
+	//For CollectionLiteral IteratCall
 	@Override
 	public ASTree visitIterateCallAlt(IterateCallAltContext ctx) {
-		/* ------------ 1. 解析來源 collection ---------------- */
-	    ASTree source = visit(ctx.literalExpCS());      // <source>
-	    if (source == null) {
-	        recordError("IterateCall Error: UnDefined collection source ", ctx.getStart());
-	        return null;
+		/* ------------ 1. Analysis CollectionLiteral Source ---------------- */
+	    ASTree current = visit(ctx.literalExpCS());      // <source>
+	    if (current == null) {
+	        recordError("CollectionLiteralIterateCall Error: UnDefined CollectionLiteral source ", ctx.getStart());
 	    }
- 
-	    /* ------------ 2. 折疊 isMarkedPreCS? ---------------- */
-	    boolean isPre = ctx.isMarkedPreCS() != null;
-
-	    /* ------------ 3. 建立 iterate 區域 Scope ------------ */
-	    LocalScope iterScope = new LocalScope(currentScope(), "iterate LocalScope");
-	    enterScope(iterScope);
-
-	    /* ------------ 4. iterator 與 result VarDecl --------- */
-	    VariableDeclContext iteratorDeclcontext = ctx.callExpCS(0).loopExpCS().iterateExpCS().variableDecl(0);
-	    VariableDeclContext resultDeclcontext   = ctx.callExpCS(0).loopExpCS().iterateExpCS().variableDecl(1);
-
-	    ASTree iteratorDecl = visit(iteratorDeclcontext); // it : E
-	    ASTree resultDecl   = visit(resultDeclcontext);   // acc : R = init
-
-	    /* ------------ 5. build body  --------------------- */
-	    ASTree body = visit(ctx.callExpCS(0).loopExpCS().iterateExpCS().expression()); 
-	    if (body == null) {
-	        recordError("IterateCall Error: ：no body no body but..", ctx.getStart());
-	        exitScope();
-	        return null;
+	    
+	    /* 折疊後續呼叫 */
+	    for (CallExpCSContext callCtx : ctx.callExpCS()) {
+	    	current = buildCallExp(callCtx, current);
+	        if (current == null) {             // build 失敗即提早終止
+	            recordError("Self FeatureCall Error: fail to build feature call", callCtx.getStart());
+	            break;
+	        }
 	    }
-
-	    /* ------------ 6. 離開區域 Scope -------------------- */
-	    exitScope();
-
-	    /* ------------ 7. 建立 AST 節點 ---------------------- */
-	    // children: 0-source, 1-iteratorDecl, 2-resultDecl, 3-body 
-	    return new IterateExp(
-	            List.of(source, iteratorDecl, resultDecl, body),
-	            isPre);
+	    return current;
 	}
 
 	@Override
@@ -567,13 +627,15 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    } 
 
 	    ASTree current = new SelfExp(false, existing);
-		return buildFeatureCall(ctx.callExpCS(), current);
+		return buildCallExp(ctx.callExpCS(), current);
 	}
 
 	@Override
 	public ASTree visitClassFeatureCallAlt(ClassFeatureCallAltContext ctx) {
 		boolean isPre = ctx.isMarkedPreCS() != null;
-
+		if (isPre && !insidePost) {
+	        recordError("@pre can only be used inside postconditions", ctx.isMarkedPreCS().stop);
+	    }
 	    /* 找最近的 class scope，製造隱含 self 變數 */
 	    Scope s = currentScope();
 	    while (s != null && !(s instanceof ClassSymbol)) s = s.getEnclosingScope();
@@ -588,7 +650,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 
 	    /* 折疊後續呼叫 */
 	    for (CallExpCSContext callCtx : ctx.callExpCS()) {
-	    	current = buildFeatureCall(callCtx, current);
+	    	current = buildCallExp(callCtx, current);
 	        if (current == null) {             // build 失敗即提早終止
 	            recordError("Self FeatureCall Error: fail to build feature call", callCtx.getStart());
 	            break;
@@ -611,7 +673,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    }
 	    if (!(s instanceof MethodSymbol method)) {
 	        recordError("Result FeatureCall Error : 'result' used outside any operation context", ctx.getStart());
-	        return null;
+	        return new InvalidExp();
 	    }
 
 	    VariableSymbol resultSym = (VariableSymbol) method.resolve("result");
@@ -623,7 +685,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    
 	    /* 5. 依序折疊後續 callExpCS* */
 	    for (CallExpCSContext callCtx : ctx.callExpCS()) {
-	    	current = buildFeatureCall(callCtx, current);
+	    	current = buildCallExp(callCtx, current);
 	        if (current == null) {             // build 失敗即提早終止
 	            recordError("Result FeatureCall Error : fail to build feature call", callCtx.getStart());
 	            break;
@@ -632,60 +694,82 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    return current;
 	}
 
+	
+	@Override
+	public ASTree visitIndexExpCS(IndexExpCSContext ctx) {
+		return visit(ctx.expression());
+	}
+
 	/*------------------------------------------------------------------
 	 * OCL EXPRESSIONS - Directly Access Array  ps.need shange
 	 *------------------------------------------------------------------*/
 	@Override
 	public ASTree visitVarArrayAccessAlt(VarArrayAccessAltContext ctx) {
+		String varname = ctx.variableExpCS().getText();
 		boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
-		String varname = ctx.variableExpCS().ID().getText();
 		
-		Symbol sym =  currentScope().resolve(varname);
-		if (sym == null) {
-			recordError("Variable Array Access Error : UnDefined variable '" + varname + "'", ctx.variableExpCS().getStart());
-			return null;
-		}		
-		ASTree source = new VariableExp(varname, isPre, sym);
+		ASTree source = visit(ctx.variableExpCS());
+		
+		Symbol sym = currentScope().resolve(varname);
+		if(sym == null ) 
+			recordError("Variable Array Access Error : UnDefined array "+ varname,ctx.variableExpCS().start);
+		Type t ;
+		if(sym instanceof ArrayTypeClassSymbol a) {
+			t = a;
+		}else if(sym instanceof BaseSymbol b) {
+			if( b.getType() instanceof ArrayTypeClassSymbol a) {
+				t = a;
+			} else {
+				recordError("Variable Array Access Error : Variable "+varname+" isn't ArrayTypeClassSymbol ",ctx.variableExpCS().start);
+			}
+		} 
 		
 		List<ASTree> indices = new ArrayList<>(); 	
 		indices.add(source);
-		for (int i = 0; i < ctx.arrayAccessCS().expression().size(); i++) {
-			ASTree index = visit(ctx.arrayAccessCS().expression(i));
+		IndexExpCSContext x = ctx.indexExpCS(0);
+		for (int i = 0; i < ctx.indexExpCS().size(); i++) {
+			ASTree index = visit(ctx.indexExpCS(i));
 			if (index == null) {
-				recordError("Variable Array Access Error : UnDefined array index ", ctx.arrayAccessCS().getStart());
+				recordError("Variable Array Access Error : UnDefined array index ",ctx.variableExpCS().start);
 					break;
 				}
 				indices.add(index);
 			}
-		return new ArrayRefExp(indices,isPre, varname);
+		ArrayRefExp rt = new ArrayRefExp(indices,isPre, sym,varname);
+		return rt;
 	}
 
 	@Override
 	public ASTree visitClassArrayAccessAlt(ClassArrayAccessAltContext ctx) {
 		boolean isPre = ctx.isMarkedPreCS() != null;
-
+		if (isPre && !insidePost) {
+	        recordError("@pre can only be used inside postconditions", ctx.isMarkedPreCS().stop);
+	    }
 	    /* 找最近的 class scope，製造隱含 self 變數 */
 	    Scope s = currentScope();
 	    while (s != null && !(s instanceof ClassSymbol)) s = s.getEnclosingScope();
 	    
 	    //check if the class is defined
-	    VariableSymbol existing = (VariableSymbol) s.resolve("self");
-	    if (existing == null) {
-	    	recordError("Self Array Access Error : 'self' used outside classifier context", ctx.SELF().getSymbol());
-	    } 
+	   Symbol existing = s.resolve("self");
+	   	if(existing == null)
+	   		recordError("Self Array Access Error : 'self' used outside classifier context", ctx.SELF().getSymbol());
+	    if (!(existing instanceof ArrayTypeClassSymbol)) 
+	    	recordError("Self Array Access Error : 'self' isn't ArrayTypeClassSymbol", ctx.SELF().getSymbol());
+	    
 	    ASTree source = new SelfExp(isPre, existing);
 	    
 	    List<ASTree> indices = new ArrayList<>(); 	
 		indices.add(source);
-		for (int i = 0; i < ctx.arrayAccessCS().expression().size(); i++) {
-			ASTree index = visit(ctx.arrayAccessCS().expression(i));
+		for (int i = 0; i < ctx.indexExpCS().size(); i++) {
+			ASTree index = visit(ctx.indexExpCS(i));
 			if (index == null) {
-				recordError("Self Array Access Error : UnDefined array index ", ctx.arrayAccessCS().getStart());
+				recordError("Variable Array Access Error : UnDefined array index ",ctx.getStart());
 					break;
 				}
 				indices.add(index);
 			}
-		return new ArrayRefExp(indices,isPre, "self");
+		ArrayRefExp rt = new ArrayRefExp(indices,isPre,existing, "self");
+		return rt;
 	}
 
 	@Override
@@ -703,193 +787,241 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    }
 	    if (!(s instanceof MethodSymbol method)) {
 	        recordError("Result Array Access Error : 'result' used outside any operation context", ctx.getStart());
-	        return null;
+	        return new InvalidExp();
 	    }
-	    VariableSymbol resultSym = (VariableSymbol) method.resolve("result");
-	    if (resultSym == null) {
+	    Symbol resultSym = method.resolve("result");
+	    if (resultSym == null) 
 	    	recordError("Result Array Access Error : 'result' used outside classifier context", ctx.getStart());
-	    } 
+	    if (!(resultSym instanceof ArrayTypeClassSymbol)) 
+	    	recordError("Self Array Access Error : 'self' isn't ArrayTypeClassSymbol", ctx.RESULT().getSymbol());
+
 	    ASTree source = new ResultExp(resultSym);  
 	    
 		//step2
-		List<ASTree> indices = new ArrayList<>(); 	
+	    List<ASTree> indices = new ArrayList<>(); 	
 		indices.add(source);
-		for (int i = 0; i < ctx.arrayAccessCS().expression().size(); i++) {
-			ASTree index = visit(ctx.arrayAccessCS().expression(i));
+		for (int i = 0; i < ctx.indexExpCS().size(); i++) {
+			ASTree index = visit(ctx.indexExpCS(i));
 			if (index == null) {
-				recordError("Result Array Access Error : UnDefined array index ", ctx.arrayAccessCS().getStart());
+				recordError("Variable Array Access Error : UnDefined array index ",ctx.getStart());
 					break;
 				}
 				indices.add(index);
 			}
-		return new ArrayRefExp(indices,false, "self");
+		ArrayRefExp rt = new ArrayRefExp(indices,false,resultSym, "self");
+		return rt;
 	}
 	
 	/* =====================================================
-     * Private FeatureCall helpers
+     * Private CallExp helpers
      * ===================================================== */
-	private ASTree buildFeatureCall(CallExpCSContext ctx, ASTree source) {
-	/* ------------ OperationCallExpCS -------------------------------- */
-	    if (ctx.featureCallExpCS().operationCallExpCS() != null) {
-	    	return buildOperationCall(ctx.featureCallExpCS().operationCallExpCS(), source);
-	    } else if (ctx.featureCallExpCS().propertyCallExpCS().arrayAccessCS() == null){
-	/* ------------ PropertyCallExpCS -------------------------------- */
-	    	PropertyCallExpCSContext prop = ctx.featureCallExpCS().propertyCallExpCS();
-	    	return buildPropertyCall(prop, source);
-	    } else {
-	/* ------------ arrayAccessCS -------------------------------- */
-	    	PropertyCallExpCSContext prop = ctx.featureCallExpCS().propertyCallExpCS();
+	private ASTree buildCallExp(CallExpCSContext ctx, ASTree source) {
+	    if (ctx.featureCallExpCS() != null) {
+	    	FeatureCallExpCSContext feature = ctx.featureCallExpCS();
+	    		if(feature.propertyCallExpCS() != null) {
+	    			return buildPropertyCall(ctx.featureCallExpCS().propertyCallExpCS(), source);
+	    		} else if(feature.operationCallExpCS() != null) {
+	    			return buildOperationCall(ctx.featureCallExpCS().operationCallExpCS(), source);
+	    		} else if(feature.arrayAccessCS() != null) {
+	    			return buildArrayAccessCall(ctx.featureCallExpCS().arrayAccessCS(), source);
+	    		} else {
+	    			recordError("CallExp Error : UnDefined CallExp ",ctx.getStart());
+	    			return new InvalidExp();
+	    		}
+	    } else return buildLoopCall(ctx.loopExpCS(),source);     
+	    	//PropertyCallExpCSContext prop = ctx.featureCallExpCS().propertyCallExpCS();
 	    	//if source is self, need sourceName and selfisPre
-	    	return buildArrayAccessCall(prop, source);
-	    }
+	    	//return buildArrayAccessCall(prop, source);
+	    
 	}
-
 	/** Source Must be ClassSymbol then class scope can resolve MethodSymbol*/
 	private ASTree buildOperationCall(OperationCallExpCSContext ctx, ASTree source) {
 		boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
 		String opname = ctx.variableExpCS().ID().getText();
-		/* Ex. obj1.operation()*/
+		if (isPre && !insidePost) {
+	        recordError("@pre can only be used inside postconditions", ctx.variableExpCS().isMarkedPreCS().stop);
+	    }
+		
 		Type returnType = null;
+		Symbol sym = null ;
+		
+		/* Ex. obj1.operation()*/
 		if(source instanceof VariableExp ) {
 			
-			Symbol sym = ((VariableExp) source).getSymbol();
+			sym = ((VariableExp) source).getSymbol();
 			
 			if (sym instanceof ClassSymbol) {
 				ClassSymbol classSym = (ClassSymbol) sym;
 				MethodSymbol methodSym = classSym.resolveMethod(opname);
+				
 				if (methodSym == null) {
-					recordError("Builde OperationCall Error: UnDefined MethodSymbol " + opname + "in" +classSym.getName() , ctx.getStart());
+					recordError("Build OperationCall Error: UnDefined MethodSymbol " + opname + "in" +classSym.getName() , ctx.getStart());
 					returnType = new InvalidType();
 				}
 				if (methodSym.getType() != null) {
 					if (methodSym.resolveType(methodSym.getType().getTypeName()) == null) {
-						recordError("Builde OperationCall Error: UnDefined returnType " + methodSym.getType().getTypeName() + "in" + opname, ctx.getStart());
+						recordError("Build OperationCall Error: UnDefined returnType " + methodSym.getType().getTypeName() + "in" + opname, ctx.getStart());
 						returnType = new InvalidType();
 					}
+					sym = methodSym;
 					returnType = methodSym.getType();
 				}
-			} else {
-				recordError("Builde OperationCall Error: Source must be Class " + opname + " in " +source , ctx.getStart());
+				//FieldSymbol Type is ArrayType
+			} else if(sym instanceof BaseSymbol) {
+				if(((BaseSymbol) sym).getType() instanceof ClassSymbol c) {
+					MethodSymbol methodSym = (MethodSymbol) c.resolve(opname);
+					returnType = methodSym.getType();
+					sym = methodSym;
+				}
+			}
+			else {
+				recordError("Build OperationCall Error: Source must be Class " + opname + " in " +source , ctx.getStart());
 				returnType = new InvalidType();
 			}
 		/* Ex. obj1.obj2.operation()*/
 		} else if( source instanceof FeatureCallExp) {
 			
 			String sourceName = ((FeatureCallExp) source).getName(); 
-			Symbol sym = currentScope.resolve(sourceName);
+			sym = currentScope.resolve(sourceName);
 			
-			if (sym instanceof ClassSymbol) {
-				ClassSymbol classSym = (ClassSymbol) sym;
+			if (sym instanceof ClassSymbol classSym) {
 				MethodSymbol methodSym = classSym.resolveMethod(opname);
 				if (methodSym == null) {
-					recordError("Builde OperationCall Error: UnDefined MethodSymbol " + opname + " in " +classSym.getName() , ctx.getStart());
+					recordError("Build OperationCallExp Error: UnDefined Method " + opname + " in " +classSym.getName() , ctx.getStart());
 					returnType = new InvalidType();
 				} 
 				if (methodSym.getType() != null) {
 					if (methodSym.resolveType(methodSym.getType().getTypeName()) == null) {
-						recordError("Builde OperationCall Error: UnDefined returnType " + methodSym.getType().getTypeName() + " in " + opname, ctx.getStart());
+						recordError("Build OperationCallExp Error: UnDefined returnType " + methodSym.getType().getTypeName() + " in " + opname, ctx.getStart());
 						returnType = new InvalidType();
 					}
 					returnType = methodSym.getType();
+					sym = methodSym;
 				}
 			} else if (sym instanceof BaseSymbol) {
 				Type type = ((BaseSymbol) sym).getType();
 				if (type instanceof ClassSymbol) {
 					MethodSymbol methodSym = ((ClassSymbol) type).resolveMethod(opname);
 					if (methodSym == null) {
-						recordError("Builde OperationCall Error: UnDefined MethodSymbol " + opname + " in " +((ClassSymbol) type).getName() , ctx.getStart());
+						recordError("Build OperationCallExp Error: UnDefined Method " + opname + " in " +((ClassSymbol) type).getName() , ctx.getStart());
 						returnType = new InvalidType();
+						sym = methodSym;
 					} 
 					if (methodSym.getType() != null) {
 						
 						if ( methodSym.resolveType(methodSym.getType().getTypeName()) == null) {
-							recordError("Builde OperationCall Error: UnDefined returnType " + methodSym.getType().getTypeName() + " in " + opname, ctx.getStart());
+							recordError("Build OperationCallExp Error: UnDefined returnType " + methodSym.getType().getTypeName() + " in " + opname, ctx.getStart());
 							returnType = new InvalidType();
 						}
-						else returnType = methodSym.getType();
+						else {
+							returnType = methodSym.getType();
+							sym = methodSym;
+							}
 					}
 				}
 			} 	
 			else {
-				recordError("Builde OperationCall Error: UnDefined source operationCall " + opname + "in" +source , ctx.getStart());
+				recordError("Build OperationCall Error: UnDefined source operationCall " + opname + "in" +source , ctx.getStart());
 				returnType = new InvalidType();
 			}
+			
+			
 		}
-	    return new OperationCallExp(source, gatherArguments(ctx.argumentsCS()), returnType, isPre, opname, ctx.ARROW() != null ? "->" : ".");
+		/* Args */
+		List<ASTree> args = gatherArguments(ctx.argumentsCS());
+		
+		if(sym instanceof MethodSymbol m) {
+			if(args.size() != m.getNumberOfSymbols()) {
+				recordError("Build OperationCall Error: Parameter Error "  + " in " +source +" call "+ opname, ctx.getStart());
+			}
+		}
+	    return new OperationCallExp(source, args, returnType, isPre, opname, ctx.ARROW() != null ? "->" : ".",sym);
 	}
-
-
+	
 	private ASTree buildPropertyCall(PropertyCallExpCSContext ctx, ASTree source) {
 		String propName = ctx.variableExpCS().ID().getText();
 		boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
-		
+		if (isPre && !insidePost) {
+	        recordError("@pre can only be used inside postconditions", ctx.variableExpCS().isMarkedPreCS().stop);
+	    }
 		Symbol sym = currentScope().resolve(propName);
 		if (sym == null) {
-			recordError("Builde PropertyCall Error: UnDefined property " + propName + "in" +currentScope() , ctx.getStart());
-			return null;
+			recordError("Build PropertyCall Error: UnDefined property " + propName + "in" +currentScope() , ctx.getStart());
+
 		}
-		
 		Type type = null;
 		if (sym instanceof BaseSymbol) {
 			type = ((BaseSymbol) sym).getType();
 			if (type == null) {
-				recordError("Builde PropertyCall Error: UnDefined type " + propName + "in" +currentScope() , ctx.getStart());
-				return null;
+				recordError("Build PropertyCall Error: UnDefined type " + propName + "in" +currentScope() , ctx.getStart());
 			}
 		}else if(sym instanceof ClassSymbol){
 			type =  currentScope().resolveType(propName);
 			if (type == null) {
-				recordError("Builde PropertyCall Error: UnDefined type " + propName + "in" +currentScope() , ctx.getStart());
-				return null;
+				recordError("Build PropertyCall Error: UnDefined type " + propName + "in" +currentScope() , ctx.getStart());
 			}
 		}
 		
-		return new PropertyCallExp(List.of(source), propName, type, isPre);
+		return new PropertyCallExp(List.of(source), propName, type, isPre, sym);
 	}
 	
 	
-	private ASTree buildArrayAccessCall(PropertyCallExpCSContext ctx, ASTree source) {
+	private ASTree buildArrayAccessCall(ArrayAccessCSContext ctx, ASTree source) {
 			String arrayName = ctx.variableExpCS().ID().getText();
 			boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
-			Type typecheck = null;
+			if (isPre && !insidePost) {
+		        recordError("@pre can only be used inside postconditions", ctx.variableExpCS().isMarkedPreCS().getStart());
+		    }
 			Symbol sym = null ;
+
+			//not source chain Ex. self.datas[it][it2][it3] , self(VariableExp)
 			if(source instanceof VariableExp) {
-				Type type = ((VariableExp)source).getType();
-				if (type instanceof ClassSymbol) {
-					typecheck = ((ClassSymbol)type).resolveType(arrayName);
-					if (typecheck == null) {
-						recordError("Builde ArrayFeatureCall Error: UnDefined Arraytype at" + ((VariableExp)source).getName(), ctx.getStart());
+				Type sourcesym = ((VariableExp) source).getType();
+				if(sourcesym instanceof ClassSymbol) {
+					Symbol tepsym = ((ClassSymbol) sourcesym).resolve(arrayName);
+					//source is 'self' or 'result' FieldSymbol
+					if(tepsym instanceof ClassSymbol)
+						if(!(tepsym instanceof ArrayTypeClassSymbol)) {
+							recordError("Build ArrayFeatureCall Error: " + arrayName +" must be ArrayTypeClassSymbol", ctx.getStart());
+						}
+					if(tepsym instanceof BaseSymbol) {
+						Type targettype = ((BaseSymbol) tepsym).getType();
+						if (!(targettype instanceof ArrayTypeClassSymbol)) {
+							recordError("Build ArrayFeatureCall Error: " + arrayName +" must be ArrayTypeClassSymbol", ctx.getStart());
+						}
 					}
-				} else {
-					recordError("Builde ArrayFeatureCall Error: Source must be ClassSymbol " + ((VariableExp)source).getName(), ctx.getStart());
+				}else {
+					recordError("Build ArrayFeatureCall Error: Source must be ClassSymbol " + ((VariableExp)source).getName(), ctx.getStart());
 				}
+						
+				
+			//source chain Ex. arg.datas.array[1][2][3]  ,arg.datas(PropertyCallExp)
 			} else if(source instanceof FeatureCallExp) {
 				Type type = ((FeatureCallExp)source).getType();
-				if (type instanceof ClassSymbol) {
+				if (type instanceof ArrayTypeClassSymbol) {
 					sym = ((ClassSymbol)type).resolve(arrayName);
-					if(sym instanceof VariableSymbol) {
-						typecheck = ((VariableSymbol)sym).getType();
+					if(sym==null) {
+						recordError("Build ArrayFeatureCall Error: ArrayTypeClassSymbol "+((FeatureCallExp)source).getName()+" does't have MultiplicityListType: " +arrayName, ctx.getStart());
 					}
-					if (typecheck == null) {
-						recordError("Builde ArrayFeatureCall Error: UnDefined Arraytype at" + ((FeatureCallExp)source).getName(), ctx.getStart());
+					if (!(sym instanceof ArrayTypeClassSymbol)) {
+						recordError("Build ArrayFeatureCall Error: " +arrayName +" isn't ArrayTypeClassSymbol", ctx.getStart());
 					}
 				} else {
-					recordError("Builde ArrayFeatureCall Error: Source must be ClassSymbol " + ((FeatureCallExp)source).getName(), ctx.getStart());
+					recordError("Build ArrayFeatureCall Error: ArraySource must be ArrayTypeClassSymbol " + ((FeatureCallExp)source).getName(), ctx.getStart());
 				}
 			} 
     		
     		List<ASTree> indices = new ArrayList<>(); 	
     		indices.add(source);
-    		for (int i = 0; i < ctx.arrayAccessCS().expression().size(); i++) {
-    			ASTree index = visit(ctx.arrayAccessCS().expression(i));
+    		for (int i = 0; i < ctx.indexExpCS().size(); i++) {
+    			ASTree index = visit(ctx.indexExpCS(i));
     			if (index == null) {
-    				recordError("Builde ArrayFeatureCall Error: UnDefined array index ", ctx.arrayAccessCS().getStart());
-   					break;
-   				}
-   				indices.add(index);
-   			}
-    		ArrayRefExp arr = new ArrayRefExp(indices, isPre, arrayName);		
-    		arr.setSymbol(sym);
+    				recordError("Variable Array Access Error : UnDefined array index ",ctx.getStart());
+    					break;
+    				}
+    				indices.add(index);
+    			}
+    		ArrayRefExp arr = new ArrayRefExp(indices, isPre, sym, arrayName);		
     		return arr;
 	}
 	
@@ -903,6 +1035,36 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	        cur = cur.argumentsCS();
 	    }
 	    return list;
+	}
+
+	private ASTree buildLoopCall(LoopExpCSContext ctx, ASTree source) {
+	    /* ------------ 2. isMarkedPreCS ---------------- */
+	    boolean isPre = false;
+	    Symbol sym = null;
+	    if (source instanceof VariableExp v) {isPre = v.isMarkedPre(); sym = v.getSymbol();}
+	    if(source instanceof FeatureCallExp f) {isPre = f.isMarkedPre(); sym = f.getSymbol();}
+
+	    /* ------------ 3. Create Iterate Scope ------------ */
+	    LocalScope iterScope = new LocalScope(currentScope(), "iterate LocalScope");
+	    enterScope(iterScope);
+
+	    /* ------------ 4. iterator and result VarDecl --------- */
+	    ASTree iteratorDecl = visit(ctx.iterateExpCS().variableDecl().get(0)); 
+	    ASTree resultDecl   = visit(ctx.iterateExpCS().variableDecl().get(1)); 
+
+	    /* ------------ 5. build body  --------------------- */
+	    ASTree body = visit(ctx.iterateExpCS().expression()); 
+	    if (body == null) {
+	        recordError("IterateCall Error: ：no body no body but..", ctx.getStart());
+	        exitScope();
+	    }
+	    /* ------------ 6. Exit Scope -------------------- */
+	    exitScope();
+	    /* ------------ 7. new AST IterateNode ---------------------- */
+	    // children: 0-source, 1-iteratorDecl, 2-resultDecl, 3-body 
+	    return new IterateExp(
+	            List.of(source, iteratorDecl, resultDecl, body)
+	            ,isPre, sym);
 	}
 
 	
@@ -933,14 +1095,16 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		children.add(visit(ctx.oclExpressionCS()));
 		
 		exitScope();
-		Symbol sym = currentScope().resolve("dim1");
 		return new letExp(children);
 	}
 
 	@Override
 	public ASTree visitVariableExpCS(VariableExpCSContext ctx) {
-		boolean isMarkedPre = ctx.isMarkedPreCS() != null;
+		boolean isPre = ctx.isMarkedPreCS() != null;
 		Token tok = ctx.getStart();
+		if (isPre && !insidePost) {
+	        recordError("@pre can only be used inside postconditions", tok);
+	    }
         String name= ctx.ID().getText();
         Type type;
         //check if the variable is defined
@@ -970,7 +1134,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		}
         
         
-        return new VariableExp(name,isMarkedPre,sym);
+        return new VariableExp(name,isPre,sym);
 	}
 
 	/* =====================================================
@@ -1005,50 +1169,34 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
             return new StringLiteralExp(raw.substring(1, raw.length() - 1),strtype);
         }
         recordError("PrimitiveListeral Error: Unknown primitive literal", ctx.getStart());
-        return null; // fallback (should not really happen)
+        return new InvalidExp(); // fallback (should not really happen)
 	}
+	
+	
 	@Override
-	public ASTree visitNormoalSequenceLiteral(NormoalSequenceLiteralContext ctx) {
-		String typeName = ctx.basetype().getText();
-		Type type = (Type) currentScope().resolve(typeName) ;
+	public ASTree visitCollectionLiteralExpCS(CollectionLiteralExpCSContext ctx) {
+		ASTree collectionParts = visit(ctx.collectionLiteralPartsCS());
+		return new CollectionLiteralExp( List.of(collectionParts) );
+	}
 
-		if (type == null) {
-			recordError("Collection Literal Error: UnDefined type " + typeName, ctx.getStart());
-			return null;
-		}
+	@Override
+	public ASTree visitCollectionitem(CollectionitemContext ctx) {
 		List<ASTree> parts = new ArrayList<>();
-		if (ctx.collectionLiteralPartsCS() != null) {
-			for ( LiteralExpCSContext partCtx : ctx.collectionLiteralPartsCS().literalExpCS()) {
-				ASTree part = visit(partCtx);
-				if (part != null) {
-				parts.add(part);
-				}
+		for ( LiteralExpCSContext partCtx : ctx.literalExpCS()) {
+			ASTree part = visit(partCtx);
+			if (part != null) {
+			parts.add(part);
 			}
-			return new CollectionLiteralExp(type, parts, false);
-		}else {
-			return new CollectionLiteralExp(type, List.of(), false);
 		}
+		return new CollectionItem(parts);	
 	}
 
 	@Override
-	public ASTree visitRangeSequenceLiteral(RangeSequenceLiteralContext ctx) {
-		String typeName = ctx.basetype().getText();
-		Type inttype = (Type) currentScope().resolve("int"); //find int primtivetype
-		
-		if (inttype == null) {
-			recordError("Collection Literal Range Error: UnDefined  int type! " + typeName, ctx.getStart());
-			return null;
-		}
-		ASTree from = visit(ctx.collectionRangeCS().expression(0));
-        ASTree to   = visit(ctx.collectionRangeCS().expression(1));
-        if(from.getType() != inttype | to.getType()!= inttype) {
-        	recordError("Collection Literal Range Error: Only for  int type! " + typeName, ctx.getStart());
-			return null;
-        }
-
-        return new CollectionLiteralExp(inttype, List.of(from, to), true);
+	public ASTree visitCollectionRangeCS(CollectionRangeCSContext ctx) {
+		ASTree from = visit(ctx.expression(0));
+        ASTree to   = visit(ctx.expression(1));
+        return new CollectionRange(List.of(from,to));
 	}
-
 
 	/* =====================================================
      *  Default/fallback – delegate to children so we do not need to implement every rule.
@@ -1060,7 +1208,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
      * ===================================================== */
     /** Returns a <em>copy</em> of the semantic error list collected so far. */
     public List<String> getSemanticErrors() {
-        return new ArrayList<>(semanticErrors);
+        return semanticErrors;
     }
 
 	

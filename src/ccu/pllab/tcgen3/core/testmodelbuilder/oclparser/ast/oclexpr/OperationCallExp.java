@@ -5,6 +5,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.symboltable.Symbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class OperationCallExp extends FeatureCallExp{
@@ -13,7 +14,6 @@ public class OperationCallExp extends FeatureCallExp{
 	private String name;
 	private String op; //arrow"->" or dot "."
 	private Type returnType;
-
 	
 	/** OperationCallExp
 	 * ├── child(0) : source (可為 null ⇒ 無顯式 source 時不放)
@@ -21,8 +21,8 @@ public class OperationCallExp extends FeatureCallExp{
 	 * ├── child(2) : arg2
 	 *  */
 	public OperationCallExp(ASTree source, List<ASTree> args, Type returnType,
-							boolean isPre, String methodName, String op) {
-		super(merge(source, args), isPre);   // 交給 ASTList 儲存
+							boolean isPre, String methodName, String op ,Symbol sym) {
+		super(merge(source, args), isPre,sym);   // 交給 ASTList 儲存
 		this.name = methodName;
 		this.op = op;
 		this.returnType= returnType;
@@ -37,6 +37,7 @@ public class OperationCallExp extends FeatureCallExp{
         list.addAll(args);
         return list;
 	}
+    
     
 	@SuppressWarnings("unchecked")
 	public List<ASTree> getArgs() { 

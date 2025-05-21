@@ -4,6 +4,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.symboltable.Symbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 /**In OCL spec 2.4 ch9.3.34 FeatureCallExpCS:<br>
  * A FeatureCallExp expression may have three different productions. Which one is chosen depends on the disambiguating
@@ -14,11 +15,13 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
  * */
 public class PropertyCallExp extends FeatureCallExp  {
 	
-	private Type type;
-	private String name;
+	//Ex. self.datas.dimension
+	private Type type;//type = intType
+	private String name;//name = dimension
+						//sym = fieldSymbol
 
-	public PropertyCallExp(List<ASTree> source,String name, Type type, boolean isPre) {
-		super(source, isPre);
+	public PropertyCallExp(List<ASTree> source,String name, Type type, boolean isPre,Symbol sym) {
+		super(source, isPre,sym);
         this.name = name;
         this.type = type;
 
