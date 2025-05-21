@@ -2,6 +2,8 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 
 import java.util.List;
 
+import ccu.pllab.tcgen3.symboltable.type.Type;
+
 public class ContextExpAST extends ASTList {
 
 	String contextKeyword;
@@ -11,6 +13,12 @@ public class ContextExpAST extends ASTList {
 		super(oclexpression);
 		this.contextKeyword = contextKeyword;
 		this.contextlabel = contextlabel;
+	}
+
+	@Override
+	public Type getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

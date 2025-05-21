@@ -41,7 +41,7 @@ public class OclBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Oc
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNoRturnTypeAlt(OclParser.NoRturnTypeAltContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNoReturnTypeAlt(OclParser.NoReturnTypeAltContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -314,21 +314,7 @@ public class OclBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Oc
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitUntypedCollectionLiteralExpCS(OclParser.UntypedCollectionLiteralExpCSContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitNormoalSequenceLiteral(OclParser.NormoalSequenceLiteralContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitRangeSequenceLiteral(OclParser.RangeSequenceLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCollectionLiteralExpCS(OclParser.CollectionLiteralExpCSContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -336,6 +322,13 @@ public class OclBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Oc
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitCollectionLiteralPartsCS(OclParser.CollectionLiteralPartsCSContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitCollectionitem(OclParser.CollectionitemContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -384,13 +377,6 @@ public class OclBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Oc
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArrayAccessCS(OclParser.ArrayAccessCSContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitCallExpCS(OclParser.CallExpCSContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -420,6 +406,20 @@ public class OclBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Oc
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitArgumentsCS(OclParser.ArgumentsCSContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitArrayAccessCS(OclParser.ArrayAccessCSContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitIndexExpCS(OclParser.IndexExpCSContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -24,7 +24,7 @@ classifierContextDecl
 
 /** Method Level*/
 operationContextDecl  
-	: 'context' pathNameCS '::' ID '(' variableDecls? ')'  # NoRturnTypeAlt
+	: 'context' pathNameCS '::' ID '(' variableDecls? ')'  # NoReturnTypeAlt
 	| 'context' pathNameCS '::' ID '(' variableDecls? ')' ':' type # HasRturnTypeAlt
 	;
 
@@ -82,11 +82,11 @@ primitiveType
 	;
 
 collectionTypeIdentifierCS 
-	: 'Set'
-	| 'Bag'
-	| 'Sequence'
-	| 'OrderedSet' 
-	| 'Collection'
+	: 'Set' 
+	| 'Bag' 
+	| 'Sequence' 
+	| 'OrderedSet'  
+	| 'Collection' 
 	;
 
 userClassType
@@ -135,9 +135,9 @@ postfixExpression
 	| SELF isMarkedPreCS? (callExpCS)+ 				 #ClassFeatureCallAlt
 	| RESULT (callExpCS)* 						     #ResultFeatureCallAlt
 //Special Casses Ex. self[1][2]  or  result[2][3] or datas[2][3][4]
-	| variableExpCS arrayAccessCS 					 #VarArrayAccessAlt
-	| SELF isMarkedPreCS? arrayAccessCS				 #ClassArrayAccessAlt
-	| RESULT arrayAccessCS							 #ResultArrayAccessAlt
+	| variableExpCS indexExpCS+ 					 #VarArrayAccessAlt
+	| SELF isMarkedPreCS? indexExpCS+				 #ClassArrayAccessAlt
+	| RESULT indexExpCS+							 #ResultArrayAccessAlt
 	;
 
 /**------------------------------------------------------------------
@@ -164,13 +164,14 @@ variableExpCS
 	;
 /**------------------------------------------------------------------
  * OCL EXPRESSIONS - PrimaryExpr - literalExpCS
+ * Collection Prohibit Empty !!!
  *------------------------------------------------------------------*/
 literalExpCS
 	: arrayLiteralExpCS 
 	| arrayListLiteralExpCS 
 	| collectionLiteralExpCS 
 	| primitiveLiteralExpCS 
-	| untypedCollectionLiteralExpCS 
+	| arrayLiteralPartsCS 
 	;
 
 /** e.g. int[][][]{ {{1,2},{1,2}}, {{1,2},{1,2}} }*/
@@ -183,23 +184,21 @@ arrayListLiteralExpCS
 	: arrayListType arrayLiteralPartsCS
 	;
 
-
 arrayLiteralPartsCS
-	: '{' (literalExpCS (',' literalExpCS)* )? '}'
-	;
-
-/** For Semantic Analysis e.g. {1, 2}, {{1, 2}, {3, 4}}*/	
-untypedCollectionLiteralExpCS 
-	: '{' (literalExpCS ( ',' literalExpCS)* )?'}'
+	: '{' collectionitem '}'
 	;
 	
 collectionLiteralExpCS 
-	: basetype '{' collectionLiteralPartsCS? '}' #NormoalSequenceLiteral
-	| basetype '{' collectionRangeCS '}'		 #RangeSequenceLiteral
+	:  basetype '{' collectionLiteralPartsCS '}' 
 	;
 
 collectionLiteralPartsCS
-	: literalExpCS ( ',' literalExpCS )*
+	: collectionitem
+	| collectionRangeCS
+	;
+
+collectionitem
+	:literalExpCS (',' literalExpCS )* 
 	;
 
 collectionRangeCS
@@ -218,13 +217,6 @@ realLiteralExpCS 	: INTEGER '.' INTEGER 	; //Not yet Support
 stringLiteralExpCS 	: STRING_LITERAL		;
 booleanLiteralExpCS : 'true'|'false' 		;
 /**------------------------------------------------------------------
- * OCL EXPRESSIONS - PrimaryExpr - arrayAccessCS
- *------------------------------------------------------------------*/
-arrayAccessCS 
-	: ('[' expression ']')+
-	;
-	
-/**------------------------------------------------------------------
  * OCL EXPRESSIONS - CallExpCS
  *------------------------------------------------------------------*/ 
 callExpCS
@@ -235,12 +227,12 @@ callExpCS
 featureCallExpCS
 	: propertyCallExpCS
 	| operationCallExpCS
+	| arrayAccessCS
 	;
-
+	
 propertyCallExpCS
-    : DOT variableExpCS  	   //# SimplePropAlt
-	| DOT variableExpCS arrayAccessCS        //# ArrayPropAlt
-    ;
+    : DOT variableExpCS 
+    ;		
 	
 /**------------------------------------------------------------------
  * OCL EXPRESSIONS - OperationCallExpCS
@@ -269,6 +261,19 @@ operationCallExpCS
 argumentsCS
 	: oclExpressionCS (',' argumentsCS )?
 	;
+	
+/**------------------------------------------------------------------
+ * OCL EXPRESSIONS - PrimaryExpr - arrayAccessCS
+ *------------------------------------------------------------------*/	
+ 
+arrayAccessCS 
+	: DOT variableExpCS indexExpCS+
+	;
+	
+indexExpCS
+	: '[' expression ']'
+	;
+	
 /**------------------------------------------------------------------
  * OCL EXPRESSIONS - loopExpCS
  *------------------------------------------------------------------*/ 

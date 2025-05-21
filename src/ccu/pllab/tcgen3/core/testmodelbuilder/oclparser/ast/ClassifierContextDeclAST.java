@@ -14,5 +14,11 @@ public class ClassifierContextDeclAST extends ASTLeaf {
 		return pathName;
 	}
 
+	@Override
+	public Type getType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

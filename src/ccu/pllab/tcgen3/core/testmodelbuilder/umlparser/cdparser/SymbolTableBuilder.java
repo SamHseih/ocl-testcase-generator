@@ -9,12 +9,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
+import ccu.pllab.tcgen3.symboltable.DataAggregateSymbol;
 import ccu.pllab.tcgen3.symboltable.FieldSymbol;
 import ccu.pllab.tcgen3.symboltable.MethodSymbol;
 import ccu.pllab.tcgen3.symboltable.ParameterSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 import ccu.pllab.tcgen3.symboltable.scope.GlobalScope;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
+import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
 import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
@@ -82,21 +84,9 @@ public class SymbolTableBuilder {
                 String datatypename = element.getAttribute("name");
                 String dataid = element.getAttribute("xmi:id");
                 
-                
+                /** dataTypeFor Array*/
                 if ("uml:DataType".equals(xmiType)) {
-                	/*Type elementType = null;
-                	if (datatypename.contains("int")) {
-                		elementType = (Type) symbolTable.resolve("int");
-                	}else if (datatypename.contains("boolean")) {
-                		elementType = (Type) symbolTable.resolve("boolean");
-                	}else if (datatypename.contains("String")) {
-                		elementType = (Type) symbolTable.resolve("String");
-                	} 
-                	StaticArrayClassSymbol arrayType = new StaticArrayClassSymbol(datatypename,dataid,elementType);
-                	symbolTable.define(arrayType);
-                	symbolTable.defineById(arrayType);*/
-                	
-                	ClassSymbol classSymbol = new ClassSymbol(datatypename, dataid);
+                	ArrayTypeClassSymbol classSymbol = new ArrayTypeClassSymbol(datatypename, dataid);
 					classSymbol.setScope(globalsymbolTable);
 					globalsymbolTable.define(classSymbol);
 					globalsymbolTable.defineById(classSymbol);
@@ -176,8 +166,17 @@ public class SymbolTableBuilder {
 	            String[] multiplicity = extractMultiplicity(attrElement, attrId);
 	            
 	            Type attrType = getTypebyID(attrTypeId);
-	            if (multiplicity[1].equals("*")) {
-	            	 attrType = new MultiplicityListType(classname+"_"+attrName,attrType, multiplicity[2]);
+	            if (multiplicity[1].equals("*")) {                         //id changed cause multiplicity
+	            	 attrType = new MultiplicityListType(classname+"::"+attrName+"[]",attrType, multiplicity[2]);
+	            	 
+	            	 /* Special fun. :  Size() */
+	            	 MethodSymbol sizeSymbol = new MethodSymbol("size", "predefined");
+	            	 Type returntype =  globalsymbolTable.resolveType("int");
+	            	 sizeSymbol.setType(returntype);
+	            	 sizeSymbol.setScope((ArrayTypeClassSymbol) attrType);
+	            	 ((ArrayTypeClassSymbol) attrType).define(sizeSymbol);
+	            	 /* Special fun. End*/
+	            	 
 	            	 globalsymbolTable.define((Symbol) attrType);
 	            	 globalsymbolTable.defineById((Symbol) attrType);
 	            	 ((MultiplicityListType) attrType).setSize(size);
@@ -257,6 +256,8 @@ public class SymbolTableBuilder {
 
 	            MethodSymbol methodSymbol = new MethodSymbol(opName, opId);
 	            methodSymbol.setScope(classSymbol);
+	            
+
 
 	            NodeList parameters = opElement.getElementsByTagName("ownedParameter");
 	            for (int k = 0; k < parameters.getLength(); k++) {
@@ -273,7 +274,16 @@ public class SymbolTableBuilder {
 	                    Type paramType = getTypebyID(paramTypeId);
 	                    String[] multiplicity = extractMultiplicity(paramElement, paramId);
 	                    if (multiplicity[1].equals("*")) {
-	                    	paramType = new MultiplicityListType(classname+"_"+opName+"_"+paramName,paramType, multiplicity[2]);
+	                    	paramType = new MultiplicityListType(classname+"::"+opName+"::"+paramName+"[]",paramType, multiplicity[2]);
+	                    	
+	                    	/* Special fun. :  Size() */
+		   	            	 MethodSymbol sizeSymbol = new MethodSymbol("size", "predefined");
+		   	            	 Type returntype =  globalsymbolTable.resolveType("int");
+		   	            	sizeSymbol.setType(returntype);
+		   	            	sizeSymbol.setScope((ArrayTypeClassSymbol) paramType);
+	   	            	 	((ArrayTypeClassSymbol) paramType).define(sizeSymbol);
+	   	            	 	/* Special fun. End*/
+	                    	
 	   	            	 	globalsymbolTable.define((Symbol) paramType);
 	   	            	 	globalsymbolTable.defineById((Symbol) paramType);
 	                    }

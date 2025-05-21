@@ -40,17 +40,17 @@ public interface OclListener extends ParseTreeListener {
 	 */
 	void exitClassifierContextDecl(OclParser.ClassifierContextDeclContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code NoRturnTypeAlt}
+	 * Enter a parse tree produced by the {@code NoReturnTypeAlt}
 	 * labeled alternative in {@link OclParser#operationContextDecl}.
 	 * @param ctx the parse tree
 	 */
-	void enterNoRturnTypeAlt(OclParser.NoRturnTypeAltContext ctx);
+	void enterNoReturnTypeAlt(OclParser.NoReturnTypeAltContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code NoRturnTypeAlt}
+	 * Exit a parse tree produced by the {@code NoReturnTypeAlt}
 	 * labeled alternative in {@link OclParser#operationContextDecl}.
 	 * @param ctx the parse tree
 	 */
-	void exitNoRturnTypeAlt(OclParser.NoRturnTypeAltContext ctx);
+	void exitNoReturnTypeAlt(OclParser.NoReturnTypeAltContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code HasRturnTypeAlt}
 	 * labeled alternative in {@link OclParser#operationContextDecl}.
@@ -460,39 +460,15 @@ public interface OclListener extends ParseTreeListener {
 	 */
 	void exitArrayLiteralPartsCS(OclParser.ArrayLiteralPartsCSContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link OclParser#untypedCollectionLiteralExpCS}.
+	 * Enter a parse tree produced by {@link OclParser#collectionLiteralExpCS}.
 	 * @param ctx the parse tree
 	 */
-	void enterUntypedCollectionLiteralExpCS(OclParser.UntypedCollectionLiteralExpCSContext ctx);
+	void enterCollectionLiteralExpCS(OclParser.CollectionLiteralExpCSContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link OclParser#untypedCollectionLiteralExpCS}.
+	 * Exit a parse tree produced by {@link OclParser#collectionLiteralExpCS}.
 	 * @param ctx the parse tree
 	 */
-	void exitUntypedCollectionLiteralExpCS(OclParser.UntypedCollectionLiteralExpCSContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code NormoalSequenceLiteral}
-	 * labeled alternative in {@link OclParser#collectionLiteralExpCS}.
-	 * @param ctx the parse tree
-	 */
-	void enterNormoalSequenceLiteral(OclParser.NormoalSequenceLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code NormoalSequenceLiteral}
-	 * labeled alternative in {@link OclParser#collectionLiteralExpCS}.
-	 * @param ctx the parse tree
-	 */
-	void exitNormoalSequenceLiteral(OclParser.NormoalSequenceLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code RangeSequenceLiteral}
-	 * labeled alternative in {@link OclParser#collectionLiteralExpCS}.
-	 * @param ctx the parse tree
-	 */
-	void enterRangeSequenceLiteral(OclParser.RangeSequenceLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code RangeSequenceLiteral}
-	 * labeled alternative in {@link OclParser#collectionLiteralExpCS}.
-	 * @param ctx the parse tree
-	 */
-	void exitRangeSequenceLiteral(OclParser.RangeSequenceLiteralContext ctx);
+	void exitCollectionLiteralExpCS(OclParser.CollectionLiteralExpCSContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link OclParser#collectionLiteralPartsCS}.
 	 * @param ctx the parse tree
@@ -503,6 +479,16 @@ public interface OclListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCollectionLiteralPartsCS(OclParser.CollectionLiteralPartsCSContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link OclParser#collectionitem}.
+	 * @param ctx the parse tree
+	 */
+	void enterCollectionitem(OclParser.CollectionitemContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link OclParser#collectionitem}.
+	 * @param ctx the parse tree
+	 */
+	void exitCollectionitem(OclParser.CollectionitemContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link OclParser#collectionRangeCS}.
 	 * @param ctx the parse tree
@@ -564,16 +550,6 @@ public interface OclListener extends ParseTreeListener {
 	 */
 	void exitBooleanLiteralExpCS(OclParser.BooleanLiteralExpCSContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link OclParser#arrayAccessCS}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayAccessCS(OclParser.ArrayAccessCSContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link OclParser#arrayAccessCS}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayAccessCS(OclParser.ArrayAccessCSContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link OclParser#callExpCS}.
 	 * @param ctx the parse tree
 	 */
@@ -623,6 +599,26 @@ public interface OclListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitArgumentsCS(OclParser.ArgumentsCSContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link OclParser#arrayAccessCS}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayAccessCS(OclParser.ArrayAccessCSContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link OclParser#arrayAccessCS}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayAccessCS(OclParser.ArrayAccessCSContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link OclParser#indexExpCS}.
+	 * @param ctx the parse tree
+	 */
+	void enterIndexExpCS(OclParser.IndexExpCSContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link OclParser#indexExpCS}.
+	 * @param ctx the parse tree
+	 */
+	void exitIndexExpCS(OclParser.IndexExpCSContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link OclParser#loopExpCS}.
 	 * @param ctx the parse tree

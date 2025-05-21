@@ -23,6 +23,11 @@ public class PrimitiveTypeSymbol extends BaseSymbol implements Type{
 	public String getTypeName() {
 		return this.name;
 	}
+	
+	@Override
+	public String toString() {
+		return this.umlId;
+	}
 
 	
 	

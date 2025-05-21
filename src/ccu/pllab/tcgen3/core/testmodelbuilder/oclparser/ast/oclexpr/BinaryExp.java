@@ -4,6 +4,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 /**
@@ -40,6 +41,13 @@ public class BinaryExp extends ASTList implements Expression{
     public ASTree left()  { return child(0); }
     public ASTree right() { return child(1); }
     @Override public String toString() { return "(" + left() + " " + operator + " " + right() + ")"; }
+
+	@Override
+	public Type getType() {
+		if(child(0).getType().equals(child(1).getType()))
+		return child(0).getType();
+		return new InvalidType();
+	}
 
 
 

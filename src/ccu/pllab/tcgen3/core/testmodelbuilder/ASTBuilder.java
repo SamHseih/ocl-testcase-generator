@@ -42,11 +42,10 @@ public class ASTBuilder {
         try {
 			oclparser.build();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         this.symboltable = oclparser.getSymbolTable();
-        this.ast = oclparser.getAst();      
+        this.ast = oclparser.getAst(); 
 	}
 	
 	 public Scope getSymboltable() {

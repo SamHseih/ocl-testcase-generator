@@ -17,4 +17,8 @@ public class VariableSymbol extends BaseSymbol implements SymbolHasType{
 		super.setType(type);
 	}
 
+	@Override
+	public String toString() {
+		return this.umlId;
+	}
 }

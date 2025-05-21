@@ -56,6 +56,12 @@ public class OperationContextDeclAST extends ASTList {
 		return sb.toString();
 		
 	}
+
+	@Override
+	public Type getType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 
 

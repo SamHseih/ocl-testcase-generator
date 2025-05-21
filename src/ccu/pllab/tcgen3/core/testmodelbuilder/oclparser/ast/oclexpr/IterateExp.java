@@ -3,6 +3,7 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.symboltable.Symbol;
 
 
 public class IterateExp extends LoopExp {
@@ -15,8 +16,8 @@ public class IterateExp extends LoopExp {
 	 * ├── VariableDecl child(2) :  AccumulatorDecl<br>
 	 * ├── ASTree child(3) 		 :  body
 	 *  */
-	public IterateExp(List<ASTree> children, boolean isPre) {
-		super(children, isPre);
+	public IterateExp(List<ASTree> children, boolean isPre, Symbol sourcesym) {
+		super(children, isPre,sourcesym);
 		// TODO Auto-generated constructor stub
 	}
 

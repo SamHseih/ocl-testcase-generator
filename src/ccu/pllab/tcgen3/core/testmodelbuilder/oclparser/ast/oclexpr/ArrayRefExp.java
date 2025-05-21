@@ -11,7 +11,6 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class ArrayRefExp extends FeatureCallExp  {
 	private final String arrayName;
-	private Symbol sym;
 	
 	/** New OCL Extends «ArrayRef»  
 	 * ArrayRefExp Ex. x = self.a[2][4][5]<br> 
@@ -20,14 +19,10 @@ public class ArrayRefExp extends FeatureCallExp  {
 	 * ├── ASTree child(2) 		 :  index = 4
 	 * └── ASTree child(3) 		 :  index = 2
 	 *  */
-	public ArrayRefExp(List<ASTree> children, boolean isPre, String arrayName) {
-		super(children, isPre);
+	public ArrayRefExp(List<ASTree> children, boolean isPre,Symbol sym, String arrayName ) {
+		super(children, isPre,sym);
 		this.arrayName = arrayName;
 		
-	}
-	
-	public void setSymbol(Symbol symbol) {
-		this.sym = symbol;
 	}
 	
 	public List<ASTree> getIndex() {
@@ -57,8 +52,8 @@ public class ArrayRefExp extends FeatureCallExp  {
 		if (sym instanceof BaseSymbol) {
 			return ((BaseSymbol) sym).getType();
 		}
-		else if (sym instanceof ClassSymbol) {
-			Type tp = (Type) this.sym;
+		else if (sym instanceof ClassSymbol c) {
+			Type tp = c;
 			return tp;
 		}else return null;
 	}
@@ -70,7 +65,7 @@ public class ArrayRefExp extends FeatureCallExp  {
 		for (ASTree index : getIndex()) {
 			sb.append("[").append(index.toString()).append("]");
 		}
-		if (isPre()) {
+		if (isMarkedPre()) {
 			sb.append("@pre");
 		}
 		return sb.toString();

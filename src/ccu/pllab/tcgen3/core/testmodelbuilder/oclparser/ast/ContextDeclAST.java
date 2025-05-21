@@ -3,6 +3,8 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 import java.util.ArrayList;
 import java.util.List;
 
+import ccu.pllab.tcgen3.symboltable.type.Type;
+
 public class ContextDeclAST extends ASTList {
 	
 	/** ContextDeclAST 
@@ -29,6 +31,12 @@ public class ContextDeclAST extends ASTList {
 	
 	public List<ASTree> getContexts() {
 		return children.subList(1, children.size());
+	}
+
+	@Override
+	public Type getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
