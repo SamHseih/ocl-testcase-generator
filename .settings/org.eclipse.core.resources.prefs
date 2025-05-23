@@ -8,4 +8,5 @@ encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/Opera
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/SelfExp.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/umlparser/cdparser/SymbolTableBuilder.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/symboltable/type/StaticArrayClassSymbol.java=UTF-8
+encoding//src/ccu/pllab/tcgen3/visualization/DotFileConverter.java=UTF-8
 encoding/<project>=x-windows-950

@@ -28,7 +28,7 @@ public class CollectionItem extends CollectionPart{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("{");
+		sb.append("Sequence {");
 		for (int i = 0; i < numChildren(); i++) {
 	        sb.append(children.get(i).toString());
 	        if (i < children.size() - 1) {

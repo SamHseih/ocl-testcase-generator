@@ -7,6 +7,9 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
+import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
+import ccu.pllab.tcgen3.symboltable.type.InvalidType;
+import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class ArrayRefExp extends FeatureCallExp  {
@@ -50,12 +53,46 @@ public class ArrayRefExp extends FeatureCallExp  {
 	@Override
 	public Type getType() {
 		if (sym instanceof BaseSymbol) {
-			return ((BaseSymbol) sym).getType();
+			Type arrayType =  ((BaseSymbol) sym).getType();
+			if(arrayType instanceof MultiplicityListType a) {
+				if(numChildren()>1 ) {return a.getElementType();}
+				else return a;
+			}
+			//for uml array
+			if(arrayType instanceof ArrayTypeClassSymbol a) {
+				Symbol arrsym = a.resolve("elements");
+				//elements is fieldsymbol 
+				if(arrsym instanceof BaseSymbol arr) {
+					Type multiplicityType = arr.getType();
+					if(multiplicityType instanceof MultiplicityListType b) {
+						//result.datas[index][index][index]
+						if(numChildren()>1 ) {return b.getElementType();}
+						else return a;
+					}
+				}
+			}
+		
 		}
+		//for 1..* array
 		else if (sym instanceof ClassSymbol c) {
-			Type tp = c;
-			return tp;
-		}else return null;
+			if(c instanceof MultiplicityListType a) {
+				if(numChildren()>1 ) {return a.getElementType();}
+				else return a;
+			}
+			//for uml array
+			if(c instanceof ArrayTypeClassSymbol a) {
+				Symbol arrsym = a.resolve("elements");
+				//elements is fieldsymbol 
+				if(arrsym instanceof BaseSymbol arr) {
+					Type multiplicityType = arr.getType();
+					if(multiplicityType instanceof MultiplicityListType b) {
+						if(numChildren()>1 ) {return b.getElementType();}
+						else return a;
+					}
+				}
+			}
+		}
+		return new InvalidType();
 	}
 	
 	@Override
@@ -63,7 +100,7 @@ public class ArrayRefExp extends FeatureCallExp  {
 		StringBuilder sb = new StringBuilder();
 		sb.append(getSource().toString()).append(".").append(arrayName);
 		for (ASTree index : getIndex()) {
-			sb.append("[").append(index.toString()).append("]");
+			sb.append("[node ").append(index.id()).append("]");
 		}
 		if (isMarkedPre()) {
 			sb.append("@pre");

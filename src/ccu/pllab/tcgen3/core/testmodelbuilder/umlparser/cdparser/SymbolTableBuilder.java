@@ -9,7 +9,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
-import ccu.pllab.tcgen3.symboltable.DataAggregateSymbol;
 import ccu.pllab.tcgen3.symboltable.FieldSymbol;
 import ccu.pllab.tcgen3.symboltable.MethodSymbol;
 import ccu.pllab.tcgen3.symboltable.ParameterSymbol;
@@ -24,6 +23,7 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 public class SymbolTableBuilder {
 	private GlobalScope globalsymbolTable;
 	private Document document;
+	public static Type Boolean;
 	
 	public SymbolTableBuilder(Document document) {
 		if (document == null) {
@@ -65,6 +65,7 @@ public class SymbolTableBuilder {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);
 					symbolTable.defineById(primitiveType);
+					Boolean = primitiveType;
 				} else if ("uml:PrimitiveType".equals(xmiType) && "String".equals(name)) {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);

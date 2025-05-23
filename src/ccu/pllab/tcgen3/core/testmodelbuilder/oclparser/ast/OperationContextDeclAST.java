@@ -2,6 +2,7 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 
 import java.util.List;
 
+import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class OperationContextDeclAST extends ASTList {
@@ -25,10 +26,7 @@ public class OperationContextDeclAST extends ASTList {
 		this.returnType = returnType;
 	}
 	
-	public Type getReturnType() {
-		return returnType;
-	}
-	
+
 	public String getPathName() {
 		return pathName;
 	}
@@ -40,15 +38,18 @@ public class OperationContextDeclAST extends ASTList {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(pathName).append("::").append(methodName).append("(");
+		sb.append(pathName).append("::").append(methodName);
+		 sb.append("(");
 		
 		for (int i = 0; i < numChildren(); i++) {
-			sb.append(children.get(i));
+			sb.append("node (");
+			sb.append(child(i).id());
+			sb.append(")");
 			if (i < numChildren() - 1) {
 				sb.append(", ");
 			}
 		}
-		sb.append(")");
+		sb.append(")"); 
 		if (returnType != null) {
 			sb.append(" : ").append(returnType.getTypeName());
 		}
@@ -57,10 +58,11 @@ public class OperationContextDeclAST extends ASTList {
 		
 	}
 
+	/* default Boolean for ASTree **not perfect!**  */
 	@Override
 	public Type getType() {
-		// TODO Auto-generated method stub
-		return null;
+		Type defaultt = new PrimitiveTypeSymbol("","");
+		return defaultt;
 	}
 }
 

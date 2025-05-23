@@ -16,6 +16,9 @@ public class VariableDeclExp extends ASTList implements Expression {
 	private Type vartype;
 	boolean hasInit = false;
 	
+	/** VariableDeclExp
+	 * ¢u¢w¢w child(0) : expressionExp  (for var init)
+	 * */
 	public VariableDeclExp(List<ASTree> varinit, String varname, Type vartype) {
 		super(varinit);
 		this.varname = varname;
@@ -40,7 +43,7 @@ public class VariableDeclExp extends ASTList implements Expression {
 		StringBuilder sb = new StringBuilder();
 		sb.append(varname).append(" : ").append(vartype.getTypeName());
 		if (hasInit) {
-			sb.append(" = ").append(child(0).toString());
+			sb.append(" = node(").append(child(0).id()).append(")");
 		}
 		return sb.toString();
 	}

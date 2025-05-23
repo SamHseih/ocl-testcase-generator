@@ -24,7 +24,7 @@ public class MultiplicityListType extends ArrayTypeClassSymbol{
 
 	@Override
 	public String getTypeName() {	
-		return  this.name;
+		return  this.elementType.getTypeName()+"[]";
 	}
 	
 	@Override

@@ -17,8 +17,11 @@ public class ContextExpAST extends ASTList {
 
 	@Override
 	public Type getType() {
-		// TODO Auto-generated method stub
-		return null;
+		return child(0).getType();
 	}
 	
+	@Override
+	public String toString(){
+		return contextlabel +" "+ contextKeyword + ":";
+	}
 }
