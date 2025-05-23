@@ -31,6 +31,7 @@ public class Oclparser {
     private  List<String> lexicalErrors  = new ArrayList<>();
     private  List<String> syntaxErrors   = new ArrayList<>();
     private  List<String> semanticErrors = new ArrayList<>();
+    private List<String> scopeIOdetail;
     
 	public Oclparser(Path ocl, Scope predefinedUmlScope) {
 		this.symbolTable = predefinedUmlScope;
@@ -90,6 +91,7 @@ public class Oclparser {
         ast          = visitor.visit(parseTree);
         symbolTable  = visitor.getCurrentGlobalScope(); // 若 Visitor 有新增符號
         semanticErrors = visitor.getSemanticErrors();
+        scopeIOdetail = visitor.getScopeIOdetail();
     }
  
 

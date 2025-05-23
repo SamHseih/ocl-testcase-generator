@@ -23,11 +23,15 @@ public class CollectionLiteralExp extends ASTList implements Expression {
 		return child(0).getType();
 	}
 	
-	@Override
-	public String toString() {
+	public String getInfo() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Sequence");
 		sb.append(child(0).toString());
 		return sb.toString();
+	}
+	
+	@Override
+	public String toString() {
+		return "Sequence";
 	}
 }

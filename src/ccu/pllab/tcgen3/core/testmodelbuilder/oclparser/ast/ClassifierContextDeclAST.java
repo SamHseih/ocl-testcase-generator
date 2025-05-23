@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 
+import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class ClassifierContextDeclAST extends ASTLeaf {
@@ -14,10 +15,11 @@ public class ClassifierContextDeclAST extends ASTLeaf {
 		return pathName;
 	}
 
+	//Not Important 
 	@Override
 	public Type getType() {
-		// TODO Auto-generated method stub
-		return null;
+		Type defaultt = new PrimitiveTypeSymbol("","");
+		return defaultt;
 	}
 
 	

@@ -35,9 +35,24 @@ public class ContextDeclAST extends ASTList {
 
 	@Override
 	public Type getType() {
-		// TODO Auto-generated method stub
-		return null;
+		return child(1).getType();
 	}
 	
-	
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("ContextDecl: node(");
+		sb.append(child(0).id()).append(") ");
+		sb.append("Context: ");
+		for (int i = 1; i < numChildren(); i++) {
+			sb.append("node (");
+			sb.append(child(i).id());
+			sb.append(")");
+			if (i < numChildren() - 1) {
+				sb.append(", ");
+			}
+		}
+		
+		return sb.toString();
+	}
 }

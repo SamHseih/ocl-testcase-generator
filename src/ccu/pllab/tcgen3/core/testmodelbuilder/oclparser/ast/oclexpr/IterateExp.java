@@ -4,6 +4,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.symboltable.Symbol;
+import ccu.pllab.tcgen3.symboltable.type.Type;
 
 
 public class IterateExp extends LoopExp {
@@ -40,14 +41,23 @@ public class IterateExp extends LoopExp {
 	public ASTree getBody() {
 		return this.child(3);
 	}
+
 	
-	public String toString() {
+	@Override
+	public String toString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("IterateExp: ").append(getSource()).append("\n");
-		sb.append("IteratorDecl: ").append(getIteratorDecl()).append("\n");
-		sb.append("ResultDecl: ").append(getResultDecl()).append("\n");
-		sb.append("Body: ").append(getBody()).append("\n");
+		sb.append("IterateExp\n");
+		sb.append("source=node(").append(getSource().id()).append(") ");
+		sb.append("Iterator=node(").append(getIteratorDecl().id()).append(")\n");
+		sb.append("Result=node(").append(getResultDecl().id()).append(") ");
+		sb.append("Body=node(").append(getBody().id()).append(")");
 		return sb.toString();
+	}
+
+	@Override
+	public Type getType() {
+		// TODO Auto-generated method stub
+		return child(2).getType();
 	}
 
 }

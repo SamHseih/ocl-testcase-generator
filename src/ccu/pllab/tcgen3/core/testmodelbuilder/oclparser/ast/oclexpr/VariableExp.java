@@ -4,6 +4,7 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTLeaf;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
+import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class VariableExp extends ASTLeaf implements Expression {
@@ -49,7 +50,7 @@ public class VariableExp extends ASTLeaf implements Expression {
 		} else if(symbol instanceof ClassSymbol) {
 			return (ClassSymbol)this.symbol;
 		} else {
-			return null;
+			return new InvalidType();
 		}
 
 	}

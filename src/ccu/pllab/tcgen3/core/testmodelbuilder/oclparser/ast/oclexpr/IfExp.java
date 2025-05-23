@@ -4,6 +4,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser.SymbolTableBuilder;
 import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
@@ -20,15 +21,15 @@ public class IfExp extends ASTList implements Expression {
 	ASTree thenBranch() { return  child(1); }
 	ASTree elseBranch() { return  child(2); }
 
-	@Override
+	@Override  //always boolean   ****not perfect!***
 	public Type getType() {
-		if(returnType == null)
-		{return new InvalidType();}
-        return returnType;
+
+        return SymbolTableBuilder.Boolean;
 	}
-	
-	public void setreturnType(Type type) {
-		this.returnType = type;
+
+	@Override
+	public String toString() {
+		return "IfExp ConditionNode:("+child(0).id()+") thenNode: ("+child(1).id()+") elseNode: ("+child(2).id()+")";
 	}
 
 }

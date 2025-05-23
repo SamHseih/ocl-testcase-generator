@@ -11,11 +11,6 @@ public abstract class LoopExp extends FeatureCallExp {
 	public LoopExp(List<ASTree> children, boolean isPre, Symbol sourcesym) {
 		super(children, isPre,sourcesym);
 	}
-	
-	@Override
-	public Type getType() {
-		return null;
-	}
 
 
 

@@ -7,12 +7,13 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
-public class letExp extends ASTList implements Expression{
+public class LetExp extends ASTList implements Expression{
 	
-	/**	vaiabledecls = child(0)
-	 *  oclExpression = child(1)
+	/**	letExp
+	 *  ¢u¢w¢w child(0): VariableDeclExp
+	 *  ¢u¢w¢w child(1): oclExpression
 	 * */
-	public letExp(List<ASTree> children) {
+	public LetExp(List<ASTree> children) {
 		super(children);
 	}
 	
@@ -25,6 +26,11 @@ public class letExp extends ASTList implements Expression{
 
 	@Override
 	public Type getType() {
-		return ((Expression) child(1)).getType();
+		return child(1).getType();
+	}
+	
+	@Override
+	public String toString(){
+		return "LetExp \nLet node(" + child(0).id()+") in node("+child(1).id()+")";
 	}
 }

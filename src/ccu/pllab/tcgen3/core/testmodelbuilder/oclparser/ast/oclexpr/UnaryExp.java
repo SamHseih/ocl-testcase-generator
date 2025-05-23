@@ -9,6 +9,7 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 public class UnaryExp extends ASTList implements Expression {
 	private final String operator;
 
+	
 	public UnaryExp(List<ASTree> expr, String operator) {
 		super(expr);
 		this.operator = operator;
@@ -20,6 +21,6 @@ public class UnaryExp extends ASTList implements Expression {
 
 	@Override
 	public Type getType() {
-		return null;
+		return child(0).getType();
 	}
 }

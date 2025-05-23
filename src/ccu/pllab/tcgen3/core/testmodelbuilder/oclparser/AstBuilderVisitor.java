@@ -37,7 +37,6 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.NoRet
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.NonCallExpContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.OperationCallExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PackageDeclarationCSContext;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PostfixExpressionContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PrimitiveLiteralExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.PropertyCallExpCSContext;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.RelationalExpressionContext;
@@ -54,19 +53,19 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ClassifierContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextExpAST;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.InvalidExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.InvalidAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.OperationContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.PackageDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.ArrayRefExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BinaryExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BooleanLiteralExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionItem;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionLiteralExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionRange;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.FeatureCallExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IfExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IntegerLiteralExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IterateExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.LetExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.OperationCallExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.PropertyCallExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.ResultExp;
@@ -75,7 +74,6 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.StringLitera
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.UnaryExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableDeclExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableExp;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.letExp;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.FieldSymbol;
@@ -119,6 +117,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
      *  Fields & constructor
      * ===================================================== */
     private Scope currentScope;  
+    private List<String> scopeIOdetail = new ArrayList<>();;
     private final List<String> semanticErrors = new ArrayList<>();
     private boolean insidePost = false;          // debug result in pre/inv
     
@@ -141,11 +140,15 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 
     private void enterScope(Scope s) {
     	this.currentScope = s;
-    	System.out.println("entering: "+currentScope.getName()+":"+s);
+    	String str = "entering: "+currentScope.getName()+":"+s.toString();
+    	//System.out.println("entering: "+currentScope.getName()+":"+s);
+    	scopeIOdetail.add(str);
     	}
 
     private void exitScope() {
-    	System.out.println("leaving: "+currentScope.getName()+":"+currentScope);
+    	//System.out.println("leaving: "+currentScope.getName()+":"+currentScope);
+    	String str = "leaving: "+currentScope.getName()+":"+currentScope.toString();
+    	scopeIOdetail.add(str);
 		currentScope = currentScope.getEnclosingScope();
     	}
 /*
@@ -218,7 +221,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
             selfSym.setType(clazz); //Return type
             clazz.define(selfSym);          // 在 class scope
         }
-        
         return new ClassifierContextDeclAST(className);
     }
 
@@ -273,7 +275,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
             }
         }
         OperationContextDeclAST decl = new OperationContextDeclAST(params, opName, clsName);
-
         return decl; 
 	}
 	
@@ -298,6 +299,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         }
 
         enterScope(method); 
+        
         /* inject implicit 'self' variable , type Class*/
         if (clazz.resolve("self") == null) {
         	FieldSymbol selfSym = new FieldSymbol("self", "<implicit>");
@@ -459,14 +461,10 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         return new VariableDeclExp(List.of(),collectionName, (Type)typeSym);
 	}
 
-	
 	/* =====================================================
      *  OCL EXPRESSIONS - BinaryExp 
      * ===================================================== */
 	
-
-	
-
 	@Override
 	public ASTree visitLogicalExpression(LogicalExpressionContext ctx) {	
 		List<RelationalExpressionContext> terms = ctx.relationalExpression();        
@@ -554,7 +552,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         	return visit(ctx.postfixExpression());
         }else {
 			recordError("Variable FeatureError: Wrong OCL Spec'" , ctx.getStop());
-        	return new InvalidExp();
+        	return new InvalidAST();
         }
         	
 		
@@ -579,7 +577,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		Symbol sym =  currentScope().resolve(varname);
 		if (sym == null) {
 			recordError("Variable FeatureError: UnDefined variable '" + varname + "'", ctx.variableExpCS().getStart());
-			return new InvalidExp();
+			return new InvalidAST();
 		}
 		
 		ASTree current = new VariableExp(varname, isPre, sym);
@@ -673,7 +671,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    }
 	    if (!(s instanceof MethodSymbol method)) {
 	        recordError("Result FeatureCall Error : 'result' used outside any operation context", ctx.getStart());
-	        return new InvalidExp();
+	        return new InvalidAST();
 	    }
 
 	    VariableSymbol resultSym = (VariableSymbol) method.resolve("result");
@@ -694,7 +692,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    return current;
 	}
 
-	
 	@Override
 	public ASTree visitIndexExpCS(IndexExpCSContext ctx) {
 		return visit(ctx.expression());
@@ -787,7 +784,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    }
 	    if (!(s instanceof MethodSymbol method)) {
 	        recordError("Result Array Access Error : 'result' used outside any operation context", ctx.getStart());
-	        return new InvalidExp();
+	        return new InvalidAST();
 	    }
 	    Symbol resultSym = method.resolve("result");
 	    if (resultSym == null) 
@@ -826,7 +823,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	    			return buildArrayAccessCall(ctx.featureCallExpCS().arrayAccessCS(), source);
 	    		} else {
 	    			recordError("CallExp Error : UnDefined CallExp ",ctx.getStart());
-	    			return new InvalidExp();
+	    			return new InvalidAST();
 	    		}
 	    } else return buildLoopCall(ctx.loopExpCS(),source);     
 	    	//PropertyCallExpCSContext prop = ctx.featureCallExpCS().propertyCallExpCS();
@@ -965,7 +962,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		return new PropertyCallExp(List.of(source), propName, type, isPre, sym);
 	}
 	
-	
 	private ASTree buildArrayAccessCall(ArrayAccessCSContext ctx, ASTree source) {
 			String arrayName = ctx.variableExpCS().ID().getText();
 			boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
@@ -977,15 +973,15 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 			//not source chain Ex. self.datas[it][it2][it3] , self(VariableExp)
 			if(source instanceof VariableExp) {
 				Type sourcesym = ((VariableExp) source).getType();
-				if(sourcesym instanceof ClassSymbol) {
-					Symbol tepsym = ((ClassSymbol) sourcesym).resolve(arrayName);
+				if(sourcesym instanceof ClassSymbol ) {
+					sym = ((ClassSymbol) sourcesym).resolve(arrayName);
 					//source is 'self' or 'result' FieldSymbol
-					if(tepsym instanceof ClassSymbol)
-						if(!(tepsym instanceof ArrayTypeClassSymbol)) {
+					if(sym instanceof ClassSymbol)
+						if(!(sym instanceof ArrayTypeClassSymbol)) {
 							recordError("Build ArrayFeatureCall Error: " + arrayName +" must be ArrayTypeClassSymbol", ctx.getStart());
 						}
-					if(tepsym instanceof BaseSymbol) {
-						Type targettype = ((BaseSymbol) tepsym).getType();
+					if(sym instanceof BaseSymbol) {
+						Type targettype = ((BaseSymbol) sym).getType();
 						if (!(targettype instanceof ArrayTypeClassSymbol)) {
 							recordError("Build ArrayFeatureCall Error: " + arrayName +" must be ArrayTypeClassSymbol", ctx.getStart());
 						}
@@ -1024,7 +1020,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
     		ArrayRefExp arr = new ArrayRefExp(indices, isPre, sym, arrayName);		
     		return arr;
 	}
-	
 	
 	private List<ASTree> gatherArguments(ArgumentsCSContext ctx) {
 	    if (ctx == null) return List.of();
@@ -1067,7 +1062,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	            ,isPre, sym);
 	}
 
-	
 	/* =====================================================
      *  OCL EXPRESSIONS - PrimaryExpr
      *  ifExpCS、letExprCS、literalExpCS、'(' expression ')'、variableExpCS
@@ -1078,8 +1072,6 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		ASTree condionast = visit(ctx.expression(0));
 		ASTree thenast = visit(ctx.expression(1));
 		ASTree elseast = visit(ctx.expression(2));
-		
-		
         return new IfExp(List.of(condionast, thenast, elseast));
 	}
 
@@ -1095,7 +1087,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		children.add(visit(ctx.oclExpressionCS()));
 		
 		exitScope();
-		return new letExp(children);
+		return new LetExp(children);
 	}
 
 	@Override
@@ -1169,14 +1161,12 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
             return new StringLiteralExp(raw.substring(1, raw.length() - 1),strtype);
         }
         recordError("PrimitiveListeral Error: Unknown primitive literal", ctx.getStart());
-        return new InvalidExp(); // fallback (should not really happen)
+        return new InvalidAST(); // fallback (should not really happen)
 	}
-	
-	
 	@Override
 	public ASTree visitCollectionLiteralExpCS(CollectionLiteralExpCSContext ctx) {
 		ASTree collectionParts = visit(ctx.collectionLiteralPartsCS());
-		return new CollectionLiteralExp( List.of(collectionParts) );
+		return collectionParts;
 	}
 
 	@Override
@@ -1214,6 +1204,11 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	
 	public Scope getCurrentGlobalScope() {
 		return currentScope;
+	}
+
+	
+	public List<String> getScopeIOdetail() {
+		return scopeIOdetail;
 	}
     
 }

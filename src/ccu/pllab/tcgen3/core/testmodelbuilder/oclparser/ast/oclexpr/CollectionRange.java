@@ -8,7 +8,10 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class CollectionRange extends CollectionPart{
 
-	//child(0) is lowerValue  , child(1) is uperValue 
+	/** CollectionRangeExp
+	 * ¢u¢w¢w child(0) : lowerValue
+	 * ¢u¢w¢w child(1) : uperValue
+	 * */
 	public CollectionRange(List<ASTree> children) {
 		super(children);
 	}
@@ -19,8 +22,8 @@ public class CollectionRange extends CollectionPart{
 			return child(0).getType();
 		}else return new InvalidType();
 	}
-
-	public String toString() {
+	
+	public String getInfo() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("{");
 		String sep="..";
@@ -29,5 +32,8 @@ public class CollectionRange extends CollectionPart{
 	    sb.append(children.get(1).toString());    
 	    sb.append("}");
 	    return sb.toString();
+	}
+	public String toString() {
+		return "Sequence{ node("+child(0).id()+") .. node("+child(1).id()+") }";
 	}
 }
