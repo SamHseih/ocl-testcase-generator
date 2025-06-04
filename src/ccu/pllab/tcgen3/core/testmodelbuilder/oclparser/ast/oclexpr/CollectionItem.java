@@ -1,10 +1,10 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.symboltable.type.InvalidType;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class CollectionItem extends CollectionPart{
@@ -24,6 +24,10 @@ public class CollectionItem extends CollectionPart{
 	public Type getType() {
 		return child(0).getType();
 	}
+	
+	public String getSize() {
+		return String.valueOf(numChildren());
+	}
 
 	@Override
 	public String toString() {
@@ -37,5 +41,47 @@ public class CollectionItem extends CollectionPart{
 	    }
 	    sb.append("}");
 	    return sb.toString();
+	}
+	
+	@Override
+	public String toAstString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Sequence {");
+		for (int i = 0; i < numChildren(); i++) {
+	        sb.append(children.get(i).toString());
+	        if (i < children.size() - 1) {
+	            sb.append(", ");
+	        }
+	    }
+	    sb.append("}");
+	    return sb.toString();
+	}
+	
+	@Override
+	public String toClgString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Sequence {");
+		for (int i = 0; i < numChildren(); i++) {
+	        sb.append(children.get(i).toString());
+	        if (i < children.size() - 1) {
+	            sb.append(", ");
+	        }
+	    }
+	    sb.append("}");
+	    return sb.toString();
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitCollectionItemContext(this);
+	}
+	
+	@Override
+	public ASTree clone() {
+	    List<ASTree> clonedChildren = new ArrayList<>();
+	    for (ASTree child : this.children) {
+	        clonedChildren.add(child.clone());
+	    }
+	    return new CollectionItem(clonedChildren);
 	}
 }

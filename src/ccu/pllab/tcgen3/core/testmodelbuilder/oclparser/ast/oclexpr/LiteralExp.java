@@ -1,6 +1,7 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTLeaf;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public abstract class LiteralExp<T> extends ASTLeaf implements Expression{
@@ -24,4 +25,15 @@ public abstract class LiteralExp<T> extends ASTLeaf implements Expression{
 		return value.toString();
 	}
 	
+	@Override
+	public String toAstString() {
+		return value.toString();
+	}
+	
+	@Override
+	public String toClgString() {
+		return value.toString();
+	}
+	
+	public abstract ASTree clone();
 }

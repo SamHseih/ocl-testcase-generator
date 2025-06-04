@@ -23,6 +23,7 @@ public class FileLoader {
         	System.out.println("Enter arg2: <ProjectName> to find ProjectName");
         	System.exit(1);
        }
+	
 		projectPath = Path.of(args[0],args[1]);
 		umlfilePath = Path.of(args[0],args[1],args[1]+".uml");
 		oclfilePath = Path.of(args[0],args[1],args[1]+".ocl");

@@ -4,6 +4,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 /**In OCL spec 2.4 ch9.3.34 FeatureCallExpCS:<br>
@@ -54,5 +55,49 @@ public class PropertyCallExp extends FeatureCallExp  {
 		sb.append(name);
 		return sb.toString();
 	}
+	
+	@Override
+	public String toAstString() {
+		StringBuilder sb = new StringBuilder();
+		if (numChildren() > 0) {
+			sb.append(getSource().toString());
+			sb.append(".");
+		}
+		sb.append(name);
+		return sb.toString();
+	}
+	
+	@Override
+	public String toClgString() {
+		StringBuilder sb = new StringBuilder();
+		if (numChildren() > 0) {
+			sb.append(getSource().toString());
+			sb.append(".");
+		}
+		sb.append(name);
+		return sb.toString();
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitPropertyCallExpContext(this);
+	}
+	
+	@Override
+	public ASTree clone() {
+	    // 1️ 複製 source（若存在）
+	    java.util.List<ASTree> clonedSource = new java.util.ArrayList<>();
+	    for (ASTree ch : this.children) {
+	        clonedSource.add(ch.clone());
+	    }
 
+	    // 2 建立新節點
+	    return new PropertyCallExp(
+	        clonedSource,          // List<ASTree> source
+	        this.name,             // property 名
+	        this.type,             // Type 直接共用
+	        this.isMarkedPre(),    // @pre 標記
+	        this.sym               // Symbol 直接共用
+	    );
+	}
 }

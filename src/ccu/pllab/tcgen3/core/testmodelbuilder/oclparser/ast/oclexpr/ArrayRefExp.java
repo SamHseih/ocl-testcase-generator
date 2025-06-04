@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
@@ -80,7 +81,7 @@ public class ArrayRefExp extends FeatureCallExp  {
 				else return a;
 			}
 			//for uml array
-			if(c instanceof ArrayTypeClassSymbol a) {
+			if(c instanceof ArrayTypeClassSymbol a) { 
 				Symbol arrsym = a.resolve("elements");
 				//elements is fieldsymbol 
 				if(arrsym instanceof BaseSymbol arr) {
@@ -100,13 +101,88 @@ public class ArrayRefExp extends FeatureCallExp  {
 		StringBuilder sb = new StringBuilder();
 		sb.append(getSource().toString()).append(".").append(arrayName);
 		for (ASTree index : getIndex()) {
-			sb.append("[node ").append(index.id()).append("]");
+			//self.datas[node 233][node 234][node 235]
+			//sb.append("[node ").append(index.id()).append("]");
+			//self.datas[it][it1][it3]
+			if(index instanceof BinaryExp b) {
+				sb.append("["); 
+				sb.append(b.toString());
+				sb.append("]");
+			} else {
+				sb.append("["); 
+				sb.append(index.toString());
+				sb.append("]");
+			}
 		}
 		if (isMarkedPre()) {
 			sb.append("@pre");
 		}
 		return sb.toString();
 		
+	}
+	
+	@Override
+	public String toClgString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(getSource().toString()).append(".").append(arrayName);
+		for (ASTree index : getIndex()) {
+			//self.datas[node 233][node 234][node 235]
+			//sb.append("[node ").append(index.id()).append("]");
+			//self.datas[it][it1][it3]
+			if(index instanceof BinaryExp b) {
+				sb.append("["); 
+				sb.append(b.toString());
+				sb.append("]");
+			} else {
+				sb.append("["); 
+				sb.append(index.toString());
+				sb.append("]");
+			}
+		}
+		if (isMarkedPre()) {
+			sb.append("@pre");
+		}
+		return sb.toString();
+	}
+	
+	@Override
+	public String toAstString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(getSource().toString()).append(".").append(arrayName);
+		for (ASTree index : getIndex()) {
+			//self.datas[node 233][node 234][node 235]
+			//sb.append("[node ").append(index.id()).append("]");
+			//self.datas[it][it1][it3]
+			if(index instanceof BinaryExp b) {
+				sb.append("["); 
+				sb.append(b.toString());
+				sb.append("]");
+			} else {
+				sb.append("["); 
+				sb.append(index.toString());
+				sb.append("]");
+			}
+		}
+		if (isMarkedPre()) {
+			sb.append("@pre");
+		}
+		return sb.toString();
+		
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitArrayRefExpContext(this);
+	}
+	
+	@Override
+	public ASTree clone() {
+	    List<ASTree> clonedChildren = new ArrayList<>();
+	    for (ASTree child : this.children) {
+	        clonedChildren.add(child.clone());
+	    }
+	    
+	    return new ArrayRefExp(clonedChildren, this.isMarkedPre(), this.sym, this.arrayName);
 	}
 
 }

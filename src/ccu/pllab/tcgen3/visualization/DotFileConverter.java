@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class DotFileConverter {
-
     /**
      * Converts a .dot file into an image file (SVG or PNG).
      *
@@ -14,6 +13,8 @@ public class DotFileConverter {
      * @param outputPath  Path to the output image file (.svg or .png)
      * @throws IOException           If the dot process fails to start
      * @throws InterruptedException  If the process is interrupted
+     * 
+     * This method uses the Graphviz 'dot' command-line tool to perform the conversion.
      */
     public static void convertDotToImage(Path dotPath, Path outputPath)
             throws IOException, InterruptedException {

@@ -14,6 +14,6 @@ public abstract class CollectionPart extends ASTList implements Expression {
 		super(children);
 	}
 
-	
+	public abstract ASTree clone();
 
 }

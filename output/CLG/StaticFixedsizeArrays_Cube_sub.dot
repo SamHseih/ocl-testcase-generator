@@ -1,0 +1,84 @@
+digraph CLG {
+  128 [shape="box", label="Sequence{0..dim3}", style=filled, fillcolor=yellow, xlabel="[128]"];
+  131 [shape="box", label="it3", style=filled, fillcolor=yellow, xlabel="[131]"];
+  134 [shape="box", label="acc3 = true", style=filled, fillcolor=yellow, xlabel="[134]"];
+  137 [shape="box", label="acc3 and
+result.datas[it][it2][it3] = self.datas[it][it2][it3] - arg.datas[it][it2][it3]
+", style=filled, fillcolor=yellow, xlabel="[137]"];
+  139 [shape="hexagon", label="i = 1
+i<Sequence{0..dim3}
+Accumulator: acc3 = true
+Loop Var: it3", style=filled, fillcolor=coral1, fixedsize=true, width=2.9, height=1, xlabel="[139]"];
+  141 [shape="box", label="acc2 and
+IterateExp
+", style=filled, fillcolor=yellow, xlabel="[141]"];
+  143 [shape="hexagon", label="i = 1
+i<Sequence{0..dim2}
+Accumulator: acc2 = true
+Loop Var: it2", style=filled, fillcolor=coral1, fixedsize=true, width=2.9, height=1, xlabel="[143]"];
+  145 [shape="box", label="acc and
+IterateExp
+", style=filled, fillcolor=yellow, xlabel="[145]"];
+  147 [shape="hexagon", label="i = 1
+i<Sequence{0..dim1}
+Accumulator: acc = true
+Loop Var: it", style=filled, fillcolor=coral1, fixedsize=true, width=2.9, height=1, xlabel="[147]"];
+  83 [shape="box", label="exception=\"Exception\"", style=filled, fillcolor=yellow, xlabel="[83]"];
+  84 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  148 [shape="diamond", label="", xlabel="<148>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  149 [shape="diamond", label="", xlabel="<149>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  86 [shape="box", label="arg.datas.getDimension() <> self.datas.getDimension() or
+arg.datas.getDimensionSizes(0) <> self.datas.getDimensionSizes(0) or
+arg.datas.getDimensionSizes(1) <> self.datas.getDimensionSizes(1) or
+arg.datas.getDimensionSizes(2) <> self.datas.getDimensionSizes(2)
+", style=filled, fillcolor=yellow, xlabel="[86]"];
+  88 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  89 [shape="box", label="arg.datas.getDimension() = self.datas.getDimension() and
+arg.datas.getDimensionSizes(0) = self.datas.getDimensionSizes(0) and
+arg.datas.getDimensionSizes(1) = self.datas.getDimensionSizes(1) and
+arg.datas.getDimensionSizes(2) = self.datas.getDimensionSizes(2)
+", style=filled, fillcolor=yellow, xlabel="[89]"];
+  92 [shape="box", label="dim1 = arg.datas.getDimensionSizes(0) - 1", style=filled, fillcolor=yellow, xlabel="[92]"];
+  95 [shape="box", label="arg.datas.getDimensionSizes(0) - 1", style=filled, fillcolor=yellow, xlabel="[95]"];
+  98 [shape="box", label="dim2 = arg.datas.getDimensionSizes(1) - 1", style=filled, fillcolor=yellow, xlabel="[98]"];
+  101 [shape="box", label="arg.datas.getDimensionSizes(1) - 1", style=filled, fillcolor=yellow, xlabel="[101]"];
+  104 [shape="box", label="dim3 = arg.datas.getDimensionSizes(2) - 1", style=filled, fillcolor=yellow, xlabel="[104]"];
+  107 [shape="box", label="arg.datas.getDimensionSizes(2) - 1", style=filled, fillcolor=yellow, xlabel="[107]"];
+  110 [shape="box", label="Sequence{0..dim1}", style=filled, fillcolor=yellow, xlabel="[110]"];
+  113 [shape="box", label="it", style=filled, fillcolor=yellow, xlabel="[113]"];
+  116 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[116]"];
+  119 [shape="box", label="Sequence{0..dim2}", style=filled, fillcolor=yellow, xlabel="[119]"];
+  122 [shape="box", label="it2", style=filled, fillcolor=yellow, xlabel="[122]"];
+  125 [shape="box", label="acc2 = true", style=filled, fillcolor=yellow, xlabel="[125]"];
+  119 -> 122[label="graphAnd_132"];
+  122 -> 125[label="graphAnd_133"];
+  128 -> 131[label="graphAnd_140"];
+  131 -> 134[label="graphAnd_141"];
+  139 -> 137[label="iterate_145"];
+  137 -> 139[label="iterate_146"];
+  134 -> 139[label="graphAnd_148"];
+  141 -> 128[label="graphAnd_151"];
+  143 -> 141[label="iterate_153"];
+  139 -> 143[label="iterate_154"];
+  125 -> 143[label="graphAnd_156"];
+  145 -> 119[label="graphAnd_159"];
+  147 -> 145[label="iterate_161"];
+  143 -> 147[label="iterate_162"];
+  116 -> 147[label="graphAnd_164"];
+  107 -> 110[label="graphAnd_165"];
+  86 -> 83[label="graphAnd_166"];
+  89 -> 92[label="graphAnd_167"];
+  88 -> 148[label="graphOr_start_168"];
+  92 -> 95[label="graphAnd_105"];
+  148 -> 89[label="split1_169"];
+  148 -> 86[label="split2_170"];
+  147 -> 149[label="merge1_171"];
+  83 -> 149[label="merge2_172"];
+  149 -> 84[label="graphOr_end_173"];
+  98 -> 101[label="graphAnd_110"];
+  104 -> 107[label="graphAnd_115"];
+  95 -> 98[label="graphAnd_116"];
+  101 -> 104[label="graphAnd_117"];
+  110 -> 113[label="graphAnd_124"];
+  113 -> 116[label="graphAnd_125"];
+}

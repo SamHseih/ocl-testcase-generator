@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,10 +15,6 @@ public abstract class ASTList extends ASTree{
     	super();
     	this.children = children;
     }
-    
-    public void addChild(ASTree child) {
-		children.add(child);
-	}
 
 	@Override
 	public ASTree child(int i) {
