@@ -74,6 +74,7 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.StringLitera
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.UnaryExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableDeclExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser.SymbolTableBuilder;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.FieldSymbol;
@@ -547,6 +548,11 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		if (ctx.unaryOperator() != null) {
             String op = ctx.unaryOperator().getText();
             ASTree operand = visit(ctx.postfixExpression());
+            if(operand.getType() != SymbolTableBuilder.Boolean) {
+            	recordError("unaryOperator: only for BooleanType'" , ctx.getStop());
+            	return new InvalidAST();
+			}
+            else
             return new UnaryExp(List.of(operand), op);
         }else if(ctx.postfixExpression() != null){
         	return visit(ctx.postfixExpression());
@@ -1165,6 +1171,11 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	}
 	@Override
 	public ASTree visitCollectionLiteralExpCS(CollectionLiteralExpCSContext ctx) {
+		String s = ctx.basetype().getText();
+		if(!s.equals("Sequence")) {
+			recordError("CollectionLiteral Type Error: UnDefined collectiontype" + s+"\nCollection only for 'Sequence'", ctx.getStart());
+		}
+		
 		ASTree collectionParts = visit(ctx.collectionLiteralPartsCS());
 		return collectionParts;
 	}

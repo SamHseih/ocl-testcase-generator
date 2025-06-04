@@ -3,7 +3,10 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 import java.util.ArrayList;
 import java.util.List;
 
+import ccu.pllab.tcgen3.symboltable.type.InvalidType;
+import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
+import ccu.pllab.tcgen3.symboltable.type.VoidType;
 
 public class ContextDeclAST extends ASTList {
 	
@@ -35,11 +38,65 @@ public class ContextDeclAST extends ASTList {
 
 	@Override
 	public Type getType() {
-		return child(1).getType();
+		if(numChildren()>2) {
+			for(int i = 2; i<numChildren(); i++) {
+				if(!child(i-1).getType().getTypeName().equals(child(i).getType().getTypeName())) {
+					return new InvalidType();
+				} else if(!(child(i-1).getType() instanceof PrimitiveTypeSymbol)) {
+					return new InvalidType();
+				}
+			}
+			
+			return new VoidType();
+		} else {
+			
+			return new VoidType();
+		}
+	}
+	
+	public int getPreNum() {
+		int rt=0;
+		for(int i = 1; i<numChildren(); i++) {
+			if(child(i) instanceof ContextExpAST c) {
+				if(c.getKeyWord().equals("pre")) {
+					rt++;
+				}
+			}
+		}
+		return rt;
+	}
+	
+	public int getPostNum() {
+		int rt=0;
+		for(int i = 1; i<numChildren(); i++) {
+			if(child(i) instanceof ContextExpAST c) {
+				if(c.getKeyWord().equals("post")) {
+					rt++;
+				}
+			}
+		}
+		return rt;
+	}
+	
+	
+	@Override
+ 	public String toString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("ContextDecl: ");
+		sb.append(child(0)).append(" ");
+		sb.append("\nContext:\n \t");
+		for (int i = 1; i < numChildren(); i++) {
+			sb.append(child(i));
+			if (i < numChildren() - 1) {
+				sb.append(",\n ");
+			}
+		}
+		
+		return sb.toString();
 	}
 	
 	@Override
-	public String toString(){
+ 	public String toAstString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("ContextDecl: node(");
 		sb.append(child(0).id()).append(") ");
@@ -54,5 +111,49 @@ public class ContextDeclAST extends ASTList {
 		}
 		
 		return sb.toString();
+	}
+	
+	@Override
+ 	public String toClgString(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("ContextDecl: ");
+		sb.append(child(0)).append(" ");
+		sb.append("\nContext:\n \t");
+		for (int i = 1; i < numChildren(); i++) {
+			sb.append(child(i));
+			if (i < numChildren() - 1) {
+				sb.append(",\n ");
+			}
+		}
+		
+		return sb.toString();
+	}
+	
+	public String getFilename() {
+		StringBuilder sb = new StringBuilder();
+			if(child(0) instanceof ClassifierContextDeclAST clazz) {
+				sb.append(clazz.toString());
+			}else if(child(0) instanceof OperationContextDeclAST clazz){
+				sb.append(clazz.getPathName()).append("_");
+				sb.append(clazz.getMethodName());
+			}
+			return sb.toString();
+	}
+	
+	@Override
+ 	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitContextDeclAST(this);
+	}
+
+	@Override
+	public ASTree clone() {
+	    ASTree contextDeclClone = getContextDecl().clone(); // child(0)
+	    
+	    List<ASTree> clonedContexts = new ArrayList<>();
+	    for (ASTree context : getContexts()) {
+	        clonedContexts.add(context.clone());
+	    }
+
+	    return new ContextDeclAST(contextDeclClone, clonedContexts);
 	}
 }

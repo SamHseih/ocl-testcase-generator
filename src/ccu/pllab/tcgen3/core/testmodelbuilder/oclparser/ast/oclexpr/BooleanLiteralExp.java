@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class BooleanLiteralExp extends LiteralExp<Boolean> {
@@ -9,5 +10,15 @@ public class BooleanLiteralExp extends LiteralExp<Boolean> {
 
 	public BooleanLiteralExp(boolean value, Type type) {
 		super(value, type);
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitBooleanLiteralExpContext(this);
+	}
+	
+	@Override
+	public BooleanLiteralExp clone() {
+	    return new BooleanLiteralExp(this.getValue(), this.getType());
 	}
 }

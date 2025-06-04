@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class StringLiteralExp extends LiteralExp<String> {
@@ -9,5 +10,15 @@ public class StringLiteralExp extends LiteralExp<String> {
 	
 	public StringLiteralExp(String value, Type type) {
 		super(value, type);
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitStringLiteralExpContext(this);
+	}
+	
+	@Override
+	public StringLiteralExp clone() {
+	    return new StringLiteralExp(this.getValue(), this.getType());
 	}
 }

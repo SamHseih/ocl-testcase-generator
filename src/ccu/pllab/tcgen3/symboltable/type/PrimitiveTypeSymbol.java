@@ -1,13 +1,9 @@
 package ccu.pllab.tcgen3.symboltable.type;
 
-import ccu.pllab.tcgen3.symboltable.BaseSymbol;
+import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 
-public class PrimitiveTypeSymbol extends BaseSymbol implements Type{
+public class PrimitiveTypeSymbol extends ClassSymbol{
 	protected int typeIndex; 
-	
-	public PrimitiveTypeSymbol(String name) {
-		super(name);
-	}
 	
 	public PrimitiveTypeSymbol(String name,String umlID) {
 		super(name,umlID);
@@ -26,7 +22,7 @@ public class PrimitiveTypeSymbol extends BaseSymbol implements Type{
 	
 	@Override
 	public String toString() {
-		return this.umlId;
+		return this.umlID;
 	}
 
 	

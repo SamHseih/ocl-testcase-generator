@@ -218,7 +218,7 @@ stringLiteralExpCS 	: STRING_LITERAL		;
 booleanLiteralExpCS : 'true'|'false' 		;
 /**------------------------------------------------------------------
  * OCL EXPRESSIONS - CallExpCS
- *------------------------------------------------------------------*/ 
+ *------------------------------------------------------------------*/
 callExpCS
     : featureCallExpCS
 	| loopExpCS

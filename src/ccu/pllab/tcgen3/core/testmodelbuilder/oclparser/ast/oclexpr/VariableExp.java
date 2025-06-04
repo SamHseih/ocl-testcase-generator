@@ -1,6 +1,8 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTLeaf;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
@@ -30,6 +32,16 @@ public class VariableExp extends ASTLeaf implements Expression {
 	public String toString() {
 		return varname;
 	}
+	
+	@Override
+	public String toAstString() {
+		return varname;
+	}
+	
+	@Override
+	public String toClgString() {
+		return varname;
+	}
 
 	public String getName() {
 		return varname;
@@ -53,6 +65,17 @@ public class VariableExp extends ASTLeaf implements Expression {
 			return new InvalidType();
 		}
 
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitVariableExpContext(this);
+	}
+	
+	@Override
+	public ASTree clone() {
+	    // varname、isMarkedPre 為不可變型別；symbol 依約定可安全共用
+	    return new VariableExp(this.varname, this.isMarkedPre, this.symbol);
 	}
 	
 }

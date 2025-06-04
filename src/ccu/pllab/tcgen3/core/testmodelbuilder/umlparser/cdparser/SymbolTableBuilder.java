@@ -1,6 +1,5 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser;
 
-import java.nio.file.Path;
 import java.util.Arrays;
 
 import org.w3c.dom.Document;
@@ -56,11 +55,22 @@ public class SymbolTableBuilder {
                 String xmiType = element.getAttribute("xmi:type");
                 String name = element.getAttribute("name");
                 String id = element.getAttribute("xmi:id");
-                
                 if ("uml:PrimitiveType".equals(xmiType) && "int".equals(name)) {
-					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
-					symbolTable.define(primitiveType);
-					symbolTable.defineById(primitiveType);					
+					PrimitiveTypeSymbol intType = new PrimitiveTypeSymbol(name, id);
+					
+					/* predefine fun. :  mod() */
+	            	 MethodSymbol modSymbol = new MethodSymbol("mod", "predefined");
+	            	 ParameterSymbol paramSymbol = new ParameterSymbol("value", "predefined");
+                     paramSymbol.setType(intType);
+                     paramSymbol.setScope(modSymbol);
+                     modSymbol.define(paramSymbol);
+	            	 modSymbol.setType(intType);
+	            	 modSymbol.setScope((ClassSymbol) intType);
+	            	 ((ClassSymbol) intType).define(modSymbol);
+	            	 /* predefine fun. End*/
+	            	 
+					symbolTable.define(intType);
+					symbolTable.defineById(intType);
 				} else if ("uml:PrimitiveType".equals(xmiType) && "Boolean".equals(name)) {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);
@@ -327,20 +337,4 @@ public class SymbolTableBuilder {
 	    return new String[] { lowerValueStr, upperValueStr, id };
 	}
 	
-	// Test the SymbolTableBuilder
-	public static void main(String[] args) {
-		try {
-			//Path umlPath = Path.of("F:\\papyrus\\WorkSpace\\Cube\\Cube.uml");
-			//Path umlPath = Path.of("F:\\papyrus\\WorkSpace\\MultiDimArray\\MultiDimArray.uml");
-			Path umlPath = Path.of("F:\\papyrus\\WorkSpace\\ThreeDimStaticArray\\ThreeDimStaticArray.uml");
-
-			XmlParser parser = new XmlParser(umlPath);
-			Document document = parser.getDocument();
-			SymbolTableBuilder symbolTableBuilder = new SymbolTableBuilder(document);
-			Scope symbolTable = symbolTableBuilder.build();
-			System.out.println("Symbol Table: \n" + symbolTable);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

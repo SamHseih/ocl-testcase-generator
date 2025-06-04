@@ -7,18 +7,18 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 
 public abstract class FeatureCallExp extends ASTList implements Expression{
-	protected boolean isPre;
+	protected boolean isMarkedPre;
 	protected Symbol sym;
 	
 	public FeatureCallExp(List<ASTree> children, boolean isPre,Symbol sym) {
 		super(children);
-		this.isPre = isPre;
+		this.isMarkedPre = isPre;
 		this.sym = sym;
 		// TODO Auto-generated constructor stub
 	}
 	
 	public boolean isMarkedPre() {
-		return isPre;
+		return isMarkedPre;
 	}
 	
 	public abstract ASTree getSource();
@@ -26,4 +26,6 @@ public abstract class FeatureCallExp extends ASTList implements Expression{
 	//public abstract void setSource(ASTree source);
 	
 	public Symbol getSymbol() {return sym;}
+	
+	public abstract ASTree clone();
 }

@@ -1,9 +1,11 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class CollectionLiteralExp extends ASTList implements Expression {
@@ -33,5 +35,29 @@ public class CollectionLiteralExp extends ASTList implements Expression {
 	@Override
 	public String toString() {
 		return "Sequence";
+	}
+	
+	@Override
+	public String toAstString() {
+		return "Sequence";
+	}
+	
+	@Override
+	public String toClgString() {
+		return "Sequence";
+	}
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitCollectionLiteralExpContext(this);
+	}
+	
+	@Override
+	public ASTree clone() {
+	    List<ASTree> clonedChildren = new ArrayList<>();
+	    for (ASTree child : this.children) {
+	        clonedChildren.add(child.clone());
+	    }
+	    return new CollectionRange(clonedChildren);
 	}
 }

@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public class IntegerLiteralExp extends LiteralExp<Integer> {
@@ -10,5 +11,15 @@ public class IntegerLiteralExp extends LiteralExp<Integer> {
 	public IntegerLiteralExp(int value, Type type) {	
 		super(value, type);
 	}
-
+	
+	@Override
+	public <R> R accept(CLGAstVisitor<R> visitor) {
+		return visitor.visitIntegerLiteralExpContext(this);
+	}
+	
+	@Override
+	public IntegerLiteralExp clone() {
+	    return new IntegerLiteralExp(this.getValue(), this.getType());
+	}
+	
 }

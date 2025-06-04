@@ -60,6 +60,12 @@ public class Oclparser {
     public List<String> getSyntaxErrors()   { return syntaxErrors;   }
     public List<String> getSemanticErrors() { return semanticErrors; }
     
+    public boolean hasError() {
+    	if(lexicalErrors.isEmpty() && this.syntaxErrors.isEmpty() && this.semanticErrors.isEmpty())
+    		return true;
+    	else return false;
+    }
+    
  // ---------- internal steps ---------- //
     /** 建立 ANTLR ParseTree；若已建立則直接回傳 */
     private void buildParseTree() throws IOException {
