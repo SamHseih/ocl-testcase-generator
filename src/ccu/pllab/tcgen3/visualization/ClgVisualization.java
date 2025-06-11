@@ -71,12 +71,10 @@ public class ClgVisualization {
                     break;
 
                 case ITERATE:    // 自訂一個預設
-                	String txt2 ="";
-                	if(n.getExpr() instanceof IterateExp i)txt2 = i.toClgString();
-                    sb.append("[shape=\"hexagon\", label=\"").append(txt2).append("\", ")
-                      .append("style=filled, fillcolor=coral1, ")
-                      .append("fixedsize=true, width=2.9, height=1, ")
-                      .append("xlabel=\"[").append(n.id()).append("]\"];\n");
+                	sb.append("[shape=\"diamond\", label=\"\", ")
+                    .append("xlabel=\"<").append(n.id()).append(">\", ")
+                    .append("style=filled, fillcolor=aquamarine, ")
+                    .append("fixedsize=true, width=.2, height=.2];\n");
                     break;
             }
         }
@@ -95,7 +93,7 @@ public class ClgVisualization {
             
 
             if (!e.getLabel().isEmpty()) {
-                sb.append("[label=\"").append(esc(e.getLabel())).append("_")
+                sb.append("[label=\"").append(esc(e.getLabel())).append("#")
                 .append(e.getId()).append("\"]");
             } 
             sb.append(";\n");

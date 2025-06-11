@@ -15,13 +15,17 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ExceptionAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.InvalidAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.OperationContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.PackageDeclAST;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.AccumulatorExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.ArrayRefExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BinaryExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BooleanLiteralExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionItem;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionLiteralExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionPart;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.CollectionRange;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.FeatureCallExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IfExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IndexVariableExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IntegerLiteralExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IterateExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.LetExp;
@@ -31,9 +35,12 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.StringLitera
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.UnaryExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableDeclExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser.SymbolTableBuilder;
 import ccu.pllab.tcgen3.symboltable.scope.LocalScope;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
-import ccu.pllab.tcgen3.util.ASTutil;
+import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
+import ccu.pllab.tcgen3.util.AstUtil;
+import ccu.pllab.tcgen3.visualization.ClgVisualization;
 
 public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 	private List<String> CLGtransferMessege = new ArrayList<>();
@@ -58,12 +65,14 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 		List<CLGGraph> preclgs= new ArrayList<>();
 		List<CLGGraph> postclgs= new ArrayList<>();
 		CLGGraph excepclg = new CLGGraph( new ExceptionAST());
+		// If the context is an OperationContextDeclAST, we need to generate the pre and post condition CLG
 		if(node.getContextDecl() instanceof OperationContextDeclAST) {
 			for(int i = 1 ; i < node.numChildren();i++) {
 				if(node.child(i) instanceof ContextExpAST ctx) {
 					//pre condition
 					if(ctx.getKeyWord().equals("pre")) {
-						notpreclgs.add(processNegatePreCLG(ctx));
+						//notpreclgs.add(processNegatePreCLG(ctx));
+						notpreclgs.add(AstUtil.DeMorgan(ctx.getConstraint()).accept(this));
 						preclgs.add(visitContextExp(ctx));
 					//post condition
 					} else {
@@ -71,6 +80,7 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 					}
 				}
 			}
+		// If the context is a ClassifierContextDeclAST, we need to generate the invariant CLG
 		}else if(node.getContextDecl() instanceof ClassifierContextDeclAST) {
 			//inv:.. ⋀ inv:...  ⋀ inv:.. ⋀ ...
 			ClassiferContextDecl = node;
@@ -172,17 +182,19 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 	public CLGGraph visitBinaryExpContext(BinaryExp node) {
 		CLGGraph leftclg = null;
 		CLGGraph rightclg = null;
-		if(node.left() instanceof IfExp||node.left() instanceof IterateExp) {
+		if(node.left() instanceof IfExp||node.left() instanceof IterateExp ) {
 			leftclg = node.left().accept(this);
 		}
-		if(node.right() instanceof IfExp ||node.right() instanceof IterateExp) {
+		if(node.right() instanceof IfExp ||node.right() instanceof IterateExp|| node.left() instanceof AccumulatorExp) {
 			rightclg = node.right().accept(this);
 		}
 			
 		if(node.getGroup().equals(BinaryExp.OpGroup.LOGICAL)) {
 			if(node.getOperator().equals("and")|| node.getOperator().equals("or")) {
+				// ASTLeft op AStLeft
 				if(leftclg == null && rightclg == null) {
 					return new CLGGraph(node);
+				// ASTLeft op AStList
 				} else if(leftclg == null && rightclg != null) {
 					leftclg = new CLGGraph(node);
 					if(node.getOperator().equals("and")) {
@@ -191,7 +203,9 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 						leftclg.graphOr(rightclg);
 					}
 					leftclg.validate();
+			        //System.out.println(ClgVisualization.toGraphvizDot(leftclg));
 					return leftclg;
+				// ASTList op ASTLeft
 				} else if(leftclg != null && rightclg == null) {
 					rightclg = new CLGGraph(node);
 					if(node.getOperator().equals("and")) {
@@ -201,6 +215,7 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 					}
 					rightclg.validate();
 					return rightclg;
+				// ASTList op ASTList
 				} else if(leftclg != null && rightclg != null) {
 					if(node.getOperator().equals("and")) {
 						leftclg.graphAnd(rightclg);
@@ -226,7 +241,12 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 				CLGtransferMessege.add("BinaryExp Error! There isn't appropriate AST to CLG.");
 				return null;
 			}
-		} else {
+			//Special Case: AccumulatorExp  ....
+		} else if(node.left() instanceof AccumulatorExp) {
+			//loop acc = Expr .
+			return rightclg;
+
+		}else {
 			return new CLGGraph(node);
 		}
 	}
@@ -235,7 +255,7 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 	public CLGGraph visitIfExpContext(IfExp node) {
 		CLGGraph condclg = node.getCondition().accept(this);
 		CLGGraph thenclg = node.getThenBranch().accept(this);
-		CLGGraph negatecondclg = ASTutil.DeMorgan(node.getCondition()).accept(this);
+		CLGGraph negatecondclg = AstUtil.DeMorgan(node.getCondition()).accept(this);
 		CLGGraph elseclg = node.getElseBranch().accept(this);
 			
         condclg.graphAnd(thenclg);
@@ -305,32 +325,101 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 
 	@Override
 	public CLGGraph visitIterateExpContext(IterateExp node) { 
-		//collection size n 
-		CLGGraph sourceclg = node.getSource().accept(this);
-		//System.out.println("iteratorclg: \n"+ClgVisualization.toGraphvizDot(sourceclg));
+		
+		/* Init  */
+		IndexVariableExp Index = new IndexVariableExp("Index");		
+		BinaryExp initIndex = new BinaryExp(List.of(Index,new IntegerLiteralExp(0,SymbolTableBuilder.IntType)),"=");
 
-		// Ex. Loop Variable: it
-		CLGGraph iteratorclg = node.getIteratorDecl().accept(this);
-		//System.out.println("iteratorclg: \n"+ClgVisualization.toGraphvizDot(iteratorclg));
+		CLGGraph indexclg = new CLGGraph(initIndex);
+		//Accumulator = <initExpr>?
+		CLGGraph resultinitclg = node.getResultDecl().accept(this);
+		resultinitclg.graphAnd(indexclg);
+		//System.out.println("Init: \n"+ClgVisualization.toGraphvizDot(resultinitclg));
+		/* Init End */
+		
+		CLGGraph truecondclg = null;
+		CLGGraph falsecondclg = null;
+		if(node.getSource() instanceof CollectionPart c ) {
+			//collection size n 
+			VariableExp sizeVar = new VariableExp(c.size(),false,null);
+			BinaryExp truecondexp = new BinaryExp(List.of(Index,sizeVar),">");
+			BinaryExp falsecondexp = new BinaryExp(List.of(Index,sizeVar),"<=");
+			truecondclg = truecondexp.accept(this);
+			falsecondclg = falsecondexp.accept(this);
+		}
+		if(node.getSource() instanceof VariableExp v) {
+			if(v.getType() instanceof MultiplicityListType) {
+			//collection size n 
+			VariableExp sizeVar = new VariableExp(v.getName(),false,null);
+			BinaryExp truecondexp = new BinaryExp(List.of(Index,sizeVar),">");
+			BinaryExp falsecondexp = new BinaryExp(List.of(Index,sizeVar),"<=");
+			truecondclg = truecondexp.accept(this);
+			falsecondclg = falsecondexp.accept(this);
+			} else {
+				CLGtransferMessege.add("IterateExp Error! The source is not a ArrayType.");
+				return null;
+			}
+		}
+		if(node.getSource() instanceof FeatureCallExp f) {
+			//collection size n 
+			if(f.getType() instanceof MultiplicityListType) {
+				//collection size n 
+				VariableExp sizeVar = new VariableExp(f.getName(),false,null);
+				BinaryExp truecondexp = new BinaryExp(List.of(Index,sizeVar),">");
+				BinaryExp falsecondexp = new BinaryExp(List.of(Index,sizeVar),"<=");
+				truecondclg = truecondexp.accept(this);
+				falsecondclg = falsecondexp.accept(this);
+				} else {
+					CLGtransferMessege.add("IterateExp Error! The source is not a ArrayType.");
+					return null;
+				}
+		}
+		
+		if(truecondclg != null && falsecondclg != null) {
+			/*In Loop */		
+			// Ex. Loop Variable: it
+			BinaryExp element = new BinaryExp(List.of( node.getIteratorDecl(),node.getSource()),"=");
+			CLGGraph elementclg = element.accept(this);
+			//System.out.println("elementclg: \n"+ClgVisualization.toGraphvizDot(elementclg));
+			
+			AccumulatorExp accVar  = new AccumulatorExp(((VariableDeclExp) node.getResultDecl()).getVarname());
+			BinaryExp loopaccast = new BinaryExp(List.of( accVar,node.getBody()),"=");
+			CLGGraph bodyclg = loopaccast.accept(this);
+			//System.out.println("bodyclg: \n"+ClgVisualization.toGraphvizDot(bodyclg));
+			
+			BinaryExp nextIndex = new BinaryExp(List.of(Index,new IntegerLiteralExp(1,SymbolTableBuilder.IntType)),"+");
+			BinaryExp next = new BinaryExp(List.of(Index,nextIndex),"=");
+			CLGGraph nextIndexclg = next.accept(this);
+			
+			falsecondclg.graphAnd(elementclg);
+			falsecondclg.graphAnd(bodyclg);
+			falsecondclg.graphAnd(nextIndexclg);
+			falsecondclg.graphClosure(); 
+			//System.out.println("bodyclg: \n"+ClgVisualization.toGraphvizDot(falsecondclg));
+			
+			/*Loop End*/	
+			
+			/*Result*/
+			AccumulatorExp resultVar  = new AccumulatorExp(((VariableDeclExp) node.getResultDecl()).getVarname()+"_result");
+			BinaryExp resultast = new BinaryExp(List.of( resultVar,accVar),"=");
+			CLGGraph resultclg = resultast.accept(this);
+			truecondclg.graphAnd(resultclg);
+			//System.out.println("Result: \n"+ClgVisualization.toGraphvizDot(truecondclg));
 
-		//Accumulator = <Expr>
-		CLGGraph resultclg = node.getResultDecl().accept(this);
-		//System.out.println("resultclg: \n"+ClgVisualization.toGraphvizDot(resultclg));
+			/*Result  End*/
+			
+			falsecondclg.graphAnd(truecondclg);
+			//System.out.println("And: \n"+ClgVisualization.toGraphvizDot(falsecondclg));
 
-		sourceclg.graphAnd(iteratorclg);
-		//System.out.println("sourceclg: \n"+ClgVisualization.toGraphvizDot(sourceclg));
+			resultinitclg.graphAnd(falsecondclg);
+			//System.out.println("Final: \n"+ClgVisualization.toGraphvizDot(resultinitclg));
 
-		sourceclg.graphAnd(resultclg);
-		//System.out.println("sourceclg: \n"+ClgVisualization.toGraphvizDot(sourceclg));
-
-		CLGGraph bodyclg = node.getBody().accept(this);
-		//System.out.println("bodyclg: \n"+ClgVisualization.toGraphvizDot(bodyclg));
-		bodyclg.graphClosure(node);
-		//System.out.println("bodyclg: \n"+ClgVisualization.toGraphvizDot(bodyclg));
-		sourceclg.graphAnd(bodyclg);
-		//System.out.println("Iterate CLG: \n"+ClgVisualization.toGraphvizDot(sourceclg));
-
-		return sourceclg;
+			return resultinitclg;
+		} else {
+			CLGtransferMessege.add("IterateExp Error! There isn't appropriate AST to CLG.");
+			return null;
+		}
+		
 	}
 
 	@Override
@@ -353,7 +442,7 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 		CLGGraph bodyclg = node.getOclExpression().accept(this);
 		
 		declclgfirst.graphAnd(bodyclg);
-		return declclgfirst;
+		return declclgfirst; 
 		
 	}
 
@@ -363,7 +452,7 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 		return null;
 	}
 
-	@Override
+	@Override 
 	public CLGGraph visitVariableDeclExpContext(VariableDeclExp node) {
 		if(node.numChildren() == 0 ) {
 			return new CLGGraph(node);
@@ -394,22 +483,22 @@ public class DcCLGBuilderVisitor<T> implements CLGAstVisitor<CLGGraph> {
 	private CLGGraph genInvCLG(ContextDeclAST node) {
 		return node.accept(this);
 	} 
-	//不符合前置條件的CLG
+	//不符合前置條件的CLG 尚未用到 可刪除
 	private CLGGraph processNegatePreCLG(ContextExpAST ctx) {
 		if(ctx.getConstraint() instanceof BinaryExp b) {
-			BinaryExp astclone = (BinaryExp) ASTutil.DeMorgan(b);
+			BinaryExp astclone = (BinaryExp) AstUtil.DeMorgan(b);
 			return visitBinaryExpContext(astclone);
 		} else if(ctx.getConstraint() instanceof IterateExp i) {
-			IterateExp astclone = (IterateExp) ASTutil.DeMorgan(i);
+			IterateExp astclone = (IterateExp) AstUtil.DeMorgan(i);
 			return visitIterateExpContext(astclone);
 		} else if(ctx.getConstraint() instanceof IfExp i) {
-			IterateExp astclone = (IterateExp) ASTutil.DeMorgan(i);
+			IterateExp astclone = (IterateExp) AstUtil.DeMorgan(i);
 			return visitIterateExpContext(astclone);
 		} else if(ctx.getConstraint() instanceof LetExp i) {
-			IterateExp astclone = (IterateExp) ASTutil.DeMorgan(i);
+			IterateExp astclone = (IterateExp) AstUtil.DeMorgan(i);
 			return visitIterateExpContext(astclone);
 		} else if(ctx.getConstraint() instanceof UnaryExp i) {
-			IterateExp astclone = (IterateExp) ASTutil.DeMorgan(i);
+			IterateExp astclone = (IterateExp) AstUtil.DeMorgan(i);
 			return visitIterateExpContext(astclone);
 		} 
 		CLGtransferMessege.add("processNegatePreCLG Err.");

@@ -1,0 +1,103 @@
+digraph CLG {
+  128 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  129 [shape="box", label="indices->size() = dimension@pre and
+IterateExp
+", style=filled, fillcolor=yellow, xlabel="[129]"];
+  132 [shape="box", label="dimension = 1", style=filled, fillcolor=yellow, xlabel="[132]"];
+  135 [shape="box", label="x = indices.indices[0]", style=filled, fillcolor=yellow, xlabel="[135]"];
+  71 [shape="box", label="exception=\"Exception\"", style=filled, fillcolor=yellow, xlabel="[71]"];
+  72 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  138 [shape="box", label="self.elements[x] = value", style=filled, fillcolor=yellow, xlabel="[138]"];
+  74 [shape="box", label="Index = 0", style=filled, fillcolor=yellow, xlabel="[74]"];
+  141 [shape="box", label="dimension <> 1", style=filled, fillcolor=yellow, xlabel="[141]"];
+  77 [shape="box", label="check = true", style=filled, fillcolor=yellow, xlabel="[77]"];
+  144 [shape="box", label="x = IterateExp", style=filled, fillcolor=yellow, xlabel="[144]"];
+  80 [shape="box", label="Index > dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[80]"];
+  147 [shape="box", label="Index = 0", style=filled, fillcolor=yellow, xlabel="[147]"];
+  83 [shape="box", label="Index <= dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[83]"];
+  150 [shape="box", label="indez = indices.indices[dimension - 1]", style=filled, fillcolor=yellow, xlabel="[150]"];
+  86 [shape="box", label="elem = Sequence{0..dimension@pre - 1}", style=filled, fillcolor=yellow, xlabel="[86]"];
+  153 [shape="box", label="Index > 0 - dimension - 2", style=filled, fillcolor=yellow, xlabel="[153]"];
+  89 [shape="box", label="indices@pre.indices[elem@pre] < 0 or
+indices@pre.indices[elem@pre] >= dimensionSizes@pre.dimensionSizes[elem@pre]
+", style=filled, fillcolor=yellow, xlabel="[89]"];
+  156 [shape="box", label="Index <= 0 - dimension - 2", style=filled, fillcolor=yellow, xlabel="[156]"];
+  92 [shape="box", label="Index = Index + 1", style=filled, fillcolor=yellow, xlabel="[92]"];
+  94 [shape="diamond", label="", xlabel="<94>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  159 [shape="box", label="i = Sequence{dimension - 2..0}", style=filled, fillcolor=yellow, xlabel="[159]"];
+  96 [shape="box", label="check", style=filled, fillcolor=yellow, xlabel="[96]"];
+  162 [shape="box", label="indez + indices.indices[i] * IterateExp", style=filled, fillcolor=yellow, xlabel="[162]"];
+  99 [shape="box", label="indices->size() <> dimension@pre or
+IterateExp
+", style=filled, fillcolor=yellow, xlabel="[99]"];
+  165 [shape="box", label="Index = Index + 1", style=filled, fillcolor=yellow, xlabel="[165]"];
+  101 [shape="diamond", label="", xlabel="<101>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  102 [shape="diamond", label="", xlabel="<102>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  167 [shape="diamond", label="", xlabel="<167>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  104 [shape="box", label="Index = 0", style=filled, fillcolor=yellow, xlabel="[104]"];
+  169 [shape="box", label="indez", style=filled, fillcolor=yellow, xlabel="[169]"];
+  107 [shape="box", label="check = true", style=filled, fillcolor=yellow, xlabel="[107]"];
+  172 [shape="box", label="elements.elements[x] = value", style=filled, fillcolor=yellow, xlabel="[172]"];
+  110 [shape="box", label="Index > dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[110]"];
+  174 [shape="diamond", label="", xlabel="<174>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  175 [shape="diamond", label="", xlabel="<175>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  176 [shape="diamond", label="", xlabel="<176>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  113 [shape="box", label="Index <= dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[113]"];
+  177 [shape="diamond", label="", xlabel="<177>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  116 [shape="box", label="elem = Sequence{0..dimension@pre - 1}", style=filled, fillcolor=yellow, xlabel="[116]"];
+  119 [shape="box", label="indices@pre.indices[elem@pre] >= 0 and
+indices@pre.indices[elem@pre] < dimensionSizes@pre.dimensionSizes[elem@pre]
+", style=filled, fillcolor=yellow, xlabel="[119]"];
+  122 [shape="box", label="Index = Index + 1", style=filled, fillcolor=yellow, xlabel="[122]"];
+  124 [shape="diamond", label="", xlabel="<124>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  126 [shape="box", label="check", style=filled, fillcolor=yellow, xlabel="[126]"];
+  113 -> 116[label="graphAnd#128"];
+  116 -> 119[label="graphAnd#129"];
+  119 -> 122[label="graphAnd#130"];
+  124 -> 113[label="iterate#132"];
+  122 -> 124[label="iterate#133"];
+  110 -> 126[label="graphAnd#137"];
+  124 -> 110[label="graphAnd#138"];
+  104 -> 124[label="graphAnd#139"];
+  129 -> 107[label="graphAnd#142"];
+  135 -> 138[label="graphAnd#149"];
+  150 -> 147[label="graphAnd#158"];
+  156 -> 159[label="graphAnd#169"];
+  159 -> 162[label="graphAnd#170"];
+  162 -> 165[label="graphAnd#171"];
+  167 -> 156[label="iterate#173"];
+  165 -> 167[label="iterate#174"];
+  153 -> 169[label="graphAnd#178"];
+  167 -> 153[label="graphAnd#179"];
+  147 -> 167[label="graphAnd#180"];
+  144 -> 150[label="graphAnd#181"];
+  169 -> 172[label="graphAnd#184"];
+  132 -> 135[label="graphAnd#185"];
+  141 -> 144[label="graphAnd#186"];
+  174 -> 132[label="split1#188"];
+  174 -> 141[label="split2#189"];
+  138 -> 175[label="merge1#190"];
+  172 -> 175[label="merge2#191"];
+  102 -> 71[label="graphAnd#193"];
+  126 -> 174[label="graphAnd#194"];
+  128 -> 176[label="graphOr_start#195"];
+  176 -> 129[label="split1#196"];
+  176 -> 101[label="split2#197"];
+  175 -> 177[label="merge1#198"];
+  71 -> 177[label="merge2#199"];
+  177 -> 72[label="graphOr_end#200"];
+  77 -> 74[label="graphAnd#82"];
+  83 -> 86[label="graphAnd#93"];
+  86 -> 89[label="graphAnd#94"];
+  89 -> 92[label="graphAnd#95"];
+  94 -> 83[label="iterate#97"];
+  92 -> 94[label="iterate#98"];
+  80 -> 96[label="graphAnd#102"];
+  94 -> 80[label="graphAnd#103"];
+  74 -> 94[label="graphAnd#104"];
+  101 -> 99[label="split1#108"];
+  101 -> 77[label="split2#109"];
+  99 -> 102[label="merge1#110"];
+  96 -> 102[label="merge2#111"];
+  107 -> 104[label="graphAnd#117"];
+}

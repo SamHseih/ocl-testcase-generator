@@ -90,7 +90,7 @@ public class OperationCallExp extends FeatureCallExp{
 	public String toAstString() {
 		StringBuilder sb = new StringBuilder();
 		if (source != null) {
-			sb.append(source.toString());
+			sb.append(source.toAstString());
 			sb.append(op);
 		}
 		sb.append(name);
@@ -100,7 +100,7 @@ public class OperationCallExp extends FeatureCallExp{
 				if (i > 2) {
 					sb.append(", ");
 				}
-				sb.append(child(i).toString());
+				sb.append(child(i).toAstString());
 			}
 		}
 		sb.append(")");
@@ -112,7 +112,7 @@ public class OperationCallExp extends FeatureCallExp{
 	public String toClgString() {
 		StringBuilder sb = new StringBuilder();
 		if (source != null) {
-			sb.append(source.toString());
+			sb.append(source.toClgString());
 			sb.append(op);
 		}
 		sb.append(name);
@@ -122,7 +122,7 @@ public class OperationCallExp extends FeatureCallExp{
 				if (i > 2) {
 					sb.append(", ");
 				}
-				sb.append(child(i).toString());
+				sb.append(child(i).toClgString());
 			}
 		}
 		sb.append(")");

@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/ccu/pllab/tcgen3/core/testcasegen/PathEnumerator.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGEdge.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGGraph.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGNode.java=UTF-8
@@ -6,6 +7,7 @@ encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGNodeType.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/visitor/DcCLGBuilderVisitor.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/visitor/DccCLGBuilderVisitor.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/nouse/StaticArrayClassSymbol.java=UTF-8
+encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/Antlr4Exe.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/AstBuilderVisitor.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/Ocl.g4=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/ArrayRefExp.java=UTF-8
@@ -16,6 +18,6 @@ encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/Prope
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/SelfExp.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/umlparser/cdparser/SymbolTableBuilder.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/visualization/DotFileConverter.java=UTF-8
-encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/clgtest/DemoCLGgraph.java=UTF-8
-encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/clgtest/DemoClgGraphOps.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoCLGgraph.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoClgGraphOps.java=UTF-8
 encoding/<project>=x-windows-950

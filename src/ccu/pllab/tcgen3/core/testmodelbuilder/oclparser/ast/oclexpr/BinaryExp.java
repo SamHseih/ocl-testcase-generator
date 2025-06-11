@@ -50,7 +50,7 @@ public class BinaryExp extends ASTList implements Expression{
 		if(opGroup == OpGroup.ADDITIVE || opGroup == OpGroup.MULTIPLICATIVE) {
 			return child(0).getType();
 		} else if(opGroup == OpGroup.LOGICAL || opGroup == OpGroup.RELATIONAL){
-			return SymbolTableBuilder.Boolean;
+			return SymbolTableBuilder.BooleanType;
 		} else return new InvalidType();
 	}
 	
@@ -63,7 +63,7 @@ public class BinaryExp extends ASTList implements Expression{
 	private void pretty(StringBuilder sb, ASTree node, int depth, boolean isTop) {
 		// 1. 若不是 BinaryExp，直接 append
 	    if (!(node instanceof BinaryExp bin)) {
-	        sb.append(node);
+	        sb.append(node.toClgString());
 	        return;
 	    }
 
@@ -72,7 +72,7 @@ public class BinaryExp extends ASTList implements Expression{
 
 	        // 左邊
 	        pretty(sb, bin.left(), depth, false);
-	        sb.append(" "+getOperator()).append(System.lineSeparator());
+	        sb.append(" "+bin.getOperator()).append(System.lineSeparator());
 
 	        // 右邊：若還是 and，就遞迴（同層縮排）；否則正常列印
 	        if (bin.right() instanceof BinaryExp rightBin &&

@@ -24,8 +24,8 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableExp;
 import ccu.pllab.tcgen3.io.FileLoader;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 
-public final  class ASTutil  {
-	private ASTutil() {}          // 工具類別，禁止實例化
+public final  class AstUtil  {
+	private AstUtil() {}          // 工具類別，禁止實例化
 
 	/* ---------- 1. Pre-order DFS (root → left → right) ---------- */
 	/**
@@ -296,13 +296,13 @@ public final  class ASTutil  {
 		 astbuilder.build();
     	ASTree ast = astbuilder.getAST();           // 假設你有自己的 AST root
         System.out.println("=== PRE-ORDER DFS ===");
-        printAST(ast, ASTutil::dfsPre, 9);
+        printAST(ast, AstUtil::dfsPre, 9);
         System.out.println("=== POST-ORDER DFS ===");
-        printAST(ast, ASTutil::dfsPost, 9);
+        printAST(ast, AstUtil::dfsPost, 9);
         System.out.println("=== IN-ORDER DFS ===");
-        printAST(ast, ASTutil::dfsIn, 9);
+        printAST(ast, AstUtil::dfsIn, 9);
         System.out.println("=== BFS ===");
-        printAST(ast, ASTutil::bfs, 9);
+        printAST(ast, AstUtil::bfs, 9);
         
      }
     /** 僅示範用途：用你實際建立的 AST 取代這段即可 */

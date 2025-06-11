@@ -34,7 +34,7 @@ public class IterateExp extends LoopExp {
 		if(getSource() instanceof CollectionRange c) {
 			return c.toString();
 		}else if(getSource() instanceof CollectionItem c) {
-			return c.getSize();
+			return c.size();
 		}
 		return getSource().toString();
 	}
@@ -65,10 +65,11 @@ public class IterateExp extends LoopExp {
 	//for CLG visualization Info
 	public String toClgString(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("i = 1\n");
+		sb.append("IterateExp");
+		/*sb.append("i = 1\n");
 		sb.append("i<").append(getSourceSize()).append("\n");
 		sb.append("Accumulator: ").append(getResultDecl()).append("\n");
-		sb.append("Loop Var: ").append(getIteratorDecl());
+		sb.append("Loop Var: ").append(getIteratorDecl());*/
 		return sb.toString();
 	}
 	

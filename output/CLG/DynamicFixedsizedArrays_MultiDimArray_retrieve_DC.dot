@@ -1,0 +1,103 @@
+digraph CLG {
+  258 [shape="box", label="indez = indices.indices[dimension - 1]", style=filled, fillcolor=yellow, xlabel="[258]"];
+  194 [shape="box", label="i = Sequence{0..dimension@pre - 1}", style=filled, fillcolor=yellow, xlabel="[194]"];
+  261 [shape="box", label="Index > 0 - dimension - 2", style=filled, fillcolor=yellow, xlabel="[261]"];
+  197 [shape="box", label="indices@pre.indices[i@pre] < 0 or
+indices@pre.indices[i@pre] >= dimensionSizes@pre.dimensionSizes[i@pre]
+", style=filled, fillcolor=yellow, xlabel="[197]"];
+  264 [shape="box", label="Index <= 0 - dimension - 2", style=filled, fillcolor=yellow, xlabel="[264]"];
+  200 [shape="box", label="Index = Index + 1", style=filled, fillcolor=yellow, xlabel="[200]"];
+  202 [shape="diamond", label="", xlabel="<202>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  267 [shape="box", label="i = Sequence{dimension - 2..0}", style=filled, fillcolor=yellow, xlabel="[267]"];
+  204 [shape="box", label="check", style=filled, fillcolor=yellow, xlabel="[204]"];
+  270 [shape="box", label="indez + indices.indices[i] * IterateExp", style=filled, fillcolor=yellow, xlabel="[270]"];
+  207 [shape="box", label="indices->size() <> dimensionSizes->size() or
+IterateExp
+", style=filled, fillcolor=yellow, xlabel="[207]"];
+  273 [shape="box", label="Index = Index + 1", style=filled, fillcolor=yellow, xlabel="[273]"];
+  209 [shape="diamond", label="", xlabel="<209>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  210 [shape="diamond", label="", xlabel="<210>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  275 [shape="diamond", label="", xlabel="<275>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  212 [shape="box", label="Index = 0", style=filled, fillcolor=yellow, xlabel="[212]"];
+  277 [shape="box", label="indez", style=filled, fillcolor=yellow, xlabel="[277]"];
+  215 [shape="box", label="check = true", style=filled, fillcolor=yellow, xlabel="[215]"];
+  280 [shape="box", label="result = elements.elements[x]", style=filled, fillcolor=yellow, xlabel="[280]"];
+  218 [shape="box", label="Index > dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[218]"];
+  282 [shape="diamond", label="", xlabel="<282>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  283 [shape="diamond", label="", xlabel="<283>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  284 [shape="diamond", label="", xlabel="<284>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  221 [shape="box", label="Index <= dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[221]"];
+  285 [shape="diamond", label="", xlabel="<285>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  224 [shape="box", label="i = Sequence{0..dimension@pre - 1}", style=filled, fillcolor=yellow, xlabel="[224]"];
+  227 [shape="box", label="indices@pre.indices[i@pre] >= 0 and
+indices@pre.indices[i@pre] < dimensionSizes@pre.dimensionSizes[i@pre]
+", style=filled, fillcolor=yellow, xlabel="[227]"];
+  230 [shape="box", label="Index = Index + 1", style=filled, fillcolor=yellow, xlabel="[230]"];
+  232 [shape="diamond", label="", xlabel="<232>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  234 [shape="box", label="check", style=filled, fillcolor=yellow, xlabel="[234]"];
+  236 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  237 [shape="box", label="indices->size() = dimensionSizes->size() and
+IterateExp
+", style=filled, fillcolor=yellow, xlabel="[237]"];
+  240 [shape="box", label="dimension = 1", style=filled, fillcolor=yellow, xlabel="[240]"];
+  243 [shape="box", label="x = indices.indices[0]", style=filled, fillcolor=yellow, xlabel="[243]"];
+  179 [shape="box", label="exception=\"Exception\"", style=filled, fillcolor=yellow, xlabel="[179]"];
+  180 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  246 [shape="box", label="result = self.elements[x]", style=filled, fillcolor=yellow, xlabel="[246]"];
+  182 [shape="box", label="Index = 0", style=filled, fillcolor=yellow, xlabel="[182]"];
+  249 [shape="box", label="dimension <> 1", style=filled, fillcolor=yellow, xlabel="[249]"];
+  185 [shape="box", label="check = true", style=filled, fillcolor=yellow, xlabel="[185]"];
+  252 [shape="box", label="x = IterateExp", style=filled, fillcolor=yellow, xlabel="[252]"];
+  188 [shape="box", label="Index > dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[188]"];
+  255 [shape="box", label="Index = 0", style=filled, fillcolor=yellow, xlabel="[255]"];
+  191 [shape="box", label="Index <= dimension@pre - 1 - 0", style=filled, fillcolor=yellow, xlabel="[191]"];
+  232 -> 221[label="iterate#257"];
+  230 -> 232[label="iterate#258"];
+  218 -> 234[label="graphAnd#262"];
+  232 -> 218[label="graphAnd#263"];
+  212 -> 232[label="graphAnd#264"];
+  237 -> 215[label="graphAnd#267"];
+  243 -> 246[label="graphAnd#274"];
+  258 -> 255[label="graphAnd#283"];
+  264 -> 267[label="graphAnd#294"];
+  267 -> 270[label="graphAnd#295"];
+  270 -> 273[label="graphAnd#296"];
+  275 -> 264[label="iterate#298"];
+  273 -> 275[label="iterate#299"];
+  261 -> 277[label="graphAnd#303"];
+  275 -> 261[label="graphAnd#304"];
+  255 -> 275[label="graphAnd#305"];
+  252 -> 258[label="graphAnd#306"];
+  277 -> 280[label="graphAnd#309"];
+  240 -> 243[label="graphAnd#310"];
+  249 -> 252[label="graphAnd#311"];
+  282 -> 240[label="split1#313"];
+  282 -> 249[label="split2#314"];
+  246 -> 283[label="merge1#315"];
+  280 -> 283[label="merge2#316"];
+  210 -> 179[label="graphAnd#318"];
+  234 -> 282[label="graphAnd#319"];
+  236 -> 284[label="graphOr_start#320"];
+  284 -> 237[label="split1#321"];
+  284 -> 209[label="split2#322"];
+  283 -> 285[label="merge1#323"];
+  179 -> 285[label="merge2#324"];
+  285 -> 180[label="graphOr_end#325"];
+  185 -> 182[label="graphAnd#207"];
+  191 -> 194[label="graphAnd#218"];
+  194 -> 197[label="graphAnd#219"];
+  197 -> 200[label="graphAnd#220"];
+  202 -> 191[label="iterate#222"];
+  200 -> 202[label="iterate#223"];
+  188 -> 204[label="graphAnd#227"];
+  202 -> 188[label="graphAnd#228"];
+  182 -> 202[label="graphAnd#229"];
+  209 -> 207[label="split1#233"];
+  209 -> 185[label="split2#234"];
+  207 -> 210[label="merge1#235"];
+  204 -> 210[label="merge2#236"];
+  215 -> 212[label="graphAnd#242"];
+  221 -> 224[label="graphAnd#253"];
+  224 -> 227[label="graphAnd#254"];
+  227 -> 230[label="graphAnd#255"];
+}

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
-import ccu.pllab.tcgen3.core.testmodelbuilder.clg.Criterion;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.DcCLGBuilderVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.DccCLGBuilderVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.MccCLGBuilderVisitor;
@@ -43,8 +42,18 @@ public class CLGbuilder {
 	
 		//parser each ContextDeclAST and build CLGS
 		for(ASTree ctxDecl: root) {
+			PackageDeclAST p = (PackageDeclAST) root;
 			CLGGraph ctx = ctxDecl.accept(visitor);
-			if(ctx != null )clgs.add(ctx);
+			if(ctx != null ) {
+				StringBuilder filename = new StringBuilder();
+				 filename.append(p.getPackagename()).append("_");
+				if(ctxDecl instanceof ContextDeclAST c) {
+					filename.append(c.getFilename());
+				}
+				filename.append("_").append(this.criterion.toString());
+				ctx.setFilename(filename.toString());
+				clgs.add(ctx);
+			}
 			else System.err.println(visitor.getErrorMesg());
 		}
 	}
@@ -56,16 +65,12 @@ public class CLGbuilder {
 	public void genCLGGraph() {
 		PackageDeclAST p = (PackageDeclAST) root;
 		 for(int i = 0; i< p.numChildren(); i++) {
-			 StringBuilder filename = new StringBuilder();
-			 filename.append(p.getPackagename()).append("_");
-			if(p.child(i) instanceof ContextDeclAST ctx) {
-				filename.append(ctx.getFilename());
-			}
-			 String dotfilename = filename.toString()+".dot";
-			 String svgfilename = filename.toString()+".svg";
-			 Path dotpath = Paths.get(System.getProperty("user.dir")+"\\output\\CLG\\"+dotfilename);
-			 Path svgpath =  Paths.get(System.getProperty("user.dir")+"\\output\\CLG\\"+svgfilename);
-			 ClgVisualization.printGraphvizSvg(dotpath, svgpath, clgs.get(i)); 
+			String filename = clgs.get(i).getFilename();
+			String dotfilename = filename.toString()+".dot";
+			String svgfilename = filename.toString()+".svg";
+			Path dotpath = Paths.get(System.getProperty("user.dir")+"\\output\\CLG\\"+dotfilename);
+			Path svgpath =  Paths.get(System.getProperty("user.dir")+"\\output\\CLG\\"+svgfilename);
+			ClgVisualization.printGraphvizSvg(dotpath, svgpath, clgs.get(i)); 
 		 }
 	}
 	
