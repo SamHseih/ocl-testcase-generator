@@ -131,11 +131,11 @@ public class ArrayRefExp extends FeatureCallExp  {
 			//self.datas[it][it1][it3]
 			if(index instanceof BinaryExp b) {
 				sb.append("["); 
-				sb.append(b.toString());
+				sb.append(b.toClgString());
 				sb.append("]");
 			} else {
 				sb.append("["); 
-				sb.append(index.toString());
+				sb.append(index.toClgString());
 				sb.append("]");
 			}
 		}
@@ -155,11 +155,11 @@ public class ArrayRefExp extends FeatureCallExp  {
 			//self.datas[it][it1][it3]
 			if(index instanceof BinaryExp b) {
 				sb.append("["); 
-				sb.append(b.toString());
+				sb.append(b.toAstString());
 				sb.append("]");
 			} else {
 				sb.append("["); 
-				sb.append(index.toString());
+				sb.append(index.toAstString());
 				sb.append("]");
 			}
 		}

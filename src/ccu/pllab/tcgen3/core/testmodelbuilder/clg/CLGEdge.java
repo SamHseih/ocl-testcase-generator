@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.clg;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class CLGEdge {
@@ -50,10 +51,20 @@ public class CLGEdge {
     public String getLabel()          { return label; }
     public int getIterationIndex()    { return iterationIndex; }
     
+    /**
+     * 回傳此邊自身「連接到的」運算式節點（如果有）。
+     * 推斷式：判斷 from / to 其中是否為 CLGNodeType.EXPR。
+     */
+    public Optional<CLGNode> getConstraintNode() {
+        if (from.getType() == CLGNodeType.CONSTRAINT) return Optional.of(from);
+        if (to.getType() == CLGNodeType.CONSTRAINT)   return Optional.of(to);
+        return Optional.empty();
+    }
+    
     /* === 6. Coverage 支援 === */
     public boolean isCovered()        { return covered; }
     public void markCovered()         { this.covered = true; }
-
+    
     /* === 7. equals/hashCode ⇒ 以 id 為準 === */
     @Override
     public int hashCode() { return Long.hashCode(id); }
@@ -66,8 +77,12 @@ public class CLGEdge {
     /* === 8. 方便除錯的 toString() === */
     @Override
     public String toString() {
-        return "Edge#" + id + "(" + from.id() + "→" + to.id() +
-               ", type=" + type + (label.isEmpty()? "" : ", label=" + label) + ")";
+    	if (type == CLGEdgeType.ITERATION) {
+			return "iterate#" + id + "\n";
+    		
+    	}else
+        return "#"+id+"";//+ "(" + from.id() + "→" + to.id() +
+              // ", type=" + type + (label.isEmpty()? "" : ", label=" + label) + ")";
     }
     
 }

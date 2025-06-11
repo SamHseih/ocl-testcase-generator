@@ -1,0 +1,14 @@
+digraph AST {
+  node [shape=box];
+  n255 [label="ContextDecl: node(250) Context: node (254)", xlabel="(255)"];
+  n255 -> n250;
+  n255 -> n254;
+  n250 [label="MultiDimArray::getDimensionSizes() : int[]", xlabel="(250)"];
+  n254 [label=" post:", xlabel="(254)Boolean"];
+  n254 -> n253;
+  n253 [label="=", xlabel="(253)Boolean"];
+  n253 -> n251;
+  n253 -> n252;
+  n251 [label="result", xlabel="(251)int[]"];
+  n252 [label="dimensionSizes", xlabel="(252)int[]"];
+}

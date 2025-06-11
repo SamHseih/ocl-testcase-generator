@@ -60,7 +60,7 @@ public class PropertyCallExp extends FeatureCallExp  {
 	public String toAstString() {
 		StringBuilder sb = new StringBuilder();
 		if (numChildren() > 0) {
-			sb.append(getSource().toString());
+			sb.append(getSource().toAstString());
 			sb.append(".");
 		}
 		sb.append(name);
@@ -71,7 +71,7 @@ public class PropertyCallExp extends FeatureCallExp  {
 	public String toClgString() {
 		StringBuilder sb = new StringBuilder();
 		if (numChildren() > 0) {
-			sb.append(getSource().toString());
+			sb.append(getSource().toClgString());
 			sb.append(".");
 		}
 		sb.append(name);

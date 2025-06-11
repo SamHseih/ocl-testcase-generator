@@ -28,7 +28,7 @@ public class IfExp extends ASTList implements Expression {
 		if(!(child(0).getType().getTypeName().equals("Boolean")))
 			return new InvalidType();
 		
-        return SymbolTableBuilder.Boolean;
+        return SymbolTableBuilder.BooleanType;
 	}
 
 	@Override

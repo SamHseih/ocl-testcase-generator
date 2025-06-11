@@ -1,12 +1,16 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder;
 
+import java.util.List;
+
+import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.io.FileLoader;
 
 public class TestmodelBuilder {
 	private FileLoader fileLoader;
 	private ASTBuilder astbuilder;
 	private CLGbuilder clgbuilder;
-	private String criterion;
+	private Criterion criterion;
 	
 	/** Run Configuration > Arguments<br> 
 	 * arg1: &lt; Papyrus WorkSpace dir &gt;<br> 
@@ -18,13 +22,33 @@ public class TestmodelBuilder {
 			System.out.println("Enter DC/DCC/MCC");
 			System.exit(1); 
 		}else {
-			this.criterion = args[2];
 			fileLoader = new FileLoader(args);
-			}
+			this.criterion = switch(args[2]) {
+				case "DC" -> Criterion.DC;
+				case "DCC" -> Criterion.DCC;
+				case "MCC" -> Criterion.MCC;
+				default -> throw new IllegalArgumentException("Unexpected value: " + args[2]);
+			};
+		}
 	}
 	
+	public void build() {
+		this.astbuilder = new ASTBuilder(fileLoader.getOclPath(), fileLoader.getUmlPath());
+		astbuilder.build();
+		this.clgbuilder = new CLGbuilder(astbuilder.getAST(),astbuilder.getSymboltable(),criterion);
+		clgbuilder.build();
+	}
 	
-	public void main(String[] args) {
-		
+	public void genGraph() {
+		astbuilder.genASTGraph();
+		clgbuilder.genCLGGraph();
+	}
+	
+	public ASTree getAST() {
+		return astbuilder.getAST();
+	}
+	
+	public List<CLGGraph> getCLG() {
+		return clgbuilder.getCLGGrapies();
 	}
 }

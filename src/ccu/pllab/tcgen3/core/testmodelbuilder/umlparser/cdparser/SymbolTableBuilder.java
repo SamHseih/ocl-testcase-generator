@@ -22,7 +22,9 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 public class SymbolTableBuilder {
 	private GlobalScope globalsymbolTable;
 	private Document document;
-	public static Type Boolean;
+	public static Type BooleanType;
+	public static Type StringType;
+	public static Type IntType;
 	
 	public SymbolTableBuilder(Document document) {
 		if (document == null) {
@@ -57,6 +59,7 @@ public class SymbolTableBuilder {
                 String id = element.getAttribute("xmi:id");
                 if ("uml:PrimitiveType".equals(xmiType) && "int".equals(name)) {
 					PrimitiveTypeSymbol intType = new PrimitiveTypeSymbol(name, id);
+					IntType = intType;
 					
 					/* predefine fun. :  mod() */
 	            	 MethodSymbol modSymbol = new MethodSymbol("mod", "predefined");
@@ -75,11 +78,12 @@ public class SymbolTableBuilder {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);
 					symbolTable.defineById(primitiveType);
-					Boolean = primitiveType;
+					BooleanType = primitiveType;
 				} else if ("uml:PrimitiveType".equals(xmiType) && "String".equals(name)) {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);
 					symbolTable.defineById(primitiveType);
+					StringType = primitiveType;
 				} 
             }
         }

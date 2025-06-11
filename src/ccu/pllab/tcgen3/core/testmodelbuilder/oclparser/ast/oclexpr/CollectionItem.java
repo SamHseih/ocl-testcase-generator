@@ -25,8 +25,9 @@ public class CollectionItem extends CollectionPart{
 		return child(0).getType();
 	}
 	
-	public String getSize() {
-		return String.valueOf(numChildren());
+	@Override
+	public String size() {
+		return 	String.valueOf(numChildren());
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public class CollectionItem extends CollectionPart{
 		StringBuilder sb = new StringBuilder();
 		sb.append("Sequence {");
 		for (int i = 0; i < numChildren(); i++) {
-	        sb.append(children.get(i).toString());
+	        sb.append(children.get(i).toAstString());
 	        if (i < children.size() - 1) {
 	            sb.append(", ");
 	        }
@@ -62,7 +63,7 @@ public class CollectionItem extends CollectionPart{
 		StringBuilder sb = new StringBuilder();
 		sb.append("Sequence {");
 		for (int i = 0; i < numChildren(); i++) {
-	        sb.append(children.get(i).toString());
+	        sb.append(children.get(i).toClgString());
 	        if (i < children.size() - 1) {
 	            sb.append(", ");
 	        }

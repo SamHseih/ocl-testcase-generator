@@ -121,6 +121,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
     private List<String> scopeIOdetail = new ArrayList<>();;
     private final List<String> semanticErrors = new ArrayList<>();
     private boolean insidePost = false;          // debug result in pre/inv
+    private boolean insidePre = false; //control @pre variableExp or featureCallExp .
     
     /*1. duplicate declaration 2. reference to undeclared variable.
      * Note that semantic errors are different from syntax errors.*/
@@ -357,6 +358,11 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		String kw = ctx.getChild(0).getText();
         String label = ctx.ID() == null ? "" : ctx.ID().getText();
         
+        /* control @pre area*/
+        boolean preold  = this.insidePre;
+        this.insidePre   = "pre".equals(kw);
+        /* control @pre area end*/
+        
         /* debug result area*/
         boolean old  = this.insidePost;
         this.insidePost   = "post".equals(kw);
@@ -364,9 +370,10 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         
         ASTree exp = visit(ctx.oclExpressionCS());
         
-        /* debug result area*/
+        //debug result area
         insidePost   = old; 
-        /* debug result end*/
+        //control @pre area 
+        this.insidePre = preold;
         
         return new ContextExpAST(List.of(exp), kw, label);
 	}
@@ -548,7 +555,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		if (ctx.unaryOperator() != null) {
             String op = ctx.unaryOperator().getText();
             ASTree operand = visit(ctx.postfixExpression());
-            if(operand.getType() != SymbolTableBuilder.Boolean) {
+            if(operand.getType() != SymbolTableBuilder.BooleanType) {
             	recordError("unaryOperator: only for BooleanType'" , ctx.getStop());
             	return new InvalidAST();
 			}
@@ -1103,6 +1110,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		if (isPre && !insidePost) {
 	        recordError("@pre can only be used inside postconditions", tok);
 	    }
+		
         String name= ctx.ID().getText();
         Type type;
         //check if the variable is defined
@@ -1131,7 +1139,9 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 			}
 		}
         
-        
+        if(insidePre) {
+        	isPre = true; // inside precondition, always mark as pre
+		}
         return new VariableExp(name,isPre,sym);
 	}
 

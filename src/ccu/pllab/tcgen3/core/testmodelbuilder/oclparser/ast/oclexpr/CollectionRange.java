@@ -23,6 +23,11 @@ public class CollectionRange extends CollectionPart{
 	public ASTree getUpperValue() {
 		return child(1);
 	}
+	
+	@Override
+	public String size() {
+		return child(1) +" - " + child(0);
+	}
 
 	@Override
 	public Type getType() {
@@ -53,9 +58,9 @@ public class CollectionRange extends CollectionPart{
 		StringBuilder sb = new StringBuilder();
 		sb.append("Sequence{");
 		String sep="..";
-		sb.append(children.get(0).toString());
+		sb.append(children.get(0).toClgString());
 	    sb.append(sep);
-	    sb.append(children.get(1).toString());    
+	    sb.append(children.get(1).toClgString());    
 	    sb.append("}");
 	    return sb.toString();
 	}

@@ -15,7 +15,7 @@ public class VariableExp extends ASTLeaf implements Expression {
 	// For example: x, y, z, etc.
 	
 	private final String varname;
-	private final boolean isMarkedPre;
+	private  boolean isMarkedPre;
 	private Symbol symbol;
 	
 	public VariableExp(String name,boolean isMarkedPre,Symbol symbol) {
@@ -30,7 +30,10 @@ public class VariableExp extends ASTLeaf implements Expression {
 	
 	@Override
 	public String toString() {
-		return varname;
+		StringBuilder sb = new StringBuilder();
+		sb.append(varname);
+		sb.append(isMarkedPre ? "@pre" : "");
+		return sb.toString();
 	}
 	
 	@Override
@@ -40,7 +43,10 @@ public class VariableExp extends ASTLeaf implements Expression {
 	
 	@Override
 	public String toClgString() {
-		return varname;
+		StringBuilder sb = new StringBuilder();
+		sb.append(varname);
+		sb.append(isMarkedPre ? "@pre" : "");
+		return sb.toString();
 	}
 
 	public String getName() {
@@ -54,6 +60,11 @@ public class VariableExp extends ASTLeaf implements Expression {
 	public boolean isMarkedPre() {
 		return isMarkedPre;
 	}
+	
+	public void setisMarkedPre(boolean isMarkedPre) {
+		this.isMarkedPre = isMarkedPre;
+	}
+	
 
 	@Override
 	public Type getType() {

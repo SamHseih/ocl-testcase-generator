@@ -26,6 +26,7 @@ public final class CLGGraph {
     /* =====================================================
      *  F I E L D S
      * ===================================================== */
+	private String clgfilename;
     private final Map<Integer, CLGNode> nodes = new ConcurrentHashMap<>();//<id,node>
     private final Set<CLGEdge> edges = Collections.newSetFromMap(new ConcurrentHashMap<>());
 
@@ -101,6 +102,14 @@ public final class CLGGraph {
 
     public Collection<CLGEdge> getEdges() {
         return Collections.unmodifiableCollection(edges);
+    }
+    
+    public void setFilename(String filename) {
+		this.clgfilename = filename;
+	}
+    
+    public String getFilename() {
+ 		return clgfilename;
     }
 
     /* =====================================================
@@ -267,7 +276,7 @@ public final class CLGGraph {
     }
     
     /** Create a self-loop between last and first constraint → (A)+ 形式 */
-    public void graphClosure(ASTree node) {
+    public void graphClosure() {
         validate(); 
         //System.out.println("graphClosure Before: \n"+ClgVisualization.toGraphvizDot(this));
         CLGNode thisLast   = this.getEnd();
@@ -276,18 +285,18 @@ public final class CLGGraph {
         CLGNode thisLastConstraint = thisLast.getInEdges().getFirst().getFrom();
         removeEdgefromGraph(thisFirst,thisFirstConstraint,this);
         removeEdgefromGraph(thisLastConstraint,thisLast,this);
-        CLGNode iteratenode = new CLGNode(CLGNodeType.ITERATE,node);        
-        this.addNode(iteratenode);
-        
-        CLGEdge ITERATION_START = thisFirst.connectTo(iteratenode, CLGEdgeType.SEQUENTIAL, "", -1);
-        CLGEdge ITERATION = iteratenode.connectTo(thisFirstConstraint, CLGEdgeType.ITERATION, "iterate", -1);
-        CLGEdge ITERATION_MERGE = thisLastConstraint.connectTo(iteratenode, CLGEdgeType.ITERATION_MERGE, "iterate", -1);
-        CLGEdge ITERATION_END = iteratenode.connectTo(thisLast, CLGEdgeType.SEQUENTIAL, "", -1);
+        CLGNode branchnode = new CLGNode(CLGNodeType.ITERATE);        
+        this.addNode(branchnode);
+         
+        CLGEdge ITERATION_START = thisFirst.connectTo(branchnode, CLGEdgeType.SEQUENTIAL, "", -1);
+        CLGEdge ITERATION = branchnode.connectTo(thisFirstConstraint, CLGEdgeType.ITERATION, "iterate", -1);
+        CLGEdge ITERATION_MERGE = thisLastConstraint.connectTo(branchnode, CLGEdgeType.ITERATION_MERGE, "iterate", -1);
+        CLGEdge ITERATION_END = branchnode.connectTo(thisLast, CLGEdgeType.SEQUENTIAL, "", -1);
         this.addEdge(ITERATION_START); 
         this.addEdge(ITERATION);
         this.addEdge(ITERATION_MERGE);
         this.addEdge(ITERATION_END);
-        System.out.println("graphClosure After: \n"+ClgVisualization.toGraphvizDot(this));
+        //System.out.println("graphClosure After: \n"+ClgVisualization.toGraphvizDot(this));
 
         validate(); 
     }
@@ -312,7 +321,7 @@ public final class CLGGraph {
     	        g.edges.remove(e);   // 全域集合
     	    }
        } else 
-    	   System.out.print("There has no node in graph "+g.toString());
+    	   System.out.print("There has no node in graph "+g.toString()); 
     }
     
     private void removeNodefromGraph(CLGNode thisLast, CLGGraph clgGraph) {
