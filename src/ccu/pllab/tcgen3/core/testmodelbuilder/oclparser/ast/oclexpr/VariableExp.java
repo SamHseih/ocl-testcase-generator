@@ -2,7 +2,7 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTLeaf;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
@@ -79,7 +79,7 @@ public class VariableExp extends ASTLeaf implements Expression {
 	}
 	
 	@Override
-	public <R> R accept(CLGAstVisitor<R> visitor) {
+	public <R> R accept(AstVisitor<R> visitor) {
 		return visitor.visitVariableExpContext(this);
 	}
 	

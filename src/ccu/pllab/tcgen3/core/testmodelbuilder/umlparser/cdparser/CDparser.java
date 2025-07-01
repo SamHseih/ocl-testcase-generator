@@ -20,7 +20,7 @@ public class CDparser {
 		SymbolTableBuilder symbolTableBuilder = new SymbolTableBuilder(parser.getDocument());
 		//System.out.println(parser);
 		this.symboltable = symbolTableBuilder.build();
-		System.out.println("Symbol table built successfully. \nIf you want to see class info, please call toString() method.");
+		System.out.println("=============== Symbol table was built successfully. ===============\nIf you want to see class info, please call XmlParser.toString() method.");
 		return this.symboltable;
 	}
 

@@ -111,7 +111,14 @@ public class OclBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Oc
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSizeDeclArray(OclParser.SizeDeclArrayContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStaticFixSizeArray(OclParser.StaticFixSizeArrayContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitDynamicFixSizeArray(OclParser.DynamicFixSizeArrayContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

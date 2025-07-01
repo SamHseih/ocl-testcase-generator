@@ -140,8 +140,26 @@ public class ContextDeclAST extends ASTList {
 			return sb.toString();
 	}
 	
+	public String getClassname() {
+		StringBuilder sb = new StringBuilder();
+		if(child(0) instanceof ClassifierContextDeclAST clazz) {
+			sb.append(clazz.toString());
+		}else if(child(0) instanceof OperationContextDeclAST clazz){
+			sb.append(clazz.getPathName());
+		}
+		return sb.toString();
+	}
+	
+	public String getMethodName() {
+		StringBuilder sb = new StringBuilder();
+		if(child(0) instanceof OperationContextDeclAST opctx){
+			sb.append(opctx.getMethodName());
+		}
+		return sb.toString();
+	}
+	
 	@Override
- 	public <R> R accept(CLGAstVisitor<R> visitor) {
+ 	public <R> R accept(AstVisitor<R> visitor) {
 		return visitor.visitContextDeclAST(this);
 	}
 

@@ -1,0 +1,14 @@
+digraph AST {
+  node [shape=box];
+  n141 [label="ContextDecl: node(140) Context: ", xlabel="(141)"];
+  n141 -> n140;
+  n140 [label=" post:", xlabel="(140)Boolean"];
+  n140 -> n139;
+  n139 [label="=", xlabel="(139)Boolean"];
+  n139 -> n136;
+  n139 -> n138;
+  n136 [label="ErrorNode", xlabel="(136)INVALID"];
+  n138 [label="self.data", xlabel="(138)int[2][2][2]"];
+  n138 -> n137;
+  n137 [label="self", xlabel="(137)Cube"];
+}

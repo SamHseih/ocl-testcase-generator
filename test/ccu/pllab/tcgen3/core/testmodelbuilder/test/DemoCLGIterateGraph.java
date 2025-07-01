@@ -5,9 +5,9 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.ASTBuilder;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
-import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.DcCLGBuilderVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.clg.builder.DcCLGBuilder;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IterateExp;
 import ccu.pllab.tcgen3.io.FileLoader;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
@@ -35,7 +35,7 @@ public class DemoCLGIterateGraph {
 	        //System.out.println("--- Iteration AST result ---");
 	        //System.out.println(AstVisualization.toGraphvizDot(i));
 	        Scope globolsymboltable = astbuilder.getSymboltable();
-	        CLGAstVisitor<CLGGraph> visitor = new  DcCLGBuilderVisitor<CLGGraph>(globolsymboltable);
+	        AstVisitor<CLGGraph> visitor = new  DcCLGBuilder<CLGGraph>(globolsymboltable);
 	        CLGGraph gI = i.accept(visitor);
 	        //gI.graphClosure();                    // (E)+
 	        System.out.println("--- Iterate result ---");

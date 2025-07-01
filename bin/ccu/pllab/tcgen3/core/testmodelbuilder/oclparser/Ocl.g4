@@ -65,7 +65,8 @@ basetype
 
 arrayType
 	: basetype (BRACKETS)+ #NonSizeDeclArray
-	| basetype ('[' INTEGER ']')+ #SizeDeclArray
+	| basetype ('[' INTEGER ']')+ #StaticFixSizeArray
+	| basetype ('[' ID ']')+ #DynamicFixSizeArray
 	;
 
 arrayListType

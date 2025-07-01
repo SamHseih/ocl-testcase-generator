@@ -1,5 +1,7 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
+import ccu.pllab.tcgen3.symboltable.Symbol;
+
 public class IndexVariableExp extends VariableExp{
 	// IndexVariableExp is a leaf node in the abstract syntax tree
 	// It represents an indexed variable in the OCL expression
@@ -11,8 +13,8 @@ public class IndexVariableExp extends VariableExp{
 	* This only used for indexed variable , 
 	* at visitIterateExpContextr{@code DcCLGBuilderVisitor} 
 	*/
-	public IndexVariableExp(String name) {
-		super(name, false, null);
+	public IndexVariableExp(String name,Symbol s) {
+		super(name, false, s);
 		//index = 0;
 	}
 /*
@@ -34,4 +36,5 @@ public class IndexVariableExp extends VariableExp{
 	public String toClgString() {
 		return this.getName(); //+ " = " + index;
 	}
+	
 }

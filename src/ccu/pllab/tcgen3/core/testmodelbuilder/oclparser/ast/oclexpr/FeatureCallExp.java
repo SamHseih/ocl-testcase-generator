@@ -22,7 +22,7 @@ public abstract class FeatureCallExp extends ASTList implements Expression{
 	}
 	
 	public abstract ASTree getSource();
-	public abstract String getName();
+	public abstract String getFeatureName();
 	//public abstract void setSource(ASTree source);
 	
 	public Symbol getSymbol() {return sym;}

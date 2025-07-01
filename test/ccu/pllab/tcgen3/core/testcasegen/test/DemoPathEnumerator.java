@@ -28,7 +28,7 @@ public class DemoPathEnumerator {
 		 case "MCC" -> Criterion.MCC;
 		 default -> throw new IllegalArgumentException("Unexpected value: " + args[2]);
 		 };
-		 
+		 	
 		 CLGbuilder clgbuilder = new CLGbuilder(astbuilder.getAST(),astbuilder.getSymboltable(),criterion);
 		 clgbuilder.build();
 		 
@@ -42,7 +42,7 @@ public class DemoPathEnumerator {
 			 System.out.println("Path " + i++ + ":");
 			 System.out.println(path);
 		 }*/
-		 
+		  
 		 PathEnumerator pathEnumerator = new PathEnumerator(clg.get(1), 3);
 		 System.out.println(clg.get(1).getFilename());
 		 int i = 1;

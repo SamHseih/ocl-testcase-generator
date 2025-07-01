@@ -5,7 +5,7 @@ import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser.SymbolTableBuilder;
 import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
@@ -47,7 +47,7 @@ public class IfExp extends ASTList implements Expression {
 	}
 	
 	@Override
-	public <R> R accept(CLGAstVisitor<R> visitor) {
+	public <R> R accept(AstVisitor<R> visitor) {
 		return visitor.visitIfExpContext(this);
 	}
 	

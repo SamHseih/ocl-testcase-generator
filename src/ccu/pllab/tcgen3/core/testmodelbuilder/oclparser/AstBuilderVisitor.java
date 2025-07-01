@@ -153,10 +153,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
     	scopeIOdetail.add(str);
 		currentScope = currentScope.getEnclosingScope();
     	}
-/*
-    private void recordError(String msg, int line, int column) {
-        semanticErrors.add(String.format("%s (%d:%d)", msg, line, column));
-    	}*/
+
     private void recordError(String msg, Token t) {
         semanticErrors.add(String.format("%s (%d:%d)", msg, t.getLine(), t.getCharPositionInLine()+1));
     }
@@ -228,8 +225,8 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 
 	/* ===================================================== 
 	 * operationContextDecl  
-	 * : 'context' className=pathNameCS '::' operationName = ID '(' contextOpParameters? ')'  # NoRturnTypeAlt
-	 * | 'context' className=pathNameCS '::' operationName = ID '(' contextOpParameters? ')' ':' type # HasRturnTypeAlt
+	 * : 'context' pathNameCS '::' ID '(' contextOpParameters? ')'  # NoRturnTypeAlt
+	 * | 'context' pathNameCS '::' ID '(' contextOpParameters? ')' ':' type # HasRturnTypeAlt
 	 * ;
 	 * =====================================================*/
 	@Override
@@ -425,18 +422,20 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 			}
         }
         
-        //check Var initializ
+        //check Vardecl =  initializ
         if(ctx.oclExpressionCS() != null) {
 			ASTree initExp = visit(ctx.oclExpressionCS());
 			if (initExp == null) {
 				recordError("VariableDecl Error: UnDefined variable init" + varName + "'", idToken);
 				return null;
 			}
+			VariableDeclExp varDeclExp = new VariableDeclExp(varName, (Type)typeSym);
+			return new BinaryExp(List.of(varDeclExp,initExp),"=");
 			
-			return new VariableDeclExp(List.of(initExp),varName, (Type)typeSym);
+			//return new VariableDeclExp(List.of(initExp),varName, (Type)typeSym);
 		}
   
-		return new VariableDeclExp(List.of(),varName, (Type)typeSym);
+		return new VariableDeclExp(varName, (Type)typeSym);
 	}
 	
 	//Only for LocalScope
@@ -466,7 +465,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 			recordError("CollectionDecl Error: CollectionDecl only for LocalScope'" + collectionName + "'", idToken);
 			return null;
         }
-        return new VariableDeclExp(List.of(),collectionName, (Type)typeSym);
+        return new VariableDeclExp(collectionName, (Type)typeSym);
 	}
 
 	/* =====================================================
@@ -891,7 +890,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 		/* Ex. obj1.obj2.operation()*/
 		} else if( source instanceof FeatureCallExp) {
 			
-			String sourceName = ((FeatureCallExp) source).getName(); 
+			String sourceName = ((FeatureCallExp) source).getFeatureName(); 
 			sym = currentScope.resolve(sourceName);
 			
 			if (sym instanceof ClassSymbol classSym) {
@@ -951,28 +950,40 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 	private ASTree buildPropertyCall(PropertyCallExpCSContext ctx, ASTree source) {
 		String propName = ctx.variableExpCS().ID().getText();
 		boolean isPre = ctx.variableExpCS().isMarkedPreCS() != null;
+		Symbol propsym = null;
+		Type proptype = null;
+		
+		Type sourcetype = source.getType();
+		
+		if(!(sourcetype instanceof ClassSymbol)) {
+			recordError("Build PropertyCall Error: Source Type "+source+" isn't Class Type", ctx.variableExpCS().isMarkedPreCS().stop);
+		} else if(sourcetype instanceof ClassSymbol c) {
+			propsym = c.resolve(propName);
+			if(propsym == null) {
+				recordError("Build PropertyCall Error: UnDefined property " + propName + " in " + c , ctx.getStart());
+			}
+			if(propsym instanceof MethodSymbol) {
+				recordError("Build PropertyCall Error: UnDefined property " + propName + " in " + c , ctx.getStart());
+			}
+			if (propsym instanceof BaseSymbol) {
+				proptype = ((BaseSymbol) propsym).getType();
+				if (proptype == null) {
+					recordError("Build PropertyCall Error: UnDefined type " + propName + " in " +currentScope() , ctx.getStart());
+				}
+			}else if(propsym instanceof ClassSymbol pc){
+				proptype =  pc.resolveType(propName);
+				if (proptype == null) {
+					recordError("Build PropertyCall Error: UnDefined type " + propName + " in " +currentScope() , ctx.getStart());
+				}
+			}
+			
+		}
+		
 		if (isPre && !insidePost) {
 	        recordError("@pre can only be used inside postconditions", ctx.variableExpCS().isMarkedPreCS().stop);
 	    }
-		Symbol sym = currentScope().resolve(propName);
-		if (sym == null) {
-			recordError("Build PropertyCall Error: UnDefined property " + propName + "in" +currentScope() , ctx.getStart());
-
-		}
-		Type type = null;
-		if (sym instanceof BaseSymbol) {
-			type = ((BaseSymbol) sym).getType();
-			if (type == null) {
-				recordError("Build PropertyCall Error: UnDefined type " + propName + "in" +currentScope() , ctx.getStart());
-			}
-		}else if(sym instanceof ClassSymbol){
-			type =  currentScope().resolveType(propName);
-			if (type == null) {
-				recordError("Build PropertyCall Error: UnDefined type " + propName + "in" +currentScope() , ctx.getStart());
-			}
-		}
 		
-		return new PropertyCallExp(List.of(source), propName, type, isPre, sym);
+		return new PropertyCallExp(List.of(source), propName, proptype, isPre, propsym);
 	}
 	
 	private ASTree buildArrayAccessCall(ArrayAccessCSContext ctx, ASTree source) {
@@ -1010,13 +1021,13 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 				if (type instanceof ArrayTypeClassSymbol) {
 					sym = ((ClassSymbol)type).resolve(arrayName);
 					if(sym==null) {
-						recordError("Build ArrayFeatureCall Error: ArrayTypeClassSymbol "+((FeatureCallExp)source).getName()+" does't have MultiplicityListType: " +arrayName, ctx.getStart());
+						recordError("Build ArrayFeatureCall Error: ArrayTypeClassSymbol "+((FeatureCallExp)source).getFeatureName()+" does't have MultiplicityListType: " +arrayName, ctx.getStart());
 					}
 					if (!(sym instanceof ArrayTypeClassSymbol)) {
 						recordError("Build ArrayFeatureCall Error: " +arrayName +" isn't ArrayTypeClassSymbol", ctx.getStart());
 					}
 				} else {
-					recordError("Build ArrayFeatureCall Error: ArraySource must be ArrayTypeClassSymbol " + ((FeatureCallExp)source).getName(), ctx.getStart());
+					recordError("Build ArrayFeatureCall Error: ArraySource must be ArrayTypeClassSymbol " + ((FeatureCallExp)source).getFeatureName(), ctx.getStart());
 				}
 			} 
     		
