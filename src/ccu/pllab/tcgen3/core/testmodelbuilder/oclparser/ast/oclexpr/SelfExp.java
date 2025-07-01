@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 
 /**
@@ -28,5 +29,13 @@ public class SelfExp extends VariableExp {
 		super("self", isMarkedPre, symbol);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public ASTree clone() {
+	    // varname、isMarkedPre 為不可變型別；symbol 依約定可安全共用
+	    return new SelfExp(this.isMarkedPre(),this.getSymbol() );
+	}
+	
+	
 
 }

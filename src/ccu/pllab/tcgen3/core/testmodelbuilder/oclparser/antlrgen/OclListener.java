@@ -150,17 +150,29 @@ public interface OclListener extends ParseTreeListener {
 	 */
 	void exitNonSizeDeclArray(OclParser.NonSizeDeclArrayContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code SizeDeclArray}
+	 * Enter a parse tree produced by the {@code StaticFixSizeArray}
 	 * labeled alternative in {@link OclParser#arrayType}.
 	 * @param ctx the parse tree
 	 */
-	void enterSizeDeclArray(OclParser.SizeDeclArrayContext ctx);
+	void enterStaticFixSizeArray(OclParser.StaticFixSizeArrayContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code SizeDeclArray}
+	 * Exit a parse tree produced by the {@code StaticFixSizeArray}
 	 * labeled alternative in {@link OclParser#arrayType}.
 	 * @param ctx the parse tree
 	 */
-	void exitSizeDeclArray(OclParser.SizeDeclArrayContext ctx);
+	void exitStaticFixSizeArray(OclParser.StaticFixSizeArrayContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code DynamicFixSizeArray}
+	 * labeled alternative in {@link OclParser#arrayType}.
+	 * @param ctx the parse tree
+	 */
+	void enterDynamicFixSizeArray(OclParser.DynamicFixSizeArrayContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code DynamicFixSizeArray}
+	 * labeled alternative in {@link OclParser#arrayType}.
+	 * @param ctx the parse tree
+	 */
+	void exitDynamicFixSizeArray(OclParser.DynamicFixSizeArrayContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link OclParser#arrayListType}.
 	 * @param ctx the parse tree

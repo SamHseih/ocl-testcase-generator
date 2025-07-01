@@ -47,10 +47,14 @@ public class Oclparser {
         }else { 
         	buildAstAndSymbolTable();
         	if(!(semanticErrors.isEmpty())) {
-        		System.out.println("SemanticErrors!\n");
+        		System.out.println("=========================================================================");
+        		System.out.println("!!!!!!!!!!!!!!!!!!!!!!SemanticErrors!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        		System.out.println("=========================================================================");
         		System.out.println(semanticErrors);
-        	}
-        	}
+        	} else 
+        		System.out.println("=============== ASTBuilder was built successfully. ===============");
+        }
+        
     }
     
     public Scope  getSymbolTable() { return symbolTable; }

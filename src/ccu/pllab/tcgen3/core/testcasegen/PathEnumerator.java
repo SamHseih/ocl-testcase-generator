@@ -31,7 +31,7 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGNode;
  * </ul>
  * <h2>Basic usage</h2>
  * <pre>{@code
- * PathEnumerator pe = new PathEnumerator(clg, 1000, 3);  // up to 1,000 paths, unroll loops at most 3 times
+ * PathEnumerator pe = new PathEnumerator(clg, 1000, 3);  // up	 to 1,000 paths, unroll loops at most 3 times
  * for (List<CLGEdge> path : pe) {
  *     // handle each complete path from START to END
  * }

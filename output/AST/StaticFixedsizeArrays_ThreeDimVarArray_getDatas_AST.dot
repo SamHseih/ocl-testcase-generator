@@ -1,0 +1,16 @@
+digraph AST {
+  node [shape=box];
+  n165 [label="ContextDecl: node(159) Context: node (164)", xlabel="(165)"];
+  n165 -> n159;
+  n165 -> n164;
+  n159 [label="ThreeDimVarArray::getDatas() : ThreeDimVarArray", xlabel="(159)"];
+  n164 [label=" post:", xlabel="(164)Boolean"];
+  n164 -> n163;
+  n163 [label="=", xlabel="(163)Boolean"];
+  n163 -> n160;
+  n163 -> n162;
+  n160 [label="result", xlabel="(160)ThreeDimVarArray"];
+  n162 [label="self.datas", xlabel="(162)int[dim1][dim2][dim3]"];
+  n162 -> n161;
+  n161 [label="self", xlabel="(161)ThreeDimVarArray"];
+}

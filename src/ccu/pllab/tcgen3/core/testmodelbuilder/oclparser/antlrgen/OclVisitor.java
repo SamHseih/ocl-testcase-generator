@@ -96,12 +96,19 @@ public interface OclVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNonSizeDeclArray(OclParser.NonSizeDeclArrayContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code SizeDeclArray}
+	 * Visit a parse tree produced by the {@code StaticFixSizeArray}
 	 * labeled alternative in {@link OclParser#arrayType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSizeDeclArray(OclParser.SizeDeclArrayContext ctx);
+	T visitStaticFixSizeArray(OclParser.StaticFixSizeArrayContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code DynamicFixSizeArray}
+	 * labeled alternative in {@link OclParser#arrayType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDynamicFixSizeArray(OclParser.DynamicFixSizeArrayContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link OclParser#arrayListType}.
 	 * @param ctx the parse tree

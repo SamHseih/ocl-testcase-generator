@@ -1,0 +1,76 @@
+:- lib(ic).
+:- lib(listut).
+:- lib(random).
+:- lib(random).
+
+
+solving_Path_1391(Self,Arg,Result):-
+
+% Class and attribute combined as Class_Attr.
+% dim/3 is called if the attribute is an array type.
+Self=[Self_data],Arg=[Arg_data],Result = [Result_data],
+dim(Self_data,[1,2,4]),dim(Arg_data,[1,2,4]),dim(Result_data,[1,2,4]),
+
+%CLG Path Constrints,
+getDimensionSizes(Arg_data, 1, Var_1493625803),
+(Dim1 = Var_1493625803),
+getDimensionSizes(Arg_data, 2, Var_191037037),
+(Dim2 = Var_191037037),
+getDimensionSizes(Arg_data, 3, Var_330084561),
+(Dim3 = Var_330084561),
+(Acc = true),
+(Idx0 #= 1),
+(Idx0 #=< Dim1 - 1+ 1),
+sueuencetolist(1,Dim1,List_235237152),nth1(Idx0,List_235237152,Var_235237152),(It = Var_235237152),
+(Acc2 = true),
+(Idx1 #= 1),
+(Idx1 #=< Dim2 - 1+ 1),
+sueuencetolist(1,Dim2,List_1259014228),nth1(Idx1,List_1259014228,Var_1259014228),(It2 = Var_1259014228),
+(Acc3 = true),
+(Idx2 #= 1),
+(Idx2 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2,List_431687661,Var_431687661),(It3 = Var_431687661),
+(Var_283383329_1 is Arg_data[It,It2,It3]),(Var_893192050_1 is Self_data[It,It2,It3]),(Var_644345897_1 is Result_data[It,It2,It3]),(Var_644345897_1 #= (Var_893192050_1-Var_283383329_1)),
+(Idx2_1 #= (Idx2+1)),
+(Idx2_1 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_1,List_431687661,Var_431687661_1),(It3_1 = Var_431687661_1),
+(Var_283383329_2 is Arg_data[It,It2,It3_1]),(Var_893192050_2 is Self_data[It,It2,It3_1]),(Var_644345897_2 is Result_data[It,It2,It3_1]),(Var_644345897_2 #= (Var_893192050_2-Var_283383329_2)),
+(Idx2_2 #= (Idx2_1+1)),
+(Idx2_2 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_2,List_431687661,Var_431687661_2),(It3_2 = Var_431687661_2),
+(Var_283383329_3 is Arg_data[It,It2,It3_2]),(Var_893192050_3 is Self_data[It,It2,It3_2]),(Var_644345897_3 is Result_data[It,It2,It3_2]),(Var_644345897_3 #= (Var_893192050_3-Var_283383329_3)),
+(Idx2_3 #= (Idx2_2+1)),
+(Idx2_3 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_3,List_431687661,Var_431687661_3),(It3_3 = Var_431687661_3),
+(Var_283383329_4 is Arg_data[It,It2,It3_3]),(Var_893192050_4 is Self_data[It,It2,It3_3]),(Var_644345897_4 is Result_data[It,It2,It3_3]),(Var_644345897_4 #= (Var_893192050_4-Var_283383329_4)),
+(Idx2_4 #= (Idx2_3+1)),
+(Idx2_4 #> Dim3 - 1+ 1),
+(Idx1_1 #= (Idx1+1)),
+(Idx1_1 #=< Dim2 - 1+ 1),
+sueuencetolist(1,Dim2,List_1259014228),nth1(Idx1_1,List_1259014228,Var_1259014228_1),(It2_1 = Var_1259014228_1),
+(Acc3_1 = true),
+(Idx2_5 #= 1),
+(Idx2_5 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_5,List_431687661,Var_431687661_4),(It3_4 = Var_431687661_4),
+(Var_283383329_5 is Arg_data[It,It2_1,It3_4]),(Var_893192050_5 is Self_data[It,It2_1,It3_4]),(Var_644345897_5 is Result_data[It,It2_1,It3_4]),(Var_644345897_5 #= (Var_893192050_5-Var_283383329_5)),
+(Idx2_6 #= (Idx2_5+1)),
+(Idx2_6 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_6,List_431687661,Var_431687661_5),(It3_5 = Var_431687661_5),
+(Var_283383329_6 is Arg_data[It,It2_1,It3_5]),(Var_893192050_6 is Self_data[It,It2_1,It3_5]),(Var_644345897_6 is Result_data[It,It2_1,It3_5]),(Var_644345897_6 #= (Var_893192050_6-Var_283383329_6)),
+(Idx2_7 #= (Idx2_6+1)),
+(Idx2_7 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_7,List_431687661,Var_431687661_6),(It3_6 = Var_431687661_6),
+(Var_283383329_7 is Arg_data[It,It2_1,It3_6]),(Var_893192050_7 is Self_data[It,It2_1,It3_6]),(Var_644345897_7 is Result_data[It,It2_1,It3_6]),(Var_644345897_7 #= (Var_893192050_7-Var_283383329_7)),
+(Idx2_8 #= (Idx2_7+1)),
+(Idx2_8 #=< Dim3 - 1+ 1),
+sueuencetolist(1,Dim3,List_431687661),nth1(Idx2_8,List_431687661,Var_431687661_7),(It3_7 = Var_431687661_7),
+(Var_283383329_8 is Arg_data[It,It2_1,It3_7]),(Var_893192050_8 is Self_data[It,It2_1,It3_7]),(Var_644345897_8 is Result_data[It,It2_1,It3_7]),(Var_644345897_8 #= (Var_893192050_8-Var_283383329_8)),
+(Idx2_9 #= (Idx2_8+1)),
+(Idx2_9 #> Dim3 - 1+ 1),
+(Idx1_2 #= (Idx1_1+1)),
+(Idx1_2 #> Dim2 - 1+ 1),
+(Idx0_1 #= (Idx0+1)),
+(Idx0_1 #> Dim1 - 1+ 1),
+
+%Labeling Parts
+labeling_Arrays([Self_data, Arg_data]).

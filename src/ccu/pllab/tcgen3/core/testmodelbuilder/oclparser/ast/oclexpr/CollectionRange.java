@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 
@@ -26,7 +26,7 @@ public class CollectionRange extends CollectionPart{
 	
 	@Override
 	public String size() {
-		return child(1) +" - " + child(0);
+		return child(1) +" - " + child(0) + "+ 1";
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class CollectionRange extends CollectionPart{
 	}
 
 	@Override
-	public <R> R accept(CLGAstVisitor<R> visitor) {
+	public <R> R accept(AstVisitor<R> visitor) {
 		return visitor.visitCollectionRangeContext(this);
 	}
 	

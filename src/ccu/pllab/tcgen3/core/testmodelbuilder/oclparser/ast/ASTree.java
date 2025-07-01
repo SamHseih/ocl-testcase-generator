@@ -73,7 +73,7 @@ public abstract class ASTree implements Iterable<ASTree>,Expression{
 	 *
 	 * @param <R> 各 {@code visit*Context} 方法的回傳型別
 	 */
-	public abstract <R> R accept(CLGAstVisitor<R> visitor);
+	public abstract <R> R accept(AstVisitor<R> visitor);
 	//R 是回傳型別（我們要的是 CLGGraph）。 
 	/** deep clone the ASTree */
 	public abstract ASTree clone();

@@ -111,7 +111,7 @@ public class OperationContextDeclAST extends ASTList {
 	}
 
 	@Override
-	public <R> R accept(CLGAstVisitor<R> visitor) {
+	public <R> R accept(AstVisitor<R> visitor) {
 		return visitor.visitOperationContext(this);
 	}
 	

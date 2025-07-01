@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
-import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.DcCLGBuilderVisitor;
-import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.DccCLGBuilderVisitor;
-import ccu.pllab.tcgen3.core.testmodelbuilder.clg.visitor.MccCLGBuilderVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.clg.builder.DcCLGBuilder;
+import ccu.pllab.tcgen3.core.testmodelbuilder.clg.builder.DccCLGBuilder;
+import ccu.pllab.tcgen3.core.testmodelbuilder.clg.builder.MccCLGBuilder;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.PackageDeclAST;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
@@ -31,10 +31,10 @@ public class CLGbuilder {
 	}
 	
 	public void build() {
-		CLGAstVisitor<CLGGraph> visitor = switch(criterion) {
-			case DC -> new  DcCLGBuilderVisitor<CLGGraph>(globolsymboltable);
-			case DCC -> new  DccCLGBuilderVisitor<CLGGraph>(globolsymboltable);
-			case MCC -> new  MccCLGBuilderVisitor<CLGGraph>(globolsymboltable);
+		AstVisitor<CLGGraph> visitor = switch(criterion) {
+			case DC -> new  DcCLGBuilder<CLGGraph>(globolsymboltable);
+			case DCC -> new  DccCLGBuilder<CLGGraph>(globolsymboltable);
+			case MCC -> new  MccCLGBuilder<CLGGraph>(globolsymboltable);
 		  /*case DCDUP -> new DcdupCLGBuilderVisitor<CLGGraph>(globolsymboltable);
 			case DCCDUP -> new DccddupCLGBuilderVisitor<CLGGraph>(globolsymboltable);
 			case MCCDUP -> new MccddupCLGBuilderVisitor<CLGGraph>(globolsymboltable);*/
@@ -42,17 +42,23 @@ public class CLGbuilder {
 	
 		//parser each ContextDeclAST and build CLGS
 		for(ASTree ctxDecl: root) {
+			
 			PackageDeclAST p = (PackageDeclAST) root;
 			CLGGraph ctx = ctxDecl.accept(visitor);
+			visitor.reset_iterate();
 			if(ctx != null ) {
 				StringBuilder filename = new StringBuilder();
 				 filename.append(p.getPackagename()).append("_");
 				if(ctxDecl instanceof ContextDeclAST c) {
 					filename.append(c.getFilename());
+					ctx.setClassname(c.getClassname());
+					ctx.setMethodname(c.getMethodName());
 				}
 				filename.append("_").append(this.criterion.toString());
 				ctx.setFilename(filename.toString());
+				
 				clgs.add(ctx);
+				
 			}
 			else System.err.println(visitor.getErrorMesg());
 		}

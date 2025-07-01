@@ -26,7 +26,9 @@ public final class CLGGraph {
     /* =====================================================
      *  F I E L D S
      * ===================================================== */
-	private String clgfilename;
+	private String clgfilename; //packagename_filename_criterion.clg
+	private String classname;
+	private String methodname;
     private final Map<Integer, CLGNode> nodes = new ConcurrentHashMap<>();//<id,node>
     private final Set<CLGEdge> edges = Collections.newSetFromMap(new ConcurrentHashMap<>());
 
@@ -104,13 +106,12 @@ public final class CLGGraph {
         return Collections.unmodifiableCollection(edges);
     }
     
-    public void setFilename(String filename) {
-		this.clgfilename = filename;
-	}
-    
-    public String getFilename() {
- 		return clgfilename;
-    }
+    public void setClassname(String classname) {this.classname = classname;  }
+    public void setMethodname(String methodname) { this.methodname = methodname; }  
+    public void setFilename(String filename) {this.clgfilename = filename;}
+    public String getFilename() {return clgfilename;}
+    public String getClassname() {return classname;}
+    public String getMethodname() {return methodname;}
 
     /* =====================================================
      *  V A L I D A T I O N

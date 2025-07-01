@@ -56,7 +56,7 @@ public class CLGEdge {
      * 推斷式：判斷 from / to 其中是否為 CLGNodeType.EXPR。
      */
     public Optional<CLGNode> getConstraintNode() {
-        if (from.getType() == CLGNodeType.CONSTRAINT) return Optional.of(from);
+        //if (from.getType() == CLGNodeType.CONSTRAINT) return Optional.of(from);
         if (to.getType() == CLGNodeType.CONSTRAINT)   return Optional.of(to);
         return Optional.empty();
     }

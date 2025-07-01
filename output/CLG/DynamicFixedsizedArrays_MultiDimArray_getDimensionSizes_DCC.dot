@@ -1,7 +1,0 @@
-digraph CLG {
-  325 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
-  326 [shape="box", label="result = dimensionSizes", style=filled, fillcolor=yellow, xlabel="[326]"];
-  327 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
-  325 -> 326;
-  326 -> 327;
-}

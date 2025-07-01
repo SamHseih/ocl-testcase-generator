@@ -175,13 +175,25 @@ public class OclBaseListener implements OclListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSizeDeclArray(OclParser.SizeDeclArrayContext ctx) { }
+	@Override public void enterStaticFixSizeArray(OclParser.StaticFixSizeArrayContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSizeDeclArray(OclParser.SizeDeclArrayContext ctx) { }
+	@Override public void exitStaticFixSizeArray(OclParser.StaticFixSizeArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDynamicFixSizeArray(OclParser.DynamicFixSizeArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDynamicFixSizeArray(OclParser.DynamicFixSizeArrayContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

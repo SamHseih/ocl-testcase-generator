@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.CLGAstVisitor;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.symboltable.BaseSymbol;
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
@@ -47,7 +47,7 @@ public class ArrayRefExp extends FeatureCallExp  {
 	}
 
 	@Override
-	public String getName() {
+	public String getFeatureName() {
 		return arrayName;
 	}
 
@@ -171,7 +171,7 @@ public class ArrayRefExp extends FeatureCallExp  {
 	}
 	
 	@Override
-	public <R> R accept(CLGAstVisitor<R> visitor) {
+	public <R> R accept(AstVisitor<R> visitor) {
 		return visitor.visitArrayRefExpContext(this);
 	}
 	

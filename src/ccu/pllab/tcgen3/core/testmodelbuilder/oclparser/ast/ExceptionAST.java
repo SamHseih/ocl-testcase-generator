@@ -5,7 +5,7 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 
 //Only for CLG Exception Node 
 public class ExceptionAST extends ASTLeaf {
-	String name = "exception=\"Exception\"";
+	String name = "Exception = 'Exception'";
 	
 	@Override
 	public String toString() {
@@ -28,9 +28,8 @@ public class ExceptionAST extends ASTLeaf {
 	}
 
 	@Override
-	public <R> R accept(CLGAstVisitor<R> visitor) {
-		// TODO Auto-generated method stub
-		return null;
+	public <R> R accept(AstVisitor<R> visitor) {
+		return visitor.visitExceptionASTContext(this);
 	}
 
 	@Override
