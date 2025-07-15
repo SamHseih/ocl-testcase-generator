@@ -7,6 +7,7 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ClassifierContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextExpAST;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ExceptionAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.InvalidAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.OperationContextDeclAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.PackageDeclAST;
@@ -171,5 +172,23 @@ public class MccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 	
 	public List<CLGGraph> getClgs(){
 		return clgs;
+	}
+
+	@Override
+	public CLGGraph visitExceptionASTContext(ExceptionAST node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> getErrorMesg() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void reset_iterate() {
+		// TODO Auto-generated method stub
+		
 	}
 }

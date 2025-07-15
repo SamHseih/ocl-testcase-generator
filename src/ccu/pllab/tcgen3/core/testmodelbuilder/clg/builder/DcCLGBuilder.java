@@ -42,13 +42,12 @@ import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 import ccu.pllab.tcgen3.util.AstUtil;
-import ccu.pllab.tcgen3.visualization.ClgVisualization;
 
 public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 	private List<String> CLGtransferMessege = new ArrayList<>();
-	private ContextDeclAST ClassiferContextDecl; //to repeat construct InvCLG for graphAnd
-	private Scope globolsymboltable;
-	private LocalScope localScope;
+	private Scope globolsymboltable;// not yet used
+//	private LocalScope localScope;  not yet used
+	List<ContextExpAST> ClassiferContextDecl = new ArrayList<>(); //for invariant CLG
 	private int nth_ITERATE = 0; //for IterateExp, to generate unique index variable name
 	
 	public DcCLGBuilder(Scope globolsymboltable) {
@@ -67,45 +66,43 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 		List<CLGGraph> notpreclgs = new ArrayList<>();
 		List<CLGGraph> preclgs= new ArrayList<>();
 		List<CLGGraph> postclgs= new ArrayList<>();
-		CLGGraph excepclg = new CLGGraph( new ExceptionAST());
-		// If the context is an OperationContextDeclAST, we need to generate the pre and post condition CLG
+		CLGGraph excepclg = new CLGGraph( new ExceptionAST());//for false pre condition CLG used
+		
+		/* Collect AllCLGs*/
+		//pre and post condition CLGs
 		if(node.getContextDecl() instanceof OperationContextDeclAST) {
 			for(int i = 1 ; i < node.numChildren();i++) {
 				if(node.child(i) instanceof ContextExpAST ctx) {
-					//pre condition
 					if(ctx.getKeyWord().equals("pre")) {
-						//notpreclgs.add(processNegatePreCLG(ctx));
+						//false pre condition
 						notpreclgs.add(AstUtil.DeMorgan(ctx.getConstraint()).accept(this));
+						//true pre condition
 						preclgs.add(visitContextExp(ctx));
-					//post condition
 					} else {
+						//post condition
 						postclgs.add(visitContextExp(ctx));
 					}
 				}
 			}
-		// If the context is a ClassifierContextDeclAST, we need to generate the invariant CLG
+			
+		//invariant CLGs
 		}else if(node.getContextDecl() instanceof ClassifierContextDeclAST) {
-			//inv:.. ?? inv:...  ?? inv:.. ?? ...
-			ClassiferContextDecl = node;
-			List<CLGGraph> g = new ArrayList<>();
+			//inv:..  , inv:..,..
 			for(int i = 1 ; i < node.numChildren();i++) {
-				g.add( visitContextExp((ContextExpAST) node.child(i)) );
+				if(node.child(i) instanceof ContextExpAST ctx) {
+					ClassiferContextDecl.add(ctx);
+				}  else {
+					CLGtransferMessege.add("ClassifierContextDecl Error! There isn't appropriate AST to CLG.");
+				}
 			}
-			CLGGraph invfirst = null;
-			if (!g.isEmpty()) {
-			    Iterator<CLGGraph> inv = g.iterator();
-			    	invfirst = inv.next();
-			    while(inv.hasNext()) {
-			    	invfirst.graphAnd(inv.next());
-			    }
-			    invfirst.validate();
-			    return invfirst;
-			}else {CLGtransferMessege.add("Inv Context Err.");}
+				return genInvCLG(ClassiferContextDecl); 
 		}
+		
+		/* Combine all CLGs Using GraphAnd() GraphOr */
 		CLGGraph npfirst = null;
 		CLGGraph pfirst = null;
 		CLGGraph pofirst = postclgs.get(0);
-		//Not pre condition CLG
+		//There is not pre-condition CLG
 		if(!notpreclgs.isEmpty()) {
 			Iterator<CLGGraph> np = notpreclgs.iterator();
 			npfirst = np.next();
@@ -114,7 +111,7 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 			} 
 			npfirst.graphAnd(excepclg);
 		}
-		//pre condition CLG
+		//There is pre-condition CLG
 		if(!preclgs.isEmpty()) {
 			Iterator<CLGGraph> p = preclgs.iterator();
 			pfirst = p.next();
@@ -122,40 +119,44 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 				pfirst.graphAnd(p.next());
 			} 
 		}
-		//post condition CLG
+		//There is post-condition CLG
 		if(!preclgs.isEmpty()) {
 			Iterator<CLGGraph> po = postclgs.iterator();
 			pofirst = po.next();
 			while(po.hasNext()) {
 				pofirst.graphAnd(po.next());
 			}
-			pofirst.validate();
 		}
+		/* There is Pre-Condition*/
 		if(pfirst != null) {
-			/* Has Pre & Post Condition Context*/
 			//System.out.println(ClgVisualization.toGraphvizDot(pofirst));
 			pfirst.graphAnd(pofirst);
 			//System.out.println(ClgVisualization.toGraphvizDot(pfirst));
+			
+			//There is inv CLG?
 			CLGGraph invclg = null;
-			if(ClassiferContextDecl != null) {
+			if(!ClassiferContextDecl.isEmpty()) {
 				invclg = genInvCLG(ClassiferContextDecl);
-				invclg.graphAnd(pfirst);
 				}
 			if(invclg != null) { 
-				invclg.graphOr(npfirst);
+				pfirst.graphOr(npfirst);
+				invclg.graphAnd(pfirst);
 				return invclg;
 			} else {
 				pfirst.graphOr(npfirst);
 				return pfirst;
 			}
+		/* Only Has Post Conditions Context*/	
 		}else {
-			/* Only Has Post Conditions Context*/
+			//There isn't inv CLG
 			CLGGraph invclg = null;
-			if(ClassiferContextDecl != null) {
+			if(!ClassiferContextDecl.isEmpty()) {
 				invclg = genInvCLG(ClassiferContextDecl);
-				invclg.graphAnd(pofirst);
 			}
-			if(invclg != null) return invclg;
+			if(invclg != null) {
+				invclg.graphAnd(pofirst);
+				return invclg;
+			}
 			else return pofirst;
 		}
 	}
@@ -189,12 +190,14 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 	public CLGGraph visitBinaryExpContext(BinaryExp node) {
 		CLGGraph leftclg = null;
 		CLGGraph rightclg = null;
-		if(node.left() instanceof IfExp||node.left() instanceof IterateExp ) {
+		if(node.left() instanceof IfExp
+				||node.left() instanceof IterateExp||node.right() instanceof LetExp
+				||node.left() instanceof LetExp) {
 			leftclg = node.left().accept(this);
 		}
 		if(node.right() instanceof IfExp                    
-				|| node.right() instanceof IterateExp 
-				|| node.left() instanceof AccumulatorExp//Special Case : acc = <OclExpr>
+				||node.right() instanceof IterateExp ||node.right() instanceof LetExp
+				||node.left() instanceof AccumulatorExp//Special Case : Ex.acc = <OclExpr>
 				) {
 			rightclg = node.right().accept(this);
 		}
@@ -212,7 +215,6 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 					} else {
 						leftclg.graphOr(rightclg);
 					}
-					leftclg.validate();
 			        //System.out.println(ClgVisualization.toGraphvizDot(leftclg));
 					return leftclg;
 				// ASTList op ASTLeft
@@ -223,7 +225,6 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 					} else {
 						rightclg.graphOr(leftclg);
 					}
-					rightclg.validate();
 					return rightclg;
 				// ASTList op ASTList
 				} else if(leftclg != null && rightclg != null) {
@@ -232,7 +233,6 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 					} else {
 						leftclg.graphOr(rightclg);
 					}
-					leftclg.validate();
 					return leftclg;
 				} else {
 					CLGtransferMessege.add("BinaryExp Error! There isn't appropriate AST to CLG.");
@@ -272,7 +272,6 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
         negatecondclg.graphAnd(elseclg);
         
         condclg.graphOr(negatecondclg);
-        condclg.validate();
         return condclg;
 	}
 
@@ -337,20 +336,23 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 	public CLGGraph visitIterateExpContext(IterateExp node) { 
 		
 		/* Init  */
-		
+		//new Index Variable for source collection
 		IndexVariableExp Index = new IndexVariableExp("idx"+nth_ITERATE++,(Symbol) SymbolTableBuilder.IntType);
 		//OCL && ECLiPSe index init from 1
 		BinaryExp initIndex = new BinaryExp(List.of(Index,new IntegerLiteralExp(1,SymbolTableBuilder.IntType)),"=");
-
 		CLGGraph indexclg = new CLGGraph(initIndex);
+		
 		//Accumulator = <initExpr>?
 		CLGGraph resultinitclg = node.getResultDecl().accept(this);
 		resultinitclg.graphAnd(indexclg);
 		//System.out.println("Init: \n"+ClgVisualization.toGraphvizDot(resultinitclg));
+		
+		
 		/* Init End */
 		
 		CLGGraph truecondclg = null;
 		CLGGraph falsecondclg = null;
+		//Case1 Get Source from Collection Size 
 		if(node.getSource() instanceof CollectionPart c ) {
 			//collection size n from CollectionPart Method size()  ,  CollectionRange/CollectionItem extends CollectionPart
 			VariableExp sizeVar = new VariableExp(c.size(),false,null);
@@ -359,6 +361,7 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 			truecondclg = truecondexp.accept(this);
 			falsecondclg = falsecondexp.accept(this);
 		}
+		//Case2 Get Source from VariableExp Type Size
 		if(node.getSource() instanceof VariableExp v) {
 			if(v.getType() instanceof MultiplicityListType) {
 			//collection size n 
@@ -372,6 +375,7 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 				return null;
 			}
 		}
+		//Case3 Get Source from FeatureCallExp Size
 		if(node.getSource() instanceof FeatureCallExp f) {
 			//collection size n 
 			if(f.getType() instanceof MultiplicityListType) {
@@ -504,10 +508,20 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
     /* =====================================================
      *  H E L P E R  genInvCLG / processNegatePreCLG 
      * ===================================================== */
-	private CLGGraph genInvCLG(ContextDeclAST node) {
-		return node.accept(this);
+	private CLGGraph genInvCLG(List<ContextExpAST> invContextExps) {
+		CLGGraph invfirst = null;
+		if (!invContextExps.isEmpty()) {
+		    Iterator<ContextExpAST> inv = invContextExps.iterator();
+		    if(inv.next() instanceof ContextExpAST n)
+		    invfirst = n.accept(this);
+		    while(inv.hasNext()) {
+		    	invfirst.graphAnd(inv.next().accept(this));
+		    }
+		    return invfirst;
+		}else {CLGtransferMessege.add("Inv Context Err.");}
+		return null;
 	}
-
+	
 	@Override
 	public CLGGraph visitExceptionASTContext(ExceptionAST node) {
 		// TODO Auto-generated method stub

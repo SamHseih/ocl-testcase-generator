@@ -9,6 +9,7 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.CLGbuilder;
 import ccu.pllab.tcgen3.core.testmodelbuilder.Criterion;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
 import ccu.pllab.tcgen3.io.FileLoader;
+import ccu.pllab.tcgen3.util.StringTool;
 
 public class DemoTestCaseGenerator {
 	public static void main(String[] args) {
@@ -31,10 +32,11 @@ public class DemoTestCaseGenerator {
 		 clgbuilder.build();
 		 
 		 List<CLGGraph> clgs = clgbuilder.getCLGGrapies();
-		 int maxloop = 8;
+		 int maxloop = 9;
 		 
 		 TestCaseGenerator tcgen = new TestCaseGenerator(astbuilder.getSymboltable(),maxloop);
 		 Map<String,Map<Integer,String>> testcases = tcgen.generateTestCases(clgs);
-		 System.out.println(testcases);
+		 
+		 //System.out.println(StringTool.mapToString(testcases,2));
 	}
 }

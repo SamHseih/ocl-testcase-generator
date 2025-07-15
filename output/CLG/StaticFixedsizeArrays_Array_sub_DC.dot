@@ -1,0 +1,39 @@
+digraph CLG {
+  65 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[65]"];
+  67 [shape="diamond", label="", xlabel="<67>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  35 [shape="box", label="Result = 'Exception'", style=filled, fillcolor=yellow, xlabel="[35]"];
+  36 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  68 [shape="diamond", label="", xlabel="<68>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  69 [shape="diamond", label="", xlabel="<69>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  38 [shape="box", label="arg.datas.getDimension() <> self.datas.getDimension() or
+arg.datas.getDimensionSizes(1) <> self.datas.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[38]"];
+  40 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  41 [shape="box", label="arg.datas.getDimension() = self.datas.getDimension() and
+arg.datas.getDimensionSizes(1) = self.datas.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[41]"];
+  44 [shape="box", label="dim1 = arg.datas.getDimensionSizes(1)", style=filled, fillcolor=yellow, xlabel="[44]"];
+  47 [shape="box", label="idx0 = 1", style=filled, fillcolor=yellow, xlabel="[47]"];
+  50 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[50]"];
+  53 [shape="box", label="idx0 > dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[53]"];
+  56 [shape="box", label="idx0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[56]"];
+  59 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[59]"];
+  62 [shape="box", label="result.datas[it] = self.datas[it] - arg.datas[it]", style=filled, fillcolor=yellow, xlabel="[62]"];
+  47 -> 67[label="graphAnd#64"];
+  44 -> 50[label="graphAnd#65"];
+  38 -> 35[label="graphAnd#66"];
+  41 -> 44[label="graphAnd#67"];
+  40 -> 68[label="graphOr_start#68"];
+  68 -> 41[label="split1#69"];
+  68 -> 38[label="split2#70"];
+  53 -> 69[label="merge1#71"];
+  35 -> 69[label="merge2#72"];
+  69 -> 36[label="graphOr_end#73"];
+  50 -> 47[label="graphAnd#45"];
+  56 -> 59[label="graphAnd#56"];
+  59 -> 62[label="graphAnd#57"];
+  62 -> 65[label="graphAnd#58"];
+  67 -> 56[label="iterate#60"];
+  65 -> 67[label="iterate#61"];
+  67 -> 53[label="graphAnd#63"];
+}

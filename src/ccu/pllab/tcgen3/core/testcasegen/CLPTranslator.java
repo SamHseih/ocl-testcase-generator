@@ -14,35 +14,54 @@ import ccu.pllab.tcgen3.symboltable.MethodSymbol;
 import ccu.pllab.tcgen3.symboltable.ParameterSymbol;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
-import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
+import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.util.ClgUtil;
 import ccu.pllab.tcgen3.util.StringTool;
 
 public class CLPTranslator {
 	private  List<CLGNode> constraintnodes;//Collect ConstraintNode && IterateNode
 	private Scope currentScope; //Current CLG Scpope
-	private StringBuilder arrayTypeDecl = new StringBuilder();
-	private List<String> arrayType = new ArrayList<>();
-	private List<String> intType =  new ArrayList<>();
+	AstVisitor<ClpCode> visitor;//gen CLP code from path AST nodes
+	
+	//collect for Array type declaration, ex. decl_Array(ArrayName, [2,3,4]) or decl_Array(ArrayName, [dim1,dim2,dim3])
+	private StringBuilder arrayDecl = new StringBuilder();	
+	
+	//collect Array type dimension variable for labeling_Dim, ex. Self_dimensionSizes、Arg_dimensionSizes、Result_dimensionSizes
+	private List<String> arraydimVar = new ArrayList<>();
+	
+	//collect Array type variable for labeling_Arrays, ex. Self_data、Arg_data、Result_data
+	private List<String> arrayTypeVar = new ArrayList<>();
+	
+	//collect PrimitiveType variable for labeling, ex. Self_number、Arg_number、Result_number
+	private List<String> intTypeVar =  new ArrayList<>();
 	
 	private List<String> errMessage =  new ArrayList<>();
 	private String requestterm;
-	private int pathnum ;
+
 	private boolean isVarArray =false;
+	private boolean isConstructor = false;
+	private String filename ;
 	
-	public CLPTranslator(List<CLGEdge> clgEdge, Scope currentScope,int num) {
+	public CLPTranslator(List<CLGEdge> clgEdge, Scope currentScope,boolean isConstructor,String filename) {
 		constraintnodes = ClgUtil.collectExprNodes(clgEdge);
 		this.currentScope = currentScope;
-		this.pathnum = num;
+		this.visitor = new ASTtoCLP<String>(currentScope);
+		this.isConstructor = isConstructor;
+		this.filename = filename;
 	}
 	
 	public String translate() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(this.genlibCLP()).append("\n").append("\n");
-		String decl = this.gendeclCLP();
-		String body = this.genBodyCLP();
+		//Need first gen , cause path info  Ex. exception
+		String body = this.genPathCLP();
+		boolean isException = ((ASTtoCLP<String>) this.visitor).isException();
+		String decl = this.gendeclCLP(isException);
+		
 		String labeling = this.genlabelingCLP();
-		String head = this.genHead(); //need final exe for DimensionSizes
+		String head = this.genHead(isException); //need final exe for DimensionSizes
+
+		//combine all parts
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.genlibCLP()).append("\n");
 		sb.append(head).append("\n");
 		sb.append(decl).append("\n");
 		sb.append(body).append("\n");
@@ -55,34 +74,44 @@ public class CLPTranslator {
 		 return requestterm;
 	}
 									
-	public boolean isVarArray() {
+	public boolean getisVarArray() {
 		return isVarArray;
 	}
 	
-	private String genHead() {
+	private String genHead(boolean isException) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("solving_Path_").append(pathnum).append("(Self");
+		sb.append(StringTool.todecapitalizeFirstLetter(filename)).append("(");
 		List<ParameterSymbol>  args =null;
-		if(currentScope instanceof MethodSymbol m) {
+		
+		//Classifier inv or OCL OperationContextDecl has no args
+		if(currentScope instanceof ClassSymbol) {
+			sb.append("Self)");
+		}
+		//Operation pre or post or getters constext
+		else if(currentScope instanceof MethodSymbol m) {
+			if(!(isException && isConstructor))sb.append("Self");
 			args = m.getParameters();
-			if(!args.isEmpty())sb.append(",");
+			if(!args.isEmpty() && sb.toString().contains("Self"))sb.append(",");
 			Iterator<ParameterSymbol> it = args.iterator();
 			while (it.hasNext()) {
-			    sb.append(tocapitalizeFirstLetter(it.next().getName()));      // 加入目前元素
+			    sb.append(StringTool.tocapitalizeFirstLetter(it.next().getName()));      // 加入目前元素
 			    if (it.hasNext()) {
 			        sb.append(",");        // 還有下一個 → 加逗號
 			    } 
 			}
-			if(isVarArray)sb.append(",DimensionSizes"); 
-				
-				
-			if(m.getType() != null) {
+			//for OCL getters context
+			if(sb.toString().charAt(sb.toString().length()-1) == '(') {
+				sb.append("Result)");
+			}//for OCL OperationContextDecl has Return Value
+			else if(m.getType() != null) {
 				sb.append(",Result)");
-			} else sb.append(")");
-			
-			
-		}
+			}//for OCL has Exception Context 
+			else if(isException) {if(!sb.toString().contains("Result"))sb.append(",Result)");}
+			else sb.append(")");
+		} 
+		
 		requestterm = sb.toString();
+		
 		sb.append(":-\n");
 		
 		return sb.toString();
@@ -93,67 +122,52 @@ public class CLPTranslator {
 		libStringBuilder.append(":- lib(ic).\n"
 				+ ":- lib(listut).\n"
 				+ ":- lib(random).\n"
-				+ ":- lib(random).\n");
+				+ ":- lib(timeout).\n");
 		return libStringBuilder.toString();
 	}
-	
-	private String gendeclCLP() {
+		
+	private String gendeclCLP(boolean isException) {
 		StringBuilder declBuilder = new StringBuilder();
 		declBuilder.append("% Class and attribute combined as Class_Attr.\n");
 		declBuilder.append("% dim/3 is called if the attribute is an array type.\n");
-		declBuilder.append(genSelfClass());
-
-		//Class Operation TestCase No Result
-		if(!this.currentScope.getName().equals(currentScope.getEnclosingScope().getName()))
-		declBuilder.append(genArgClass());
-		//Operation TestCase Has Result
-		if(!this.currentScope.getName().equals(currentScope.getEnclosingScope().getName()))
-			if(this.currentScope instanceof MethodSymbol m)
-				if(m.getType() != null)
-					declBuilder.append(genResultClass()).append("\n");
 		
-		if(isVarArray)declBuilder.append(genDimensionlabeling());
-		declBuilder.append(arrayTypeDecl.toString()).append("\n");
+		declBuilder.append(genSelfClass());
+		
+		//for OperationContextDecl: pre、post
+		if(!(this.currentScope instanceof ClassSymbol)) {
+			//Arg
+			if(this.currentScope instanceof MethodSymbol m) {
+				if(m.getNumberOfParameters() > 0) {
+					declBuilder.append(genArgClass());
+				}
+			}
+			//TestCase OperationContextDecl Has Result
+			if(!this.currentScope.getName().equals(currentScope.getEnclosingScope().getName()))
+				if(this.currentScope instanceof MethodSymbol m)
+					//isException set from genPathCLP()
+					if(m.getType() != null && !isException)
+						declBuilder.append(genResultClass()).append("\n");
+			}
+		
+		declBuilder.append(arrayDecl.toString()).append("\n");
+
 		return declBuilder.toString();
 	}
 	
 	private Object genDimensionlabeling() {
 		StringBuilder sb = new StringBuilder();
-		if(this.currentScope.getEnclosingScope() instanceof ClassSymbol c) {
-			Iterator<? extends FieldSymbol> i = c.getFields().iterator();
-			if(i.hasNext()) {
-				FieldSymbol current = i.next();
-					while(current != null) {
-						if(current.getName().equals("self"))break;
-						else if(current.getType() instanceof ArrayTypeClassSymbol a) {
-							for(FieldSymbol f:a.getFields()) {
-								if(f.getName().equals("dimensionSizes")) {
-									if(!StringTool.isPureIntegerList(f.getDefaultValue())) {
-										List<String> vars = StringTool.toCapitalizedList(f.getDefaultValue());
-										for(String s :vars) {
-											sb.append(s);
-											sb.append("#> 0 ,");
-										}
-										sb.append("labeling_Dim(").append(StringTool.capitalizeElements(f.getDefaultValue())).append("),");
-										sb.append("DimensionSizes = ").append(StringTool.capitalizeElements(f.getDefaultValue())).append(",");
-									} 
-								}
-							}
-						}
-						if(i.hasNext()) 
-							current = i.next();
-					}
-				}
+		if(!arraydimVar.isEmpty()) {
+			for(String s :arraydimVar) {
+				sb.append("labeling_Dim(").append(s).append("),\n");
 			}
-			sb.append("\n");
-			return sb.toString();
-		}
-	
+		}		
+		return sb.toString();
+	}	
 
-	private String genBodyCLP() {
+	//gen CLPBody from "a Path"
+	private String genPathCLP() {
 		StringBuilder pathconstraint = new StringBuilder();
 		pathconstraint.append("%CLG Path Constrints");
-		AstVisitor<ClpCode> visitor = new ASTtoCLP<String>(currentScope);
 		
 		for(CLGNode node : constraintnodes) {
 			if(node.getType()== CLGNodeType.CONSTRAINT) {
@@ -181,18 +195,21 @@ public class CLPTranslator {
 	
 	private String genlabelingCLP() {
 		StringBuilder labelingBuilder = new StringBuilder();
-		labelingBuilder.append("%Labeling Parts\n");
-		if(!arrayType.isEmpty()) {
+		if(isVarArray) {
+			labelingBuilder.append("%DimensionSizes Labeling Parts\n");
+			labelingBuilder.append(genDimensionlabeling());
+		}
+		labelingBuilder.append("%TypeVar Labeling Parts\n");
+		if(!arrayTypeVar.isEmpty()) {
 		labelingBuilder.append("labeling_Arrays(");
-		labelingBuilder.append(arrayType.toString());
-		
-		if(intType.isEmpty()) labelingBuilder.append(").");
+		labelingBuilder.append(arrayTypeVar.toString());
+		if(intTypeVar.isEmpty()) labelingBuilder.append(").");
 		else labelingBuilder.append("),");
 		}
 		
-		if( !intType.isEmpty()) {
-			labelingBuilder.append("labeling(");
-			labelingBuilder.append(intType.toString());
+		if( !intTypeVar.isEmpty()) {
+			labelingBuilder.append("labeling_int(");
+			labelingBuilder.append(intTypeVar.toString());
 			labelingBuilder.append(").");
 		}
 		
@@ -201,155 +218,205 @@ public class CLPTranslator {
 	
 	private String genSelfClass() {
 		StringBuilder selfClass = new StringBuilder();
-		if(this.currentScope.getEnclosingScope() instanceof ClassSymbol c) {
-			selfClass.append("Self=[");
+		
+		//test case for OCL OperationContext
+		if(this.currentScope.getEnclosingScope() instanceof ClassSymbol c ) {
+			//collect all fields of the class
+			String arrayTypeDimensionDecl ="";
+			Iterator<? extends FieldSymbol> i = c.getFields().iterator();
+			FieldSymbol currentAttr = null;
+			if(i.hasNext()) {
+				currentAttr = i.next();
+				if(!currentAttr.getName().equals("self"))selfClass.append("Self=[");
+			}
+			while(currentAttr != null) {
+				if(currentAttr.getName().equals("self"))break;
+				else {
+					//attribute flatten
+					String classattr = "Self_"+ currentAttr.getName();
+					selfClass.append(classattr);
+					//PrimitiveType type variable collect
+					if(currentAttr.getType().getTypeName().equals("int")) intTypeVar.add(classattr);
+					//ArrayType variable collect
+					if(currentAttr.getType() instanceof ArrayTypeClassSymbol a) {
+						selfClass.append(",Self_dimensionSizes");
+						if(!isConstructor)arrayTypeVar.add(classattr);
+						//Code : decl_Array(Self_data,Self_dimensionSizes),
+						arrayDecl.append("decl_Array(").append(classattr).append(",").append("Self_dimensionSizes)").append(",\n");
+						arraydimVar.add("Self_dimensionSizes");
+						arrayTypeDimensionDecl=dimensionProcess(a,arrayTypeDimensionDecl,"Self");
+					}
+					
+				}
+				if(i.hasNext()) {
+					currentAttr = i.next();
+					if(currentAttr.getName().equals("self")) {selfClass.append("],"); break;}
+					else selfClass.append(",");
+				}
+			}	
+			if(!arrayTypeDimensionDecl.isEmpty())
+			selfClass.append("Self_dimensionSizes = ").append(StringTool.capitalizeElements(arrayTypeDimensionDecl)).append(",\n");
 			
+			return selfClass.toString();
+		
+			//testcase for Classifier inv
+		}else if(currentScope instanceof ClassSymbol c) {
+			//collect all fields of the class
+			String arrayTypeDimensionDecl = "";
+			FieldSymbol currentAttr = null;
 			Iterator<? extends FieldSymbol> i = c.getFields().iterator();
 			if(i.hasNext()) {
-			FieldSymbol current = i.next();
-				while(current != null) {
-					if(current.getName().equals("self"))break;
-					else {
-						selfClass.append("Self_").append(current.getName());
-						if(current.getType().getTypeName().equals("int")) intType.add("Self_"+current.getName());
-						if(current.getType() instanceof ArrayTypeClassSymbol a) {
-							arrayType.add("Self_"+current.getName());
-							arrayTypeDecl.append("dim(");
-							arrayTypeDecl.append("Self_").append(current.getName()).append(",");
-							for(FieldSymbol f:a.getFields()) {
-								if(f.getName().equals("dimensionSizes")) {
-									if(!(f.getDefaultValue().isEmpty()) && f.getDefaultValue().contains("[") ) {
-										if(StringTool.isPureIntegerList(f.getDefaultValue()))
-											arrayTypeDecl.append(f.getDefaultValue()).append("),");
-											else {
-												arrayTypeDecl.append( StringTool.capitalizeElements(f.getDefaultValue())).append("),");
-												isVarArray =true;
-											}
-									}
-									else {System.out.println("CLPTranslator Error, UML dimensionSize Default Value Wrong. Use\"[\" \"]\" ");}
-								}
-							}
-						}
-					}
-					if(i.hasNext()) {
-						current = i.next();
-						if(current.getName().equals("self")) {selfClass.append("],"); break;}
-						else selfClass.append(",");
+				currentAttr = i.next();
+				if(!currentAttr.getName().equals("self"))selfClass.append("Self=[");
+			}
+			while(currentAttr!=null) {
+				if(currentAttr.getName().equals("self"))break;
+				else {
+					//attribute flatten
+					String classattr = "Self_"+ currentAttr.getName();
+					selfClass.append(classattr);
+					//PrimitiveType Var collect
+					if(currentAttr.getType().getTypeName().equals("int")) intTypeVar.add(classattr);
+					//ArrayType Var collect
+					if(currentAttr.getType() instanceof ArrayTypeClassSymbol a) {
+						selfClass.append(",Self_dimensionSizes");
+						arrayTypeVar.add(classattr);
+						//Code : decl_Array(Self_data,Self_dimensionSizes),
+						arrayDecl.append("decl_Array(").append(classattr).append(",").append("Self_dimensionSizes)").append(",\n");
+						arraydimVar.add("Self_dimensionSizes");
+						arrayTypeDimensionDecl=dimensionProcess(a,arrayTypeDimensionDecl,"Self");
 					}
 				}
-			}else {
-			selfClass.append("],");
+				if(i.hasNext()) {
+					currentAttr = i.next();
+					if(currentAttr.getName().equals("self")) {selfClass.append("],"); break;}
+					else selfClass.append(",");
+				}
 			}
+			if(!arrayTypeDimensionDecl.isEmpty())
+			selfClass.append("Self_dimensionSizes = ").append(StringTool.capitalizeElements(arrayTypeDimensionDecl)).append(",\n");
 			
+			return selfClass.toString();
 		}
-		return selfClass.toString();
+		errMessage.add("Error! The currentScope is not ClassSymbol.");
+		return "Wrong genSelfClass";
 	}
+	
 	
 	private String genArgClass() {
 		StringBuilder argClass = new StringBuilder();
+		String argname = "";
+		//collect for Array dimensionSizesEx. [2,3,4] or [dim1,dim2,dim3] <-from UML default value
+		String arrayTypeDimensionDecl = "";
 		
+		//collect all Parameter of the MethodSymbol
 		List<ParameterSymbol>  args =null;
 		if(currentScope instanceof MethodSymbol m) {
 			args = m.getParameters();
 		} 
 		if(args == null) return null;
 		
-		
+		//for each of Parameter flatten || obj decl
 		for(ParameterSymbol p : args) {
-			String argname = this.tocapitalizeFirstLetter(p.getName());
-			argClass.append(argname).append("=[");
-			if(p.getType() instanceof ClassSymbol c) {
+			argname = StringTool.tocapitalizeFirstLetter(p.getName());
+			
+			//Case 1 OCL args Type is ArrayTypeClassSymbol
+			//Ex: context VarArray::VarArray(inputArray:int[dim])
+			if(p.getType() instanceof ArrayTypeClassSymbol ac) {
+				arrayTypeVar.add(argname);
+				arrayDecl.append("decl_Array(").append(argname).append(",").append(argname+"_dimensionSizes),\n");
+				arraydimVar.add(argname+"_dimensionSizes");
+				arrayTypeDimensionDecl=dimensionProcess(ac,arrayTypeDimensionDecl,argname);
+			}
+			
+			//Case 2 OCL args Type is UserDefinedType   need to class flatten or obj decl
+			//Ex: context VarArray::add(arg:VarArray):VarArray
+			else if(p.getType() instanceof ClassSymbol c) {
+				FieldSymbol currentAttri = null;
 				Iterator<? extends FieldSymbol> i = c.getFields().iterator();
 				if(i.hasNext()) {
-				FieldSymbol current = i.next();
-					while(current != null) {
-						if(current.getName().equals("self"))break;
+					currentAttri = i.next();
+					if(!currentAttri.getName().equals("self"))argClass.append(argname+"=[");
+				}
+					while(currentAttri != null) {
+						if(currentAttri.getName().equals("self"))break;
 						else {
-							argClass.append(argname);
-							argClass.append("_").append(current.getName());
-							if(current.getType().getTypeName().equals("int")) intType.add(argname+"_"+current.getName());
-							if(current.getType() instanceof ArrayTypeClassSymbol a) {
-								arrayType.add(argname+"_"+current.getName());
-								arrayTypeDecl.append("dim(").append(argname);
-								arrayTypeDecl.append("_").append(current.getName()).append(",");
-								for(FieldSymbol f:a.getFields()) {
-									if(f.getName().equals("dimensionSizes")) {
-										if(!(f.getDefaultValue().isEmpty())) {
-											if(StringTool.isPureIntegerList(f.getDefaultValue()))
-												arrayTypeDecl.append(f.getDefaultValue()).append("),");
-												else {
-													arrayTypeDecl.append( StringTool.capitalizeElements(f.getDefaultValue())).append("),");
-													isVarArray =true;
-												}
-										}
-										else {System.out.println("CLPTranslator Error, UML dimensionSize Default Value Wrong.");}
-									}
-								}
-							}
+							//attribute flatten
+							String argattr = argname+"_"+ currentAttri.getName();
+							argClass.append(argattr);
+							//Attribute's PrimitiveType Var collect
+							if(currentAttri.getType().getTypeName().equals("int")) intTypeVar.add(argattr);
+							//Attribute's ArrayType Var collect
+							if(currentAttri.getType() instanceof ArrayTypeClassSymbol a) {
+								argClass.append(",").append(argname).append("_dimensionSizes");
+								arrayTypeVar.add(argattr);
+								arrayDecl.append("decl_Array(").append(argattr).append(",").append(argname+"_dimensionSizes),\n");
+								arraydimVar.add(argname+"_dimensionSizes");
+								arrayTypeDimensionDecl = dimensionProcess(a,arrayTypeDimensionDecl,argname);
+							}							
 						}
-						
-						
 						if(i.hasNext()) {
-							current = i.next();
-							if(current.getName().equals("self")) {argClass.append("],"); break;}
+							currentAttri = i.next();
+							if(currentAttri.getName().equals("self")) {argClass.append("],"); break;}
 							else argClass.append(",");
 						}
 					}
-				}else {
-					argClass.append("],");
-				}
-			} else argClass.append("]");
+				//for collect primitive Type Var
+				if( p.getType() instanceof PrimitiveTypeSymbol ptype)
+					if(ptype.getTypeName().equals("int")) 
+						intTypeVar.add(argname);
+			}
+			else argClass.append("]");
 		}
+		if(!arrayTypeDimensionDecl.isEmpty())
+			argClass.append(argname).append("_dimensionSizes = ").append(StringTool.capitalizeElements(arrayTypeDimensionDecl)).append(",\n");
+		
+		
 		return argClass.toString();
 	}
 
+	
 	private String genResultClass() {
 		StringBuilder resultClass = new StringBuilder();
-		
+		String arrayTypeDimensionDecl = "";
 		if(currentScope instanceof MethodSymbol m){
 			if(m.getType() == null) {errMessage.add("Error! The MethodSymbol doesn't have return Type.");return null;}
-			
 			
 			else if(m.getType() instanceof ClassSymbol c){
 				//result:int[1][2][3] or result:int[dim]
 				if(c.getName().contains("[")) {
 					//Nothing to do.  Ex. getData()
 				}else {
+					FieldSymbol classAttrSym = null;
 					//result:Cube or result:ClassSymbol
 					Iterator<? extends FieldSymbol> i = c.getFields().iterator();
 					if(i.hasNext()) {
-					resultClass.append("Result = [");
-					FieldSymbol classAttrSym = i.next();
-						while(classAttrSym != null) {
-							if(classAttrSym.getName().equals("self"))break;
-							else {
-								resultClass.append("Result_").append(classAttrSym.getName());
-								if(classAttrSym.getType() instanceof ArrayTypeClassSymbol a) {
-									//arrayType.add("Result_"+current.getName());
-									arrayTypeDecl.append("dim(");
-									arrayTypeDecl.append("Result_").append(classAttrSym.getName()).append(",");
-									for(FieldSymbol f:a.getFields()) {
-										if(f.getName().equals("dimensionSizes")) {
-											if(!(f.getDefaultValue().isEmpty())) {
-											if(StringTool.isPureIntegerList(f.getDefaultValue()))
-											arrayTypeDecl.append(f.getDefaultValue()).append("),");
-											else {
-												arrayTypeDecl.append( StringTool.capitalizeElements(f.getDefaultValue())).append("),");
-												isVarArray =true;
-											}
-											}
-											else {System.out.println("CLPTranslator Error, UML dimensionSize Default Value Wrong.");}
-										}
-									}
-								} 
-							}
-							//next run
-							if(i.hasNext()) {
-								classAttrSym = i.next();
-								if(classAttrSym.getName().equals("self")) {resultClass.append("],"); break;}
-								else resultClass.append(",");
+						classAttrSym = i.next();
+						if(!classAttrSym.getName().equals("self"))resultClass.append("Result = [");
+					}
+					while(classAttrSym != null) {
+						if(classAttrSym.getName().equals("self"))break;
+						else {
+							//attribute flatten
+							String classattr = "Result_"+ classAttrSym.getName();
+							resultClass.append(classattr);
+							
+							//PrimitiveType Var flatten
+							//if(classAttrSym.getType().getTypeName().equals("int")) intTypeVar.add(classattr);
+							//ArrayType Var flatten
+							if(classAttrSym.getType() instanceof ArrayTypeClassSymbol a) {
+								//arrayType.add("Result_"+current.getName());
+								resultClass.append(",Result_dimensionSizes");
+								arrayDecl.append("decl_Array("+classattr).append(",").append("Result_dimensionSizes),");
+								arrayTypeDimensionDecl = dimensionProcess(a,arrayTypeDimensionDecl,"Result");
 							} 
 						}
+						//next run
+						if(i.hasNext()) {
+							classAttrSym = i.next();
+							if(classAttrSym.getName().equals("self")) {resultClass.append("],"); break;}
+							else resultClass.append(",");
+						} 
 					}
 				}
 			} else {
@@ -359,14 +426,26 @@ public class CLPTranslator {
 		}else {
 			errMessage.add("Error! The currentScope is not MethodSymbol.");
 			return null;}
+		if(!arrayTypeDimensionDecl.isEmpty())
+			resultClass.append("Result_dimensionSizes = ").append(StringTool.capitalizeElements(arrayTypeDimensionDecl)).append(",\n");
 		return resultClass.toString();
 	}
 
-	private String tocapitalizeFirstLetter(String str) {
-		if (str == null || str.isEmpty()) {
-			return str;
+	
+	private String dimensionProcess(ArrayTypeClassSymbol acsym, String arrayTypeDimensionDecl, String argname) {
+		for(FieldSymbol f:acsym.getFields()) {
+			if(f.getName().equals("dimensionSizes")) {
+				if(!(f.getDefaultValue().isEmpty())&& f.getDefaultValue().contains("[") ) {
+					if(!StringTool.isPureIntegerList(f.getDefaultValue())) {
+						arrayTypeDimensionDecl = StringTool.addPrefix(f.getDefaultValue(),argname);
+						isVarArray =true;
+					}
+					else arrayTypeDimensionDecl =  f.getDefaultValue();
+				}
+				else {System.out.println("CLPTranslator Error, UML dimensionSize Default Value Wrong.");}
+			}
 		}
-		return Character.toUpperCase(str.charAt(0)) + str.substring(1);
+		return arrayTypeDimensionDecl;
 	}
 	
 	

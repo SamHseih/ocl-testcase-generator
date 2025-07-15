@@ -24,12 +24,12 @@ public class CoverageCriterionManager {
 	private int testcaseNum = 0;
 	private int pathNUm;
 	private int maxUnoll;
-	private String PROHECT_DIR = System.getProperty("user.dir");
 	
 	private List<String> logMessage = new ArrayList<>();
 	//<PathNum , TestCaseStr>
 	private Map<Integer,String> testCaseStr = new LinkedHashMap<>();
-
+	private Map<Integer,String> test = new LinkedHashMap<>();
+	
 	//Boundary value for unroll, default is Integer.MAX_VALUE
 	public CoverageCriterionManager(Scope globalSymbolTable, CLGGraph clgGraph, int maxUnoll) {
 		this.globalSymbolTable = globalSymbolTable;
@@ -47,6 +47,10 @@ public class CoverageCriterionManager {
 		return this.testCaseStr;
 	}
 	
+	public Map<Integer,String> getTest(){
+		return this.test;
+	}
+	
 	//INFINITY Loop
 	public CoverageCriterionManager(Scope globalSymbolTable, CLGGraph clgGraph) {
 		this.globalSymbolTable = globalSymbolTable;
@@ -55,40 +59,30 @@ public class CoverageCriterionManager {
 		this.maxUnoll = Integer.MAX_VALUE; // default maxUnoll
 	}
 
-	public void genTestCase() {
+	public void genTestCase(CLPSolver solver) {
 		PathEnumerator pathEnumerator = new PathEnumerator(this.clg,maxUnoll);
-
+		
 		for (List<CLGEdge> path : pathEnumerator) {
-			 CLPSolver solver =null;
-			 try {
-				solver = new CLPSolver();
-			} catch (IOException | EclipseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}			 
-			 if(solver != null) {
-				 Path predefined = Path.of(PROHECT_DIR,"output","CLP","staticArrayFunc");
-				 try {
-					solver.compile(predefined.toFile());
-				} catch (EclipseException | IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			 
-				 //get clg symboltable
+//get CLG symboltable
 				 Scope currentscope = null;
 				 if( globalSymbolTable.resolve(clg.getClassname()) instanceof Scope classsymbol){
 					 currentscope = classsymbol; 
 					 //operation clg
 					 if(!clg.getMethodname().isEmpty()) {
 						 currentscope = (Scope) currentscope.resolve(clg.getMethodname());
-					 } 
+					 }
 				 }
 				 
-				 //genCLPcode 
-				 CLPTranslator translator = new CLPTranslator(path, currentscope,pathNUm);
-				 String CLPCode = translator.translate();
+//Generate ECLiPSe CLPcode: PathCLP && WrapperCLP
+				 boolean isConstructor = false;
+				 if(clg.getClassname().equals(clg.getMethodname())) {
+					 isConstructor = true;
+				 }
 				 String eclfilename = clg.getFilename()+"_Path_"+pathNUm;
+				 
+				 CLPTranslator translator = new CLPTranslator(path, currentscope,isConstructor,eclfilename);
+				 String CLPCode = translator.translate();
+				
 				 Path outputpath = Paths.get(System.getProperty("user.dir")+"\\output\\CLP\\"+ eclfilename);
 				 try {
 						ClpUtil.writeEclFile(outputpath, CLPCode);
@@ -96,7 +90,7 @@ public class CoverageCriterionManager {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				 //COMPILE ecl
+//Compile  ECLiPSe CLPcode <eclfilename>.ecl
 				 try {
 					solver.compile(outputpath.toFile());
 				} catch (EclipseException | IOException e) {
@@ -104,33 +98,34 @@ public class CoverageCriterionManager {
 					e.printStackTrace();
 				}
 				 
-				 //Solving
+//Solving ECLiPSe CLP Code , Predicte is timeout(eclfilename,0.01,true).
 				 String SolvingHead = translator.getRequestTerm();
-				 String goal = "timeout("+SolvingHead+",0.0001"+",true"+")";
-				 //Feasiable
-				 try {
-						CompoundTerm result = solver.getEngine().rpc(goal);
-						//System.out.println(result);
-						testCaseStr.put(pathNUm,"There has a feasiable path.");
-						testcaseNum++;
-						
-				//InFeasiable
-					} catch (EclipseException e) {
-						//e.printStackTrace();
-						try {
-							FileUtil.deleteEclFile(outputpath);
-						} catch (IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				 pathNUm++;
+				 String goal = "timeout("+SolvingHead+",0.01"+",true"+")";
+				 
+				 CompoundTerm result = solver.solve(goal,outputpath);
+//Feasiable
+				if(result != null) {
+				
+				testCaseStr.put(pathNUm,"There has a feasiable path.");
+//Boundary Analysis
+				
+//Test Case OutPut				
+				test.put(pathNUm,result.toString());
+				testcaseNum++;
+				pathNUm++;
+				//if(!translator.getisVarArray()) {break;}
+				}
+//InFeasiable
+				else {
+					
+				pathNUm++;	
+				}
 			 }
-		
-		}
-		System.out.print("genTestCase End~~~~~~");
+		System.out.println(clg.getFilename()+"genTestCase End~~~~~~");
+	}
+
+	private String resultToString(CompoundTerm result) {
+		return null;
 	}
 	
 	

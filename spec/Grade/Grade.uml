@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_YCSgECsmEfCei6kbwwRXZw" name="Grade">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_YEPA0CsmEfCei6kbwwRXZw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZEVL4CsmEfCei6kbwwRXZw" name="Grade">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_e3A8MCsmEfCei6kbwwRXZw" name="number" type="_JJecQCsnEfCei6kbwwRXZw"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ha48QCsoEfCei6kbwwRXZw" name="Grade">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_k1IOgCsoEfCei6kbwwRXZw" name="score" type="_JJecQCsnEfCei6kbwwRXZw"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_rDCiQCsoEfCei6kbwwRXZw" name="rating">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_w6qc8CsoEfCei6kbwwRXZw" type="_KdBHwCsnEfCei6kbwwRXZw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ccS-cFpTEfChaLa_rgIQyw" name="getNumber">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_f0LgQFpTEfChaLa_rgIQyw" type="_JJecQCsnEfCei6kbwwRXZw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_OwItUCsoEfCei6kbwwRXZw" name="PrimitiveType">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_MOwVsCsoEfCei6kbwwRXZw" name="Boolean"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_JJecQCsnEfCei6kbwwRXZw" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KdBHwCsnEfCei6kbwwRXZw" name="String"/>
+  </packagedElement>
+</uml:Model>

@@ -10,13 +10,10 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclLexer;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
-import ccu.pllab.tcgen3.symboltable.SymbolTable;
-import ccu.pllab.tcgen3.symboltable.scope.BaseScope;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
 
 /** Tcgen = Test Case generate <br>
@@ -44,15 +41,19 @@ public class Oclparser {
         this.syntaxErrors = CollectingSyntaxErrorListener.errors;
         if(CollectingSyntaxErrorListener.hasError) {
         	System.out.println(syntaxErrors);
-        }else { 
+        }else {
         	buildAstAndSymbolTable();
         	if(!(semanticErrors.isEmpty())) {
         		System.out.println("=========================================================================");
-        		System.out.println("!!!!!!!!!!!!!!!!!!!!!!SemanticErrors!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!SemanticErrors!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         		System.out.println("=========================================================================");
         		System.out.println(semanticErrors);
+        		System.out.println(scopeIOdetail);
+        		System.exit(1);
         	} else 
-        		System.out.println("=============== ASTBuilder was built successfully. ===============");
+        	System.out.println("======================================================================");
+    		System.out.println("================ ASTBuilder was built successfully. ==================");
+    		System.out.println("======================================================================");
         }
         
     }

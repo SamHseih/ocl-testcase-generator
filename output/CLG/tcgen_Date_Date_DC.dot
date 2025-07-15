@@ -1,0 +1,110 @@
+digraph CLG {
+  7 [shape="box", label="Result = 'Exception'", style=filled, fillcolor=yellow, xlabel="[7]"];
+  8 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  10 [shape="box", label="y < 1 or
+y > 3999 or
+m < 1 or
+m > 12 or
+d < 1 or
+m <> 1 and
+m <> 3 and
+m <> 5 and
+m <> 7 and
+m <> 8 and
+m <> 10 and
+m <> 12
+", style=filled, fillcolor=yellow, xlabel="[10]"];
+  13 [shape="box", label="m = 1 or
+m = 3 or
+m = 5 or
+m = 7 or
+m = 8 or
+m = 10 or
+m = 12
+", style=filled, fillcolor=yellow, xlabel="[13]"];
+  16 [shape="box", label="d <= 31", style=filled, fillcolor=yellow, xlabel="[16]"];
+  19 [shape="box", label="m <> 1 and
+m <> 3 and
+m <> 5 and
+m <> 7 and
+m <> 8 and
+m <> 10 and
+m <> 12
+", style=filled, fillcolor=yellow, xlabel="[19]"];
+  22 [shape="box", label="m = 4 or
+m = 6 or
+m = 9 or
+m = 11
+", style=filled, fillcolor=yellow, xlabel="[22]"];
+  25 [shape="box", label="d <= 30", style=filled, fillcolor=yellow, xlabel="[25]"];
+  28 [shape="box", label="m <> 4 and
+m <> 6 and
+m <> 9 and
+m <> 11
+", style=filled, fillcolor=yellow, xlabel="[28]"];
+  31 [shape="box", label="y.mod(400) = 0 or
+y.mod(4) = 0 and
+y.mod(100) <> 0
+", style=filled, fillcolor=yellow, xlabel="[31]"];
+  34 [shape="box", label="d <= 29", style=filled, fillcolor=yellow, xlabel="[34]"];
+  37 [shape="box", label="y.mod(400) <> 0 and
+y.mod(4) <> 0 or
+y.mod(100) = 0
+", style=filled, fillcolor=yellow, xlabel="[37]"];
+  40 [shape="box", label="d <= 28", style=filled, fillcolor=yellow, xlabel="[40]"];
+  42 [shape="diamond", label="", xlabel="<42>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  43 [shape="diamond", label="", xlabel="<43>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  44 [shape="diamond", label="", xlabel="<44>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  45 [shape="diamond", label="", xlabel="<45>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  46 [shape="diamond", label="", xlabel="<46>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  47 [shape="diamond", label="", xlabel="<47>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  49 [shape="box", label="y >= 1 and
+y <= 3999 and
+m >= 1 and
+m <= 12 and
+d >= 1 and
+IfExp ConditionNode:(75) thenNode: (78) elseNode: (121)
+", style=filled, fillcolor=yellow, xlabel="[49]"];
+  52 [shape="box", label="year = y and
+month = m and
+day = d
+", style=filled, fillcolor=yellow, xlabel="[52]"];
+  57 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  58 [shape="box", label="year >= 1 and
+year <= 3999 and
+month >= 1 and
+month <= 12 and
+day <= 31 and
+day >= 1
+", style=filled, fillcolor=yellow, xlabel="[58]"];
+  60 [shape="diamond", label="", xlabel="<60>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  61 [shape="diamond", label="", xlabel="<61>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  57 -> 60[label="graphOr_start#64"];
+  60 -> 58[label="split1#65"];
+  60 -> 10[label="split2#66"];
+  52 -> 61[label="merge1#67"];
+  7 -> 61[label="merge2#68"];
+  61 -> 8[label="graphOr_end#69"];
+  31 -> 34[label="graphAnd#28"];
+  37 -> 40[label="graphAnd#29"];
+  42 -> 31[label="split1#31"];
+  42 -> 37[label="split2#32"];
+  34 -> 43[label="merge1#33"];
+  40 -> 43[label="merge2#34"];
+  22 -> 25[label="graphAnd#36"];
+  28 -> 42[label="graphAnd#37"];
+  44 -> 22[label="split1#39"];
+  44 -> 28[label="split2#40"];
+  25 -> 45[label="merge1#41"];
+  43 -> 45[label="merge2#42"];
+  13 -> 16[label="graphAnd#44"];
+  19 -> 44[label="graphAnd#45"];
+  46 -> 13[label="split1#47"];
+  46 -> 19[label="split2#48"];
+  16 -> 47[label="merge1#49"];
+  45 -> 47[label="merge2#50"];
+  49 -> 46[label="graphAnd#54"];
+  10 -> 7[label="graphAnd#57"];
+  47 -> 52[label="graphAnd#58"];
+  58 -> 49[label="graphAnd#63"];
+}

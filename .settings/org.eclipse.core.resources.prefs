@@ -24,5 +24,6 @@ encoding//src/ccu/pllab/tcgen3/util/ClpUtil.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/visualization/DotFileConverter.java=UTF-8
 encoding//test/ccu/pllab/tcgen3/core/testcasegen/eclipse/test/DemononSynchronizeMode.java=UTF-8
 encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoCLGgraph.java=UTF-8
-encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoClgGraphOps.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoDCCGraphOps.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoDCGraphOps.java=UTF-8
 encoding/<project>=x-windows-950

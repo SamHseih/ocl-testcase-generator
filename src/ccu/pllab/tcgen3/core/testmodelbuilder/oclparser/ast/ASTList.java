@@ -1,6 +1,5 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 

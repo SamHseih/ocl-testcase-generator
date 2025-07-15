@@ -32,10 +32,7 @@ public abstract  class SymbolWithScope extends BaseScope implements Symbol, Scop
 		return name;
 	}
 	
-	@Override
-	public String getTypeID(){
-		return umlID;
-	}
+
 	
 
 	@Override 

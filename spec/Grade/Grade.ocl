@@ -1,0 +1,33 @@
+package tcgen	
+	context Grade
+	inv:
+		self.number >= 0 and self.number <=100
+		
+
+	context Grade::Grade(score:int)
+	pre:
+		score >= 0 and score <= 100
+	post:
+		number = score and score@pre = score
+		
+	context Grade::rating():String
+	post:
+		if (number<= 59) then 
+			result = 'F'
+        else if (number <=69 and number >= 60) then
+                 result = 'D'
+        	else if (number >=70 and number <= 79) then 
+             	     result = 'C'
+      	  		 else if (number >= 80 and number <= 89) then 
+    	 	  	          result = 'B'
+       	 			  else 	if ( number >= 90)  then result = 'A'
+							else result = 'B' endif
+					  endif
+        		 endif
+       	    endif
+        endif
+		
+	context Grade::getNumber():int
+		post:
+			result = number
+endpackage 

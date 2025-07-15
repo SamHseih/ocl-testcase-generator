@@ -1,0 +1,39 @@
+package DynamicFixedsizeVarArrays 
+	
+	context VarArray
+		inv: self.data.getDimensionSizes(1) > 0  and self.data.getDimensionSizes(1) < 10 
+	
+	context VarArray::VarArray(inputArray:int[dim])
+	post: 
+		self.data = inputArray
+	
+	context VarArray::add(arg:VarArray):VarArray
+	pre IllegalDimensionSize:
+		 self.data.getDimension()  = arg.data.getDimension() and
+		 self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1)	
+	post:
+		self.data.getDimension()  = result.data.getDimension() and
+		self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1) and
+		let dim1:int = arg.data.getDimensionSizes(1)
+		in
+		Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			result.data[it] = self.data[it] + arg.data[it]
+					)
+			
+	context VarArray::sub(arg:VarArray):VarArray
+	pre IllegalDimensionSize: 
+		arg.data.getDimension() = self.data.getDimension()  and
+		arg.data.getDimensionSizes(1) = self.data.getDimensionSizes(1) 
+	post: 
+		self.data.getDimension()  = result.data.getDimension() and
+		self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1)	and
+		let dim1:int = arg.data.getDimensionSizes(1)
+		in
+		Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			result.data[it] = self.data[it] - arg.data[it]
+					)
+						
+	context VarArray::getData():int[dim]
+	post:
+		result = self.data
+endpackage 

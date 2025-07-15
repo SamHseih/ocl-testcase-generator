@@ -14,8 +14,9 @@ import com.parctechnologies.eclipse.EmbeddedEclipse;
 public class DemoSynchronizeMode {
 	 private final EclipseEngine engine;
 	    public DemoSynchronizeMode() throws EclipseException, IOException {
-			EclipseEngineOptions opt = new EclipseEngineOptions(new File("C:\\ECLiPSe"));
-	        opt.setUseQueues(false);                    // 先用 RPC，暫不開啟佇列
+			File eclipseHome = new File("C:\\ECLiPSe");
+	    	EclipseEngineOptions opt = new EclipseEngineOptions(eclipseHome);
+			opt.setUseQueues(false);                  // 先用 RPC，暫不開啟佇列
 	        // 若要讓 ECLiPSe 先載入你寫好的 .ecl 檔：
 	        this.engine = EmbeddedEclipse.getInstance(opt);  
 	    }

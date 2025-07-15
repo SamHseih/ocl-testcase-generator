@@ -4,7 +4,7 @@
 :- lib(random).
 
 
-solving_Path_1391(Self,Arg,DimensionSizes,Result,D1,D2,D3,Idx0_1,Idx1_2,Idx2_4,Idx2_9):-
+solving_Path_1391(Self,Arg,DimensionSizes,Result):-
 
 % Class and attribute combined as Class_Attr.
 % dim/3 is called if the attribute is an array type.

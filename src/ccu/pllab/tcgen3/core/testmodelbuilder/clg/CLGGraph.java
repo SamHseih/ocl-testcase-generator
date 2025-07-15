@@ -113,6 +113,50 @@ public final class CLGGraph {
     public String getClassname() {return classname;}
     public String getMethodname() {return methodname;}
 
+    public CLGGraph clone() {
+    	 // 1. 準備複製品與「舊節點 → 新節點」對照表
+        CLGGraph copy = new CLGGraph();
+        copy.clgfilename = this.clgfilename;
+        copy.classname   = this.classname;
+        copy.methodname  = this.methodname;
+
+        Map<Integer, CLGNode> nodeMap = new HashMap<>();
+
+        // 2. 複製所有節點
+        for (CLGNode n : this.nodes.values()) {
+            CLGNode cloned;
+            if (n.getType() == CLGNodeType.CONSTRAINT) {
+                ASTree astClone = n.getExpr() != null ? n.getExpr().clone() : null;
+                cloned = new CLGNode(CLGNodeType.CONSTRAINT, astClone);
+            } else {
+                cloned = new CLGNode(n.getType());
+            }
+            nodeMap.put(n.id(), cloned);
+            copy.addNode(cloned);              // 會自動設定 start/end
+        }
+
+        // 3. 複製所有邊
+        for (CLGEdge e : this.edges) {
+            CLGNode fromClone = nodeMap.get(e.getFrom().id());
+            CLGNode toClone   = nodeMap.get(e.getTo().id());
+
+            CLGEdge edgeClone = fromClone.connectTo(
+                    toClone,
+                    e.getType(),
+                    e.getLabel(),
+                    e.getIterationIndex()
+            );
+            if (e.isCovered()) {
+                edgeClone.setCovered(true);
+            }
+            copy.addEdge(edgeClone);
+        }
+
+        // 4. 完整性檢查
+        copy.validate();
+        return copy;
+    }
+    
     /* =====================================================
      *  V A L I D A T I O N
      * ===================================================== */
@@ -329,6 +373,6 @@ public final class CLGGraph {
     	clgGraph.nodes.remove(thisLast.id());
 	}
 
-
+    
 }
 

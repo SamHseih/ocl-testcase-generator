@@ -2,7 +2,6 @@ package ccu.pllab.tcgen3.symboltable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 
@@ -41,15 +40,6 @@ public abstract class DataAggregateSymbol extends SymbolWithScope implements Mem
 		setSlotNumber(sym);
 	}
 	
-	@Override
-	public List<MemberSymbol> getSymbols() {
-		return (List<MemberSymbol>)super.getSymbols();
-	}
-	
-	@Override
-	public Map<String, ? extends MemberSymbol> getMembers() {
-		return (Map<String, ? extends MemberSymbol>)super.getMembers();
-	}
 	
 	/** Look up name within this scope only. Return any kind of MemberSymbol found
 	 *  or null if nothing with this name found as MemberSymbol.
@@ -76,7 +66,8 @@ public abstract class DataAggregateSymbol extends SymbolWithScope implements Mem
 	/** get the number of fields defined specifically in this class */
 	public int getNumberOfDefinedFields() {
 		int n = 0;
-		for (MemberSymbol s : getSymbols()) {
+		List<? extends Symbol> symbols = getSymbols();
+		for (Symbol s : symbols) {
 			if ( s instanceof FieldSymbol ) {
 				n++;
 			}
@@ -92,9 +83,10 @@ public abstract class DataAggregateSymbol extends SymbolWithScope implements Mem
 	/** Return the list of fields in this specific aggregate */
 	public List<? extends FieldSymbol> getDefinedFields() {
 		List<FieldSymbol> fields = new ArrayList<>();
-		for (MemberSymbol s : getSymbols()) {
-			if (s instanceof FieldSymbol) {
-				fields.add((FieldSymbol)s);
+		List<? extends Symbol> symbols = getSymbols();
+		for (Symbol s : symbols) {
+			if (s instanceof FieldSymbol f) {
+				fields.add(f);
 			}
 		}
 		return fields;

@@ -73,16 +73,18 @@ public class SymbolTableBuilder {
 	            	 /* predefine fun. End*/
 	            	 
 					symbolTable.define(intType);
-					symbolTable.defineById(intType);
+					symbolTable.defineByClassSymTypeId(intType);
+					
+					
 				} else if ("uml:PrimitiveType".equals(xmiType) && "Boolean".equals(name)) {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);
-					symbolTable.defineById(primitiveType);
+					symbolTable.defineByClassSymTypeId(primitiveType);
 					BooleanType = primitiveType;
 				} else if ("uml:PrimitiveType".equals(xmiType) && "String".equals(name)) {
 					PrimitiveTypeSymbol primitiveType = new PrimitiveTypeSymbol(name, id);
 					symbolTable.define(primitiveType);
-					symbolTable.defineById(primitiveType);
+					symbolTable.defineByClassSymTypeId(primitiveType);
 					StringType = primitiveType;
 				} 
             }
@@ -104,7 +106,7 @@ public class SymbolTableBuilder {
                 	ArrayTypeClassSymbol classSymbol = new ArrayTypeClassSymbol(datatypename, dataid);
 					classSymbol.setScope(globalsymbolTable);
 					globalsymbolTable.define(classSymbol);
-					globalsymbolTable.defineById(classSymbol);
+					globalsymbolTable.defineByClassSymTypeId(classSymbol);
 					
 					// Process attributes
 					processAttributes(element, classSymbol,datatypename);
@@ -145,7 +147,7 @@ public class SymbolTableBuilder {
 					ClassSymbol classSymbol = new ClassSymbol(classname, classid);
 					classSymbol.setScope(globalsymbolTable);
 					globalsymbolTable.define(classSymbol);
-					globalsymbolTable.defineById(classSymbol);
+					globalsymbolTable.defineByClassSymTypeId(classSymbol);
 					
 					// Process attributes
 					processAttributes(element, classSymbol,classname);
@@ -172,6 +174,7 @@ public class SymbolTableBuilder {
 	            /* deal with default value, default value is 0, if not set ,value always using String type*/
 	            String defaultValue = "0"; 
 	            String defaultValueArray = extractDefaultValue(attrElement);
+	            
 	            defaultValue = defaultValueArray;
 	            int size = multiplyIfBraced(defaultValueArray);
 	            
@@ -193,7 +196,7 @@ public class SymbolTableBuilder {
 	            	 /* Special fun. End*/
 	            	 
 	            	 globalsymbolTable.define((Symbol) attrType);
-	            	 globalsymbolTable.defineById((Symbol) attrType);
+	            	 globalsymbolTable.defineByClassSymTypeId((ClassSymbol) attrType);
 	            	 ((MultiplicityListType) attrType).setSize(size);
 	            }
 	            
@@ -203,6 +206,7 @@ public class SymbolTableBuilder {
 	            variableSymbol.setScope(classSymbol);
 	            variableSymbol.setMultiplicity(multiplicity[0], multiplicity[1]);
 	            variableSymbol.setDefaultValue(defaultValue);
+	            
 	            
 	            classSymbol.define(variableSymbol);
 	        }
@@ -300,7 +304,7 @@ public class SymbolTableBuilder {
 	   	            	 	/* Special fun. End*/
 	                    	
 	   	            	 	globalsymbolTable.define((Symbol) paramType);
-	   	            	 	globalsymbolTable.defineById((Symbol) paramType);
+	   	            	 	globalsymbolTable.defineByClassSymTypeId((ClassSymbol) paramType);
 	                    }
 	                    if ("return".equals(paramDirection)) {
 	                        methodSymbol.setType(paramType);

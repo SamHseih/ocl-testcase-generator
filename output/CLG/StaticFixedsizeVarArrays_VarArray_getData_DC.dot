@@ -1,0 +1,11 @@
+digraph CLG {
+  112 [shape="box", label="result = self.data", style=filled, fillcolor=yellow, xlabel="[112]"];
+  113 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  117 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  118 [shape="box", label="self.data.getDimensionSizes(1) > 0 and
+self.data.getDimensionSizes(1) < 10
+", style=filled, fillcolor=yellow, xlabel="[118]"];
+  112 -> 113;
+  117 -> 118;
+  118 -> 112[label="graphAnd#119"];
+}

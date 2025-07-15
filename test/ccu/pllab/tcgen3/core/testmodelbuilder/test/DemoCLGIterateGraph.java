@@ -31,7 +31,7 @@ public class DemoCLGIterateGraph {
 				 iterates.add(n);
 		 });
 		 
-		 ASTree i = iterates.get(3);
+		 ASTree i = iterates.get(0);
 	        //System.out.println("--- Iteration AST result ---");
 	        //System.out.println(AstVisualization.toGraphvizDot(i));
 	        Scope globolsymboltable = astbuilder.getSymboltable();
