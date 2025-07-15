@@ -278,33 +278,5 @@ public class XmlParser {
 				parseReferencePackageInfo();
     }
     
-    /**
-	 * Main method for testing the XML parser.
-	 * 
-	 * @param args command line arguments (not used)
-	 */
-	public static void main(String[] args) {
-		 try {
-			// ´ú¸Õ¥Î¨Ò
-			Path umlPath = Path.of(".\\spec\\Cube.uml");
-			XmlParser parser = new XmlParser(umlPath);
-			Document doc = parser.getDocument();			
-            
-         // Invoke each method to retrieve the relevant sections
-            System.out.println("=== (1) UML Class Info ===");
-            System.out.println(parser.parseClassInfo());
-
-            System.out.println("=== (2) UML Association Info ===");
-            System.out.println(parser.parseAssociationInfo());
-
-            System.out.println("=== (3) UML Package (Primitivetype) Info ===");
-            System.out.println(parser.parsePrimitivePackageInfo());
-
-            System.out.println("=== (4) UML Package (Referencetype) Info ===");
-            System.out.println(parser.parseReferencePackageInfo());
-            
-        } catch (Exception e) {
-        		e.printStackTrace();
-        }
-	}
+    
 }

@@ -1,0 +1,26 @@
+digraph AST {
+  node [shape=box];
+  n11 [label="ContextDecl: node(0) Context: node (10)", xlabel="(11)"];
+  n11 -> n0;
+  n11 -> n10;
+  n0 [label="Grade", xlabel="(0)"];
+  n10 [label=" inv:", xlabel="(10)Boolean"];
+  n10 -> n9;
+  n9 [label="and", xlabel="(9)Boolean"];
+  n9 -> n4;
+  n9 -> n8;
+  n4 [label=">=", xlabel="(4)Boolean"];
+  n4 -> n2;
+  n4 -> n3;
+  n8 [label="<=", xlabel="(8)Boolean"];
+  n8 -> n6;
+  n8 -> n7;
+  n2 [label="self.number", xlabel="(2)int"];
+  n2 -> n1;
+  n3 [label="0", xlabel="(3)int"];
+  n6 [label="self.number", xlabel="(6)int"];
+  n6 -> n5;
+  n7 [label="100", xlabel="(7)int"];
+  n1 [label="self", xlabel="(1)Grade"];
+  n5 [label="self", xlabel="(5)Grade"];
+}

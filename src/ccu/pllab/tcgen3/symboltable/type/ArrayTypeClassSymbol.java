@@ -10,4 +10,6 @@ public class ArrayTypeClassSymbol extends ClassSymbol{
 		super(name, umlID);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 }

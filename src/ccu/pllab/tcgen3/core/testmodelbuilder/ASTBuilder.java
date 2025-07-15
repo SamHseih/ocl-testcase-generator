@@ -34,7 +34,7 @@ public class ASTBuilder {
             parseUML(umlpath);
             parseOCL(oclpath);
         } catch (Exception e) {
-            System.err.println("[TestModelBuilder] Error during initialization: " + e.getMessage());
+            System.err.println("[ASTBuilder] Error during initialization: " + e.getMessage());
             e.printStackTrace();
         }
     }

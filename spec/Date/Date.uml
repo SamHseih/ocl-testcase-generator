@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_nd_zgDg0EfC7yO9YHQ534Q" name="Date">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_nf_-oDg0EfC7yO9YHQ534Q">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uCKEEDg0EfC7yO9YHQ534Q" name="Date">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_nByjMDg1EfC7yO9YHQ534Q" name="year" type="_vQeRUDg0EfC7yO9YHQ534Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_qJQDYDg1EfC7yO9YHQ534Q" name="month" type="_vQeRUDg0EfC7yO9YHQ534Q"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sWpvEDg1EfC7yO9YHQ534Q" name="day" type="_vQeRUDg0EfC7yO9YHQ534Q"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_vCtFoDg1EfC7yO9YHQ534Q" name="Date">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_xPBMMDg1EfC7yO9YHQ534Q" name="y" type="_vQeRUDg0EfC7yO9YHQ534Q"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_yctHUDg1EfC7yO9YHQ534Q" name="m" type="_vQeRUDg0EfC7yO9YHQ534Q"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_z1eREDg1EfC7yO9YHQ534Q" name="d" type="_vQeRUDg0EfC7yO9YHQ534Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_33GTcDg1EfC7yO9YHQ534Q" name="next">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_PdN-QDg4EfC7yO9YHQ534Q" type="_uCKEEDg0EfC7yO9YHQ534Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kt5GkDg4EfC7yO9YHQ534Q" name="getYear">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nIWW0Dg4EfC7yO9YHQ534Q" type="_vQeRUDg0EfC7yO9YHQ534Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_nva94Dg4EfC7yO9YHQ534Q" name="getMonth">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_rU7sADg4EfC7yO9YHQ534Q" type="_vQeRUDg0EfC7yO9YHQ534Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_rwveQDg4EfC7yO9YHQ534Q" name="getDay">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ukkQwDg4EfC7yO9YHQ534Q" type="_vQeRUDg0EfC7yO9YHQ534Q" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_3qqPYDg0EfC7yO9YHQ534Q" name="Primitive">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_vQeRUDg0EfC7yO9YHQ534Q" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_wW9YQDg0EfC7yO9YHQ534Q" name="String"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_0qqpIDg0EfC7yO9YHQ534Q" name="Boolean"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_npte0Dg1EfC7yO9YHQ534Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_npv7EDg1EfC7yO9YHQ534Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>

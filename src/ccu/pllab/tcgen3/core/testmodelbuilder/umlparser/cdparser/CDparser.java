@@ -20,7 +20,10 @@ public class CDparser {
 		SymbolTableBuilder symbolTableBuilder = new SymbolTableBuilder(parser.getDocument());
 		//System.out.println(parser);
 		this.symboltable = symbolTableBuilder.build();
-		System.out.println("=============== Symbol table was built successfully. ===============\nIf you want to see class info, please call XmlParser.toString() method.");
+		System.out.println("======================================================================");
+		System.out.println("================ Symbol table was built successfully. ================");
+		System.out.println("======================================================================");
+		System.out.println("If you want to see class info, please call XmlParser.toString() method.");
 		return this.symboltable;
 	}
 
@@ -35,14 +38,5 @@ public class CDparser {
 	public String toString() {
 		XmlParser parser = new XmlParser(umlPath);
 		return parser.toString();
-	}
-	
-	public static void main(String[] args) {
-		//Path umlPath = Path.of("spec", "MultiDimArray.uml");
-		Path umlPath = Path.of("F:\\papyrus\\WorkSpace","ThreeDimStaticArray", "ThreeDimStaticArray.uml");
-		CDparser parser = new CDparser(umlPath);
-		parser.parse();
-		System.out.println("Symbol table: " + parser.getSymboltable());
-		System.out.println("Parsing completed.\n");
 	}
 }

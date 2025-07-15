@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_A8NyoBxPEfCkuu2vytGR7A" name="Cube">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_A_H8sBxPEfCkuu2vytGR7A">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_C8VQQBxPEfCkuu2vytGR7A" name="Cube">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OyznoBxSEfCkuu2vytGR7A" name="data" visibility="public" type="_eH5psBxPEfCkuu2vytGR7A"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_SX5NEBxUEfCkuu2vytGR7A" name="Cube">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_U_vjoBxVEfCkuu2vytGR7A" name="inputArray" type="_eH5psBxPEfCkuu2vytGR7A"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YudREBxVEfCkuu2vytGR7A" name="add">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_eV6BwBxVEfCkuu2vytGR7A" name="arg" type="_C8VQQBxPEfCkuu2vytGR7A"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hM6EEBxVEfCkuu2vytGR7A" type="_C8VQQBxPEfCkuu2vytGR7A" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WCuA8BzAEfCkuu2vytGR7A" name="getData">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_aY9ocBzAEfCkuu2vytGR7A" type="_eH5psBxPEfCkuu2vytGR7A" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_H6Z9UB5_EfCkuu2vytGR7A" name="sub">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MTEmsB5_EfCkuu2vytGR7A" name="arg" type="_C8VQQBxPEfCkuu2vytGR7A"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_NmYBoB5_EfCkuu2vytGR7A" type="_C8VQQBxPEfCkuu2vytGR7A" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_EaDygBxPEfCkuu2vytGR7A" name="Primitive">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_LVfTkBxPEfCkuu2vytGR7A" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_MwpqABxPEfCkuu2vytGR7A" name="String"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_Ofz6gBxPEfCkuu2vytGR7A" name="Boolean"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_eH5psBxPEfCkuu2vytGR7A" name="int[1][2][4]">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_WA_IYB59EfCkuu2vytGR7A" name="dimension" type="_LVfTkBxPEfCkuu2vytGR7A">
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_aSDU8B59EfCkuu2vytGR7A" value="3"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_esdqwB59EfCkuu2vytGR7A" name="dimensionSizes" type="_LVfTkBxPEfCkuu2vytGR7A">
+      <defaultValue xmi:type="uml:Expression" xmi:id="_vGnJAB59EfCkuu2vytGR7A" symbol="[1,2,4]"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_EQ3gQB5-EfCkuu2vytGR7A" name="elements" type="_LVfTkBxPEfCkuu2vytGR7A">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IE3WUB5-EfCkuu2vytGR7A" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6Px10B59EfCkuu2vytGR7A" name="getDimension">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_9OiF8B59EfCkuu2vytGR7A" type="_LVfTkBxPEfCkuu2vytGR7A" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_MgvrwB5-EfCkuu2vytGR7A" name="int[1][2][4]"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uB_N0B5-EfCkuu2vytGR7A" name="getDimensionSizes">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_1FxZoB5-EfCkuu2vytGR7A" type="_LVfTkBxPEfCkuu2vytGR7A" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_svcvgDZGEfCMCbKRxzBwWw" name="value" type="_LVfTkBxPEfCkuu2vytGR7A"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_9TYUQB5-EfCkuu2vytGR7A" name="getElements">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Alvc4B5_EfCkuu2vytGR7A" type="_LVfTkBxPEfCkuu2vytGR7A" direction="return">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CTIy0B5_EfCkuu2vytGR7A" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>

@@ -9,7 +9,7 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
  *  You can associate a node in the parse tree that is responsible
  *  for defining this symbol.
  */
-public class FunctionSymbol extends SymbolWithScope implements SymbolHasType{ 
+public class FunctionSymbol extends SymbolWithScope { 
 	protected ParserRuleContext defNode;
 	protected Type retType;
 	
@@ -25,12 +25,11 @@ public class FunctionSymbol extends SymbolWithScope implements SymbolHasType{
 		return defNode;
 	}
 
-	@Override
+
 	public Type getType() {
 		return retType;
 	}
 
-	@Override
 	public void setType(Type type) {
 		this.retType = type;
 	}

@@ -1,0 +1,12 @@
+group loopTet;
+delimiters "$","$"         // 4.3 版以上可直接寫
+
+listHTML(items) ::= <<
+<ul>
+  <!-- 迴圈開始 -->
+  $items:{it |
+    <li>$it$</li>
+  }$
+  <!-- 迴圈結束 -->
+</ul>
+>>

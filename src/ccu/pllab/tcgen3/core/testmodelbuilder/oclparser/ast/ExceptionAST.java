@@ -5,7 +5,7 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 
 //Only for CLG Exception Node 
 public class ExceptionAST extends ASTLeaf {
-	String name = "Exception = 'Exception'";
+	String name = "Result = 'Exception'";
 	
 	@Override
 	public String toString() {

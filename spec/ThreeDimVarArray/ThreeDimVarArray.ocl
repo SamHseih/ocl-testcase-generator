@@ -1,0 +1,63 @@
+package DynamicFixedsizeArrays 
+	
+	
+	context ThreeDimVarArray
+	inv: self.data.getDimensionSizes(1) > 0 and 
+		self.data.getDimensionSizes(2) > 0 and
+		self.data.getDimensionSizes(3) > 0
+		 
+	context ThreeDimVarArray::ThreeDimVarArray(inputArray:int[dim1][dim2][dim3])
+	post: 
+		self.data = inputArray
+	
+	context ThreeDimVarArray::add(arg:ThreeDimVarArray):ThreeDimVarArray 
+	pre IllegalDimensionSize:
+			self.data.getDimension()  = arg.data.getDimension() and
+			self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1)	and
+			self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2)	and
+			self.data.getDimensionSizes(3) = arg.data.getDimensionSizes(3)	
+		 
+	post:
+		self.data.getDimension()  = result.data.getDimension() and
+		self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1) and
+		self.data.getDimensionSizes(2) = result.data.getDimensionSizes(2) and
+		self.data.getDimensionSizes(3) = result.data.getDimensionSizes(3) and
+		let d1:int = arg.data.getDimensionSizes(1),
+			d2:int = arg.data.getDimensionSizes(2), 
+			d3:int = arg.data.getDimensionSizes(3) 
+		in
+		Sequence{1..d1}->iterate(it:int; acc:Boolean = true |
+			Sequence{1..d2}->iterate(it2:int; acc2:Boolean = true|
+				Sequence{1..d3}->iterate(it3:int; acc3:Boolean = true|
+					result.data[it][it2][it3] = self.data[it][it2][it3] + arg.data[it][it2][it3]
+					)
+				)
+			)
+			
+			
+	context ThreeDimVarArray::sub(arg:ThreeDimVarArray):ThreeDimVarArray
+	pre IllegalDimensionSize:
+			self.data.getDimension()  = arg.data.getDimension() and
+			self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1)	and
+			self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2)	and
+			self.data.getDimensionSizes(3) = arg.data.getDimensionSizes(3)
+	post: 
+		self.data.getDimension()  = result.data.getDimension() and
+		self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1) and
+		self.data.getDimensionSizes(2) = result.data.getDimensionSizes(2) and
+		self.data.getDimensionSizes(3) = result.data.getDimensionSizes(3) and
+		let d1:int = arg.data.getDimensionSizes(1),
+			d2:int = arg.data.getDimensionSizes(2), 
+			d3:int = arg.data.getDimensionSizes(3) 
+		in
+		Sequence{1..d1}->iterate(it:int; acc:Boolean = true |
+			Sequence{1..d2}->iterate(it2:int; acc2:Boolean = true|
+				Sequence{1..d3}->iterate(it3:int; acc3:Boolean = true|
+					result.data[it][it2][it3] = self.data[it][it2][it3] - arg.data[it][it2][it3]
+					)
+				)
+			)
+	context ThreeDimVarArray::getData():int[dim1][dim2][dim3]
+	post:
+		result = self.data
+endpackage 

@@ -28,10 +28,6 @@ public abstract class BaseSymbol implements Symbol{
 		return name;
 	}
 	
-	@Override
-	public String getTypeID() {
-		return umlId;
-	}
 
 	@Override
 	public Scope getScope() {
@@ -97,6 +93,7 @@ public abstract class BaseSymbol implements Symbol{
 		}
 		/*If obj is a Symbol and its name is the same as this.name, 
 		return true; otherwise, return false.*/
-		return umlId.equals(((Symbol)obj).getTypeID());
+		//return umlId.equals(((Symbol)obj).getTypeID());
+		return false;
 	}
 }

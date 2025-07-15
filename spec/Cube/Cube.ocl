@@ -1,0 +1,38 @@
+package StaticFixedsizeArrays 
+	
+	context Cube::Cube(inputArray:int[1][2][4])
+	post: 
+		self.data = inputArray
+	
+	context Cube::add(arg:Cube):Cube 
+	post:
+		let dim1:int = arg.data.getDimensionSizes(1) ,
+			dim2:int = arg.data.getDimensionSizes(2) , 
+			dim3:int = arg.data.getDimensionSizes(3) 
+		in
+		Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			Sequence{1..dim2}->iterate(it2:int; acc2:Boolean = true|
+				Sequence{1..dim3}->iterate(it3:int; acc3:Boolean = true|
+					result.data[it][it2][it3] = self.data[it][it2][it3] + arg.data[it][it2][it3]
+					)
+				)
+			)
+			
+			
+	context Cube::sub(arg:Cube):Cube
+	post: 
+		let dim1:int = arg.data.getDimensionSizes(1) ,
+			dim2:int = arg.data.getDimensionSizes(2) , 
+			dim3:int = arg.data.getDimensionSizes(3) 
+		in
+		Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			Sequence{1..dim2}->iterate(it2:int; acc2:Boolean = true|
+				Sequence{1..dim3}->iterate(it3:int; acc3:Boolean = true|
+					result.data[it][it2][it3] = self.data[it][it2][it3] - arg.data[it][it2][it3]
+					)
+				)
+			)
+	context Cube::getData():int[1][2][4]
+	post:
+		result = self.data
+endpackage 

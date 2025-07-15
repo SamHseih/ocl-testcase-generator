@@ -121,7 +121,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
     private List<String> scopeIOdetail = new ArrayList<>();;
     private final List<String> semanticErrors = new ArrayList<>();
     private boolean insidePost = false;          // debug result in pre/inv
-    private boolean insidePre = false; //control @pre variableExp or featureCallExp .
+    //private boolean insidePre = false;  //原本是只要在 precondition 都掛上pre 但OCL side-effect-free 其實不需要! 待刪除
     
     /*1. duplicate declaration 2. reference to undeclared variable.
      * Note that semantic errors are different from syntax errors.*/
@@ -356,8 +356,8 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         String label = ctx.ID() == null ? "" : ctx.ID().getText();
         
         /* control @pre area*/
-        boolean preold  = this.insidePre;
-        this.insidePre   = "pre".equals(kw);
+//        boolean preold  = this.insidePre;
+//        this.insidePre   = "pre".equals(kw);
         /* control @pre area end*/
         
         /* debug result area*/
@@ -370,7 +370,7 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
         //debug result area
         insidePost   = old; 
         //control @pre area 
-        this.insidePre = preold;
+        //this.insidePre = preold;
         
         return new ContextExpAST(List.of(exp), kw, label);
 	}
@@ -936,12 +936,29 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 			
 			
 		}
+		
 		/* Args */
 		List<ASTree> args = gatherArguments(ctx.argumentsCS());
 		
 		if(sym instanceof MethodSymbol m) {
 			if(args.size() != m.getNumberOfSymbols()) {
 				recordError("Build OperationCall Error: Parameter Error "  + " in " +source +" call "+ opname, ctx.getStart());
+			}
+		}
+		
+		/*Array Check*/
+		if(source.getType() instanceof ArrayTypeClassSymbol ac) {
+			if(opname.equals("getDimensionSizes")){
+				if(ac.resolve("dimension") instanceof FieldSymbol fs) {
+					int DefinedDimension = Integer.parseInt(fs.getDefaultValue());
+					if(args.get(0) instanceof IntegerLiteralExp indexValue) {
+						if(indexValue.getValue() > DefinedDimension || indexValue.getValue() < 0) {
+							recordError("Dimension is "+DefinedDimension +"\nBuild OperationCall Error:Call Array dimensionSizes out of range " + indexValue.getValue() + " in " +source +" call "+ opname, ctx.getStart());
+						} else if(DefinedDimension <=0) {
+							recordError("Array Error: Array dimensionSizes out of range, and dimension need to set >=1 ", ctx.getStart());
+						}
+					}
+				}
 			}
 		}
 	    return new OperationCallExp(source, args, returnType, isPre, opname, ctx.ARROW() != null ? "->" : ".",sym);
@@ -1150,9 +1167,9 @@ public class AstBuilderVisitor extends OclBaseVisitor<ASTree> {
 			}
 		}
         
-        if(insidePre) {
-        	isPre = true; // inside precondition, always mark as pre
-		}
+//        if(insidePre) {
+//        	isPre = true; // inside precondition, always mark as pre
+//		}
         return new VariableExp(name,isPre,sym);
 	}
 

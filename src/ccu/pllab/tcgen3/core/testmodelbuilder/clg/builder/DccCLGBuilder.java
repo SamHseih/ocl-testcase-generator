@@ -41,14 +41,12 @@ import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 import ccu.pllab.tcgen3.util.AstUtil;
-import ccu.pllab.tcgen3.visualization.ClgVisualization;
 
 public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 	
 	private List<String> CLGtransferMessege = new ArrayList<>();
-	private ContextDeclAST ClassiferContextDecl; //to repeat construct InvCLG for graphAnd
 	private Scope globolsymboltable;
-	
+	List<ContextExpAST> ClassiferContextDecl = new ArrayList<>(); //for invariant CLG
 	private int nth_ITERATE = 0; //for IterateExp, to generate unique index variable name
 
 	public DccCLGBuilder(Scope globolsymboltable2) {
@@ -86,26 +84,21 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 		// If the context is a ClassifierContextDeclAST, we need to generate the invariant CLG
 		}else if(node.getContextDecl() instanceof ClassifierContextDeclAST) {
 			//inv:.. ?? inv:...  ?? inv:.. ?? ...
-			ClassiferContextDecl = node;
-			List<CLGGraph> g = new ArrayList<>();
 			for(int i = 1 ; i < node.numChildren();i++) {
-				g.add( visitContextExp((ContextExpAST) node.child(i)) );
+				if(node.child(i) instanceof ContextExpAST ctx) {
+					ClassiferContextDecl.add(ctx);
+				}  else {
+					CLGtransferMessege.add("ClassifierContextDecl Error! There isn't appropriate AST to CLG.");
+				}
 			}
-			CLGGraph invfirst = null;
-			if (!g.isEmpty()) {
-			    Iterator<CLGGraph> inv = g.iterator();
-			    	invfirst = inv.next();
-			    while(inv.hasNext()) {
-			    	invfirst.graphAnd(inv.next());
-			    }
-			    invfirst.validate();
-			    return invfirst;
-			}else {CLGtransferMessege.add("Inv Context Err.");}
+				return genInvCLG(ClassiferContextDecl); 
 		}
+		
+		/* Combine all CLGs Using GraphAnd() GraphOr */
 		CLGGraph npfirst = null;
 		CLGGraph pfirst = null;
 		CLGGraph pofirst = postclgs.get(0);
-		//Not pre condition CLG
+		//There is not pre-condition CLG
 		if(!notpreclgs.isEmpty()) {
 			Iterator<CLGGraph> np = notpreclgs.iterator();
 			npfirst = np.next();
@@ -114,7 +107,7 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 			} 
 			npfirst.graphAnd(excepclg);
 		}
-		//pre condition CLG
+		//There is pre-condition CLG
 		if(!preclgs.isEmpty()) {
 			Iterator<CLGGraph> p = preclgs.iterator();
 			pfirst = p.next();
@@ -122,40 +115,42 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 				pfirst.graphAnd(p.next());
 			} 
 		}
-		//post condition CLG
+		//There is post-condition CLG
 		if(!preclgs.isEmpty()) {
 			Iterator<CLGGraph> po = postclgs.iterator();
 			pofirst = po.next();
 			while(po.hasNext()) {
 				pofirst.graphAnd(po.next());
 			}
-			pofirst.validate();
 		}
+		/* There is Pre-Condition*/
 		if(pfirst != null) {
-			/* Has Pre & Post Condition Context*/
 			//System.out.println(ClgVisualization.toGraphvizDot(pofirst));
 			pfirst.graphAnd(pofirst);
 			//System.out.println(ClgVisualization.toGraphvizDot(pfirst));
 			CLGGraph invclg = null;
-			if(ClassiferContextDecl != null) {
+			if(!ClassiferContextDecl.isEmpty()) {
 				invclg = genInvCLG(ClassiferContextDecl);
-				invclg.graphAnd(pfirst);
 				}
 			if(invclg != null) {
-				invclg.graphOr(npfirst);
+				pfirst.graphOr(npfirst);
+				invclg.graphAnd(pfirst);
 				return invclg;
 			} else {
 				pfirst.graphOr(npfirst);
 				return pfirst;
 			}
+		/* Only Has Post Conditions Context*/	
 		}else {
-			/* Only Has Post Conditions Context*/
+			//There isn't inv CLG
 			CLGGraph invclg = null;
-			if(ClassiferContextDecl != null) {
+			if(!ClassiferContextDecl.isEmpty()) {
 				invclg = genInvCLG(ClassiferContextDecl);
-				invclg.graphAnd(pofirst);
 			}
-			if(invclg != null) return invclg;
+			if(invclg != null) {
+				invclg.graphAnd(pofirst);
+				return invclg;
+			}
 			else return pofirst;
 		}
 	}
@@ -536,8 +531,18 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
     /* =====================================================
      *  H E L P E R ?� genInvCLG / processNegatePreCLG 
      * ===================================================== */
-	private CLGGraph genInvCLG(ContextDeclAST node) {
-		return node.accept(this);
+	private CLGGraph genInvCLG(List<ContextExpAST> invContextExps) {
+		CLGGraph invfirst = null;
+		if (!invContextExps.isEmpty()) {
+		    Iterator<ContextExpAST> inv = invContextExps.iterator();
+		    if(inv.next() instanceof ContextExpAST n)
+		    invfirst = n.accept(this);
+		    while(inv.hasNext()) {
+		    	invfirst.graphAnd(inv.next().accept(this));
+		    }
+		    return invfirst;
+		}else {CLGtransferMessege.add("Inv Context Err.");}
+		return null;
 	}
 
 	@Override

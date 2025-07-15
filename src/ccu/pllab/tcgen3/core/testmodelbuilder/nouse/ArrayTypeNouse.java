@@ -78,7 +78,8 @@ public class ArrayTypeNouse<T> extends BaseSymbol implements Type{
 		}
 		for (int i = 0; i <= dimension; i++) {
 			if (i == 1) {
-				sb.append(this.elementType.getTypeName());sb.append("[]");
+				//sb.append(this.elementType.getTypeName());
+				sb.append("[]");
 			} else if (i > 1) {
 				sb.append("[]");
 			}
@@ -104,7 +105,7 @@ public class ArrayTypeNouse<T> extends BaseSymbol implements Type{
 			return sb.toString();
 		}
 		sb.append("ArrayType: \n");
-		sb.append("Element Type: " + this.elementType.getTypeName() + "\n");
+		//sb.append("Element Type: " + this.elementType.getTypeName() + "\n");
 		sb.append("Dimensions: " + dimensionSizeList + "\n");
 		sb.append("Number of elements: " + this.length() + "\n");
 		sb.append("UML ID: " + this.getTypeID() + "\n");

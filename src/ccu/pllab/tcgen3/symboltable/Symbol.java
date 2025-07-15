@@ -13,7 +13,7 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 public interface Symbol {
 
     String getName();
-    String getTypeID();
+    
 	Scope getScope();
 	void setScope(Scope scope); // set scope (not enclosing) for this symbol; who contains it?
 	int getInsertionOrderNumber(); // index showing insertion order from 0

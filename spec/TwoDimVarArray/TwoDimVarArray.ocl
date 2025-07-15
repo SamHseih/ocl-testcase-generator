@@ -1,0 +1,53 @@
+package DynamicFixedsizeArrays 
+	
+	
+	context TwoDimVarArray
+	inv: self.data.getDimensionSizes(1) > 0 and 
+		self.data.getDimensionSizes(2) > 0 
+		 
+	context TwoDimVarArray::TwoDimVarArray(inputArray:int[dim1][dim2])
+	post: 
+		self.data = inputArray
+	
+	context TwoDimVarArray::add(arg:TwoDimVarArray):TwoDimVarArray 
+	pre IllegalDimensionSize:
+			self.data.getDimension()  = arg.data.getDimension() and
+			self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1)	and
+			self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2)	
+		 
+	post:
+		self.data.getDimension()  = result.data.getDimension() and
+		self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1) and
+		self.data.getDimensionSizes(2) = result.data.getDimensionSizes(2) and
+		let d1:int = arg.data.getDimensionSizes(1),
+			d2:int = arg.data.getDimensionSizes(2)
+		in
+		Sequence{1..d1}->iterate(it:int; acc:Boolean = true |
+			Sequence{1..d2}->iterate(it2:int; acc2:Boolean = true|
+					result.data[it][it2] = self.data[it][it2] + arg.data[it][it2]
+					)
+				)
+			
+			
+			
+	context TwoDimVarArray::sub(arg:TwoDimVarArray):TwoDimVarArray
+	pre IllegalDimensionSize:
+			self.data.getDimension()  = arg.data.getDimension() and
+			self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1)	and
+			self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2)	
+	post: 
+		self.data.getDimension()  = result.data.getDimension() and
+		self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1) and
+		self.data.getDimensionSizes(2) = result.data.getDimensionSizes(2) and
+		let d1:int = arg.data.getDimensionSizes(1),
+			d2:int = arg.data.getDimensionSizes(2)
+		in
+		Sequence{1..d1}->iterate(it:int; acc:Boolean = true |
+			Sequence{1..d2}->iterate(it2:int; acc2:Boolean = true|
+					result.data[it][it2] = self.data[it][it2] - arg.data[it][it2]
+					)
+				)
+	context TwoDimVarArray::getData():int[dim1][dim2]
+	post:
+		result = self.data
+endpackage 

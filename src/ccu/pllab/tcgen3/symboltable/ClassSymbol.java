@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
-import ccu.pllab.tcgen3.symboltable.type.Type;
 
 /** ref:https://github.com/antlr/symtab/blob/master/doc/symtab.png<br>
  * A symbol representing the class. It is a kind of data aggregate
@@ -136,7 +135,8 @@ public class ClassSymbol extends DataAggregateSymbol {
 	/** Return the set of all methods defined within this class */
 	public Set<MethodSymbol> getDefinedMethods() {
 		Set<MethodSymbol> methods = new LinkedHashSet<>();
-		for (MemberSymbol s : getSymbols()) {
+		List<? extends Symbol>  symbols = getSymbols();
+		for (Symbol s : symbols) {
 			if ( s instanceof MethodSymbol ) {
 				methods.add((MethodSymbol)s);
 			}
@@ -170,7 +170,8 @@ public class ClassSymbol extends DataAggregateSymbol {
 	/** get the number of methods defined specifically in this class */
 	public int getNumberOfDefinedMethods() {
 		int n = 0;
-		for (MemberSymbol s : getSymbols()) {
+		List<? extends Symbol>symbols = getSymbols();
+		for (Symbol s : symbols) {
 			if ( s instanceof MethodSymbol ) {
 				n++;
 			}

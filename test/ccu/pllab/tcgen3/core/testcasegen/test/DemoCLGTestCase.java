@@ -23,6 +23,7 @@ import ccu.pllab.tcgen3.io.FileLoader;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.util.ClpUtil;
 import ccu.pllab.tcgen3.util.FileUtil;
+import ccu.pllab.tcgen3.util.StringTool;
 
 public class DemoCLGTestCase {
 	public static void main(String[] args) {
@@ -48,8 +49,8 @@ public class DemoCLGTestCase {
 		 clgbuilder.build();
 		 
 		 List<CLGGraph> clg = clgbuilder.getCLGGrapies();
-		 int nthCLG = 0;
-		 int cycle = 10;
+		 int nthCLG = 2;
+		 int cycle = 7;
 		 
 		 
 		 PathEnumerator pathEnumerator = new PathEnumerator(clg.get(nthCLG), cycle );
@@ -64,12 +65,17 @@ public class DemoCLGTestCase {
 		 } 
 		 String ECL = clg.get(nthCLG).getFilename();
 		 int PATHNUM = 1;
+		 boolean isConstructor = false;
+		 if(classname.equals(methodname)) {
+			 isConstructor = true;
+		 }
 		 for(List<CLGEdge> path : pathEnumerator) {
 			 //System.out.println("Path "+PATHNUM+": "+ path);
-			 CLPTranslator translator = new CLPTranslator(path, currentscope,PATHNUM);
+			 String eclfilename = ECL+"Path_"+PATHNUM;
+			 CLPTranslator translator = new CLPTranslator(path, currentscope,isConstructor,eclfilename);
 			 String clpcontent = translator.translate();
 			 //System.out.println(translator.translate());
-			 String eclfilename = ECL+"Path_"+PATHNUM;
+			 
 			 Path outputpath = Paths.get(System.getProperty("user.dir")+"\\output\\CLP\\"+ eclfilename);
 			 
 			 //System.out.println(translator.getRequestTerm());
@@ -112,7 +118,7 @@ public class DemoCLGTestCase {
 			 try {
 					CompoundTerm result = solver.getEngine().rpc(goal);
 					feasiablePathinfo.put(PATHNUM, path.toString());
-					if(!translator.isVarArray())break;
+					if(!translator.getisVarArray())break;
 			//InFeasiable
 				} catch (EclipseException e) {
 					//e.printStackTrace();
@@ -130,6 +136,6 @@ public class DemoCLGTestCase {
 			PATHNUM++;
 		 }
 		 
-		 System.out.println(feasiablePathinfo.toString());
+		 System.out.println(StringTool.mapToString(feasiablePathinfo,2));
 	}
 }

@@ -4,7 +4,8 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.Expression;
-import ccu.pllab.tcgen3.symboltable.type.Type;
+import ccu.pllab.tcgen3.visualization.AstVisualization;
+import ccu.pllab.tcgen3.visualization.ClgVisualization;
 
 public abstract class ASTree implements Iterable<ASTree>,Expression{
 	

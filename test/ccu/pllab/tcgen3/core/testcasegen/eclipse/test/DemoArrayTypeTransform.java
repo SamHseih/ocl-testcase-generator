@@ -19,28 +19,37 @@ public class DemoArrayTypeTransform {
 				solver.compile(clpdir.toFile());
 
 				// Solve a goal
-				String goal = "initialize_and_label_array(Array,[2,2])";
-				CompoundTerm result = solver.solve(goal);
-
-				if(result.arg(1) instanceof CompoundTerm ct) {
-					// Convert the result to a Java String
-					String array = ClpUtil.compoundArrayToString(ct);
-					System.out.println("Result: " + array);
-					String List = ClpUtil.compoundArrayToString(ct);
-
-				} else {
-					System.out.println("Unexpected result type: " + result.arg(1).getClass());
+				String goal = "D = [[]([](-16790, -21863), [](20057, 9308)),[2,2]]";
+				CompoundTerm result = solver.solve_fortest(goal);
+				if(result.arg(1) instanceof LinkedList ll) {
+					System.out.println(ll + "\nSize: " + ll.size());
+					//ll.get(0) should be a compound term  = ECLiPSe Array []([](-16790, -21863), [](20057, 9308))
+					//ll.get(1) should be a linked list  = ECLiPSe List  [2,2]
+					for(int i=0;i<ll.size();i++) {
+						if(ll.get(i) instanceof CompoundTerm ct) {
+							System.out.println("CompoundTerm " + i + ": " + ClpUtil.compoundArrayToString(ct));
+						} else if(ll.get(i) instanceof LinkedList lll) {
+							System.out.println("LinkedList " + i + ": " +ClpUtil.listToString(lll) );
+						} else {
+							System.out.println("Unexpected type at index " + i + ": " + ll.get(i).getClass());
+						}
+					}
 				}
-				
-				
 				if(result.arg(2) instanceof LinkedList ll) {
-					// Convert the result to a Java String
-					String List = ClpUtil.listToString(ll);
-					System.out.println("Result: " + List);
-				} else {
-					System.out.println("Unexpected result type: " + result.arg(1).getClass());
+					System.out.println(ll + "\nSize: " + ll.size());
+					//ll.get(0) should be a compound term  = ECLiPSe Array []([](-16790, -21863), [](20057, 9308))
+					//ll.get(1) should be a linked list  = ECLiPSe List  [2,2]
+					for(int i=0;i<ll.size();i++) {
+						if(ll.get(i) instanceof CompoundTerm ct) {
+							System.out.println("CompoundTerm " + i + ": " + ClpUtil.compoundArrayToString(ct));
+						} else if(ll.get(i) instanceof LinkedList lll) {
+							System.out.println("LinkedList " + i + ": " + lll);
+						} else {
+							System.out.println("Unexpected type at index " + i + ": " + ll.get(i).getClass());
+						}
+					}
 				}
-				// Print  the result
+				System.out.println("End");
 		}
 		} catch (Exception e) {
 			e.printStackTrace();

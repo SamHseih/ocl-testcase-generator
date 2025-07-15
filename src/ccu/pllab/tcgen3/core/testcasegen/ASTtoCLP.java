@@ -43,18 +43,21 @@ import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
 import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
+import ccu.pllab.tcgen3.util.StringTool;
 
 public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 	
 	private List<String> CLPtransferErrMessege = new ArrayList<>();
 	private Scope currentScope;
 	
-	//collect int and array variables
+	//collect int and array variables  for SSA Define-Use
 	private Map<String, Integer> intVars = new LinkedHashMap<>();
 	private Map<String, Integer> arrayVars = new LinkedHashMap<>();
 	private Map<String, Integer> iterateVars = new LinkedHashMap<>();
+	
 	private boolean isloop = false;
 	private boolean def = false; 
+	private boolean isException = false; // for ExceptionAST
 
 	private Deque<IndexVariableExp> iteratestack = new ArrayDeque<>();
 	
@@ -111,8 +114,8 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 			right = node.right().accept(this);
 			if(right == null ) {
 				CLPtransferErrMessege.add("ResultExp without right expression: " + node);
-			}	
-		}
+			} 
+		} 
 		//Normal Case
 		if(right == null) right = node.right().accept(this);
 		
@@ -124,7 +127,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
     			def = true;
     			yield " = ";
     		}else if(node.left().getType() instanceof PrimitiveTypeSymbol) {
-    			def = true;
+    			if(node.left() instanceof IndexVariableExp)def = true;
     			yield " #= ";
     		} else {
     			def = true;
@@ -150,7 +153,12 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
     		yield " #=< ";
     		}
     	case ">=" -> " #>= " ;
-    	case "and" -> ",\n";
+    	case "and" -> {
+    		if(node.left() instanceof IfExp ||node.right() instanceof IfExp
+    		 //||node.left() instanceof LetExp ||node.right() instanceof LetExp
+    				) yield ""; //IfExp and LetExp do not need to be translated to CLP
+    		else yield ",\n";
+    		}
     	case "or" -> " ; ";
     	default -> node.getOperator();
 	    }; 
@@ -173,8 +181,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 
 	@Override
 	public ClpCode visitIfExpContext(IfExp node) {
-		CLPtransferErrMessege.add("CLPTranslator is not supposed to reach this point : " + node);
-		return null;
+		return new ClpCode("","");
 	}
 
 	@Override
@@ -191,23 +198,23 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 				sb.append("_pre");
 			}
 			if(def) {
-				varName = defVar( tocapitalizeFirstLetter(sb.toString()),node.getType());
+				varName = defVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType());
 			}else {
-				varName = readVar( tocapitalizeFirstLetter(sb.toString()),node.getType() );
+				varName = readVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType() );
 			}
 			// collect int and array variables
-			return new ClpCode(tocapitalizeFirstLetter(sb.toString()),"");
+			return new ClpCode(StringTool.tocapitalizeFirstLetter(sb.toString()),"");
 		}
 		
 		if(node instanceof IndexVariableExp) {
 			StringBuilder sb = new StringBuilder();
 			sb.append(varName);
 			if(def) {
-				varName = defVar( tocapitalizeFirstLetter(sb.toString()),node.getType());
+				varName = defVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType());
 			}else {
-				varName = readVar( tocapitalizeFirstLetter(sb.toString()),node.getType() );
+				varName = readVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType() );
 			}
-			return new ClpCode(tocapitalizeFirstLetter(varName),"");
+			return new ClpCode(StringTool.tocapitalizeFirstLetter(varName),"");
 		}
 		
 		StringBuilder sb = new StringBuilder();
@@ -217,19 +224,19 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		}
 		//if(isloop) {	
 			if(def) {
-				varName = defVar( tocapitalizeFirstLetter(sb.toString()),node.getType());
+				varName = defVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType());
 			}else {
-				varName = readVar( tocapitalizeFirstLetter(sb.toString()),node.getType() );
+				varName = readVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType() );
 			}
 		//}
-		return new ClpCode(tocapitalizeFirstLetter(varName),"");
+		return new ClpCode(StringTool.tocapitalizeFirstLetter(varName),"");
 	}
 
 	@Override
 	public ClpCode visitPropertyCallExpContext(PropertyCallExp node) {
 		//ClpCode source = node.getSource() != null ? node.getSource().accept(this) : null;
 		Deque<String> sourcenames = new ArrayDeque<>();
-		ASTree current = node.getSource();
+		ASTree current = node.getSource();//get VariableExpSource Name
 		while(current != null) {
 			if(current instanceof FeatureCallExp f) {
 				sourcenames.push(f.getFeatureName());
@@ -249,9 +256,9 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		sb.append(node.getFeatureName());
 		String proName ;
 		if(def) {
-			proName = defVar( tocapitalizeFirstLetter(sb.toString()),node.getType());
+			proName = defVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType());
 		}else {
-			proName = readVar( tocapitalizeFirstLetter(sb.toString()),node.getType() );
+			proName = readVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getType() );
 		}
 		
 		return new ClpCode(proName,"");
@@ -283,7 +290,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		String sourcename = sb.toString(); 
 		
 		ClpCode predifinedOp = switch(node.getFeatureName()) {
-			case "getDimension", "getDimensionSizes", "getElements", "Size" -> predefinedfunc(node,sourcename);
+			case "getDimension", "getDimensionSizes", "getElements", "Size","mod" -> predefinedfunc(node,sourcename);
 		    default -> null;
 		};
 		if(predifinedOp != null) {
@@ -296,8 +303,17 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 
 	private ClpCode predefinedfunc(OperationCallExp node,String source) {
 		String funcName = node.getFeatureName(); // e.g. getDimension
-		String sourceStr = readVar( tocapitalizeFirstLetter(source),node.getSource().getType() );
+		String sourceStr = readVar( StringTool.tocapitalizeFirstLetter(source),node.getSource().getType() );
 		
+		//get root source variable name
+		String rootSourceStr = "";
+		FeatureCallExp getVariableSource = node;
+		while(getVariableSource.getSource() instanceof FeatureCallExp ) {
+			getVariableSource = (FeatureCallExp) getVariableSource.getSource();
+		} 
+		if(getVariableSource.getSource() instanceof VariableExp v) rootSourceStr = v.getName();
+		
+
 		String ssaVar ;
 		if(def) {
 			ssaVar = defVar( toEclipseVar(node),node.getType());
@@ -307,28 +323,37 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		
 		List<ASTree> args = node.getArgs();
 		String method = switch(funcName) {
-	        case "getDimension" -> "getDimension(" + sourceStr + ", " + ssaVar + "),\n";
+	        //case "getDimension" -> "getDimension(" + sourceStr + ", " + ssaVar + "),\n";
+			//ECLiPSe ex. length(Self_dimensionSizes,Var_2065857933),
+	        case "getDimension" -> "length("+StringTool.tocapitalizeFirstLetter(rootSourceStr)+"_dimensionSizes" + "," + ssaVar + "),\n";
 	        case "getDimensionSizes" -> {
 	            if (args.isEmpty()) {
-	            	yield "getDimensionSizes(" + sourceStr + ", " + ssaVar + "),\n";
+	            	//yield "getDimensionSizes(" + sourceStr + ", " + ssaVar + "),\n";
+	            	yield StringTool.tocapitalizeFirstLetter(rootSourceStr)+"_dimensionSizes" + " = " + ssaVar + "\n";
 	            } else if (args.size() == 1) {
 	            	if(args.get(0)  instanceof IntegerLiteralExp i) {
 	            		int index = i.getValue(); //CLP index from 1
-	            		yield "getDimensionSizes(" + sourceStr + ", " + index + ", " + ssaVar + "),\n";
+	            		//yield "getDimensionSizes(" + sourceStr + ", " + index + ", " + ssaVar + "),\n";
+	            		//ECLiPSe ex. nth1(1,Self_dimensionSizes,Var_315932542),
+	            		yield  "nth1("+index +","+ StringTool.tocapitalizeFirstLetter(rootSourceStr)+"_dimensionSizes"+","+ssaVar+ "),\n";
 	            	} else {
 	            		String indexStr = args.get(0).toClgString(); // 動態索引
 	                    String idxExpr  = "(" + indexStr + ")";   // 明確表達 +1
-	                    yield "getDimensionSizes(" + sourceStr + ", " + idxExpr + ", " + ssaVar + "),\n";
+	                    //yield "getDimensionSizes(" + sourceStr + ", " + idxExpr + ", " + ssaVar + "),\n";
+	                    yield  "nth1("+idxExpr +","+ StringTool.tocapitalizeFirstLetter(rootSourceStr)+"_dimensionSizes"+","+ssaVar+ "),\n";
 	            	}
 	            } else {
 	            	yield "% Error: getDimensionSizes with more than 1 argument not supported.";
 	            }
 	        }
 
-	        case "getElements" -> "getElements(" + sourceStr + ", " + ssaVar + "),\n";
-	        
-
-	        case "Size" -> "Size(" + sourceStr + ", " + ssaVar + "),\n"; // 假設 Size
+	        case "getElements" -> "getElements(" + StringTool.tocapitalizeFirstLetter(rootSourceStr) + ", " + ssaVar + "),\n";
+	        //delay_mod(-Input,-Integer,+Output). Ex. Input = 100, Integer=6, Output=4
+	        case "mod" -> {
+	        	int integer = 1;//default Input, Output = 0. 
+	        	if(node.child(1)  instanceof IntegerLiteralExp i) integer = i.getValue();
+	        	yield "delay_mod(" + StringTool.tocapitalizeFirstLetter(rootSourceStr) +","+integer+ ", " + ssaVar + "),\n";} 
+	        case "Size" -> "Size(" + StringTool.tocapitalizeFirstLetter(rootSourceStr) + ", " + ssaVar + "),\n"; // 假設 Size
 	        
 
 	        default -> {
@@ -350,7 +375,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 	public ClpCode visitStringLiteralExpContext(StringLiteralExp node) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("\'");
-		sb.append(tocapitalizeFirstLetter(node.getValue()));
+		sb.append(StringTool.tocapitalizeFirstLetter(node.getValue()));
 		sb.append("\'");
 		return new ClpCode( sb.toString(),"");
 	}
@@ -378,33 +403,33 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 			
 		}
 		sb.append("_").append(node.getFeatureName());
-		String sourcename = readVar( tocapitalizeFirstLetter(sb.toString()),node.getSource().getType());
+		String sourcename = readVar( StringTool.tocapitalizeFirstLetter(sb.toString()),node.getSource().getType());
 		String returnstr = defVar(toEclipseVar(node),SymbolTableBuilder.IntType) ;
 		
 		StringBuilder func = new StringBuilder();
-		func.append("(");
-		String funcstr = defVar(returnstr, node.getType()) + " is " + sourcename+"[";
+//		func.append("(");
+//		String funcstr = defVar(returnstr, node.getType()) + " is " + sourcename+"[";
+//		
+		//arr[it,it2,it3]  it must be int
+//		func.append(funcstr);
+//		for(int i = 1 ; i < node.numChildren() ; i++) {
+//				func.append( readVar( StringTool.tocapitalizeFirstLetter( node.child(i).toString()) ,SymbolTableBuilder.IntType) );
+//			if(i ==  node.numChildren()-1 ) {func.append("]");}
+//			else func.append(",");			
+//		}
+//		func.append("),");
 		
-		func.append(funcstr);
-		for(int i = 1 ; i < node.numChildren() ; i++) {
-				//arr[it,it2,it3]  it must be int
-				func.append( readVar( tocapitalizeFirstLetter( node.child(i).toString()) ,SymbolTableBuilder.IntType) );
-			if(i ==  node.numChildren()-1 ) {func.append("]");}
-			else func.append(",");			
-		}
-		func.append("),");
 		
-		/*
-		func.append("getElem(");
+		func.append("getArrayElement(");
 		func.append(sourcename).append(",");
 		func.append("[");
 		for(int i = 1 ; i < node.numChildren() ; i++) {
 				//arr[it,it2,it3]  it must be int
-				func.append( readVar( tocapitalizeFirstLetter( node.child(i).toString()) ,SymbolTableBuilder.IntType) );
+				func.append( readVar( StringTool.tocapitalizeFirstLetter( node.child(i).toString()) ,SymbolTableBuilder.IntType) );
 			if(i ==  node.numChildren()-1 ) {func.append("]");}
 			else func.append(",");			
 		}
-		func.append(",").append(returnstr).append("),");*/
+		func.append(",").append(defVar(returnstr, node.getType())).append("),");
 		
 		
 
@@ -431,14 +456,14 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 
 	@Override  
 	public ClpCode visitCollectionRangeContext(CollectionRange node) {
-		String Min = tocapitalizeFirstLetter(node.getLowerValue().toString());
-		String Max = tocapitalizeFirstLetter(node.getUpperValue().toString());
+		String Min = StringTool.tocapitalizeFirstLetter(node.getLowerValue().toString());
+		String Max = StringTool.tocapitalizeFirstLetter(node.getUpperValue().toString());
 		String listVar = this.readVar(toEclipseList(node),node.getType());
 		String Var = this.defVar(toEclipseVar(node),node.getType());
-		String Index = this.readVar( tocapitalizeFirstLetter(iteratestack.peek().toString()),   node.getType() );
+		String Index = this.readVar( StringTool.tocapitalizeFirstLetter(iteratestack.peek().toString()),   node.getType() );
 		
 		//Transform to numlist/3  ECLiPSe Builde-in func + Delay Expr.
-		String Sequence = "sueuencetolist("+ Min +","+ Max +","+ listVar+"),";
+		String Sequence = "sequencetoList("+ Min +","+ Max +","+ listVar+"),";
 		String getnth= "nth1("+ Index +","+ listVar +","+ Var +"),";
 		return new ClpCode(Var,Sequence+getnth);
 	}
@@ -450,8 +475,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 
 	@Override
 	public ClpCode visitLetExpContext(LetExp node) {
-		// TODO Auto-generated method stub
-		return null;
+		return new ClpCode("","");
 	}
 
 	@Override
@@ -462,7 +486,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 
 	@Override
 	public ClpCode visitVariableDeclExpContext(VariableDeclExp node) {
-		String vardecl = tocapitalizeFirstLetter(node.getVarname());
+		String vardecl = StringTool.tocapitalizeFirstLetter(node.getVarname());
 		
 		if(def && isloop) {
 			vardecl = this.defVar(vardecl, node.getType());
@@ -472,9 +496,12 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 	
 	@Override
 	public ClpCode visitExceptionASTContext(ExceptionAST node) {
+		isException = true; // 設置為 true 以標記處理異常情況
 		return new ClpCode(node.toString(),"");
 	}
-	
+	/* =====================================================
+	 *  P U B L I C – G E T T E R S / O T H E R S
+	 * ===================================================== */  
 	@Override
 	public List<String> getErrorMesg(){
 		return this.CLPtransferErrMessege;
@@ -488,31 +515,21 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		return arrayVars;
 	}
 	
+	public boolean isException() {
+		return isException;
+	}
+	
 	public void popiterate() {iteratestack.pop();}
 	
 	@Override
 	public void reset_iterate() {
 		// TODO Auto-generated method stub
 	}
-
-	private String tocapitalizeFirstLetter(String str) {
-		if (str == null || str.isEmpty()) {
-			return str;
-		}
-		return Character.toUpperCase(str.charAt(0)) + str.substring(1);
-	}
 	
-	private String toEclipseVar(ASTree node) { 
-		// 範例：hashcode 當變數名
-	        return "Var_" + node.hashCode(); // fallback: 用 hashcode 避免重名
-	}
-	private String toEclipseList(ASTree node) { 
-		// 範例：hashcode 當變數名
-	        return "List_" + node.hashCode(); // fallback: 用 hashcode 避免重名
-	}
-
-	/* Private Helper*/
-
+	/* =====================================================
+     *  H E L P E R – SSA / genUnit Var/List Name 
+     * ===================================================== */
+	//SSA
 	public String defVar(String name,Type type) {            // 賦值點：版本 +1
 		if(type instanceof PrimitiveTypeSymbol) {
 			int idx = intVars.compute(name, (k, v) -> (v == null) ? 0 : v + 1);
@@ -526,7 +543,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		}
 	    
 	}
-	
+	//SSA
 	public String readVar(String name,Type type) {            
 		if(type instanceof PrimitiveTypeSymbol) {
 			int idx = intVars.getOrDefault(name, 0);
@@ -540,5 +557,15 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 		}
 	    
 	}
-	
+	//Unique Eclipse Variable Name
+	private String toEclipseVar(ASTree node) { 
+		// 範例：hashcode 當變數名
+	        return "Var_" + node.hashCode(); // fallback: 用 hashcode 避免重名
+	}
+	//Unique Eclipse List Name
+	private String toEclipseList(ASTree node) { 
+		// 範例：hashcode 當變數名
+	        return "List_" + node.hashCode(); // fallback: 用 hashcode 避免重名
+	}
+
 }

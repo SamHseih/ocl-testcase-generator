@@ -50,6 +50,7 @@ public class CLGEdge {
     public CLGEdgeType getType()      { return type; }
     public String getLabel()          { return label; }
     public int getIterationIndex()    { return iterationIndex; }
+    public void setCovered(boolean covered) { this.covered = covered; }
     
     /**
      * 回傳此邊自身「連接到的」運算式節點（如果有）。

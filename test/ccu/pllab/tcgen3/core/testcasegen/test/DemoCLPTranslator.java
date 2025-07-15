@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import ccu.pllab.tcgen3.core.testcasegen.CLPTranslator;
-import ccu.pllab.tcgen3.core.testcasegen.NestedLoopPathEnumerator;
 import ccu.pllab.tcgen3.core.testcasegen.PathEnumerator;
 import ccu.pllab.tcgen3.core.testmodelbuilder.ASTBuilder;
 import ccu.pllab.tcgen3.core.testmodelbuilder.CLGbuilder;
@@ -38,8 +37,8 @@ public class DemoCLPTranslator {
 		 clgbuilder.build();
 		 
 		 List<CLGGraph> clg = clgbuilder.getCLGGrapies();
-		 int nthCLG = 0;
-		 int cycle = 12;
+		 int nthCLG = 0; // Change this to select which CLG to translate
+		 int cycle = 7;
 		 PathEnumerator pathEnumerator = new PathEnumerator(clg.get(nthCLG),cycle);
 		 //NestedLoopPathEnumerator  NestedpathEnumerator = new NestedLoopPathEnumerator(clg.get(nthCLG),1000 ,cycle);
 		 System.out.println(clg.get(nthCLG).getFilename());
@@ -54,10 +53,15 @@ public class DemoCLPTranslator {
 		 int i = 1;
 		 for(List<CLGEdge> path : pathEnumerator) {
 			 System.out.println("Path "+i+": "+ path);
-			 CLPTranslator translator = new CLPTranslator(path, currentscope,i);
+			 boolean isConstructor = false;
+			 if(classname.equals(methodname)) {
+				 isConstructor = true;
+			 }
+			 String filename = ECL+"_Path_"+i;
+			 CLPTranslator translator = new CLPTranslator(path, currentscope,isConstructor,filename);
 			 String clpcontent = translator.translate();
 			 //System.out.println(translator.translate());
-			 String filename = ECL+"_Path_"+i;
+			 
 			 Path outputpath = Paths.get(System.getProperty("user.dir")+"\\output\\CLP\\"+ filename);
 			 
 			 //System.out.println(translator.getRequestTerm());

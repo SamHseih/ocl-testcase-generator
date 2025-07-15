@@ -1,0 +1,7 @@
+digraph CLG {
+  65 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  66 [shape="box", label="result = self.datas", style=filled, fillcolor=yellow, xlabel="[66]"];
+  67 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  65 -> 66;
+  66 -> 67;
+}

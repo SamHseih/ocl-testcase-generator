@@ -5,6 +5,7 @@ import java.util.List;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.io.FileLoader;
+import ccu.pllab.tcgen3.symboltable.scope.Scope;
 
 public class TestmodelBuilder {
 	private FileLoader fileLoader;
@@ -48,7 +49,11 @@ public class TestmodelBuilder {
 		return astbuilder.getAST();
 	}
 	
-	public List<CLGGraph> getCLG() {
+	public Scope getSymbolTable() {
+		return astbuilder.getSymboltable();
+	}
+	
+	public List<CLGGraph> getCLGs() {
 		return clgbuilder.getCLGGrapies();
 	}
 }

@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import ccu.pllab.tcgen3.symboltable.BaseSymbol;
+import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 
 /** A scope associated with globals. */
@@ -52,16 +54,15 @@ public class GlobalScope extends BaseScope {
 		return null; // not found
 	}
 	
-	
-	public void defineById(Symbol sym) throws IllegalArgumentException {
+	public void defineByClassSymTypeId(ClassSymbol sym) throws IllegalArgumentException {
 		if ( idsymbols.containsKey(sym.getTypeID()) ) {
 			throw new IllegalArgumentException("duplicate symbol "+sym.getName());
-		}
+			}
+		
 		sym.setScope(this);
 		sym.setInsertionOrderNumber(idsymbols.size()); // set to insertion position from 0
 		idsymbols.put(sym.getTypeID(), sym);
 	}
-	
 	
 	public List<? extends Symbol> getAllIDSymbols() {
 		List<Symbol> syms = new ArrayList<>();

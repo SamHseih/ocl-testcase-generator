@@ -8,6 +8,7 @@ public class FieldSymbol extends VariableSymbol implements MemberSymbol {
 	protected String lowerValue;
 	protected String upperValue;
 	protected String defaultValue;
+	
 
 	
 	public FieldSymbol(String name, String umlID) {
@@ -33,5 +34,7 @@ public class FieldSymbol extends VariableSymbol implements MemberSymbol {
 	public void setDefaultValue(String defaultValue) {
 		this.defaultValue = defaultValue;
 	}
+	
+	
 	
 }

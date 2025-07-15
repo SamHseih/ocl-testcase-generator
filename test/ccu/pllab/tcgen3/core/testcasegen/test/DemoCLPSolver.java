@@ -1,4 +1,4 @@
-package ccu.pllab.tcgen3.core.testcasegen.test;
+package ccu.pllab.tcgen3.	core.testcasegen.test;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -16,7 +16,8 @@ import ccu.pllab.tcgen3.util.FileUtil;
 
 public class DemoCLPSolver {
 	public static void main(String[] args) {
-		int PathmaxNum=1610;
+		int PathmaxNum=380;
+		int i = 1;
 		String title = "StaticFixedsizeArrays_ThreeDimVarArray_sub_DC_";
 		List<String> feasiablePath = new ArrayList<>();
 		Map<Integer,String> info = new LinkedHashMap<>();
@@ -48,7 +49,7 @@ public class DemoCLPSolver {
 		
 		// Solve a goal
 		System.out.println("Solving Begin");
-		for(int i =1;i<PathmaxNum;i++) {
+		for(;i<PathmaxNum;i++) {
 			// Compile the CLP file
 			Path clp = Path.of(projectPath,"output","CLP",title+"Path_"+i);
 			try {
@@ -62,7 +63,7 @@ public class DemoCLPSolver {
 			}
 			
 			//Solving
-			String headArg = "(Self,Arg,DimensionSize,Result)";
+			String headArg = "(Self,Arg,Result)";
 			String Solving = "solving_Path_"+i+headArg;
 			String goal = "timeout("+Solving+","+"1"+","+"false"+").";
 			CompoundTerm result = null;
@@ -70,14 +71,15 @@ public class DemoCLPSolver {
 			try {
 				result = solver.getEngine().rpc(goal);
 				feasiablePath.add("There has a feasiable path_"+i+"\n");
-				
+
 				if(result != null) {
-					if(result.functor().toString().equals("timeout") ) {
-						if(result.arg(1) instanceof CompoundTerm c) {
-							if(c.arg(3) instanceof List dimesnsionSize)
-							info.put(i, ClpUtil.listToString(dimesnsionSize)+"\n");
-						}
-					}
+					System.out.println("Result: " + result);
+//					if(result.functor().toString().equals("timeout") ) {
+//						if(result.arg(1) instanceof CompoundTerm c) {
+//							if(c.arg(3) instanceof List dimesnsionSize)
+//							info.put(i, ClpUtil.listToString(dimesnsionSize)+"\n");
+//						}
+//					}
 				}
 			} catch (EclipseException e) {
 				// TODO Auto-generated catch block
@@ -93,7 +95,7 @@ public class DemoCLPSolver {
 				e.printStackTrace();
 			}
 			
-			if(result !=null)System.out.println(result);
+			
 			
 			//e.printStackTrace();
 			//System.out.println("Fail");
@@ -103,7 +105,6 @@ public class DemoCLPSolver {
 			System.out.println("There has a feasiable path_"+i);};*/
 			//System.out.println("~~~~~~~~~~~Solving Next~~~~~~~~~~~");
 			// Print the result
-			//System.out.println("Result: " + result);
 			//System.out.println(ClpUtil.toJavaString(result));
 		}
 		System.out.println("Solving End~~~~~~");

@@ -1,0 +1,24 @@
+digraph CLG {
+  48 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  50 [shape="box", label="Index0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[50]"];
+  37 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  53 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[53]"];
+  38 [shape="box", label="dim1 = arg.datas.getDimensionSizes(1)", style=filled, fillcolor=yellow, xlabel="[38]"];
+  56 [shape="box", label="result.datas[it] = self.datas[it] - arg.datas[it]", style=filled, fillcolor=yellow, xlabel="[56]"];
+  41 [shape="box", label="Index0 = 1", style=filled, fillcolor=yellow, xlabel="[41]"];
+  59 [shape="box", label="Index0 = Index0 + 1", style=filled, fillcolor=yellow, xlabel="[59]"];
+  44 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[44]"];
+  61 [shape="diamond", label="", xlabel="<61>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  47 [shape="box", label="Index0 > dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[47]"];
+  37 -> 38;
+  50 -> 53[label="graphAnd#52"];
+  53 -> 56[label="graphAnd#53"];
+  56 -> 59[label="graphAnd#54"];
+  61 -> 50[label="iterate#56"];
+  44 -> 41[label="graphAnd#41"];
+  59 -> 61[label="iterate#57"];
+  61 -> 47[label="graphAnd#59"];
+  47 -> 48;
+  41 -> 61[label="graphAnd#60"];
+  38 -> 44[label="graphAnd#61"];
+}
