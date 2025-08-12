@@ -1,0 +1,38 @@
+digraph AST {
+  node [shape=box];
+  n17 [label="ContextDecl: node(0) Context: node (16)", xlabel="(17)"];
+  n17 -> n0;
+  n17 -> n16;
+  n0 [label="Date", xlabel="(0)"];
+  n16 [label=" inv:", xlabel="(16)Boolean"];
+  n16 -> n15;
+  n15 [label="and", xlabel="(15)Boolean"];
+  n15 -> n11;
+  n15 -> n14;
+  n11 [label="and", xlabel="(11)Boolean"];
+  n11 -> n7;
+  n11 -> n10;
+  n14 [label=">=", xlabel="(14)Boolean"];
+  n14 -> n12;
+  n14 -> n13;
+  n7 [label="and", xlabel="(7)Boolean"];
+  n7 -> n3;
+  n7 -> n6;
+  n10 [label="<=", xlabel="(10)Boolean"];
+  n10 -> n8;
+  n10 -> n9;
+  n12 [label="day", xlabel="(12)int"];
+  n13 [label="1", xlabel="(13)int"];
+  n3 [label=">=", xlabel="(3)Boolean"];
+  n3 -> n1;
+  n3 -> n2;
+  n6 [label=">=", xlabel="(6)Boolean"];
+  n6 -> n4;
+  n6 -> n5;
+  n8 [label="month", xlabel="(8)int"];
+  n9 [label="12", xlabel="(9)int"];
+  n1 [label="year", xlabel="(1)int"];
+  n2 [label="1", xlabel="(2)int"];
+  n4 [label="month", xlabel="(4)int"];
+  n5 [label="1", xlabel="(5)int"];
+}

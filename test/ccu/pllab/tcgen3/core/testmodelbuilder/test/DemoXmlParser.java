@@ -7,33 +7,33 @@ import org.w3c.dom.Document;
 import ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser.XmlParser;
 
 public class DemoXmlParser {
-	/**
-	 * Main method for testing the XML parser.
-	 * 
-	 * @param args command line arguments (not used)
-	 */
-	public static void main(String[] args) {
-		 try {
-			// 測試用例
-			Path umlPath = Path.of(".\\spec\\Cube.uml");
-			XmlParser parser = new XmlParser(umlPath);
-			Document doc = parser.getDocument();			
-            
-         // Invoke each method to retrieve the relevant sections
-            System.out.println("=== (1) UML Class Info ===");
-            System.out.println(parser.parseClassInfo());
+  /**
+   * Main method for testing the XML parser.
+   * 
+   * @param args command line arguments (not used)
+   */
+  public static void main(String[] args) {
+    try {
+      // 測試用例
+      Path umlPath = Path.of(".\\spec\\Cube.uml");
+      XmlParser parser = new XmlParser(umlPath);
+      Document doc = parser.getDocument();
 
-            System.out.println("=== (2) UML Association Info ===");
-            System.out.println(parser.parseAssociationInfo());
+      // Invoke each method to retrieve the relevant sections
+      System.out.println("=== (1) UML Class Info ===");
+      System.out.println(parser.parseClassInfo());
 
-            System.out.println("=== (3) UML Package (Primitivetype) Info ===");
-            System.out.println(parser.parsePrimitivePackageInfo());
+      System.out.println("=== (2) UML Association Info ===");
+      System.out.println(parser.parseAssociationInfo());
 
-            System.out.println("=== (4) UML Package (Referencetype) Info ===");
-            System.out.println(parser.parseReferencePackageInfo());
-            
-        } catch (Exception e) {
-        		e.printStackTrace();
-        }
-	}
+      System.out.println("=== (3) UML Package (Primitivetype) Info ===");
+      System.out.println(parser.parsePrimitivePackageInfo());
+
+      System.out.println("=== (4) UML Package (Referencetype) Info ===");
+      System.out.println(parser.parseReferencePackageInfo());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 }

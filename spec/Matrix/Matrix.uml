@@ -22,7 +22,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:DataType" xmi:id="_xkS_oFBSEfCazayHoYWa5g" name="int[2][2]">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_CD-eIFBTEfCazayHoYWa5g" name="dimension" type="_0JaAsFBSEfCazayHoYWa5g">
-      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_QQEJYFBTEfCazayHoYWa5g" value="1"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_QQEJYFBTEfCazayHoYWa5g" value="2"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_DttcEFBTEfCazayHoYWa5g" name="dimensionSizes" type="_0JaAsFBSEfCazayHoYWa5g">
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XwbjgFBTEfCazayHoYWa5g" value="*"/>

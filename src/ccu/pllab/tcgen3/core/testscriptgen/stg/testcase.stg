@@ -1,0 +1,55 @@
+group testcase-group;
+
+testcase(testCasePackage, classPackage, classList, class_name, method_name, ret_type, ret_val, case_no, target_obj, arg_list, assert, sys_decl, sys_init, asc_init, sys_cleanup, return_void, is_constructor,is_array,is_bound,obj_list,exception) ::= <<
+//package <testCasePackage>;
+
+import junit.framework.TestCase;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+<classList:importClasses()>
+
+
+
+public class Test<class_name>_<method_name><case_no> extends TestCase {
+	<sys_decl>
+
+	@Test
+	public void test<method_name>() {	
+<if(is_constructor)>
+	
+		try {
+			<sys_init>
+			assertEquals(<obj_list>,<target_obj>_Post.toString());
+			
+			
+		} catch (<exception> e) {
+			fail();
+		}
+<else>
+	<if(return_void)>
+		try {
+			<sys_init>
+			<target_obj>.<method_name>(<arg_list>);
+			assertEquals(<obj_list>,<target_obj>.toString());
+		} catch (<exception> e) {
+			fail();
+		}		
+	<else>
+		try {
+		    <sys_init>
+			assertEquals(<ret_val>,<target_obj>.<method_name>(<arg_list>));
+		} catch (<exception> e) {
+			fail();
+		}
+	<endif>
+<endif>
+	}
+}
+
+>>
+
+importClasses(class) ::= <<
+import <classPackage>.<class>;<\n>
+>>
+

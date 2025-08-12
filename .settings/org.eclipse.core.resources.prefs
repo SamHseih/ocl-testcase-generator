@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/ccu/pllab/tcgen3/core/testcasegen/ASTtoCLP.java=UTF-8
-encoding//src/ccu/pllab/tcgen3/core/testcasegen/NestedLoopPathEnumerator.java=UTF-8
+encoding//src/ccu/pllab/tcgen3/core/testcasegen/BoundaryEnumerator.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testcasegen/PathEnumerator.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGEdge.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGGraph.java=UTF-8
@@ -9,8 +9,6 @@ encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/CLGNodeType.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/builder/DcCLGBuilder.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/clg/builder/DccCLGBuilder.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/nouse/StaticArrayClassSymbol.java=UTF-8
-encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/AntlrCliGenerator.java=UTF-8
-encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/AntlrInProcessGenerator.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/AstBuilderVisitor.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/Ocl.g4=UTF-8
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/ArrayRefExp.java=UTF-8
@@ -22,7 +20,9 @@ encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/oclparser/ast/oclexpr/SelfE
 encoding//src/ccu/pllab/tcgen3/core/testmodelbuilder/umlparser/cdparser/SymbolTableBuilder.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/util/ClpUtil.java=UTF-8
 encoding//src/ccu/pllab/tcgen3/visualization/DotFileConverter.java=UTF-8
-encoding//test/ccu/pllab/tcgen3/core/testcasegen/eclipse/test/DemononSynchronizeMode.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testcasegen/solver/test/DemononSynchronizeMode.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoAntlrCliGenerator.java=UTF-8
+encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoAntlrInProcessGenerator.java=UTF-8
 encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoCLGgraph.java=UTF-8
 encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoDCCGraphOps.java=UTF-8
 encoding//test/ccu/pllab/tcgen3/core/testmodelbuilder/test/DemoDCGraphOps.java=UTF-8

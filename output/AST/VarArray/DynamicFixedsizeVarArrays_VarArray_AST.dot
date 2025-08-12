@@ -1,0 +1,20 @@
+digraph AST {
+  node [shape=box];
+  n8 [label="ContextDecl: node(0) Context: node (7)", xlabel="(8)"];
+  n8 -> n0;
+  n8 -> n7;
+  n0 [label="VarArray", xlabel="(0)"];
+  n7 [label=" inv:", xlabel="(7)Boolean"];
+  n7 -> n6;
+  n6 [label=">", xlabel="(6)Boolean"];
+  n6 -> n4;
+  n6 -> n5;
+  n4 [label="self.data.getDimensionSizes(1)", xlabel="(4)int"];
+  n4 -> n2;
+  n4 -> n3;
+  n5 [label="0", xlabel="(5)int"];
+  n2 [label="self.data", xlabel="(2)int[dim]"];
+  n2 -> n1;
+  n3 [label="1", xlabel="(3)int"];
+  n1 [label="self", xlabel="(1)VarArray"];
+}

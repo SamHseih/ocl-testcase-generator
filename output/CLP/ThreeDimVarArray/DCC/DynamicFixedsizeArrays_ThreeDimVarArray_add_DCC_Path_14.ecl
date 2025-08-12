@@ -1,0 +1,83 @@
+:- lib(ic).
+:- lib(listut).
+:- lib(random).
+:- lib(timeout).
+
+dynamicFixedsizeArrays_ThreeDimVarArray_add_DCC_Path_14(Self,Arg,Result):-
+
+% Class and attribute combined as Class_Attr.
+% dim/3 is called if the attribute is an array type.
+Self=[Self_data,Self_dimensionSizes],Self_dimensionSizes = [Self_dim1, Self_dim2, Self_dim3],
+Arg=[Arg_data,Arg_dimensionSizes],Arg_dimensionSizes = [Arg_dim1, Arg_dim2, Arg_dim3],
+Result = [Result_data,Result_dimensionSizes],Result_dimensionSizes = [Result_dim1, Result_dim2, Result_dim3],
+
+decl_Array(Self_data,Self_dimensionSizes),
+decl_Array(Arg_data,Arg_dimensionSizes),
+decl_Array(Result_data,Result_dimensionSizes),
+
+%CLG Path Constrints,
+nth1(1,Self_dimensionSizes,Var_715378067),
+(Var_715378067 #> 0),
+nth1(2,Self_dimensionSizes,Var_1262773598),
+(Var_1262773598 #> 0),
+nth1(3,Self_dimensionSizes,Var_2147046752),
+(Var_2147046752 #> 0),
+length(Arg_dimensionSizes,Var_370440646),
+length(Self_dimensionSizes,Var_1966250569),
+(Var_1966250569 #= Var_370440646),
+nth1(1,Arg_dimensionSizes,Var_2130772866),
+nth1(1,Self_dimensionSizes,Var_1125381564),
+(Var_1125381564 #= Var_2130772866),
+nth1(2,Arg_dimensionSizes,Var_1016925085),
+nth1(2,Self_dimensionSizes,Var_1840976765),
+(Var_1840976765 #= Var_1016925085),
+nth1(3,Arg_dimensionSizes,Var_416153648),
+nth1(3,Self_dimensionSizes,Var_1453774246),
+(Var_1453774246 #= Var_416153648),
+length(Result_dimensionSizes,Var_1008925772),
+length(Self_dimensionSizes,Var_2136288211),
+(Var_2136288211 #= Var_1008925772),
+nth1(1,Result_dimensionSizes,Var_1205406622),
+nth1(1,Self_dimensionSizes,Var_1175259735),
+(Var_1175259735 #= Var_1205406622),
+nth1(2,Result_dimensionSizes,Var_1556995360),
+nth1(2,Self_dimensionSizes,Var_158199555),
+(Var_158199555 #= Var_1556995360),
+nth1(3,Result_dimensionSizes,Var_1457410641),
+nth1(3,Self_dimensionSizes,Var_373182087),
+(Var_373182087 #= Var_1457410641),
+nth1(1,Arg_dimensionSizes,Var_313540687),
+(D1 = Var_313540687),
+nth1(2,Arg_dimensionSizes,Var_1383524016),
+(D2 = Var_1383524016),
+nth1(3,Arg_dimensionSizes,Var_1637061418),
+(D3 = Var_1637061418),
+(Acc = true),
+(Index0 #= 1),
+(Index0 #=< D1 - 1+ 1),
+sequencetoList(1,D1,List_1686100174),nth1(Index0,List_1686100174,Var_1686100174),(It = Var_1686100174),
+(Acc2 = true),
+(Index1 #= 1),
+(Index1 #=< D2 - 1+ 1),
+sequencetoList(1,D2,List_1552978964),nth1(Index1,List_1552978964,Var_1552978964),(It2 = Var_1552978964),
+(Acc3 = true),
+(Index2 #= 1),
+(Index2 #=< D3 - 1+ 1),
+sequencetoList(1,D3,List_2095303566),nth1(Index2,List_2095303566,Var_2095303566),(It3 = Var_2095303566),
+getArrayElement(Arg_data,[It,It2,It3],Var_1661081225_1),getArrayElement(Self_data,[It,It2,It3],Var_1192171522_1),getArrayElement(Result_data,[It,It2,It3],Var_76432244_1),(Var_76432244_1 #= (Var_1192171522_1+Var_1661081225_1)),
+(Index2_1 #= (Index2+1)),
+(Index2_1 #=< D3 - 1+ 1),
+sequencetoList(1,D3,List_2095303566),nth1(Index2_1,List_2095303566,Var_2095303566_1),(It3_1 = Var_2095303566_1),
+getArrayElement(Arg_data,[It,It2,It3_1],Var_1661081225_2),getArrayElement(Self_data,[It,It2,It3_1],Var_1192171522_2),getArrayElement(Result_data,[It,It2,It3_1],Var_76432244_2),(Var_76432244_2 #= (Var_1192171522_2+Var_1661081225_2)),
+(Index2_2 #= (Index2_1+1)),
+(Index2_2 #> D3 - 1+ 1),
+(Index1_1 #= (Index1+1)),
+(Index1_1 #> D2 - 1+ 1),
+(Index0_1 #= (Index0+1)),
+(Index0_1 #> D1 - 1+ 1),
+
+%DimensionSizes Labeling Parts
+labeling_Dim(Self_dimensionSizes),
+labeling_Dim(Arg_dimensionSizes),
+%TypeVar Labeling Parts
+labeling_Arrays([Self_data, Arg_data]).

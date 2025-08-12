@@ -1,0 +1,14 @@
+digraph AST {
+  node [shape=box];
+  n426 [label="ContextDecl: node(421) Context: node (425)", xlabel="(426)"];
+  n426 -> n421;
+  n426 -> n425;
+  n421 [label="Date::getMonth() : int", xlabel="(421)"];
+  n425 [label=" post:", xlabel="(425)Boolean"];
+  n425 -> n424;
+  n424 [label="=", xlabel="(424)Boolean"];
+  n424 -> n422;
+  n424 -> n423;
+  n422 [label="result", xlabel="(422)int"];
+  n423 [label="month", xlabel="(423)int"];
+}

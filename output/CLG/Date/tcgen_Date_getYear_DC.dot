@@ -1,0 +1,13 @@
+digraph CLG {
+  162 [shape="box", label="result = year", style=filled, fillcolor=yellow, xlabel="[162]"];
+  163 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  164 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  165 [shape="box", label="year >= 1 and
+month >= 1 and
+month <= 12 and
+day >= 1
+", style=filled, fillcolor=yellow, xlabel="[165]"];
+  162 -> 163;
+  164 -> 165;
+  165 -> 162[label="graphAnd#200"];
+}

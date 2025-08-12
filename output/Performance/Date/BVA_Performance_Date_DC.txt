@@ -1,0 +1,30 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:184 ms
+Total CLGBuild Using Time:14 ms
+Total TestCase Generation Using Time:1808 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_DC Using Time:96 ms
+  tcgen_Date_Date_DC:
+	TestCaseNum: 18, PathNum: 5, BoundaryPathNum: 25  Generate tcgen_Date_Date_DC Using Time:475 ms
+  tcgen_Date_next_DC:
+	TestCaseNum: 25, PathNum: 10, BoundaryPathNum: 50  Generate tcgen_Date_next_DC Using Time:789 ms
+  tcgen_Date_getYear_DC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_getYear_DC Using Time:59 ms
+  tcgen_Date_getMonth_DC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_getMonth_DC Using Time:73 ms
+  tcgen_Date_getDay_DC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_getDay_DC Using Time:73 ms
+
+Total System Generation Using Time:2006 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Date_Date_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
+tcgen_Date_next_DC CLG Info :  CLGNodes Size: 49  CLGEdges Size: 57
+tcgen_Date_getYear_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+tcgen_Date_getMonth_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+tcgen_Date_getDay_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/12 17:25 TestCase output Finish. ==============
+======================================================================

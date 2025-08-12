@@ -1,0 +1,27 @@
+digraph CLG {
+  32 [shape="diamond", label="", xlabel="<32>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  33 [shape="diamond", label="", xlabel="<33>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  7 [shape="box", label="score < 0", style=filled, fillcolor=yellow, xlabel="[7]"];
+  10 [shape="box", label="score > 100", style=filled, fillcolor=yellow, xlabel="[10]"];
+  12 [shape="diamond", label="", xlabel="<12>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  13 [shape="diamond", label="", xlabel="<13>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  15 [shape="box", label="Result = 'illegalargumentexception'", style=filled, fillcolor=yellow, xlabel="[15]"];
+  16 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  17 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  18 [shape="box", label="score >= 0", style=filled, fillcolor=yellow, xlabel="[18]"];
+  21 [shape="box", label="score <= 100", style=filled, fillcolor=yellow, xlabel="[21]"];
+  24 [shape="box", label="number = score", style=filled, fillcolor=yellow, xlabel="[24]"];
+  32 -> 18[label="split1#32"];
+  32 -> 12[label="split2#33"];
+  24 -> 33[label="merge1#34"];
+  15 -> 33[label="merge2#35"];
+  33 -> 16[label="graphOr_end#36"];
+  12 -> 7[label="split1#10"];
+  12 -> 10[label="split2#11"];
+  7 -> 13[label="merge1#12"];
+  10 -> 13[label="merge2#13"];
+  18 -> 21[label="graphAnd#21"];
+  13 -> 15[label="graphAnd#24"];
+  21 -> 24[label="graphAnd#25"];
+  17 -> 32[label="graphOr_start#31"];
+}

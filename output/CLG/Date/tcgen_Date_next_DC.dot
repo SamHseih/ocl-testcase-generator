@@ -1,0 +1,173 @@
+digraph CLG {
+  129 [shape="box", label="day < 29 and
+result.year = self.year and
+result.month = self.month and
+result.day = self.day + 1
+", style=filled, fillcolor=yellow, xlabel="[129]"];
+  131 [shape="diamond", label="", xlabel="<131>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  132 [shape="diamond", label="", xlabel="<132>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  134 [shape="box", label="year.mod(400) <> 0 and
+year.mod(4) <> 0 or
+year.mod(100) = 0
+", style=filled, fillcolor=yellow, xlabel="[134]"];
+  137 [shape="box", label="day = 28", style=filled, fillcolor=yellow, xlabel="[137]"];
+  140 [shape="box", label="result.year = self.year and
+result.month = self.month + 1 and
+result.day = 1
+", style=filled, fillcolor=yellow, xlabel="[140]"];
+  143 [shape="box", label="day <> 28", style=filled, fillcolor=yellow, xlabel="[143]"];
+  146 [shape="box", label="day < 28 and
+result.year = self.year and
+result.month = self.month and
+result.day = self.day + 1
+", style=filled, fillcolor=yellow, xlabel="[146]"];
+  147 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  148 [shape="diamond", label="", xlabel="<148>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  149 [shape="diamond", label="", xlabel="<149>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  150 [shape="diamond", label="", xlabel="<150>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  151 [shape="diamond", label="", xlabel="<151>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  152 [shape="diamond", label="", xlabel="<152>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  153 [shape="diamond", label="", xlabel="<153>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  154 [shape="diamond", label="", xlabel="<154>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  155 [shape="diamond", label="", xlabel="<155>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  156 [shape="diamond", label="", xlabel="<156>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  157 [shape="diamond", label="", xlabel="<157>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  158 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  159 [shape="box", label="year >= 1 and
+month >= 1 and
+month <= 12 and
+day >= 1
+", style=filled, fillcolor=yellow, xlabel="[159]"];
+  57 [shape="box", label="month = 12", style=filled, fillcolor=yellow, xlabel="[57]"];
+  60 [shape="box", label="day = 31", style=filled, fillcolor=yellow, xlabel="[60]"];
+  63 [shape="box", label="result.year = self.year + 1 and
+result.month = 1 and
+result.day = 1
+", style=filled, fillcolor=yellow, xlabel="[63]"];
+  66 [shape="box", label="day <> 31", style=filled, fillcolor=yellow, xlabel="[66]"];
+  69 [shape="box", label="day < 31 and
+result.year = self.year and
+result.month = self.month and
+result.day = self.day + 1
+", style=filled, fillcolor=yellow, xlabel="[69]"];
+  71 [shape="diamond", label="", xlabel="<71>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  72 [shape="diamond", label="", xlabel="<72>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  74 [shape="box", label="month <> 12", style=filled, fillcolor=yellow, xlabel="[74]"];
+  77 [shape="box", label="month = 1 or
+month = 3 or
+month = 5 or
+month = 7 or
+month = 8 or
+month = 10
+", style=filled, fillcolor=yellow, xlabel="[77]"];
+  80 [shape="box", label="day = 31", style=filled, fillcolor=yellow, xlabel="[80]"];
+  83 [shape="box", label="result.year = self.year and
+result.month = self.month + 1 and
+result.day = 1
+", style=filled, fillcolor=yellow, xlabel="[83]"];
+  86 [shape="box", label="day <> 31", style=filled, fillcolor=yellow, xlabel="[86]"];
+  89 [shape="box", label="day < 31 and
+result.year = self.year and
+result.month = self.month and
+result.day = self.day + 1
+", style=filled, fillcolor=yellow, xlabel="[89]"];
+  91 [shape="diamond", label="", xlabel="<91>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  92 [shape="diamond", label="", xlabel="<92>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  94 [shape="box", label="month <> 1 and
+month <> 3 and
+month <> 5 and
+month <> 7 and
+month <> 8 and
+month <> 10
+", style=filled, fillcolor=yellow, xlabel="[94]"];
+  97 [shape="box", label="month = 4 or
+month = 6 or
+month = 9 or
+month = 11
+", style=filled, fillcolor=yellow, xlabel="[97]"];
+  100 [shape="box", label="day = 30", style=filled, fillcolor=yellow, xlabel="[100]"];
+  103 [shape="box", label="result.year = self.year and
+result.month = self.month + 1 and
+result.day = 1
+", style=filled, fillcolor=yellow, xlabel="[103]"];
+  106 [shape="box", label="day <> 30", style=filled, fillcolor=yellow, xlabel="[106]"];
+  109 [shape="box", label="day < 30 and
+result.year = self.year and
+result.month = self.month and
+result.day = self.day + 1
+", style=filled, fillcolor=yellow, xlabel="[109]"];
+  111 [shape="diamond", label="", xlabel="<111>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  112 [shape="diamond", label="", xlabel="<112>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  114 [shape="box", label="month <> 4 and
+month <> 6 and
+month <> 9 and
+month <> 11
+", style=filled, fillcolor=yellow, xlabel="[114]"];
+  117 [shape="box", label="year.mod(400) = 0 or
+year.mod(4) = 0 and
+year.mod(100) <> 0
+", style=filled, fillcolor=yellow, xlabel="[117]"];
+  120 [shape="box", label="day = 29", style=filled, fillcolor=yellow, xlabel="[120]"];
+  123 [shape="box", label="result.year = self.year and
+result.month = self.month + 1 and
+result.day = 1
+", style=filled, fillcolor=yellow, xlabel="[123]"];
+  126 [shape="box", label="day <> 29", style=filled, fillcolor=yellow, xlabel="[126]"];
+  120 -> 123[label="graphAnd#135"];
+  126 -> 129[label="graphAnd#136"];
+  131 -> 120[label="split1#138"];
+  131 -> 126[label="split2#139"];
+  123 -> 132[label="merge1#140"];
+  129 -> 132[label="merge2#141"];
+  137 -> 140[label="graphAnd#153"];
+  143 -> 146[label="graphAnd#154"];
+  148 -> 137[label="split1#156"];
+  148 -> 143[label="split2#157"];
+  140 -> 149[label="merge1#158"];
+  146 -> 149[label="merge2#159"];
+  117 -> 131[label="graphAnd#161"];
+  134 -> 148[label="graphAnd#162"];
+  150 -> 117[label="split1#164"];
+  150 -> 134[label="split2#165"];
+  132 -> 151[label="merge1#166"];
+  149 -> 151[label="merge2#167"];
+  97 -> 111[label="graphAnd#169"];
+  114 -> 150[label="graphAnd#170"];
+  152 -> 97[label="split1#172"];
+  152 -> 114[label="split2#173"];
+  112 -> 153[label="merge1#174"];
+  151 -> 153[label="merge2#175"];
+  77 -> 91[label="graphAnd#177"];
+  94 -> 152[label="graphAnd#178"];
+  154 -> 77[label="split1#180"];
+  154 -> 94[label="split2#181"];
+  92 -> 155[label="merge1#182"];
+  153 -> 155[label="merge2#183"];
+  57 -> 71[label="graphAnd#185"];
+  74 -> 154[label="graphAnd#186"];
+  156 -> 57[label="split1#188"];
+  156 -> 74[label="split2#189"];
+  72 -> 157[label="merge1#190"];
+  155 -> 157[label="merge2#191"];
+  157 -> 147[label="graphOr_end#192"];
+  158 -> 159;
+  159 -> 156[label="graphAnd#195"];
+  60 -> 63[label="graphAnd#75"];
+  66 -> 69[label="graphAnd#76"];
+  71 -> 60[label="split1#78"];
+  71 -> 66[label="split2#79"];
+  63 -> 72[label="merge1#80"];
+  69 -> 72[label="merge2#81"];
+  80 -> 83[label="graphAnd#95"];
+  86 -> 89[label="graphAnd#96"];
+  91 -> 80[label="split1#98"];
+  91 -> 86[label="split2#99"];
+  83 -> 92[label="merge1#100"];
+  89 -> 92[label="merge2#101"];
+  100 -> 103[label="graphAnd#115"];
+  106 -> 109[label="graphAnd#116"];
+  111 -> 100[label="split1#118"];
+  111 -> 106[label="split2#119"];
+  103 -> 112[label="merge1#120"];
+  109 -> 112[label="merge2#121"];
+}

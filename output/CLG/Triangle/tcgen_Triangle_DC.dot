@@ -1,0 +1,13 @@
+digraph CLG {
+  0 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  1 [shape="box", label="sideA + sideB > sideC and
+sideB + sideC > sideA and
+sideA + sideC > sideB and
+sideA > 0 and
+sideB > 0 and
+sideC > 0
+", style=filled, fillcolor=yellow, xlabel="[1]"];
+  2 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  0 -> 1;
+  1 -> 2;
+}

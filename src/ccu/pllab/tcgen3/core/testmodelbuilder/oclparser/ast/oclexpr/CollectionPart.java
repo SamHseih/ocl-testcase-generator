@@ -8,14 +8,15 @@ import ccu.pllab.tcgen3.symboltable.type.Type;
 
 public abstract class CollectionPart extends ASTList implements Expression {
 
-	
-	/** not allow Empty*/
-	public CollectionPart(List<ASTree> children) {
-		super(children);
-	}
 
-	
-	public abstract String size();
-	public abstract ASTree clone();
+  /** not allow Empty */
+  public CollectionPart(List<ASTree> children) {
+    super(children);
+  }
+
+
+  public abstract String size();
+
+  public abstract ASTree clone();
 
 }

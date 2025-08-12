@@ -1,0 +1,14 @@
+digraph AST {
+  node [shape=box];
+  n85 [label="ContextDecl: node(80) Context: node (84)", xlabel="(85)"];
+  n85 -> n80;
+  n85 -> n84;
+  n80 [label="Grade::getNumber() : int", xlabel="(80)"];
+  n84 [label=" post:", xlabel="(84)Boolean"];
+  n84 -> n83;
+  n83 [label="=", xlabel="(83)Boolean"];
+  n83 -> n81;
+  n83 -> n82;
+  n81 [label="result", xlabel="(81)int"];
+  n82 [label="number", xlabel="(82)int"];
+}

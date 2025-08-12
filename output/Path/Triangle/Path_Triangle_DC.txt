@@ -1,0 +1,34 @@
+
+  tcgen_Triangle_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [1] , EndNode]
+
+  
+  tcgen_Triangle_Triangle_DC:
+	
+    Feasiable Path 1:
+	[StartNode, <18>, [10] , [13] , <19>, EndNode]
+
+    Feasiable Path 2:
+	[StartNode, <18>, [4] , [7] , <19>, EndNode]
+
+  
+  tcgen_Triangle_category_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [68] , <65>, [21] , <35>, [24] , [27] , <36>, <66>, EndNode]
+
+    Feasiable Path 2:
+	[StartNode, [68] , <65>, [21] , <35>, [30] , [33] , <36>, <66>, EndNode]
+
+    Feasiable Path 3:
+	[StartNode, [68] , <65>, [38] , <63>, [41] , [44] , <64>, <66>, EndNode]
+
+    Feasiable Path 4:
+	[StartNode, [68] , <65>, [38] , <63>, [47] , <61>, [50] , [53] , <62>, <64>, <66>, EndNode]
+
+    Feasiable Path 5:
+	[StartNode, [68] , <65>, [38] , <63>, [47] , <61>, [56] , [59] , <62>, <64>, <66>, EndNode]
+
+  

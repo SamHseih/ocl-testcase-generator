@@ -1,0 +1,30 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:180 ms
+Total CLGBuild Using Time:18 ms
+Total TestCase Generation Using Time:3977 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_DCC Using Time:102 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 62, PathNum: 20, BoundaryPathNum: 95  Generate tcgen_Date_Date_DCC Using Time:1366 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 69, PathNum: 30, BoundaryPathNum: 150  Generate tcgen_Date_next_DCC Using Time:2083 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_getYear_DCC Using Time:60 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_getMonth_DCC Using Time:63 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 5, PathNum: 1, BoundaryPathNum: 5  Generate tcgen_Date_getDay_DCC Using Time:60 ms
+
+Total System Generation Using Time:4175 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 91  CLGEdges Size: 109
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 117  CLGEdges Size: 135
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/12 17:26 TestCase output Finish. ==============
+======================================================================
