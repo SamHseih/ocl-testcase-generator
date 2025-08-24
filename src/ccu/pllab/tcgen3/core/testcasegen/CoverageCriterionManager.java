@@ -20,6 +20,8 @@ public class CoverageCriterionManager {
   private Scope currentscope;
   private CLGGraph clg;
   private boolean isBoundaryAnalysis;
+  private boolean isKeepInfeasiableInfo; // default not keep infeasiable path in ecl file
+                                         // and InfeasiablePath
 
   private int testcaseNum;// record the number of test cases generated
   private int pathNUm;// record the number of paths generated
@@ -27,12 +29,12 @@ public class CoverageCriterionManager {
   private int bdpathNum;// record the number of BVA paths generated
   private int maxUnoll;// record the max unroll number, default is Integer.MAX_VALUE
   int maxDynamicArrayTestCaseNum;// record the max dynamic array test case number, default is
-                                 // <user-define>, can
-                                 // be set by user
+                                 // <user-define>, (meaning can be set by user)
   boolean isConstructor;// for result analysis, if the method is a constructor
   boolean isException; // for result analysis, if the method is exception handling, default is
-                       // false,
-                       // for future use
+                       // false,for future use
+  int timeLimit = 10; // default time limit for CLP solver, can be set by user
+
   private List<String> errMessage = new ArrayList<>();// debug
   // <PathNum , TestCaseStr>
   private CLGTestDatas testdatas;
@@ -54,6 +56,8 @@ public class CoverageCriterionManager {
     this.isException = false; // default is false, for future use
     currentscope = null;
     this.testdatas = new CLGTestDatas(clg.getClassname(), clg.getMethodname(), isBoundaryAnalysis);
+    isKeepInfeasiableInfo = false;// default not keep infeasiable path in ecl file and
+                                  // InfeasiablePath
   }
 
   public List<String> getErrorMesg() {
@@ -81,12 +85,21 @@ public class CoverageCriterionManager {
     return this.feasiablePathMessage;
   }
 
+  public void setTimeLimit(int timeLimit) {
+    this.timeLimit = timeLimit;
+  }
+
+  public void setisKeepInfeasiableInfo(boolean isKeepInfeasiableInfo) {
+    this.isKeepInfeasiableInfo = isKeepInfeasiableInfo;
+  }
+
   public void genTestCase(CLPSolver solver) {
     Path projectpath = Path.of(System.getProperty("user.dir"));
 
     PathEnumerator pathEnumerator = new PathEnumerator(this.clg, maxUnoll);
     int dynamicArrayNum = 0;
-    for (List<CLGEdge> completepath : pathEnumerator) {
+
+    outer: for (List<CLGEdge> completepath : pathEnumerator) {
       pathNUm++;
       ithboundarypath = 0;
       // get CLG symboltable
@@ -132,8 +145,9 @@ public class CoverageCriterionManager {
 
       // Solving ECLiPSe CLP Code , Predicte is timeout(eclfilename,0.01,true).
       String SolvingHead = translator.getRequestTerm();
-      String goal = "timeout(" + SolvingHead + ",10" + ",true" + ")";// timeout 10 seconds
-      CompoundTerm result = solver.solve(goal, clpoutputpath);// false delete eclfile
+      String goal = "timeout(" + SolvingHead + "," + timeLimit + ",false" + ")";// timeout 10
+                                                                                // seconds
+      CompoundTerm result = solver.solve(goal, clpoutputpath);// if false delete eclfile
 
       // Feasiable
       if (result != null) {
@@ -177,7 +191,9 @@ public class CoverageCriterionManager {
 
             // BVA Solving ECLiPSe CLP Code , Predicte is timeout(eclfilename,0.01,true).
             String BDSolvingHead = BDtranslator.getRequestTerm();
-            String BDgoal = "timeout(" + BDSolvingHead + ",10" + ",true" + ")";// timeout 10 seconds
+
+            String BDgoal = "timeout(" + BDSolvingHead + "," + timeLimit + ",false" + ")";
+            // timeout 10seconds
 
             CompoundTerm BDresult = solver.solve(BDgoal, BVAclpoutputpath);
 
@@ -194,7 +210,7 @@ public class CoverageCriterionManager {
               if (ClgUtil.isIterateNode(clg)) {
                 // static array
                 if (!translator.getisVarArray()) {
-                  break;
+                  break outer; // continue to next complete path
                 }
                 // dynamic array
                 else {
@@ -202,16 +218,18 @@ public class CoverageCriterionManager {
                     dynamicArrayNum++;
                   }
                   if (dynamicArrayNum == maxDynamicArrayTestCaseNum) {
-                    break;
+                    break outer; // continue to next complete path
                   }
                 }
               }
               // BVA InFeasiable Path .
             } else {
-              // Nothing to do
+              if (isKeepInfeasiableInfo)
+                feasiablePathMessage.put("InFeasiable BVA Path " + pathNUm + "_" + ithboundarypath,
+                    ClgUtil.collectAllNodes(bdPath).toString() + "\n");
             }
           } // BVA Path for loop End
-        } // BVA End
+        }
         if (!isBoundaryAnalysis) {
           // Test Case OutPut
           testdatas.setTestDatas(Integer.toString(pathNUm), resultToString(result));
@@ -233,17 +251,14 @@ public class CoverageCriterionManager {
             }
           }
         }
-      } // Analysis Fesiable Complete Path END.
+      } // if (result != null).. Analysis Fesiable Complete Path END.
       else {// Analysis InFeasiable Complete Path END.
         // debug use
-        // feasiablePathMessage.put("InFeasiable
-        // Path"+pathNUm,ClgUtil.collectAllNodes(path).toString()+"\n");
-
+        if (isKeepInfeasiableInfo)
+          feasiablePathMessage.put("InFeasiablePath" + pathNUm,
+              ClgUtil.collectAllNodes(completepath).toString() + "\n");
       }
-      if (dynamicArrayNum == maxDynamicArrayTestCaseNum) {
-        break;
-      }
-    }
+    } // path for loop end
   }
 
   private Map<String, String> resultToString(CompoundTerm result) {
@@ -324,7 +339,7 @@ public class CoverageCriterionManager {
       // Self,Result
     } else if (!(clg.getMethodname().isEmpty()) && ArgNum == 0) {
       if (result.arg(1) instanceof CompoundTerm predicate) {
-        int index = 1;
+
         for (int i = 1; i <= predicate.arity(); i++) {
           if (i == 1) {
             resultMap.put("Self", ClpUtil.toJavaString(predicate.arg(i)));

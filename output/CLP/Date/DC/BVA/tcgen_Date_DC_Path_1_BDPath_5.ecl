@@ -9,11 +9,10 @@ tcgen_Date_DC_Path_1_BDPath_5(Self):-
 % dim/3 is called if the attribute is an array type.
 Self=[Self_year,Self_month,Self_day],
 
+%domiain for int Type
+[Self_year, Self_month, Self_day]#::(-32768)..32767,
 %CLG Path Constrints,
-((((Self_year #> 1),
-(Self_month #> 1)),
-(Self_month #< 12)),
-(Self_day #> 1)),
+((((Self_year #> 1) , (Self_month #> 1)) , (Self_month #< 12)) , (Self_day #> 1)),
 
 %TypeVar Labeling Parts
 labeling_int([Self_year, Self_month, Self_day]).

@@ -1,0 +1,71 @@
+Class: Triangle, Method: , Test Case Number: 1
+Boundaray Feasiable Path1_1:
+Invariant Self = [ 12511, 27162, 30884 ]
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Triangle, Method: Triangle, Test Case Number: 7
+Boundaray Feasiable Path1_1:
+Self = [ 11323, 22604, 25097 ]
+Arg_1 = 11323
+Arg_2 = 22604
+Arg_3 = 25097
+
+Boundaray Feasiable Path5_1:
+Arg_1 = 15922
+Arg_2 = 17917
+Arg_3 = 1995
+Result = EdgeErrorException
+
+Boundaray Feasiable Path5_2:
+Arg_1 = 10080
+Arg_2 = 27045
+Arg_3 = 4284
+Result = EdgeErrorException
+
+Boundaray Feasiable Path6_1:
+Arg_1 = 5400
+Arg_2 = 6175
+Arg_3 = 11575
+Result = EdgeErrorException
+
+Boundaray Feasiable Path6_2:
+Arg_1 = 12112
+Arg_2 = 12750
+Arg_3 = 28322
+Result = EdgeErrorException
+
+Boundaray Feasiable Path7_1:
+Arg_1 = 20326
+Arg_2 = 5422
+Arg_3 = 14904
+Result = EdgeErrorException
+
+Boundaray Feasiable Path7_2:
+Arg_1 = 8736
+Arg_2 = 8412
+Arg_3 = 286
+Result = EdgeErrorException
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Triangle, Method: category, Test Case Number: 5
+Boundaray Feasiable Path1_1:
+Self = [ 2734, 2734, 2734 ]
+Result = Equilateral
+
+Boundaray Feasiable Path2_1:
+Self = [ 21897, 21897, 7555 ]
+Result = Isosceles
+
+Boundaray Feasiable Path3_1:
+Self = [ 27194, 1579, 27194 ]
+Result = Isosceles
+
+Boundaray Feasiable Path4_1:
+Self = [ 28880, 19399, 19399 ]
+Result = Isosceles
+
+Boundaray Feasiable Path5_1:
+Self = [ 6543, 21641, 19012 ]
+Result = Scalene
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

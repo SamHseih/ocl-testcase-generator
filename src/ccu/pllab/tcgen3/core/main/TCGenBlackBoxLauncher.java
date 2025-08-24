@@ -15,10 +15,16 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
 import ccu.pllab.tcgen3.util.StringTool;
 
 public class TCGenBlackBoxLauncher {
+
   public static void main(String[] args) {
     // User Defined
-    int testCaseNum = 10; // default maxTestCaseNum for dynamicArray TestCase gen
-    boolean isBoundaryAnalysis = false;
+    int testCaseNum = 50; // default maxTestCaseNum for dynamicArray TestCase generate
+    boolean isBoundaryAnalysis = true;
+
+    boolean keepInfeasiablePathInfo = true; // default=false, not keep infeasiable path in ecl file
+    int solverlimitTime = 10;
+    boolean isgenASTandCLG_Graph = false;
+
     String seprater =
         "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
 
@@ -34,7 +40,9 @@ public class TCGenBlackBoxLauncher {
     performancesb.append("AST Build Using Time:").append(System.currentTimeMillis() - aststartTime)
         .append(" ms\n");
     /* output AST Graph (option) */
-    testmodelbuilder.genASTGraph();
+    if (isgenASTandCLG_Graph)
+      testmodelbuilder.genASTGraph();
+
 
     /* build CLG */
     long clgstartTime = System.currentTimeMillis();
@@ -42,7 +50,8 @@ public class TCGenBlackBoxLauncher {
     performancesb.append("Total CLGBuild Using Time:")
         .append(System.currentTimeMillis() - clgstartTime).append(" ms\n");
     /* output CLG Graph (option) */
-    testmodelbuilder.genCLGGraph();
+    if (isgenASTandCLG_Graph)
+      testmodelbuilder.genCLGGraph();
 
     System.out.println("======================================================================");
     System.out.println("====================== TestModel was built Done. =====================");
@@ -52,8 +61,13 @@ public class TCGenBlackBoxLauncher {
     /* Generate Test Case , need set testNum && isBVA analysis */
     TestCaseGenerator tcgen =
         new TestCaseGenerator(testmodelbuilder.getSymbolTable(), testCaseNum, isBoundaryAnalysis);
+    tcgen.setTimeLimit(solverlimitTime);
+    tcgen.setKeepInfeasiableInfo(keepInfeasiablePathInfo);
+
     tcgen.generateTestCases(testmodelbuilder.getCLGs());
+
     Map<String, String> tcgenm = tcgen.getTestCaseMessage();
+
     performancesb.append("Total TestCase Generation Using Time:")
         .append(System.currentTimeMillis() - testcasestartTime).append(" ms\n");
     performancesb.append(seprater);
@@ -70,13 +84,14 @@ public class TCGenBlackBoxLauncher {
     // scriptGenerator.generateScripts();
     // System.out.println("Test case scripts generated successfully.");
 
-    /* Analysis System */
+    /* Output CLG Edges & nodes */
     StringBuilder testsb = new StringBuilder();
     for (CLGGraph clg : testmodelbuilder.getCLGs()) {
       // packagename + classname + <mewthodname?> + criterion
       performancesb.append(clg.getFilename()).append(" CLG Info :").append("");
       performancesb.append("  CLGNodes Size: ").append(clg.getNodes().size()).append("  ");
       performancesb.append("CLGEdges Size: ").append(clg.getEdges().size()).append("\n");
+      // get test data by clg file name
       testsb.append(tcgen.getCLGTestDatas(clg.getFilename())).append(seprater);
     }
 
@@ -85,8 +100,9 @@ public class TCGenBlackBoxLauncher {
     performancesb.append("======================================================================\n")
         .append("============== ").append(now.format(fmt)).append(" TestCase output Finish.")
         .append(" ==============\n")
-        .append("======================================================================");
+        .append("=====================================================================\n");
 
+    /* set output path & filename */
     String BVAhead = "";
     if (isBoundaryAnalysis)
       BVAhead = "BVA_";
@@ -102,12 +118,15 @@ public class TCGenBlackBoxLauncher {
     Path TestdataOutputPath = projectpath.resolve("output").resolve("TestDatas")
         .resolve(projectname).resolve(Paths.get(testdatafilename));
     try {
+      /* Output path Info */
       Files.createDirectories(PathInfoOutputPath.getParent());
       Files.writeString(PathInfoOutputPath, StringTool.mapToString(tcgen.getFeasiablePath(), 0),
           StandardCharsets.UTF_8);
+      /* Output test data */
       Files.createDirectories(TestdataOutputPath.getParent());
       Files.writeString(TestdataOutputPath, testsb.toString(), StandardCharsets.UTF_8);
 
+      /* Output Performance */
       Files.createDirectories(PerformanceOutputPath.getParent());
       Files.writeString(PerformanceOutputPath, seprater + performancesb.toString(),
           StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND);

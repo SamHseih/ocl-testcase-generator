@@ -1,0 +1,37 @@
+package tcgen
+
+context Triangle
+	inv:
+		sideA + sideB > sideC and
+		sideB + sideC > sideA and
+		sideA + sideC > sideB and
+		sideA > 0 and
+		sideB > 0 and
+		sideC > 0
+
+context Triangle::Triangle(sa : int, sb : int, sc : int)
+	pre EdgeErrorException:
+		sa + sb > sc and sb + sc > sa and sa + sc > sb and sa > 0 and sb > 0 and sc > 0
+	post:
+		sideA = sa and sideB = sb and sideC = sc
+
+context Triangle::category() : String
+	post:
+		if (sideA = sideB) then
+			if (sideB = sideC) then
+				result = 'Equilateral'
+			else
+				result = 'Isosceles'
+			endif
+		else
+			if (sideA = sideC) then
+				result = 'Isosceles'
+			else
+				if (sideB=sideC) then
+					result = 'Isosceles'
+				else
+					result = 'Scalene'
+				endif
+			endif
+		endif 
+endpackage 

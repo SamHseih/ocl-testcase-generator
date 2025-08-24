@@ -50,7 +50,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o686UV-zEfClYpUXDFPG2w"/>
     </children>
     <element xmi:type="uml:Class" href="TwoDimVarArray.uml#_o60-cF-zEfClYpUXDFPG2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o66eAV-zEfClYpUXDFPG2w" x="-80" y="40" width="321" height="161"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o66eAV-zEfClYpUXDFPG2w" x="20" y="40" width="341" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_pJMKkF-zEfClYpUXDFPG2w" type="DataType_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_pJMxoF-zEfClYpUXDFPG2w" type="DataType_NameLabel"/>
@@ -112,7 +112,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pJMxrF-zEfClYpUXDFPG2w"/>
     </children>
     <element xmi:type="uml:DataType" href="TwoDimVarArray.uml#_pJK8cF-zEfClYpUXDFPG2w"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pJMKkV-zEfClYpUXDFPG2w" x="260" y="40" width="261" height="161"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pJMKkV-zEfClYpUXDFPG2w" x="400" y="40" width="261" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_1_txEF-zEfClYpUXDFPG2w" type="Package_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_1_uYIF-zEfClYpUXDFPG2w" type="Package_NameLabel"/>

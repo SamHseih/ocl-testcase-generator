@@ -192,7 +192,7 @@ public final class BoundaryEnumerator {
   }
 
   /**
-   * Creates a single on‑boundary path by cloning every node and replacing the relational operator
+   * Creates a single on-boundary path by cloning every node and replacing the relational operator
    * at the specified <code>bdpoint</code> with equality.
    */
   private List<CLGEdge> processBoundaryPath(List<CLGNode> allnodes, List<CLGEdge> feasiablePath,
@@ -229,7 +229,7 @@ public final class BoundaryEnumerator {
   }
 
   /**
-   * Generates exactly one interior‑point path by turning every boundary predicate along the
+   * Generates exactly one interior-point path by turning every boundary predicate along the
    * feasible path from {@code <=}/{@code >=} to {@code <}/{@code >} respectively.
    */
   private List<CLGEdge> processInteriorPath(List<CLGNode> allnodes, List<CLGEdge> feasiablePath,

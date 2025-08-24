@@ -1,0 +1,73 @@
+digraph CLG {
+  129 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[129]"];
+  131 [shape="diamond", label="", xlabel="<131>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  132 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  133 [shape="box", label="self.data.getDimensionSizes(1) > 0 and
+self.data.getDimensionSizes(2) > 0
+", style=filled, fillcolor=yellow, xlabel="[133]"];
+  135 [shape="diamond", label="", xlabel="<135>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  136 [shape="diamond", label="", xlabel="<136>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  74 [shape="box", label="self.data.getDimension() <> arg.data.getDimension() and
+self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1) and
+self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2) or
+self.data.getDimension() = arg.data.getDimension() and
+self.data.getDimensionSizes(1) <> arg.data.getDimensionSizes(1) and
+self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2) or
+self.data.getDimension() = arg.data.getDimension() and
+self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1) and
+self.data.getDimensionSizes(2) <> arg.data.getDimensionSizes(2)
+", style=filled, fillcolor=yellow, xlabel="[74]"];
+  77 [shape="box", label="Result = 'IllegalDimensionSize'", style=filled, fillcolor=yellow, xlabel="[77]"];
+  78 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  80 [shape="box", label="self.data.getDimension() = arg.data.getDimension() and
+self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1) and
+self.data.getDimensionSizes(2) = arg.data.getDimensionSizes(2)
+", style=filled, fillcolor=yellow, xlabel="[80]"];
+  83 [shape="box", label="self.data.getDimension() = result.data.getDimension() and
+self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1) and
+self.data.getDimensionSizes(2) = result.data.getDimensionSizes(2)
+", style=filled, fillcolor=yellow, xlabel="[83]"];
+  86 [shape="box", label="d1 = arg.data.getDimensionSizes(1)", style=filled, fillcolor=yellow, xlabel="[86]"];
+  89 [shape="box", label="d2 = arg.data.getDimensionSizes(2)", style=filled, fillcolor=yellow, xlabel="[89]"];
+  92 [shape="box", label="idx0 = 1", style=filled, fillcolor=yellow, xlabel="[92]"];
+  95 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[95]"];
+  98 [shape="box", label="idx0 > d1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[98]"];
+  101 [shape="box", label="idx0 <= d1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[101]"];
+  104 [shape="box", label="it = Sequence{1..d1}", style=filled, fillcolor=yellow, xlabel="[104]"];
+  107 [shape="box", label="idx1 = 1", style=filled, fillcolor=yellow, xlabel="[107]"];
+  110 [shape="box", label="acc2 = true", style=filled, fillcolor=yellow, xlabel="[110]"];
+  113 [shape="box", label="idx1 > d2 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[113]"];
+  116 [shape="box", label="idx1 <= d2 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[116]"];
+  119 [shape="box", label="it2 = Sequence{1..d2}", style=filled, fillcolor=yellow, xlabel="[119]"];
+  122 [shape="box", label="result.data[it][it2] = self.data[it][it2] - arg.data[it][it2]", style=filled, fillcolor=yellow, xlabel="[122]"];
+  125 [shape="box", label="idx1 = idx1 + 1", style=filled, fillcolor=yellow, xlabel="[125]"];
+  127 [shape="diamond", label="", xlabel="<127>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  101 -> 104[label="graphAnd#129"];
+  104 -> 110[label="graphAnd#130"];
+  113 -> 129[label="graphAnd#131"];
+  131 -> 101[label="iterate#133"];
+  129 -> 131[label="iterate#134"];
+  131 -> 98[label="graphAnd#136"];
+  92 -> 131[label="graphAnd#137"];
+  89 -> 95[label="graphAnd#138"];
+  83 -> 86[label="graphAnd#139"];
+  74 -> 77[label="graphAnd#140"];
+  80 -> 83[label="graphAnd#141"];
+  132 -> 133;
+  135 -> 80[label="split1#145"];
+  135 -> 74[label="split2#146"];
+  98 -> 136[label="merge1#147"];
+  77 -> 136[label="merge2#148"];
+  136 -> 78[label="graphOr_end#149"];
+  133 -> 135[label="graphAnd#150"];
+  86 -> 89[label="graphAnd#91"];
+  95 -> 92[label="graphAnd#96"];
+  110 -> 107[label="graphAnd#107"];
+  116 -> 119[label="graphAnd#118"];
+  119 -> 122[label="graphAnd#119"];
+  122 -> 125[label="graphAnd#120"];
+  127 -> 116[label="iterate#122"];
+  125 -> 127[label="iterate#123"];
+  127 -> 113[label="graphAnd#125"];
+  107 -> 127[label="graphAnd#126"];
+}

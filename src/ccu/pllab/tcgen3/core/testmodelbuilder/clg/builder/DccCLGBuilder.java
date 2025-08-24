@@ -40,6 +40,7 @@ import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 import ccu.pllab.tcgen3.util.AstUtil;
+import ccu.pllab.tcgen3.util.StringTool;
 
 public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 
@@ -69,7 +70,7 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
     // If the context is an OperationContextDeclAST, we need to generate the pre and post condition
     // CLG
     if (node.getContextDecl() instanceof OperationContextDeclAST op) {
-      isConstructor = op.getMethodName().equals(op.getPathName());
+      isConstructor = op.getMethodName().equals(StringTool.mergeClassRefs(op.getPathName()));
 
       // pre:.. , pre:..,.. , post:.. , post:..
       for (int i = 1; i < node.numChildren(); i++) {
@@ -338,14 +339,12 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 
   @Override
   public CLGGraph visitIntegerLiteralExpContext(IntegerLiteralExp node) {
-    // TODO Auto-generated method stub
-    return null;
+    return new CLGGraph(node);
   }
 
   @Override
   public CLGGraph visitStringLiteralExpContext(StringLiteralExp node) {
-    // TODO Auto-generated method stub
-    return null;
+    return new CLGGraph(node);
   }
 
   @Override
@@ -355,8 +354,7 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
 
   @Override
   public CLGGraph visitBooleanLiteralExpContext(BooleanLiteralExp node) {
-    // TODO Auto-generated method stub
-    return null;
+    return new CLGGraph(node);
   }
 
   @Override

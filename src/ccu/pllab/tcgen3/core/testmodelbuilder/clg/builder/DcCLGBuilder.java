@@ -36,11 +36,11 @@ import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableDecl
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.VariableExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser.SymbolTableBuilder;
 import ccu.pllab.tcgen3.symboltable.Symbol;
-import ccu.pllab.tcgen3.symboltable.scope.LocalScope;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 import ccu.pllab.tcgen3.util.AstUtil;
+import ccu.pllab.tcgen3.util.StringTool;
 
 public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
   private List<String> CLGtransferMessege = new ArrayList<>();
@@ -71,7 +71,7 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
     /* Collect AllCLGs */
     // pre and post condition CLGs
     if (node.getContextDecl() instanceof OperationContextDeclAST op) {
-      isConstructor = op.getMethodName().equals(op.getPathName());
+      isConstructor = op.getMethodName().equals(StringTool.mergeClassRefs(op.getPathName()));
 
       // pre:.. , pre:..,.. , post:.. , post:..
       for (int i = 1; i < node.numChildren(); i++) {
@@ -278,6 +278,7 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
   public CLGGraph visitIfExpContext(IfExp node) {
     CLGGraph condclg = node.getCondition().accept(this);
     CLGGraph thenclg = node.getThenBranch().accept(this);
+
     CLGGraph negatecondclg = AstUtil.DeMorgan(node.getCondition()).accept(this);
     CLGGraph elseclg = node.getElseBranch().accept(this);
 
@@ -307,14 +308,12 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 
   @Override
   public CLGGraph visitIntegerLiteralExpContext(IntegerLiteralExp node) {
-    // TODO Auto-generated method stub
-    return null;
+    return new CLGGraph(node);
   }
 
   @Override
   public CLGGraph visitStringLiteralExpContext(StringLiteralExp node) {
-    // TODO Auto-generated method stub
-    return null;
+    return new CLGGraph(node);
   }
 
   @Override
@@ -324,8 +323,7 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
 
   @Override
   public CLGGraph visitBooleanLiteralExpContext(BooleanLiteralExp node) {
-    // TODO Auto-generated method stub
-    return null;
+    return new CLGGraph(node);
   }
 
   @Override

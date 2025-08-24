@@ -1,0 +1,16 @@
+digraph AST {
+  node [shape=box];
+  n236 [label="ContextDecl: node(230) Context: node (235)", xlabel="(236)"];
+  n236 -> n230;
+  n236 -> n235;
+  n230 [label="TwoDimVarArray::getData() : int[dim1][dim2]", xlabel="(230)"];
+  n235 [label=" post:", xlabel="(235)Boolean"];
+  n235 -> n234;
+  n234 [label="=", xlabel="(234)Boolean"];
+  n234 -> n231;
+  n234 -> n233;
+  n231 [label="result", xlabel="(231)int[dim1][dim2]"];
+  n233 [label="self.data", xlabel="(233)int[dim1][dim2]"];
+  n233 -> n232;
+  n232 [label="self", xlabel="(232)TwoDimVarArray"];
+}

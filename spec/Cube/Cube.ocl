@@ -18,7 +18,6 @@ package StaticFixedsizeArrays
 				)
 			)
 			
-			
 	context Cube::sub(arg:Cube):Cube
 	post: 
 		let dim1:int = arg.data.getDimensionSizes(1) ,
@@ -32,6 +31,7 @@ package StaticFixedsizeArrays
 					)
 				)
 			)
+			
 	context Cube::getData():int[1][2][4]
 	post:
 		result = self.data

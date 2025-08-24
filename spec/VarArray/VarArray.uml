@@ -19,6 +19,11 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_gLT38FC9EfCazayHoYWa5g" name="getData">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Eg2RIFC_EfCazayHoYWa5g" type="_RFtx0FC9EfCazayHoYWa5g" direction="return"/>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_4npnUGV_EfCcsepjY0iGjA" name="sort">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_86zekGV_EfCcsepjY0iGjA" name="arr" type="_RFtx0FC9EfCazayHoYWa5g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-aWlwGV_EfCcsepjY0iGjA" name="n" type="_S8qsYFC9EfCazayHoYWa5g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_AFlYgGWAEfCcsepjY0iGjA" type="_RFtx0FC9EfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:DataType" xmi:id="_RFtx0FC9EfCazayHoYWa5g" name="int[dim]">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_d5bU4FC9EfCazayHoYWa5g" name="dimension" type="_S8qsYFC9EfCazayHoYWa5g">

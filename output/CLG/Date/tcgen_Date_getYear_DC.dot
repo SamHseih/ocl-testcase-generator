@@ -1,13 +1,119 @@
 digraph CLG {
-  162 [shape="box", label="result = year", style=filled, fillcolor=yellow, xlabel="[162]"];
-  163 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
-  164 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
-  165 [shape="box", label="year >= 1 and
+  192 [shape="box", label="self.year.mod(400) <> 0 and
+self.year.mod(4) <> 0 and
+self.year.mod(100) <> 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) = 0
+", style=filled, fillcolor=yellow, xlabel="[192]"];
+  195 [shape="box", label="self.day <= 28", style=filled, fillcolor=yellow, xlabel="[195]"];
+  197 [shape="diamond", label="", xlabel="<197>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  198 [shape="diamond", label="", xlabel="<198>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  199 [shape="diamond", label="", xlabel="<199>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  200 [shape="diamond", label="", xlabel="<200>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  201 [shape="diamond", label="", xlabel="<201>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  202 [shape="diamond", label="", xlabel="<202>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  204 [shape="box", label="self.year >= 1 and
+self.month >= 1 and
+self.month <= 12 and
+self.day >= 1 and
+IfExp ConditionNode:(468) thenNode: (472) elseNode: (525)
+", style=filled, fillcolor=yellow, xlabel="[204]"];
+  207 [shape="box", label="result = year", style=filled, fillcolor=yellow, xlabel="[207]"];
+  209 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  210 [shape="box", label="year >= 1 and
 month >= 1 and
 month <= 12 and
 day >= 1
-", style=filled, fillcolor=yellow, xlabel="[165]"];
-  162 -> 163;
-  164 -> 165;
-  165 -> 162[label="graphAnd#200"];
+", style=filled, fillcolor=yellow, xlabel="[210]"];
+  212 [shape="diamond", label="", xlabel="<212>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  213 [shape="diamond", label="", xlabel="<213>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  162 [shape="box", label="self.year < 1 and
+self.month >= 1 and
+self.month <= 12 and
+self.day >= 1 and
+IfExp ConditionNode:(1504) thenNode: (1508) elseNode: (1561) or
+self.year >= 1 and
+self.month < 1 and
+self.month <= 12 and
+self.day >= 1 and
+IfExp ConditionNode:(1616) thenNode: (1620) elseNode: (1673) or
+self.year >= 1 and
+self.month >= 1 and
+self.month > 12 and
+self.day >= 1 and
+IfExp ConditionNode:(1728) thenNode: (1732) elseNode: (1785) or
+self.year >= 1 and
+self.month >= 1 and
+self.month <= 12 and
+self.day < 1 and
+IfExp ConditionNode:(1840) thenNode: (1844) elseNode: (1897) or
+self.year >= 1 and
+self.month >= 1 and
+self.month <= 12 and
+self.day >= 1 and
+IfExp ConditionNode:(2096) thenNode: (1956) elseNode: (2062)
+", style=filled, fillcolor=yellow, xlabel="[162]"];
+  165 [shape="box", label="Result = 'DateErrorException'", style=filled, fillcolor=yellow, xlabel="[165]"];
+  166 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  168 [shape="box", label="self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+", style=filled, fillcolor=yellow, xlabel="[168]"];
+  171 [shape="box", label="self.day <= 31", style=filled, fillcolor=yellow, xlabel="[171]"];
+  174 [shape="box", label="self.month <> 1 and
+self.month <> 3 and
+self.month <> 5 and
+self.month <> 7 and
+self.month <> 8 and
+self.month <> 10 and
+self.month <> 12
+", style=filled, fillcolor=yellow, xlabel="[174]"];
+  177 [shape="box", label="self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+", style=filled, fillcolor=yellow, xlabel="[177]"];
+  180 [shape="box", label="self.day <= 30", style=filled, fillcolor=yellow, xlabel="[180]"];
+  183 [shape="box", label="self.month <> 4 and
+self.month <> 6 and
+self.month <> 9 and
+self.month <> 11
+", style=filled, fillcolor=yellow, xlabel="[183]"];
+  186 [shape="box", label="self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+", style=filled, fillcolor=yellow, xlabel="[186]"];
+  189 [shape="box", label="self.day <= 29", style=filled, fillcolor=yellow, xlabel="[189]"];
+  207 -> 213[label="merge1#256"];
+  165 -> 213[label="merge2#257"];
+  213 -> 166[label="graphOr_end#258"];
+  210 -> 212[label="graphAnd#259"];
+  186 -> 189[label="graphAnd#220"];
+  192 -> 195[label="graphAnd#221"];
+  197 -> 186[label="split1#223"];
+  197 -> 192[label="split2#224"];
+  189 -> 198[label="merge1#225"];
+  195 -> 198[label="merge2#226"];
+  177 -> 180[label="graphAnd#228"];
+  183 -> 197[label="graphAnd#229"];
+  199 -> 177[label="split1#231"];
+  199 -> 183[label="split2#232"];
+  180 -> 200[label="merge1#233"];
+  198 -> 200[label="merge2#234"];
+  168 -> 171[label="graphAnd#236"];
+  174 -> 199[label="graphAnd#237"];
+  201 -> 168[label="split1#239"];
+  201 -> 174[label="split2#240"];
+  171 -> 202[label="merge1#241"];
+  200 -> 202[label="merge2#242"];
+  204 -> 201[label="graphAnd#246"];
+  162 -> 165[label="graphAnd#249"];
+  202 -> 207[label="graphAnd#250"];
+  209 -> 210;
+  212 -> 204[label="split1#254"];
+  212 -> 162[label="split2#255"];
 }

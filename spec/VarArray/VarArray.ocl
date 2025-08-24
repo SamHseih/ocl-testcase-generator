@@ -1,7 +1,7 @@
 package DynamicFixedsizeVarArrays 
 	
 	context VarArray
-		inv: self.data.getDimensionSizes(1) > 0  and self.data.getDimensionSizes(1) < 10 
+		inv: self.data.getDimensionSizes(1) > 0 
 	
 	context VarArray::VarArray(inputArray:int[dim])
 	post: 
@@ -36,4 +36,15 @@ package DynamicFixedsizeVarArrays
 	context VarArray::getData():int[dim]
 	post:
 		result = self.data
+		
+--	context VarArray::sort(arr: int[dim], n: int) : int[dim]
+--	post permutation:
+--		let p: int[dim] in
+--			Sequence{1 .. n} -> iterate(i: int; acc: Boolean = true |
+--				p[i] >= 0 and p[i] < n and
+--					Sequence{1 .. n} -> iterate(j: int; inner: Boolean = true |
+--						i = j or p[i] <> p[j]) and p[i] = arr[i]) 
+--	post sorted:
+--			Sequence{1 .. n-1} -> iterate(i: int; acc: Boolean = true |
+--				result.data[i] <= result.data[i+1])
 endpackage 

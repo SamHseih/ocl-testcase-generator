@@ -10,6 +10,8 @@ tcgen_Date_next_DCC_Path_23_BDPath_5(Self,Result):-
 Self=[Self_year,Self_month,Self_day],Result = [Result_year,Result_month,Result_day],
 
 
+%domiain for int Type
+[Self_year, Self_month, Self_day]#::(-32768)..32767,
 %CLG Path Constrints,
 (Self_year #> 1),
 (Self_month #> 1),
@@ -26,8 +28,8 @@ Self=[Self_year,Self_month,Self_day],Result = [Result_year,Result_month,Result_d
 (Self_month #\= 6),
 (Self_month #\= 9),
 (Self_month #\= 11),
-delay_mod(Self_year,400, Var_2081191879),
-(Var_2081191879 #= 0),
+delay_mod(Self_year,400, Var_1529060733),
+(Var_1529060733 #= 0),
 (Self_day #= 29),
 (Result_year #= Self_year),
 (Result_month #= (Self_month+1)),

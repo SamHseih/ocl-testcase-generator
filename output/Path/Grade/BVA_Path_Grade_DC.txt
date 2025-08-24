@@ -1,0 +1,115 @@
+
+  tcgen_Grade_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [1] , EndNode]
+
+    Feasiable BVA Path 1_1:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_2:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_3:
+	 Same as in the Feasible Path : 1
+
+  
+  tcgen_Grade_Grade_DC:
+	
+    Feasiable Path 1:
+	[StartNode, <18>, [10] , [13] , <19>, EndNode]
+
+    Feasiable BVA Path 1_1:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_2:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_3:
+	 Same as in the Feasible Path : 1
+
+    Feasiable Path 2:
+	[StartNode, <18>, [4] , [7] , <19>, EndNode]
+
+    Feasiable BVA Path 2_1:
+	 Same as in the Feasible Path : 2
+
+  
+  tcgen_Grade_rating_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [79] , <76>, [21] , [24] , <77>, EndNode]
+
+    Feasiable BVA Path 1_1:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_3:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_4:
+	 Same as in the Feasible Path : 1
+
+    Feasiable Path 2:
+	[StartNode, [79] , <76>, [27] , <74>, [30] , [33] , <75>, <77>, EndNode]
+
+    Feasiable BVA Path 2_3:
+	 Same as in the Feasible Path : 2
+
+    Feasiable BVA Path 2_4:
+	 Same as in the Feasible Path : 2
+
+    Feasiable BVA Path 2_5:
+	 Same as in the Feasible Path : 2
+
+    Feasiable Path 3:
+	[StartNode, [79] , <76>, [27] , <74>, [36] , <72>, [39] , [42] , <73>, <75>, <77>, EndNode]
+
+    Feasiable BVA Path 3_3:
+	 Same as in the Feasible Path : 3
+
+    Feasiable BVA Path 3_4:
+	 Same as in the Feasible Path : 3
+
+    Feasiable BVA Path 3_5:
+	 Same as in the Feasible Path : 3
+
+    Feasiable Path 4:
+	[StartNode, [79] , <76>, [27] , <74>, [36] , <72>, [45] , <70>, [48] , [51] , <71>, <73>, <75>, <77>, EndNode]
+
+    Feasiable BVA Path 4_3:
+	 Same as in the Feasible Path : 4
+
+    Feasiable BVA Path 4_4:
+	 Same as in the Feasible Path : 4
+
+    Feasiable BVA Path 4_5:
+	 Same as in the Feasible Path : 4
+
+    Feasiable Path 5:
+	[StartNode, [79] , <76>, [27] , <74>, [36] , <72>, [45] , <70>, [54] , <68>, [57] , [60] , <69>, <71>, <73>, <75>, <77>, EndNode]
+
+    Feasiable BVA Path 5_2:
+	 Same as in the Feasible Path : 5
+
+    Feasiable BVA Path 5_3:
+	 Same as in the Feasible Path : 5
+
+    Feasiable BVA Path 5_4:
+	 Same as in the Feasible Path : 5
+
+  
+  tcgen_Grade_getNumber_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [85] , [82] , EndNode]
+
+    Feasiable BVA Path 1_1:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_2:
+	 Same as in the Feasible Path : 1
+
+    Feasiable BVA Path 1_3:
+	 Same as in the Feasible Path : 1
+
+  

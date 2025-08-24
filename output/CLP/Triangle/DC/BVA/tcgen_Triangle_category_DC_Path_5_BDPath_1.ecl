@@ -10,13 +10,10 @@ tcgen_Triangle_category_DC_Path_5_BDPath_1(Self,Result):-
 Self=[Self_sideA,Self_sideB,Self_sideC],
 
 
+%domiain for int Type
+[Self_sideA, Self_sideB, Self_sideC]#::(-32768)..32767,
 %CLG Path Constrints,
-(((((((Self_sideA+Self_sideB) #> Self_sideC),
-((Self_sideB+Self_sideC) #> Self_sideA)),
-((Self_sideA+Self_sideC) #> Self_sideB)),
-(Self_sideA #> 0)),
-(Self_sideB #> 0)),
-(Self_sideC #> 0)),
+(((((((Self_sideA+Self_sideB) #> Self_sideC) , ((Self_sideB+Self_sideC) #> Self_sideA)) , ((Self_sideA+Self_sideC) #> Self_sideB)) , (Self_sideA #> 0)) , (Self_sideB #> 0)) , (Self_sideC #> 0)),
 (Self_sideA #\= Self_sideB),
 (Self_sideA #\= Self_sideC),
 (Self_sideB #\= Self_sideC),

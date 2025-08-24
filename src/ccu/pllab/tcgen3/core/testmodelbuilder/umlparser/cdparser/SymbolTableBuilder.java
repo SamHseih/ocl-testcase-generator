@@ -1,12 +1,10 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser;
 
 import java.util.Arrays;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.symboltable.FieldSymbol;
 import ccu.pllab.tcgen3.symboltable.MethodSymbol;
@@ -14,6 +12,7 @@ import ccu.pllab.tcgen3.symboltable.ParameterSymbol;
 import ccu.pllab.tcgen3.symboltable.Symbol;
 import ccu.pllab.tcgen3.symboltable.scope.GlobalScope;
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
+import ccu.pllab.tcgen3.symboltable.type.ArrayListTypeClassSymbol;
 import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
 import ccu.pllab.tcgen3.symboltable.type.MultiplicityListType;
 import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
@@ -101,8 +100,18 @@ public class SymbolTableBuilder {
         String datatypename = element.getAttribute("name");
         String dataid = element.getAttribute("xmi:id");
 
-        /** dataTypeFor Array */
-        if ("uml:DataType".equals(xmiType)) {
+        /* dataTypeFor ArrayList */
+        if ("uml:DataType".equals(xmiType) && datatypename.contains("ArrayList")) {
+          ArrayListTypeClassSymbol classSymbol = new ArrayListTypeClassSymbol(datatypename, dataid);
+          classSymbol.setScope(globalsymbolTable);
+          globalsymbolTable.define(classSymbol);
+          globalsymbolTable.defineByClassSymTypeId(classSymbol);
+          // Process attributes 待修改
+          // processAttributes(element, classSymbol, datatypename);
+          // Process operations 待修改
+          // processOperations(element, classSymbol, datatypename);
+        } /* dataTypeFor Array */
+        else if ("uml:DataType".equals(xmiType)) {
           ArrayTypeClassSymbol classSymbol = new ArrayTypeClassSymbol(datatypename, dataid);
           classSymbol.setScope(globalsymbolTable);
           globalsymbolTable.define(classSymbol);

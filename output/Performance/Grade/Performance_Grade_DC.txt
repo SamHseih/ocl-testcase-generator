@@ -1,0 +1,238 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:517 ms
+Total CLGBuild Using Time:25 ms
+Total TestCase Generation Using Time:1083 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:48 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:215 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:69 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:10 ms
+
+Total System Generation Using Time:9357 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/14 15:35 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:212 ms
+Total CLGBuild Using Time:13 ms
+Total TestCase Generation Using Time:651 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:35 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:24 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:71 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:12 ms
+
+Total System Generation Using Time:876 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/20 1:04 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:215 ms
+Total CLGBuild Using Time:19 ms
+Total TestCase Generation Using Time:693 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:31 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:26 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 2, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:84 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:14 ms
+
+Total System Generation Using Time:7861 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/21 23:15 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:174 ms
+Total CLGBuild Using Time:13 ms
+Total TestCase Generation Using Time:633 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:25 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:23 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:66 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:12 ms
+
+Total System Generation Using Time:7651 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/21 23:18 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:199 ms
+Total CLGBuild Using Time:15 ms
+Total TestCase Generation Using Time:724 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:33 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:29 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:84 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:17 ms
+
+Total System Generation Using Time:8901 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/21 23:41 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:178 ms
+Total CLGBuild Using Time:14 ms
+Total TestCase Generation Using Time:659 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:25 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:26 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:71 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:11 ms
+
+Total System Generation Using Time:8749 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/21 23:45 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:285 ms
+Total CLGBuild Using Time:14 ms
+Total TestCase Generation Using Time:804 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:43 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:25 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:75 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:10 ms
+
+Total System Generation Using Time:9744 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/22 1:37 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:356 ms
+Total CLGBuild Using Time:30 ms
+Total TestCase Generation Using Time:791 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:40 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:26 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:73 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:11 ms
+
+Total System Generation Using Time:9550 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/22 13:44 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:175 ms
+Total CLGBuild Using Time:16 ms
+Total TestCase Generation Using Time:650 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_DC Using Time:33 ms
+  tcgen_Grade_Grade_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Grade_Grade_DC Using Time:24 ms
+  tcgen_Grade_rating_DC:
+	TestCaseNum: 5, PathNum: 6, BoundaryPathNum: 0  Generate tcgen_Grade_rating_DC Using Time:72 ms
+  tcgen_Grade_getNumber_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Grade_getNumber_DC Using Time:10 ms
+
+Total System Generation Using Time:841 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/22 13:49 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:178 ms
+Total CLGBuild Using Time:14 ms
+Total TestCase Generation Using Time:667 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Grade_DC Using Time:32 ms
+  tcgen_Grade_Grade_DC:
+	PathNum: 2, TestCaseNum: 2  Generate tcgen_Grade_Grade_DC Using Time:24 ms
+  tcgen_Grade_rating_DC:
+	PathNum: 6, TestCaseNum: 5  Generate tcgen_Grade_rating_DC Using Time:74 ms
+  tcgen_Grade_getNumber_DC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Grade_getNumber_DC Using Time:10 ms
+
+Total System Generation Using Time:859 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/22 14:03 TestCase output Finish. ==============
+=====================================================================

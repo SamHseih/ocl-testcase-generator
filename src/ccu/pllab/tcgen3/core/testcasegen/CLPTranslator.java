@@ -78,6 +78,9 @@ public class CLPTranslator {
     sb.append(this.genlibCLP()).append("\n");
     sb.append(head).append("\n");
     sb.append(decl).append("\n");
+    if (!intTypeVar.isEmpty())
+      sb.append("%domiain for int Type\n");
+    sb.append(intTypeVar.toString() + "#::(-32768)..32767,\n");
     sb.append(body).append("\n");
     sb.append(labeling).append("\n");
     return sb.toString();

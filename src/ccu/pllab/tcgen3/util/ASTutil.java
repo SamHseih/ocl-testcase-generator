@@ -1,6 +1,5 @@
 package ccu.pllab.tcgen3.util;
 
-import java.lang.reflect.Constructor;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,12 +7,13 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import ccu.pllab.tcgen3.core.testmodelbuilder.ASTBuilder;
-import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ContextExpAST;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.InvalidAST;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BinaryExp;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BinaryExp.OpGroup;
+import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.BooleanLiteralExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.FeatureCallExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IfExp;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr.IterateExp;
@@ -185,66 +185,89 @@ public final class AstUtil {
     System.out.println();
   }
 
-  /**
-   * 依德摩根定律將 (A and B) → (not A) or (not B) (A or B) → (not A) and (not B)
-   */
-  /** 入口：對傳入節點取反並展開德摩根律。 */
-  public static ASTree transformPost(ASTree node, Function<ASTree, ASTree> rewrite) {
-
-    if (node == null)
-      return null;
-
-    // 1) 先遞迴處理子節點
-    List<ASTree> newKids = new ArrayList<>();
-    node.children().forEachRemaining(child -> newKids.add(transformPost(child, rewrite)));
-
-    // 2) 如果任何子節點被換掉，就重建目前節點
-    ASTree current = node;
-    if (node instanceof ASTList && // 只示範 ASTList
-        newKids.stream().anyMatch(k -> k != null)) {
-      try {
-        Constructor<? extends ASTree> ctor = node.getClass().getConstructor(List.class);
-        current = ctor.newInstance(newKids);
-      } catch (Exception e) {
-        current = node.clone(); // 後援：至少 clone
-      }
-    }
-
-    // 3) 最後把「自己」交給 rewrite() 再回傳
-    return rewrite.apply(current);
+  // 新輔助方法：收集 AND 鏈成列表（遞迴扁平化）
+  private static List<ASTree> collectAndChain(BinaryExp bin) {
+    List<ASTree> chain = new ArrayList<>();
+    collectAndChainHelper(bin, chain);
+    return chain;
   }
 
+  private static void collectAndChainHelper(ASTree node, List<ASTree> chain) {
+    if (node instanceof BinaryExp b && b.getOperator().equals("and")
+        && b.getGroup() == OpGroup.LOGICAL) {
+      collectAndChainHelper(b.left(), chain);
+      collectAndChainHelper(b.right(), chain);
+    } else {
+      chain.add(node);
+    }
+  }
+
+  // 新輔助方法：從列表構建 BinaryExp 鏈（例如 [A, B, C] -> ((A op B) op C)）
+  private static ASTree buildBinaryExpChain(List<ASTree> children, String op) {
+    if (children.isEmpty()) {
+      return new InvalidAST(); // 或你的錯誤節點
+    }
+    ASTree result = children.get(0);
+    for (int i = 1; i < children.size(); i++) {
+      result = new BinaryExp(List.of(result, children.get(i)), op);
+    }
+    return result;
+  }
+
+  /** 入口：對傳入節點取反並展開德摩根律。 */
   /* ======================= 內部遞迴 ======================= */
   public static ASTree DeMorgan(ASTree n) {
     /* ---------- 1) BinaryExp ---------- */
     if (n instanceof BinaryExp bin) {
+      // 1-a) 先檢查是否為 LOGICAL AND 鏈，如果是，收集所有 AND 連接的子樹
+      if (bin.getGroup() == OpGroup.LOGICAL && bin.getOperator().equals("and")) {
+        List<ASTree> andChain = collectAndChain(bin); // 收集 [P1, P2, ..., Pn]
 
-      // 1-a) 先遞迴取反左右子樹
-      ASTree newLeft = DeMorgan(bin.left());
-      ASTree newRight = DeMorgan(bin.right());
+        // 1-b) 生成 n 個組合，每個組合否定一個 Pi，其他保持原樣
+        List<ASTree> orTerms = new ArrayList<>();
+        for (int i = 0; i < andChain.size(); i++) {
+          List<ASTree> newAndChildren = new ArrayList<>();
+          for (int j = 0; j < andChain.size(); j++) {
+            if (j == i) {
+              newAndChildren.add(DeMorgan(andChain.get(j))); // 否定這個
+            } else {
+              newAndChildren.add(andChain.get(j).clone()); // 保持原樣
+            }
+          }
+          // 構建新的 AND 表達式（如果有多個子樹，遞迴構建 BinaryExp）
+          ASTree newAnd = buildBinaryExpChain(newAndChildren, "and");
+          orTerms.add(newAnd);
+        }
 
-      // 1-b) 決定新運算子
-      String op = bin.getOperator();
-      String nop = switch (bin.getGroup()) {
-        case LOGICAL -> switch (op) {
-          case "and" -> "or";
-          case "or" -> "and";
-          default -> op; // xor / implies … 不處理
+        // 1-c) 用 OR 連接所有組合（遞迴構建 BinaryExp）
+        return buildBinaryExpChain(orTerms, "or");
+      } else {
+        // 非 AND 鏈，保持原邏輯：遞迴否定左右子樹，翻轉運算子
+        ASTree notLeft = DeMorgan(bin.left());
+        ASTree notRight = DeMorgan(bin.right());
+        String op = bin.getOperator();
+        String nop = switch (bin.getGroup()) {
+          case LOGICAL -> switch (op) {
+            case "and" -> "or";
+            case "or" -> "and";
+            default -> op; // xor / implies … 不處理
+          };
+          case RELATIONAL -> switch (op) {
+            case ">" -> "<=";
+            case "<" -> ">=";
+            case "<=" -> ">";
+            case ">=" -> "<";
+            case "=" -> "<>";
+            case "<>" -> "=";
+            default -> op;
+          };
+          default -> op; // additive / multiplicative … 不動
         };
-        case RELATIONAL -> switch (op) {
-          case ">" -> "<=";
-          case "<" -> ">=";
-          case "<=" -> ">";
-          case ">=" -> "<";
-          case "=" -> "<>";
-          case "<>" -> "=";
-          default -> op;
-        };
-        default -> op; // additive / multiplicative … 不動
-      };
-
-      return new BinaryExp(List.of(newLeft, newRight), nop);
+        return new BinaryExp(List.of(notLeft, notRight), nop);
+      }
     }
+
+
     if (n instanceof IterateExp iter) {
       boolean isPre = false;
       Symbol sym = null;
@@ -260,10 +283,20 @@ public final class AstUtil {
       return new IterateExp(List.of(iter.getSource().clone(), iter.getIteratorDecl().clone(),
           iter.getResultDecl().clone(), newbody), isPre, sym);
     }
+
+
     if (n instanceof IfExp ifexp) {
       ASTree newcond = DeMorgan(ifexp.getCondition());
-      return newcond;
+      ASTree negatedThen = DeMorgan(ifexp.getThenBranch());
+      ASTree negatedElse = DeMorgan(ifexp.getElseBranch());
+
+      return new IfExp(List.of(ifexp.getCondition().clone(), // 保持條件不變
+          negatedThen, negatedElse));
+
+      // return newcond;
     }
+
+
     if (n instanceof LetExp lt) {
       List<ASTree> Vardecl = lt.getVariabledecls();
       List<ASTree> newchildren = new ArrayList<>();
@@ -274,15 +307,26 @@ public final class AstUtil {
       newchildren.add(exp);
       return new LetExp(newchildren);
     }
+
+
     if (n instanceof UnaryExp un) {
       if (un.getOperator().equals("not") || un.getOperator().equals("!")) {
         ASTree newchild = un.getExpr().clone();
         return new UnaryExp(List.of(newchild), "");
       }
     }
+
+
     if (n instanceof ContextExpAST ctx) {
       return DeMorgan(ctx.getConstraint());
-    } // variableExp, FeatureCallExp, LiterialExp, InvalidAST, etc. 直接Clone
+    }
+    if (n instanceof BooleanLiteralExp b) {
+      if (b.getValue()) {
+        return new BooleanLiteralExp(false, b.getType());
+      } else
+        return new BooleanLiteralExp(true, b.getType());
+    }
+    // variableExp, FeatureCallExp, LiterialExp, InvalidAST, etc. 直接Clone
     return n.clone();
   }
 

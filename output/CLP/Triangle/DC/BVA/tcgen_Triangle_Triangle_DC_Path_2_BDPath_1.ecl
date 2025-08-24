@@ -9,8 +9,10 @@ tcgen_Triangle_Triangle_DC_Path_2_BDPath_1(Sa,Sb,Sc,Result):-
 % dim/3 is called if the attribute is an array type.
 Self=[Self_sideA,Self_sideB,Self_sideC],
 
+%domiain for int Type
+[Self_sideA, Self_sideB, Self_sideC, Sa, Sb, Sc]#::(-32768)..32767,
 %CLG Path Constrints,
-(((((((Sa+Sb) #< Sc) ; ((Sb+Sc) #< Sa)) ; ((Sa+Sc) #< Sb)) ; (Sa #< 0)) ; (Sb #< 0)) ; (Sc #< 0)),
+((((((((((((Sa+Sb) #< Sc) , ((Sb+Sc) #> Sa)) , ((Sa+Sc) #> Sb)) , (Sa #> 0)) , (Sb #> 0)) , (Sc #> 0)) ; (((((((Sa+Sb) #> Sc) , ((Sb+Sc) #< Sa)) , ((Sa+Sc) #> Sb)) , (Sa #> 0)) , (Sb #> 0)) , (Sc #> 0))) ; (((((((Sa+Sb) #> Sc) , ((Sb+Sc) #> Sa)) , ((Sa+Sc) #< Sb)) , (Sa #> 0)) , (Sb #> 0)) , (Sc #> 0))) ; (((((((Sa+Sb) #> Sc) , ((Sb+Sc) #> Sa)) , ((Sa+Sc) #> Sb)) , (Sa #< 0)) , (Sb #> 0)) , (Sc #> 0))) ; (((((((Sa+Sb) #> Sc) , ((Sb+Sc) #> Sa)) , ((Sa+Sc) #> Sb)) , (Sa #> 0)) , (Sb #< 0)) , (Sc #> 0))) ; (((((((Sa+Sb) #> Sc) , ((Sb+Sc) #> Sa)) , ((Sa+Sc) #> Sb)) , (Sa #> 0)) , (Sb #> 0)) , (Sc #< 0))),
 Result = 'EdgeErrorException',
 
 %TypeVar Labeling Parts

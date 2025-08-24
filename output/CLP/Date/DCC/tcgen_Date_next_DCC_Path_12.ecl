@@ -10,6 +10,8 @@ tcgen_Date_next_DCC_Path_12(Self,Result):-
 Self=[Self_year,Self_month,Self_day],Result = [Result_year,Result_month,Result_day],
 
 
+%domiain for int Type
+[Self_year, Self_month, Self_day]#::(-32768)..32767,
 %CLG Path Constrints,
 (Self_year #>= 1),
 (Self_month #>= 1),

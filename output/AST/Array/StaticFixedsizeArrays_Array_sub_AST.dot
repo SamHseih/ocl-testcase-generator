@@ -1,0 +1,65 @@
+digraph AST {
+  node [shape=box];
+  n67 [label="ContextDecl: node(39) Context: node (66)", xlabel="(67)"];
+  n67 -> n39;
+  n67 -> n66;
+  n39 [label="Array::sub(node (38)) : Array", xlabel="(39)"];
+  n39 -> n38;
+  n66 [label=" post:", xlabel="(66)Boolean"];
+  n66 -> n65;
+  n38 [label="arg : Array", xlabel="(38)Array"];
+  n65 [label="LetExp 
+Let node(45), node(64) in node(64)", xlabel="(65)Boolean"];
+  n65 -> n45;
+  n65 -> n64;
+  n45 [label="=", xlabel="(45)Boolean"];
+  n45 -> n44;
+  n45 -> n43;
+  n64 [label="IterateExp
+source=node(48) Iterator=node(49)
+Result=node(52) Body=node(63)", xlabel="(64)Boolean"];
+  n64 -> n48;
+  n64 -> n49;
+  n64 -> n52;
+  n64 -> n63;
+  n44 [label="dim1 : int", xlabel="(44)int"];
+  n43 [label="arg.datas.getDimensionSizes(1)", xlabel="(43)int"];
+  n43 -> n41;
+  n43 -> n42;
+  n48 [label="Sequence{ node(46) .. node(47) }", xlabel="(48)int"];
+  n48 -> n46;
+  n48 -> n47;
+  n49 [label="it : int", xlabel="(49)int"];
+  n52 [label="=", xlabel="(52)Boolean"];
+  n52 -> n51;
+  n52 -> n50;
+  n63 [label="=", xlabel="(63)Boolean"];
+  n63 -> n55;
+  n63 -> n62;
+  n41 [label="arg.datas", xlabel="(41)int[5]"];
+  n41 -> n40;
+  n42 [label="1", xlabel="(42)int"];
+  n46 [label="1", xlabel="(46)int"];
+  n47 [label="dim1", xlabel="(47)int"];
+  n51 [label="acc : Boolean", xlabel="(51)Boolean"];
+  n50 [label="true", xlabel="(50)Boolean"];
+  n55 [label="result.datas[it]", xlabel="(55)int"];
+  n55 -> n53;
+  n55 -> n54;
+  n62 [label="-", xlabel="(62)int"];
+  n62 -> n58;
+  n62 -> n61;
+  n40 [label="arg", xlabel="(40)Array"];
+  n53 [label="result", xlabel="(53)Array"];
+  n54 [label="it", xlabel="(54)int"];
+  n58 [label="self.datas[it]", xlabel="(58)int"];
+  n58 -> n56;
+  n58 -> n57;
+  n61 [label="arg.datas[it]", xlabel="(61)int"];
+  n61 -> n59;
+  n61 -> n60;
+  n56 [label="self", xlabel="(56)Array"];
+  n57 [label="it", xlabel="(57)int"];
+  n59 [label="arg", xlabel="(59)Array"];
+  n60 [label="it", xlabel="(60)int"];
+}

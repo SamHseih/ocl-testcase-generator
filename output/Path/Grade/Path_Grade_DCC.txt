@@ -1,0 +1,43 @@
+
+  tcgen_Grade_DCC:
+	
+    Feasiable Path 1:
+	[StartNode, [1] , [4] , EndNode]
+
+  
+  tcgen_Grade_Grade_DCC:
+	
+    Feasiable Path 1:
+	[StartNode, <38>, [24] , [27] , [30] , <39>, EndNode]
+
+    Feasiable Path 2:
+	[StartNode, <38>, <18>, [7] , [10] , <19>, [21] , <39>, EndNode]
+
+    Feasiable Path 3:
+	[StartNode, <38>, <18>, [13] , [16] , <19>, [21] , <39>, EndNode]
+
+  
+  tcgen_Grade_rating_DCC:
+	
+    Feasiable Path 1:
+	[StartNode, [141] , [144] , <138>, [41] , [44] , <139>, EndNode]
+
+    Feasiable Path 2:
+	[StartNode, [141] , [144] , <138>, [47] , <136>, [50] , [53] , [56] , <137>, <139>, EndNode]
+
+    Feasiable Path 4:
+	[StartNode, [141] , [144] , <138>, [47] , <136>, <70>, [65] , [68] , <71>, <134>, [73] , [76] , [79] , <135>, <137>, <139>, EndNode]
+
+    Feasiable Path 8:
+	[StartNode, [141] , [144] , <138>, [47] , <136>, <70>, [65] , [68] , <71>, <134>, <93>, [88] , [91] , <94>, <132>, [96] , [99] , [102] , <133>, <135>, <137>, <139>, EndNode]
+
+    Feasiable Path 23:
+	[StartNode, [141] , [144] , <138>, [47] , <136>, <70>, [65] , [68] , <71>, <134>, <93>, [88] , [91] , <94>, <132>, <116>, [111] , [114] , <117>, <130>, [119] , [122] , <131>, <133>, <135>, <137>, <139>, EndNode]
+
+  
+  tcgen_Grade_getNumber_DCC:
+	
+    Feasiable Path 1:
+	[StartNode, [150] , [153] , [147] , EndNode]
+
+  

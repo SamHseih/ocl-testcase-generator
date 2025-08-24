@@ -6,6 +6,7 @@ import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 import ccu.pllab.tcgen3.symboltable.type.VoidType;
+import ccu.pllab.tcgen3.util.StringTool;
 
 public class ContextDeclAST extends ASTList {
 
@@ -131,7 +132,7 @@ public class ContextDeclAST extends ASTList {
     if (child(0) instanceof ClassifierContextDeclAST clazz) {
       sb.append(clazz.toString());
     } else if (child(0) instanceof OperationContextDeclAST clazz) {
-      sb.append(clazz.getPathName()).append("_");
+      sb.append(StringTool.mergeClassRefs(clazz.getPathName())).append("_");
       sb.append(clazz.getMethodName());
     }
     return sb.toString();

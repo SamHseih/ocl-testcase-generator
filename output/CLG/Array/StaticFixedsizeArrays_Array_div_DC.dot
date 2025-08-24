@@ -1,0 +1,24 @@
+digraph CLG {
+  97 [shape="box", label="result.datas[it] = self.datas[it] / arg.datas[it]", style=filled, fillcolor=yellow, xlabel="[97]"];
+  82 [shape="box", label="idx0 = 1", style=filled, fillcolor=yellow, xlabel="[82]"];
+  100 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[100]"];
+  85 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[85]"];
+  102 [shape="diamond", label="", xlabel="<102>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  88 [shape="box", label="idx0 > dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[88]"];
+  89 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  91 [shape="box", label="idx0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[91]"];
+  78 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  94 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[94]"];
+  79 [shape="box", label="dim1 = arg.datas.getDimensionSizes(1)", style=filled, fillcolor=yellow, xlabel="[79]"];
+  78 -> 79;
+  91 -> 94[label="graphAnd#100"];
+  94 -> 97[label="graphAnd#101"];
+  97 -> 100[label="graphAnd#102"];
+  102 -> 91[label="iterate#104"];
+  85 -> 82[label="graphAnd#89"];
+  100 -> 102[label="iterate#105"];
+  102 -> 88[label="graphAnd#107"];
+  88 -> 89;
+  82 -> 102[label="graphAnd#108"];
+  79 -> 85[label="graphAnd#109"];
+}

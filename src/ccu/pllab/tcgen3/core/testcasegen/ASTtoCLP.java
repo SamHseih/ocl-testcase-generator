@@ -156,14 +156,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
         yield " #=< ";
       }
       case ">=" -> " #>= ";
-      case "and" -> {
-        if (node.left() instanceof IfExp || node.right() instanceof IfExp
-        // ||node.left() instanceof LetExp ||node.right() instanceof LetExp
-        )
-          yield ""; // IfExp and LetExp do not need to be translated to CLP
-        else
-          yield ",\n";
-      }
+      case "and" -> " , ";
       case "or" -> " ; ";
       default -> node.getOperator();
     };
@@ -183,7 +176,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
 
   @Override
   public ClpCode visitIfExpContext(IfExp node) {
-    return new ClpCode("", "");
+    return new ClpCode("true", "");
   }
 
   @Override

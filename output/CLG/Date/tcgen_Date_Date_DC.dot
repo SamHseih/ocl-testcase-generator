@@ -1,15 +1,29 @@
 digraph CLG {
-  4 [shape="box", label="y < 1 or
-m < 1 or
-m > 12 or
-d < 1 or
-m <> 1 and
-m <> 3 and
-m <> 5 and
-m <> 7 and
-m <> 8 and
-m <> 10 and
-m <> 12
+  4 [shape="box", label="y < 1 and
+m >= 1 and
+m <= 12 and
+d >= 1 and
+IfExp ConditionNode:(811) thenNode: (814) elseNode: (857) or
+y >= 1 and
+m < 1 and
+m <= 12 and
+d >= 1 and
+IfExp ConditionNode:(901) thenNode: (904) elseNode: (947) or
+y >= 1 and
+m >= 1 and
+m > 12 and
+d >= 1 and
+IfExp ConditionNode:(991) thenNode: (994) elseNode: (1037) or
+y >= 1 and
+m >= 1 and
+m <= 12 and
+d < 1 and
+IfExp ConditionNode:(1081) thenNode: (1084) elseNode: (1127) or
+y >= 1 and
+m >= 1 and
+m <= 12 and
+d >= 1 and
+IfExp ConditionNode:(1288) thenNode: (1174) elseNode: (1261)
 ", style=filled, fillcolor=yellow, xlabel="[4]"];
   7 [shape="box", label="Result = 'DateErrorException'", style=filled, fillcolor=yellow, xlabel="[7]"];
   8 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
@@ -45,12 +59,14 @@ m <> 11
 y.mod(4) = 0 and
 y.mod(100) <> 0
 ", style=filled, fillcolor=yellow, xlabel="[28]"];
-  31 [shape="box", label="d <= 29", style=filled, fillcolor=yellow, xlabel="[31]"];
+  31 [shape="box", label="d < 30", style=filled, fillcolor=yellow, xlabel="[31]"];
   34 [shape="box", label="y.mod(400) <> 0 and
-y.mod(4) <> 0 or
+y.mod(4) <> 0 and
+y.mod(100) <> 0 or
+y.mod(4) = 0 and
 y.mod(100) = 0
 ", style=filled, fillcolor=yellow, xlabel="[34]"];
-  37 [shape="box", label="d <= 28", style=filled, fillcolor=yellow, xlabel="[37]"];
+  37 [shape="box", label="d < 29", style=filled, fillcolor=yellow, xlabel="[37]"];
   39 [shape="diamond", label="", xlabel="<39>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
   40 [shape="diamond", label="", xlabel="<40>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
   41 [shape="diamond", label="", xlabel="<41>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];

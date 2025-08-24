@@ -1,0 +1,271 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:175 ms
+Total CLGBuild Using Time:12 ms
+Total TestCase Generation Using Time:961 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate tcgen_Triangle_DCC Using Time:49 ms
+  tcgen_Triangle_Triangle_DCC:
+	TestCaseNum: 13, PathNum: 7, BoundaryPathNum: 13  Generate tcgen_Triangle_Triangle_DCC Using Time:236 ms
+  tcgen_Triangle_category_DCC:
+	TestCaseNum: 5, PathNum: 5, BoundaryPathNum: 5  Generate tcgen_Triangle_category_DCC Using Time:114 ms
+
+Total System Generation Using Time:5967 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 30  CLGEdges Size: 35
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/14 15:56 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:193 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:976 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate tcgen_Triangle_DCC Using Time:57 ms
+  tcgen_Triangle_Triangle_DCC:
+	TestCaseNum: 13, PathNum: 7, BoundaryPathNum: 13  Generate tcgen_Triangle_Triangle_DCC Using Time:262 ms
+  tcgen_Triangle_category_DCC:
+	TestCaseNum: 5, PathNum: 5, BoundaryPathNum: 5  Generate tcgen_Triangle_category_DCC Using Time:129 ms
+
+Total System Generation Using Time:1186 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 30  CLGEdges Size: 35
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/19 13:39 TestCase output Finish. ==============
+======================================================================---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:171 ms
+Total CLGBuild Using Time:15 ms
+Total TestCase Generation Using Time:61280 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 4, TestCaseNum: 4  Generate tcgen_Triangle_DCC Using Time:89 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 19, TestCaseNum: 16  Generate tcgen_Triangle_Triangle_DCC Using Time:30361 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 20, TestCaseNum: 14  Generate tcgen_Triangle_category_DCC Using Time:30320 ms
+
+Total System Generation Using Time:61466 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/22 23:18 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:173 ms
+Total CLGBuild Using Time:16 ms
+Total TestCase Generation Using Time:61298 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 4, TestCaseNum: 4  Generate tcgen_Triangle_DCC Using Time:92 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 19, TestCaseNum: 16  Generate tcgen_Triangle_Triangle_DCC Using Time:30367 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 20, TestCaseNum: 11  Generate tcgen_Triangle_category_DCC Using Time:30323 ms
+
+Total System Generation Using Time:61487 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/22 23:20 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:170 ms
+Total CLGBuild Using Time:16 ms
+Total TestCase Generation Using Time:30645 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:55 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:30213 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:117 ms
+
+Total System Generation Using Time:30831 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/22 23:23 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:165 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:3953 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:53 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:3238 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:142 ms
+
+Total System Generation Using Time:4135 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/22 23:33 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:166 ms
+Total CLGBuild Using Time:15 ms
+Total TestCase Generation Using Time:3943 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:52 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:3231 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:136 ms
+
+Total System Generation Using Time:4125 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 0:04 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:170 ms
+Total CLGBuild Using Time:18 ms
+Total TestCase Generation Using Time:30903 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:48 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:30205 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:126 ms
+
+Total System Generation Using Time:31091 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 0:04 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:171 ms
+Total CLGBuild Using Time:15 ms
+Total TestCase Generation Using Time:966 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:52 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:248 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:114 ms
+
+Total System Generation Using Time:1152 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 0:05 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:164 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:934 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:49 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:252 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:113 ms
+
+Total System Generation Using Time:1115 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 0:05 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:171 ms
+Total CLGBuild Using Time:18 ms
+Total TestCase Generation Using Time:972 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:50 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:276 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:129 ms
+
+Total System Generation Using Time:1161 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 16:14 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:211 ms
+Total CLGBuild Using Time:19 ms
+Total TestCase Generation Using Time:937 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:56 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:251 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:117 ms
+
+Total System Generation Using Time:1168 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 16:15 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:172 ms
+Total CLGBuild Using Time:16 ms
+Total TestCase Generation Using Time:929 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DCC Using Time:52 ms
+  tcgen_Triangle_Triangle_DCC:
+	PathNum: 7, BoundaryPathNum: 7, TestCaseNum: 7  Generate tcgen_Triangle_Triangle_DCC Using Time:254 ms
+  tcgen_Triangle_category_DCC:
+	PathNum: 5, BoundaryPathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DCC Using Time:115 ms
+
+Total System Generation Using Time:1117 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Triangle_Triangle_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 65
+tcgen_Triangle_category_DCC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 32
+======================================================================
+============== 2025/08/23 18:43 TestCase output Finish. ==============
+=====================================================================

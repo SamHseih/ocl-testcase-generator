@@ -38,6 +38,10 @@
         <element xmi:type="uml:Operation" href="VarArray.uml#_gLT38FC9EfCazayHoYWa5g"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_gLW7QVC9EfCazayHoYWa5g"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_4nxjIGV_EfCcsepjY0iGjA" type="Operation_ClassOperationLabel">
+        <element xmi:type="uml:Operation" href="VarArray.uml#_4npnUGV_EfCcsepjY0iGjA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4nxjIWV_EfCcsepjY0iGjA"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Q-MNi1C9EfCazayHoYWa5g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Q-MNjFC9EfCazayHoYWa5g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Q-MNjVC9EfCazayHoYWa5g"/>
@@ -50,7 +54,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q-MNk1C9EfCazayHoYWa5g"/>
     </children>
     <element xmi:type="uml:Class" href="VarArray.uml#_Q-K_YFC9EfCazayHoYWa5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q-MNgVC9EfCazayHoYWa5g" x="80" y="140"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q-MNgVC9EfCazayHoYWa5g" x="60" y="120" width="261" height="181"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_RFuY4FC9EfCazayHoYWa5g" type="DataType_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_RFu_8FC9EfCazayHoYWa5g" type="DataType_NameLabel"/>
@@ -112,7 +116,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RFu__FC9EfCazayHoYWa5g"/>
     </children>
     <element xmi:type="uml:DataType" href="VarArray.uml#_RFtx0FC9EfCazayHoYWa5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RFuY4VC9EfCazayHoYWa5g" x="300" y="120"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RFuY4VC9EfCazayHoYWa5g" x="340" y="120" height="180"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_SLZngFC9EfCazayHoYWa5g" type="Package_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_SLZnglC9EfCazayHoYWa5g" type="Package_NameLabel"/>
@@ -181,7 +185,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SLZnhVC9EfCazayHoYWa5g"/>
     </children>
     <element xmi:type="uml:Package" href="VarArray.uml#_SLZAcFC9EfCazayHoYWa5g"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SLZngVC9EfCazayHoYWa5g" x="140" y="300" width="361"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SLZngVC9EfCazayHoYWa5g" x="140" y="320" width="361"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_MrlI0VC9EfCazayHoYWa5g" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_MrlI0lC9EfCazayHoYWa5g"/>

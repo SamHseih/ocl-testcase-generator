@@ -22,21 +22,27 @@ self.number <= 100
 number <= 69
 ", style=filled, fillcolor=yellow, xlabel="[30]"];
   33 [shape="box", label="result = D", style=filled, fillcolor=yellow, xlabel="[33]"];
-  36 [shape="box", label="number < 60 or
+  36 [shape="box", label="number < 60 and
+number <= 69 or
+number >= 60 and
 number > 69
 ", style=filled, fillcolor=yellow, xlabel="[36]"];
   39 [shape="box", label="number >= 70 and
 number <= 79
 ", style=filled, fillcolor=yellow, xlabel="[39]"];
   42 [shape="box", label="result = C", style=filled, fillcolor=yellow, xlabel="[42]"];
-  45 [shape="box", label="number < 70 or
+  45 [shape="box", label="number < 70 and
+number <= 79 or
+number >= 70 and
 number > 79
 ", style=filled, fillcolor=yellow, xlabel="[45]"];
   48 [shape="box", label="number >= 80 and
 number <= 89
 ", style=filled, fillcolor=yellow, xlabel="[48]"];
   51 [shape="box", label="result = B", style=filled, fillcolor=yellow, xlabel="[51]"];
-  54 [shape="box", label="number < 80 or
+  54 [shape="box", label="number < 80 and
+number <= 89 or
+number >= 80 and
 number > 89
 ", style=filled, fillcolor=yellow, xlabel="[54]"];
   57 [shape="box", label="number >= 90", style=filled, fillcolor=yellow, xlabel="[57]"];

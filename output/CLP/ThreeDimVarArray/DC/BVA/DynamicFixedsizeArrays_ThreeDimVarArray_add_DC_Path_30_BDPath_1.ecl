@@ -1,0 +1,83 @@
+:- lib(ic).
+:- lib(listut).
+:- lib(random).
+:- lib(timeout).
+
+dynamicFixedsizeArrays_ThreeDimVarArray_add_DC_Path_30_BDPath_1(Self,Arg,Result):-
+
+% Class and attribute combined as Class_Attr.
+% dim/3 is called if the attribute is an array type.
+Self=[Self_data,Self_dimensionSizes],Self_dimensionSizes = [Self_dim1, Self_dim2, Self_dim3],
+Arg=[Arg_data,Arg_dimensionSizes],Arg_dimensionSizes = [Arg_dim1, Arg_dim2, Arg_dim3],
+Result = [Result_data,Result_dimensionSizes],Result_dimensionSizes = [Result_dim1, Result_dim2, Result_dim3],
+
+decl_Array(Self_data,Self_dimensionSizes),
+decl_Array(Arg_data,Arg_dimensionSizes),
+decl_Array(Result_data,Result_dimensionSizes),
+
+%CLG Path Constrints,
+nth1(3,Self_dimensionSizes,Var_482082765),
+nth1(2,Self_dimensionSizes,Var_1754894440),
+nth1(1,Self_dimensionSizes,Var_1998767043),
+(((Var_1998767043 #> 0) , (Var_1754894440 #> 0)) , (Var_482082765 #> 0)),
+nth1(3,Arg_dimensionSizes,Var_1529060733),
+nth1(3,Self_dimensionSizes,Var_106374177),
+nth1(2,Arg_dimensionSizes,Var_1803669141),
+nth1(2,Self_dimensionSizes,Var_712609105),
+nth1(1,Arg_dimensionSizes,Var_1836463382),
+nth1(1,Self_dimensionSizes,Var_1388278453),
+length(Arg_dimensionSizes,Var_934275857),
+length(Self_dimensionSizes,Var_1364913072),
+((((Var_1364913072 #= Var_934275857) , (Var_1388278453 #= Var_1836463382)) , (Var_712609105 #= Var_1803669141)) , (Var_106374177 #= Var_1529060733)),
+nth1(3,Result_dimensionSizes,Var_232307208),
+nth1(3,Self_dimensionSizes,Var_609962972),
+nth1(2,Result_dimensionSizes,Var_1818544933),
+nth1(2,Self_dimensionSizes,Var_1793436274),
+nth1(1,Result_dimensionSizes,Var_572868060),
+nth1(1,Self_dimensionSizes,Var_1549725679),
+length(Result_dimensionSizes,Var_371800738),
+length(Self_dimensionSizes,Var_1364767791),
+((((Var_1364767791 #= Var_371800738) , (Var_1549725679 #= Var_572868060)) , (Var_1793436274 #= Var_1818544933)) , (Var_609962972 #= Var_232307208)),
+nth1(1,Arg_dimensionSizes,Var_1499136125),
+(D1 = Var_1499136125),
+nth1(2,Arg_dimensionSizes,Var_1926343982),
+(D2 = Var_1926343982),
+nth1(3,Arg_dimensionSizes,Var_762476028),
+(D3 = Var_762476028),
+(Acc = true),
+(Idx0 #= 1),
+(Idx0 #=< D1 - 1+ 1),
+sequencetoList(1,D1,List_2044903525),nth1(Idx0,List_2044903525,Var_2044903525),(It = Var_2044903525),
+(Acc2 = true),
+(Idx1 #= 1),
+(Idx1 #=< D2 - 1+ 1),
+sequencetoList(1,D2,List_982757413),nth1(Idx1,List_982757413,Var_982757413),(It2 = Var_982757413),
+(Acc3 = true),
+(Idx2 #= 1),
+(Idx2 #=< D3 - 1+ 1),
+sequencetoList(1,D3,List_902478634),nth1(Idx2,List_902478634,Var_902478634),(It3 = Var_902478634),
+getArrayElement(Arg_data,[It,It2,It3],Var_2114444063_1),getArrayElement(Self_data,[It,It2,It3],Var_294247762_1),getArrayElement(Result_data,[It,It2,It3],Var_918312414_1),(Var_918312414_1 #= (Var_294247762_1+Var_2114444063_1)),
+(Idx2_1 #= (Idx2+1)),
+(Idx2_1 #=< D3 - 1+ 1),
+sequencetoList(1,D3,List_902478634),nth1(Idx2_1,List_902478634,Var_902478634_1),(It3_1 = Var_902478634_1),
+getArrayElement(Arg_data,[It,It2,It3_1],Var_2114444063_2),getArrayElement(Self_data,[It,It2,It3_1],Var_294247762_2),getArrayElement(Result_data,[It,It2,It3_1],Var_918312414_2),(Var_918312414_2 #= (Var_294247762_2+Var_2114444063_2)),
+(Idx2_2 #= (Idx2_1+1)),
+(Idx2_2 #=< D3 - 1+ 1),
+sequencetoList(1,D3,List_902478634),nth1(Idx2_2,List_902478634,Var_902478634_2),(It3_2 = Var_902478634_2),
+getArrayElement(Arg_data,[It,It2,It3_2],Var_2114444063_3),getArrayElement(Self_data,[It,It2,It3_2],Var_294247762_3),getArrayElement(Result_data,[It,It2,It3_2],Var_918312414_3),(Var_918312414_3 #= (Var_294247762_3+Var_2114444063_3)),
+(Idx2_3 #= (Idx2_2+1)),
+(Idx2_3 #=< D3 - 1+ 1),
+sequencetoList(1,D3,List_902478634),nth1(Idx2_3,List_902478634,Var_902478634_3),(It3_3 = Var_902478634_3),
+getArrayElement(Arg_data,[It,It2,It3_3],Var_2114444063_4),getArrayElement(Self_data,[It,It2,It3_3],Var_294247762_4),getArrayElement(Result_data,[It,It2,It3_3],Var_918312414_4),(Var_918312414_4 #= (Var_294247762_4+Var_2114444063_4)),
+(Idx2_4 #= (Idx2_3+1)),
+(Idx2_4 #> D3 - 1+ 1),
+(Idx1_1 #= (Idx1+1)),
+(Idx1_1 #> D2 - 1+ 1),
+(Idx0_1 #= (Idx0+1)),
+(Idx0_1 #> D1 - 1+ 1),
+
+%DimensionSizes Labeling Parts
+labeling_Dim(Self_dimensionSizes),
+labeling_Dim(Arg_dimensionSizes),
+%TypeVar Labeling Parts
+labeling_Arrays([Self_data, Arg_data]).

@@ -10,6 +10,8 @@ tcgen_Date_next_DCC_Path_27(Self,Result):-
 Self=[Self_year,Self_month,Self_day],Result = [Result_year,Result_month,Result_day],
 
 
+%domiain for int Type
+[Self_year, Self_month, Self_day]#::(-32768)..32767,
 %CLG Path Constrints,
 (Self_year #>= 1),
 (Self_month #>= 1),
@@ -26,10 +28,12 @@ Self=[Self_year,Self_month,Self_day],Result = [Result_year,Result_month,Result_d
 (Self_month #\= 6),
 (Self_month #\= 9),
 (Self_month #\= 11),
-delay_mod(Self_year,400, Var_1175259735),
-(Var_1175259735 #\= 0),
-delay_mod(Self_year,100, Var_479397964),
-(Var_479397964 #= 0),
+delay_mod(Self_year,400, Var_1448061896),
+(Var_1448061896 #\= 0),
+delay_mod(Self_year,4, Var_382750013),
+(Var_382750013 #\= 0),
+delay_mod(Self_year,100, Var_1240232440),
+(Var_1240232440 #\= 0),
 (Self_day #= 28),
 (Result_year #= Self_year),
 (Result_month #= (Self_month+1)),

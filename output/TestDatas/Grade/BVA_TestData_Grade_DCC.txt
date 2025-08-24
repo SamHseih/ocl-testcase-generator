@@ -1,0 +1,109 @@
+Class: Grade, Method: , Test Case Number: 3
+Boundaray Feasiable Path1_1:
+Invariant Self = [ 0 ]
+
+Boundaray Feasiable Path1_2:
+Invariant Self = [ 100 ]
+
+Boundaray Feasiable Path1_3:
+Invariant Self = [ 95 ]
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Grade, Method: Grade, Test Case Number: 5
+Boundaray Feasiable Path1_1:
+Self = [ 0 ]
+Arg_1 = 0
+
+Boundaray Feasiable Path1_2:
+Self = [ 100 ]
+Arg_1 = 100
+
+Boundaray Feasiable Path1_3:
+Self = [ 2 ]
+Arg_1 = 2
+
+Boundaray Feasiable Path2_2:
+Arg_1 = -25071
+Result = illegalargumentexception
+
+Boundaray Feasiable Path3_2:
+Arg_1 = 17164
+Result = illegalargumentexception
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Grade, Method: rating, Test Case Number: 15
+Boundaray Feasiable Path1_1:
+Self = [ 0 ]
+Result = F
+
+Boundaray Feasiable Path1_3:
+Self = [ 59 ]
+Result = F
+
+Boundaray Feasiable Path1_4:
+Self = [ 38 ]
+Result = F
+
+Boundaray Feasiable Path2_3:
+Self = [ 60 ]
+Result = D
+
+Boundaray Feasiable Path2_4:
+Self = [ 69 ]
+Result = D
+
+Boundaray Feasiable Path2_5:
+Self = [ 66 ]
+Result = D
+
+Boundaray Feasiable Path4_4:
+Self = [ 70 ]
+Result = C
+
+Boundaray Feasiable Path4_5:
+Self = [ 79 ]
+Result = C
+
+Boundaray Feasiable Path4_6:
+Self = [ 78 ]
+Result = C
+
+Boundaray Feasiable Path8_5:
+Self = [ 80 ]
+Result = B
+
+Boundaray Feasiable Path8_6:
+Self = [ 89 ]
+Result = B
+
+Boundaray Feasiable Path8_7:
+Self = [ 83 ]
+Result = B
+
+Boundaray Feasiable Path23_2:
+Self = [ 100 ]
+Result = A
+
+Boundaray Feasiable Path23_6:
+Self = [ 90 ]
+Result = A
+
+Boundaray Feasiable Path23_7:
+Self = [ 91 ]
+Result = A
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Grade, Method: getNumber, Test Case Number: 3
+Boundaray Feasiable Path1_1:
+Self = [ 0 ]
+Result = 0
+
+Boundaray Feasiable Path1_2:
+Self = [ 100 ]
+Result = 100
+
+Boundaray Feasiable Path1_3:
+Self = [ 63 ]
+Result = 63
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

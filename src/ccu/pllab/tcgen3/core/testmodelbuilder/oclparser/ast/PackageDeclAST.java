@@ -2,11 +2,11 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.InvalidType;
 import ccu.pllab.tcgen3.symboltable.type.Type;
 import ccu.pllab.tcgen3.symboltable.type.VoidType;
+import ccu.pllab.tcgen3.util.StringTool;
 
 /** AST Root */
 public class PackageDeclAST extends ASTList {
@@ -45,6 +45,8 @@ public class PackageDeclAST extends ASTList {
     if (child(0) instanceof ContextDeclAST c) {
       if (c.getContextDecl() instanceof ClassifierContextDeclAST clazz) {
         sb.append(clazz.toString());
+      } else if (c.getContextDecl() instanceof OperationContextDeclAST clazz) {
+        sb.append(StringTool.mergeClassRefs(clazz.getPathName()));
       }
     } else {
       sb.append("There hasn't Class.");
@@ -56,7 +58,7 @@ public class PackageDeclAST extends ASTList {
     StringBuilder sb = new StringBuilder();
     if (child(0) instanceof ContextDeclAST c) {
       if (c.getContextDecl() instanceof OperationContextDeclAST clazz) {
-        sb.append(clazz.getPathName()).append("_");
+        sb.append(StringTool.mergeClassRefs(clazz.getPathName())).append("_");
         sb.append(clazz.getMethodName());
       }
     } else {

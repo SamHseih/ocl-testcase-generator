@@ -65,7 +65,7 @@ search(List, 0, first_fail, indomain_random, complete, [])
 .
 
 labeling_Dim(List):-
-List #::1..25,
+List #::1..10,
 search(List, 0, first_fail, indomain_random, complete, [])
 .
 

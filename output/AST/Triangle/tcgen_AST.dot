@@ -15,7 +15,7 @@ digraph AST {
   n112 -> n79;
   n112 -> n111;
   n0 [label="Triangle", xlabel="(0)"];
-  n30 [label=" inv:", xlabel="(30)Boolean"];
+  n30 [label="EdgeErrorException inv:", xlabel="(30)Boolean"];
   n30 -> n29;
   n35 [label="Triangle::Triangle(node (32), node (33), node (34))", xlabel="(35)"];
   n35 -> n32;

@@ -1,6 +1,15 @@
+/* 
+ * Copyright (c) 2025 YUN-JUNG HSIEH
+ * SPDX-License-Identifier: MIT
+ * 
+ * This file is part of the OCL grammar used in tcgen3.
+ * Redistributions must retain this notice.
+ */
+
 grammar Ocl	;
 
 @header { 
+
 package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen; 
 }
 

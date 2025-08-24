@@ -1,6 +1,5 @@
 package DynamicFixedsizeArrays 
 	
-	
 	context TwoDimVarArray
 	inv: self.data.getDimensionSizes(1) > 0 and 
 		self.data.getDimensionSizes(2) > 0 
@@ -27,8 +26,6 @@ package DynamicFixedsizeArrays
 					result.data[it][it2] = self.data[it][it2] + arg.data[it][it2]
 					)
 				)
-			
-			
 			
 	context TwoDimVarArray::sub(arg:TwoDimVarArray):TwoDimVarArray
 	pre IllegalDimensionSize:

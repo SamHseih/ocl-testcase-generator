@@ -12,35 +12,35 @@
 <!-- n31 -->
 <g id="node1" class="node">
 <title>n31</title>
-<polygon fill="none" stroke="black" points="661.12,-684 420.88,-684 420.88,-648 661.12,-648 661.12,-684"/>
-<text text-anchor="middle" x="541" y="-660.95" font-family="Times New Roman,serif" font-size="14.00">ContextDecl: node(0) Context: node (30)</text>
-<text text-anchor="middle" x="409.62" y="-687.2" font-family="Times New Roman,serif" font-size="14.00">(31)</text>
+<polygon fill="none" stroke="black" points="636.12,-684 395.88,-684 395.88,-648 636.12,-648 636.12,-684"/>
+<text text-anchor="middle" x="516" y="-660.95" font-family="Times New Roman,serif" font-size="14.00">ContextDecl: node(0) Context: node (30)</text>
+<text text-anchor="middle" x="384.62" y="-687.2" font-family="Times New Roman,serif" font-size="14.00">(31)</text>
 </g>
 <!-- n0 -->
 <g id="node2" class="node">
 <title>n0</title>
-<polygon fill="none" stroke="black" points="533.88,-612 472.12,-612 472.12,-576 533.88,-576 533.88,-612"/>
-<text text-anchor="middle" x="503" y="-588.95" font-family="Times New Roman,serif" font-size="14.00">Triangle</text>
-<text text-anchor="middle" x="464.25" y="-615.2" font-family="Times New Roman,serif" font-size="14.00">(0)</text>
+<polygon fill="none" stroke="black" points="484.88,-612 423.12,-612 423.12,-576 484.88,-576 484.88,-612"/>
+<text text-anchor="middle" x="454" y="-588.95" font-family="Times New Roman,serif" font-size="14.00">Triangle</text>
+<text text-anchor="middle" x="415.25" y="-615.2" font-family="Times New Roman,serif" font-size="14.00">(0)</text>
 </g>
 <!-- n31&#45;&gt;n0 -->
 <g id="edge1" class="edge">
 <title>n31&#45;&gt;n0</title>
-<path fill="none" stroke="black" d="M531.61,-647.7C527.42,-639.98 522.39,-630.71 517.72,-622.11"/>
-<polygon fill="black" stroke="black" points="520.85,-620.55 513.01,-613.43 514.7,-623.89 520.85,-620.55"/>
+<path fill="none" stroke="black" d="M500.67,-647.7C493.47,-639.56 484.72,-629.69 476.76,-620.7"/>
+<polygon fill="black" stroke="black" points="479.4,-618.4 470.15,-613.24 474.16,-623.04 479.4,-618.4"/>
 </g>
 <!-- n30 -->
 <g id="node3" class="node">
 <title>n30</title>
-<polygon fill="none" stroke="black" points="606,-612 552,-612 552,-576 606,-576 606,-612"/>
-<text text-anchor="middle" x="579" y="-588.95" font-family="Times New Roman,serif" font-size="14.00"> inv:</text>
-<text text-anchor="middle" x="518.25" y="-615.2" font-family="Times New Roman,serif" font-size="14.00">(30)Boolean</text>
+<polygon fill="none" stroke="black" points="654.88,-612 503.12,-612 503.12,-576 654.88,-576 654.88,-612"/>
+<text text-anchor="middle" x="579" y="-588.95" font-family="Times New Roman,serif" font-size="14.00">EdgeErrorException inv:</text>
+<text text-anchor="middle" x="469.38" y="-615.2" font-family="Times New Roman,serif" font-size="14.00">(30)Boolean</text>
 </g>
 <!-- n31&#45;&gt;n30 -->
 <g id="edge2" class="edge">
 <title>n31&#45;&gt;n30</title>
-<path fill="none" stroke="black" d="M550.39,-647.7C554.58,-639.98 559.61,-630.71 564.28,-622.11"/>
-<polygon fill="black" stroke="black" points="567.3,-623.89 568.99,-613.43 561.15,-620.55 567.3,-623.89"/>
+<path fill="none" stroke="black" d="M531.57,-647.7C538.97,-639.47 547.97,-629.48 556.12,-620.42"/>
+<polygon fill="black" stroke="black" points="558.51,-623 562.59,-613.23 553.3,-618.32 558.51,-623"/>
 </g>
 <!-- n29 -->
 <g id="node4" class="node">

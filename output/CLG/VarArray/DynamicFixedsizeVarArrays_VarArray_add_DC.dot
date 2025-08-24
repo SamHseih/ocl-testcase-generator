@@ -1,0 +1,45 @@
+digraph CLG {
+  34 [shape="box", label="idx0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[34]"];
+  37 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[37]"];
+  40 [shape="box", label="result.data[it] = self.data[it] + arg.data[it]", style=filled, fillcolor=yellow, xlabel="[40]"];
+  10 [shape="box", label="self.data.getDimension() <> arg.data.getDimension() or
+self.data.getDimensionSizes(1) <> arg.data.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[10]"];
+  43 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[43]"];
+  45 [shape="diamond", label="", xlabel="<45>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  13 [shape="box", label="Result = 'IllegalDimensionSize'", style=filled, fillcolor=yellow, xlabel="[13]"];
+  46 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  14 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  47 [shape="box", label="self.data.getDimensionSizes(1) > 0", style=filled, fillcolor=yellow, xlabel="[47]"];
+  16 [shape="box", label="self.data.getDimension() = arg.data.getDimension() and
+self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[16]"];
+  49 [shape="diamond", label="", xlabel="<49>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  50 [shape="diamond", label="", xlabel="<50>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  19 [shape="box", label="self.data.getDimension() = result.data.getDimension() and
+self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[19]"];
+  22 [shape="box", label="dim1 = arg.data.getDimensionSizes(1)", style=filled, fillcolor=yellow, xlabel="[22]"];
+  25 [shape="box", label="idx0 = 1", style=filled, fillcolor=yellow, xlabel="[25]"];
+  28 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[28]"];
+  31 [shape="box", label="idx0 > dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[31]"];
+  34 -> 37[label="graphAnd#32"];
+  37 -> 40[label="graphAnd#33"];
+  40 -> 43[label="graphAnd#34"];
+  45 -> 34[label="iterate#36"];
+  43 -> 45[label="iterate#37"];
+  45 -> 31[label="graphAnd#39"];
+  25 -> 45[label="graphAnd#40"];
+  22 -> 28[label="graphAnd#41"];
+  19 -> 22[label="graphAnd#42"];
+  10 -> 13[label="graphAnd#43"];
+  16 -> 19[label="graphAnd#44"];
+  46 -> 47;
+  49 -> 16[label="split1#48"];
+  49 -> 10[label="split2#49"];
+  31 -> 50[label="merge1#50"];
+  13 -> 50[label="merge2#51"];
+  50 -> 14[label="graphOr_end#52"];
+  47 -> 49[label="graphAnd#53"];
+  28 -> 25[label="graphAnd#21"];
+}

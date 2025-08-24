@@ -11,7 +11,7 @@ import ccu.pllab.tcgen3.util.ClpUtil;
 public class DemoCLPDataType {
   public static void main(String[] args) {
     String projectPath = System.getProperty("user.dir");
-    Path clpdir = Path.of(projectPath, "output", "CLP", "staticArrayFunc");
+    Path clpdir = Path.of(projectPath, "output", "CLPPredefined", "staticArrayFunc.ecl");
     List<String> errMessage = new ArrayList<>();
     try (CLPSolver solver = new CLPSolver(errMessage)) {
       solver.compile(clpdir.toFile());
@@ -64,6 +64,25 @@ public class DemoCLPDataType {
         System.out.println("labeling " + i + ": " + labeling.arg(i).getClass());
         System.out.println("labeling " + i + ": " + labeling.arg(i).toString());
       }
+
+      // CompoundTerm booleamtype = solver.solve_fortest("false");
+      // if (booleamtype != null)
+      // System.out.println(booleamtype);
+
+      Path testclpdir =
+          Path.of(projectPath, "output", "CLP", "Date", "DC", "tcgen_Date_Date_DC_Path_6.ecl");
+      solver.compile(testclpdir.toFile());
+      CompoundTerm testterm = solver.solve_fortest("tcgen_Date_Date_DC_Path_6(Self,Y,M,D).");
+      if (testterm == null) {
+        System.out.println("No solution found for tcgen_Date_Date_DC_Path_6.");
+      }
+      System.out.println(testterm);
+
+      Path testclpdir2 =
+          Path.of(projectPath, "output", "CLP", "Date", "DC", "tcgen_Date_Date_DC_Path_8.ecl");
+      solver.compile(testclpdir2.toFile());
+      CompoundTerm testterm2 = solver.solve_fortest("tcgen_Date_Date_DC_Path_8(Self,Y,M,D).");
+      System.out.println(testterm2);
     }
     if (!errMessage.isEmpty()) {
       System.out.println(errMessage);

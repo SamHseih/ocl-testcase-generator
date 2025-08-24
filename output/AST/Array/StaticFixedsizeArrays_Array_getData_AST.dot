@@ -1,0 +1,16 @@
+digraph AST {
+  node [shape=box];
+  n134 [label="ContextDecl: node(128) Context: node (133)", xlabel="(134)"];
+  n134 -> n128;
+  n134 -> n133;
+  n128 [label="Array::getData() : int[5][]", xlabel="(128)"];
+  n133 [label=" post:", xlabel="(133)Boolean"];
+  n133 -> n132;
+  n132 [label="=", xlabel="(132)Boolean"];
+  n132 -> n129;
+  n132 -> n131;
+  n129 [label="result", xlabel="(129)int[5][]"];
+  n131 [label="self.datas", xlabel="(131)int[5]"];
+  n131 -> n130;
+  n130 [label="self", xlabel="(130)Array"];
+}

@@ -1,0 +1,569 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:202 ms
+Total CLGBuild Using Time:19 ms
+Total TestCase Generation Using Time:1402 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:29 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 34, PathNum: 36, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:455 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:362 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:13 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:11 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:13 ms
+
+Total System Generation Using Time:11327 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 154  CLGEdges Size: 188
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 117  CLGEdges Size: 135
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/20 2:03 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:180 ms
+Total CLGBuild Using Time:26 ms
+Total TestCase Generation Using Time:2434 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:28 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 60, PathNum: 96, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:1428 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:421 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:11 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:10 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:10 ms
+
+Total System Generation Using Time:12388 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 238  CLGEdges Size: 287
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/21 23:51 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:185 ms
+Total CLGBuild Using Time:22 ms
+Total TestCase Generation Using Time:3026 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:30 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 46, PathNum: 144, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:2093 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:342 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:13 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:14 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:10 ms
+
+Total System Generation Using Time:12908 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 265  CLGEdges Size: 314
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/21 23:57 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:179 ms
+Total CLGBuild Using Time:23 ms
+Total TestCase Generation Using Time:2126 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:30 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 46, PathNum: 81, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:1117 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:429 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:10 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:14 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:12 ms
+
+Total System Generation Using Time:11796 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 178  CLGEdges Size: 212
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/21 23:58 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:188 ms
+Total CLGBuild Using Time:21 ms
+Total TestCase Generation Using Time:1550 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:47 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 34, PathNum: 36, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:521 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:396 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:12 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:12 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:15 ms
+
+Total System Generation Using Time:11362 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 154  CLGEdges Size: 188
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 117  CLGEdges Size: 135
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 0:01 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:190 ms
+Total CLGBuild Using Time:36 ms
+Total TestCase Generation Using Time:2468 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:27 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 60, PathNum: 96, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:1464 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:423 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:10 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:10 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:9 ms
+
+Total System Generation Using Time:12797 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 442  CLGEdges Size: 536
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 1:41 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:176 ms
+Total CLGBuild Using Time:29 ms
+Total TestCase Generation Using Time:2290 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:35 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 60, PathNum: 96, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:1363 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:336 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:10 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:10 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:10 ms
+
+Total System Generation Using Time:12486 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 442  CLGEdges Size: 536
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 1:46 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:176 ms
+Total CLGBuild Using Time:26 ms
+Total TestCase Generation Using Time:2263 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_DCC Using Time:33 ms
+  tcgen_Date_Date_DCC:
+	TestCaseNum: 68, PathNum: 90, BoundaryPathNum: 0  Generate tcgen_Date_Date_DCC Using Time:1282 ms
+  tcgen_Date_next_DCC:
+	TestCaseNum: 30, PathNum: 30, BoundaryPathNum: 0  Generate tcgen_Date_next_DCC Using Time:381 ms
+  tcgen_Date_getYear_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getYear_DCC Using Time:10 ms
+  tcgen_Date_getMonth_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getMonth_DCC Using Time:10 ms
+  tcgen_Date_getDay_DCC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Date_getDay_DCC Using Time:10 ms
+
+Total System Generation Using Time:12307 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 1:48 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:185 ms
+Total CLGBuild Using Time:29 ms
+Total TestCase Generation Using Time:2356 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:32 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1433 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:346 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getYear_DCC Using Time:10 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getMonth_DCC Using Time:9 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getDay_DCC Using Time:11 ms
+
+Total System Generation Using Time:12763 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 14:22 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:178 ms
+Total CLGBuild Using Time:28 ms
+Total TestCase Generation Using Time:2160 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:34 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1215 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:360 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getYear_DCC Using Time:9 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getMonth_DCC Using Time:10 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getDay_DCC Using Time:11 ms
+
+Total System Generation Using Time:2367 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 14:23 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:192 ms
+Total CLGBuild Using Time:30 ms
+Total TestCase Generation Using Time:2353 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:40 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1288 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:434 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getYear_DCC Using Time:11 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getMonth_DCC Using Time:11 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getDay_DCC Using Time:10 ms
+
+Total System Generation Using Time:2575 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 115  CLGEdges Size: 133
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+======================================================================
+============== 2025/08/22 14:42 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:185 ms
+Total CLGBuild Using Time:31 ms
+Total TestCase Generation Using Time:2321 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:37 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1290 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:428 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getYear_DCC Using Time:12 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getMonth_DCC Using Time:12 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getDay_DCC Using Time:12 ms
+
+Total System Generation Using Time:12608 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 115  CLGEdges Size: 133
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 7
+======================================================================
+============== 2025/08/22 14:51 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:176 ms
+Total CLGBuild Using Time:27 ms
+Total TestCase Generation Using Time:2253 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:27 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1192 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:486 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getYear_DCC Using Time:12 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getMonth_DCC Using Time:12 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getDay_DCC Using Time:12 ms
+
+Total System Generation Using Time:12525 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 14:58 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:178 ms
+Total CLGBuild Using Time:39 ms
+Total TestCase Generation Using Time:2222 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:35 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1197 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:430 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getYear_DCC Using Time:12 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getMonth_DCC Using Time:15 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_getDay_DCC Using Time:11 ms
+
+Total System Generation Using Time:2439 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 7  CLGEdges Size: 6
+======================================================================
+============== 2025/08/22 14:58 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:186 ms
+Total CLGBuild Using Time:38 ms
+Total TestCase Generation Using Time:5862 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:33 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1384 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:386 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getYear_DCC Using Time:1105 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getMonth_DCC Using Time:1137 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getDay_DCC Using Time:1299 ms
+
+Total System Generation Using Time:17696 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 114  CLGEdges Size: 132
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+======================================================================
+============== 2025/08/22 15:35 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:186 ms
+Total CLGBuild Using Time:38 ms
+Total TestCase Generation Using Time:6023 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:31 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1375 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:367 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getYear_DCC Using Time:1289 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getMonth_DCC Using Time:1270 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getDay_DCC Using Time:1173 ms
+
+Total System Generation Using Time:17881 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+======================================================================
+============== 2025/08/22 15:37 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:192 ms
+Total CLGBuild Using Time:38 ms
+Total TestCase Generation Using Time:6084 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:37 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1280 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:458 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getYear_DCC Using Time:1136 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getMonth_DCC Using Time:1294 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getDay_DCC Using Time:1340 ms
+
+Total System Generation Using Time:17064 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+======================================================================
+============== 2025/08/22 15:46 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:220 ms
+Total CLGBuild Using Time:41 ms
+Total TestCase Generation Using Time:6125 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:36 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1391 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:401 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getYear_DCC Using Time:1176 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getMonth_DCC Using Time:1250 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getDay_DCC Using Time:1347 ms
+
+Total System Generation Using Time:6386 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+======================================================================
+============== 2025/08/22 22:26 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:211 ms
+Total CLGBuild Using Time:46 ms
+Total TestCase Generation Using Time:5645 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Date_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Date_DCC Using Time:41 ms
+  tcgen_Date_Date_DCC:
+	PathNum: 90, TestCaseNum: 68  Generate tcgen_Date_Date_DCC Using Time:1212 ms
+  tcgen_Date_next_DCC:
+	PathNum: 30, TestCaseNum: 30  Generate tcgen_Date_next_DCC Using Time:439 ms
+  tcgen_Date_getYear_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getYear_DCC Using Time:1125 ms
+  tcgen_Date_getMonth_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getMonth_DCC Using Time:1052 ms
+  tcgen_Date_getDay_DCC:
+	PathNum: 90, TestCaseNum: 30  Generate tcgen_Date_getDay_DCC Using Time:1259 ms
+
+Total System Generation Using Time:5902 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Date_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+tcgen_Date_Date_DCC CLG Info :  CLGNodes Size: 412  CLGEdges Size: 500
+tcgen_Date_next_DCC CLG Info :  CLGNodes Size: 119  CLGEdges Size: 137
+tcgen_Date_getYear_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getMonth_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+tcgen_Date_getDay_DCC CLG Info :  CLGNodes Size: 414  CLGEdges Size: 502
+======================================================================
+============== 2025/08/23 0:02 TestCase output Finish. ==============
+=====================================================================

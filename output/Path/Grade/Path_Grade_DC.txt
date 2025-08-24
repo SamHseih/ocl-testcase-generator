@@ -1,0 +1,40 @@
+
+  tcgen_Grade_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [1] , EndNode]
+
+  
+  tcgen_Grade_Grade_DC:
+	
+    Feasiable Path 1:
+	[StartNode, <18>, [10] , [13] , <19>, EndNode]
+
+    Feasiable Path 2:
+	[StartNode, <18>, [4] , [7] , <19>, EndNode]
+
+  
+  tcgen_Grade_rating_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [79] , <76>, [21] , [24] , <77>, EndNode]
+
+    Feasiable Path 2:
+	[StartNode, [79] , <76>, [27] , <74>, [30] , [33] , <75>, <77>, EndNode]
+
+    Feasiable Path 3:
+	[StartNode, [79] , <76>, [27] , <74>, [36] , <72>, [39] , [42] , <73>, <75>, <77>, EndNode]
+
+    Feasiable Path 4:
+	[StartNode, [79] , <76>, [27] , <74>, [36] , <72>, [45] , <70>, [48] , [51] , <71>, <73>, <75>, <77>, EndNode]
+
+    Feasiable Path 5:
+	[StartNode, [79] , <76>, [27] , <74>, [36] , <72>, [45] , <70>, [54] , <68>, [57] , [60] , <69>, <71>, <73>, <75>, <77>, EndNode]
+
+  
+  tcgen_Grade_getNumber_DC:
+	
+    Feasiable Path 1:
+	[StartNode, [85] , [82] , EndNode]
+
+  

@@ -7,6 +7,23 @@ import java.util.stream.Collectors;
 
 /** All Static Method */
 public abstract class StringTool {
+
+  /**
+   * 將 "ClassA :: ClassB" 或 "ClassA.ClassB" 轉成 "ClassA_ClassB"。 也支援連續多段：例如 "A.B.C" -> "A_B_C"、"A ::
+   * B :: C" -> "A_B_C"。
+   */
+  public static String mergeClassRefs(String s) {
+    if (s == null)
+      return null;
+    String regex = "\\b([A-Z][A-Za-z0-9_]*)\\s*(?:::|\\.)\\s*([A-Z][A-Za-z0-9_]*)\\b";
+    String out = s, prev;
+    do {
+      prev = out;
+      out = out.replaceAll(regex, "$1_$2");
+    } while (!out.equals(prev)); // 迭代直到沒有可取代的片段（處理重疊比對）
+    return out;
+  }
+
   /**
    * 將字串的首字母轉為大寫。
    *
@@ -226,8 +243,15 @@ public abstract class StringTool {
     System.out.println(data[0].length); // 1 (第 2 維)
     System.out.println(data[0][0].length); // 8 (第 3 維)
     System.out.println(data[0][0][0]); // 19590
-
     System.out.println(addPrefix(original, "Self"));
+
+    // Test mergeClassRefs
+    String s1 = "see ClassA :: ClassB here";
+    String s2 = "see ClassA.ClassB here";
+    String s3 = "ClassA123";
+    System.out.println(mergeClassRefs(s1)); // see ClassA_ClassB here
+    System.out.println(StringTool.mergeClassRefs(s2));
+    System.out.println(StringTool.mergeClassRefs(s3));// see ClassA_ClassB here
   }
 
 }

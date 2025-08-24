@@ -14,11 +14,14 @@ decl_Array(Arg_data,Arg_dimensionSizes),
 
 
 %CLG Path Constrints,
-nth1(1,Self_dimensionSizes,Var_2143431083),
-(Var_2143431083 #> 0),
-nth1(1,Arg_dimensionSizes,Var_119358627),
-nth1(1,Self_dimensionSizes,Var_2073621255),
-(Var_2073621255 #\= Var_119358627),
+nth1(1,Self_dimensionSizes,Var_482082765),
+(Var_482082765 #> 0),
+length(Arg_dimensionSizes,Var_1122606666),
+length(Self_dimensionSizes,Var_350068407),
+(Var_350068407 #= Var_1122606666),
+nth1(1,Arg_dimensionSizes,Var_1390869998),
+nth1(1,Self_dimensionSizes,Var_1820383114),
+(Var_1820383114 #\= Var_1390869998),
 Result = 'IllegalDimensionSize',
 
 %DimensionSizes Labeling Parts

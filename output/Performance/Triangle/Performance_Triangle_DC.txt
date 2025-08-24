@@ -18,4 +18,108 @@ tcgen_Triangle_Triangle_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
 tcgen_Triangle_category_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
 ======================================================================
 ============== 2025/08/13 0:48 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:420 ms
+Total CLGBuild Using Time:28 ms
+Total TestCase Generation Using Time:769 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 0  Generate tcgen_Triangle_DC Using Time:47 ms
+  tcgen_Triangle_Triangle_DC:
+	TestCaseNum: 2, PathNum: 2, BoundaryPathNum: 0  Generate tcgen_Triangle_Triangle_DC Using Time:29 ms
+  tcgen_Triangle_category_DC:
+	TestCaseNum: 5, PathNum: 5, BoundaryPathNum: 0  Generate tcgen_Triangle_category_DC Using Time:59 ms
+
+Total System Generation Using Time:7498 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Triangle_Triangle_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Triangle_category_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
 ======================================================================
+============== 2025/08/21 17:14 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:171 ms
+Total CLGBuild Using Time:13 ms
+Total TestCase Generation Using Time:638 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DC Using Time:32 ms
+  tcgen_Triangle_Triangle_DC:
+	PathNum: 2, TestCaseNum: 2  Generate tcgen_Triangle_Triangle_DC Using Time:27 ms
+  tcgen_Triangle_category_DC:
+	PathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DC Using Time:58 ms
+
+Total System Generation Using Time:822 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Triangle_Triangle_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Triangle_category_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
+======================================================================
+============== 2025/08/22 20:00 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:168 ms
+Total CLGBuild Using Time:16 ms
+Total TestCase Generation Using Time:641 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DC Using Time:33 ms
+  tcgen_Triangle_Triangle_DC:
+	PathNum: 2, TestCaseNum: 2  Generate tcgen_Triangle_Triangle_DC Using Time:32 ms
+  tcgen_Triangle_category_DC:
+	PathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DC Using Time:60 ms
+
+Total System Generation Using Time:826 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Triangle_Triangle_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Triangle_category_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
+======================================================================
+============== 2025/08/22 23:30 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:184 ms
+Total CLGBuild Using Time:14 ms
+Total TestCase Generation Using Time:638 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DC Using Time:33 ms
+  tcgen_Triangle_Triangle_DC:
+	PathNum: 2, TestCaseNum: 2  Generate tcgen_Triangle_Triangle_DC Using Time:30 ms
+  tcgen_Triangle_category_DC:
+	PathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DC Using Time:59 ms
+
+Total System Generation Using Time:836 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Triangle_Triangle_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Triangle_category_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
+======================================================================
+============== 2025/08/23 16:17 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:246 ms
+Total CLGBuild Using Time:29 ms
+Total TestCase Generation Using Time:685 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Triangle_DC:
+	PathNum: 1, TestCaseNum: 1  Generate tcgen_Triangle_DC Using Time:39 ms
+  tcgen_Triangle_Triangle_DC:
+	PathNum: 2, TestCaseNum: 2  Generate tcgen_Triangle_Triangle_DC Using Time:28 ms
+  tcgen_Triangle_category_DC:
+	PathNum: 5, TestCaseNum: 5  Generate tcgen_Triangle_category_DC Using Time:58 ms
+
+Total System Generation Using Time:960 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Triangle_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Triangle_Triangle_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Triangle_category_DC CLG Info :  CLGNodes Size: 24  CLGEdges Size: 27
+======================================================================
+============== 2025/08/23 18:42 TestCase output Finish. ==============
+=====================================================================

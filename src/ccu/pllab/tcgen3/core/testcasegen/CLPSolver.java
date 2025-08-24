@@ -14,6 +14,7 @@ import ccu.pllab.tcgen3.util.FileUtil;
 public class CLPSolver implements AutoCloseable {
   private EclipseEngine engine;
   private List<String> errMessage;
+  private boolean iskeepinfeasiablePathEcl; // default not keep infeasiable path in ecl file
   // -Declipse.directory=<eclipse_dir>
   // https://www.eclipseclp.org/doc/embedding/embroot042.html
   private static final File ECLIPSE_HOME = new File("C:\\ECLiPSe"); // ECLiPSe installation path
@@ -32,6 +33,12 @@ public class CLPSolver implements AutoCloseable {
     }
     // this.engine = EmbeddedEclipse.getInstance(opt); // 使用嵌入式模式
     this.errMessage = errMessage;
+
+    iskeepinfeasiablePathEcl = false;
+  }
+
+  public void setKeepInfeasiablePathInfo(boolean iskeepinfeasiablePathEcl) {
+    this.iskeepinfeasiablePathEcl = iskeepinfeasiablePathEcl;
   }
 
   public void compile(File eclfile) {
@@ -61,9 +68,11 @@ public class CLPSolver implements AutoCloseable {
       CompoundTerm solved = engine.rpc(goal);
       return solved;
     } catch (EclipseException e) {
-      // e.printStackTrace();
+      if (iskeepinfeasiablePathEcl)
+        e.printStackTrace();
       try {
-        FileUtil.deleteEclFile(eclpath);
+        if (!iskeepinfeasiablePathEcl)
+          FileUtil.deleteEclFile(eclpath);
       } catch (IOException e1) {
         // TODO Auto-generated catch block
         e1.printStackTrace();

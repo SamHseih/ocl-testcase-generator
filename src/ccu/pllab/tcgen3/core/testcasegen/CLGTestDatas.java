@@ -11,7 +11,11 @@ public class CLGTestDatas {
   int testCaseNum; // record the number of test cases generated
   boolean isBVA;
 
-  // CLGGraph clgGraph;
+  // <pathNum + BVA pathNum , <Predicate Variable,test data String >>
+  // Array add Ex. <path=1_1 , test data map(predicate Variables)>
+  // test data map-> entry 1 = <Selg, [1,2,3]>
+  // test data map-> entry 2 = <Arg, [5,4,3]>
+  // test data map-> entry 3 = <Result, [6,6,6]>
   Map<String, Map<String, String>> testDatas;
 
   CLGTestDatas(String classname, String methodname, boolean BVA) {
@@ -58,4 +62,14 @@ public class CLGTestDatas {
   public int getTestCaseNum() {
     return testCaseNum;
   }
+
+  public String getClassName() {
+    return classname;
+  }
+
+  public String getMethodName() {
+    return methodname;
+  }
+
+
 }

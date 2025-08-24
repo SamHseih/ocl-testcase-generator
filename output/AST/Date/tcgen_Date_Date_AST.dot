@@ -115,10 +115,10 @@ digraph AST {
   n101 [label="or", xlabel="(101)Boolean"];
   n101 -> n89;
   n101 -> n100;
-  n104 [label="<=", xlabel="(104)Boolean"];
+  n104 [label="<", xlabel="(104)Boolean"];
   n104 -> n102;
   n104 -> n103;
-  n107 [label="<=", xlabel="(107)Boolean"];
+  n107 [label="<", xlabel="(107)Boolean"];
   n107 -> n105;
   n107 -> n106;
   n22 [label="y", xlabel="(22)int"];
@@ -148,9 +148,9 @@ digraph AST {
   n100 -> n94;
   n100 -> n99;
   n102 [label="d", xlabel="(102)int"];
-  n103 [label="29", xlabel="(103)int"];
+  n103 [label="30", xlabel="(103)int"];
   n105 [label="d", xlabel="(105)int"];
-  n106 [label="28", xlabel="(106)int"];
+  n106 [label="29", xlabel="(106)int"];
   n47 [label="or", xlabel="(47)Boolean"];
   n47 -> n43;
   n47 -> n46;

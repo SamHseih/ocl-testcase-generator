@@ -1,8 +1,5 @@
 package StaticFixedsizeArrays 
 	
-	
-			
-	
 	context Matrix::Matrix(inputArray:int[2][2])
 	post: 
 		self.datas = inputArray

@@ -4,7 +4,7 @@ digraph AST {
   n31 -> n0;
   n31 -> n30;
   n0 [label="Triangle", xlabel="(0)"];
-  n30 [label=" inv:", xlabel="(30)Boolean"];
+  n30 [label="EdgeErrorException inv:", xlabel="(30)Boolean"];
   n30 -> n29;
   n29 [label="and", xlabel="(29)Boolean"];
   n29 -> n25;

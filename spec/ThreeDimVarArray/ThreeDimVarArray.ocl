@@ -1,6 +1,5 @@
 package DynamicFixedsizeArrays 
 	
-	
 	context ThreeDimVarArray
 	inv: self.data.getDimensionSizes(1) > 0 and 
 		self.data.getDimensionSizes(2) > 0 and
@@ -33,8 +32,7 @@ package DynamicFixedsizeArrays
 					)
 				)
 			)
-			
-			
+					
 	context ThreeDimVarArray::sub(arg:ThreeDimVarArray):ThreeDimVarArray
 	pre IllegalDimensionSize:
 			self.data.getDimension()  = arg.data.getDimension() and

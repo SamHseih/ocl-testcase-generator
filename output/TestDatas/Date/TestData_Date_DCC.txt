@@ -1,0 +1,903 @@
+Class: Date, Method: , Test Case Number: 1
+Feasiable Path1:
+Invariant Self = [ 80, 10, 24594 ]
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: Date, Test Case Number: 68
+Feasiable Path1:
+Self = [ 29309, 12, 19 ]
+Arg_1 = 29309
+Arg_2 = 12
+Arg_3 = 19
+
+Feasiable Path2:
+Arg_1 = 24655
+Arg_2 = 12
+Arg_3 = 29144
+Result = DateErrorException
+
+Feasiable Path3:
+Self = [ 25918, 10, 11 ]
+Arg_1 = 25918
+Arg_2 = 10
+Arg_3 = 11
+
+Feasiable Path4:
+Arg_1 = 24270
+Arg_2 = 12
+Arg_3 = -14928
+Result = DateErrorException
+
+Feasiable Path5:
+Arg_1 = 8074
+Arg_2 = 10
+Arg_3 = 20099
+Result = DateErrorException
+
+Feasiable Path6:
+Self = [ 21738, 8, 29 ]
+Arg_1 = 21738
+Arg_2 = 8
+Arg_3 = 29
+
+Feasiable Path8:
+Arg_1 = 4770
+Arg_2 = 10
+Arg_3 = -8550
+Result = DateErrorException
+
+Feasiable Path9:
+Arg_1 = 25475
+Arg_2 = 8
+Arg_3 = 12173
+Result = DateErrorException
+
+Feasiable Path10:
+Self = [ 18845, 7, 4 ]
+Arg_1 = 18845
+Arg_2 = 7
+Arg_3 = 4
+
+Feasiable Path11:
+Arg_1 = -17015
+Arg_2 = 12
+Arg_3 = 16
+Result = DateErrorException
+
+Feasiable Path14:
+Arg_1 = 13545
+Arg_2 = 8
+Arg_3 = -31383
+Result = DateErrorException
+
+Feasiable Path15:
+Arg_1 = 19010
+Arg_2 = 7
+Arg_3 = 14960
+Result = DateErrorException
+
+Feasiable Path16:
+Self = [ 32084, 5, 24 ]
+Arg_1 = 32084
+Arg_2 = 5
+Arg_3 = 24
+
+Feasiable Path17:
+Arg_1 = -23978
+Arg_2 = 10
+Arg_3 = 24
+Result = DateErrorException
+
+Feasiable Path20:
+Arg_1 = 2462
+Arg_2 = 7
+Arg_3 = -21561
+Result = DateErrorException
+
+Feasiable Path21:
+Arg_1 = 7415
+Arg_2 = 5
+Arg_3 = 14973
+Result = DateErrorException
+
+Feasiable Path22:
+Self = [ 31313, 11, 13 ]
+Arg_1 = 31313
+Arg_2 = 11
+Arg_3 = 13
+
+Feasiable Path23:
+Arg_1 = 12316
+Arg_2 = 11
+Arg_3 = 10398
+Result = DateErrorException
+
+Feasiable Path24:
+Self = [ 9886, 1, 2 ]
+Arg_1 = 9886
+Arg_2 = 1
+Arg_3 = 2
+
+Feasiable Path25:
+Self = [ 24758, 3, 5 ]
+Arg_1 = 24758
+Arg_2 = 3
+Arg_3 = 5
+
+Feasiable Path26:
+Arg_1 = -9202
+Arg_2 = 8
+Arg_3 = 10
+Result = DateErrorException
+
+Feasiable Path29:
+Arg_1 = 14392
+Arg_2 = 5
+Arg_3 = -2059
+Result = DateErrorException
+
+Feasiable Path30:
+Arg_1 = 26856
+Arg_2 = 1
+Arg_3 = 18159
+Result = DateErrorException
+
+Feasiable Path31:
+Arg_1 = 23908
+Arg_2 = 3
+Arg_3 = 14193
+Result = DateErrorException
+
+Feasiable Path32:
+Self = [ 14358, 9, 12 ]
+Arg_1 = 14358
+Arg_2 = 9
+Arg_3 = 12
+
+Feasiable Path33:
+Arg_1 = 29100
+Arg_2 = 11
+Arg_3 = -15767
+Result = DateErrorException
+
+Feasiable Path34:
+Arg_1 = 2484
+Arg_2 = 9
+Arg_3 = 18535
+Result = DateErrorException
+
+Feasiable Path35:
+Arg_1 = -9282
+Arg_2 = 7
+Arg_3 = 13
+Result = DateErrorException
+
+Feasiable Path38:
+Arg_1 = 25639
+Arg_2 = 1
+Arg_3 = -30226
+Result = DateErrorException
+
+Feasiable Path39:
+Arg_1 = 3989
+Arg_2 = 3
+Arg_3 = -2330
+Result = DateErrorException
+
+Feasiable Path40:
+Self = [ 20517, 4, 9 ]
+Arg_1 = 20517
+Arg_2 = 4
+Arg_3 = 9
+
+Feasiable Path41:
+Self = [ 16952, 6, 24 ]
+Arg_1 = 16952
+Arg_2 = 6
+Arg_3 = 24
+
+Feasiable Path43:
+Arg_1 = 20113
+Arg_2 = 9
+Arg_3 = -6862
+Result = DateErrorException
+
+Feasiable Path44:
+Arg_1 = 32689
+Arg_2 = 4
+Arg_3 = 13865
+Result = DateErrorException
+
+Feasiable Path45:
+Arg_1 = 14982
+Arg_2 = 6
+Arg_3 = 32242
+Result = DateErrorException
+
+Feasiable Path46:
+Arg_1 = -8376
+Arg_2 = 5
+Arg_3 = 22
+Result = DateErrorException
+
+Feasiable Path50:
+Self = [ 12000, 2, 12 ]
+Arg_1 = 12000
+Arg_2 = 2
+Arg_3 = 12
+
+Feasiable Path51:
+Arg_1 = -16237
+Arg_2 = 11
+Arg_3 = 26
+Result = DateErrorException
+
+Feasiable Path54:
+Arg_1 = 21054
+Arg_2 = 4
+Arg_3 = -30837
+Result = DateErrorException
+
+Feasiable Path55:
+Arg_1 = 5396
+Arg_2 = 6
+Arg_3 = -2698
+Result = DateErrorException
+
+Feasiable Path56:
+Arg_1 = 6000
+Arg_2 = 2
+Arg_3 = 8131
+Result = DateErrorException
+
+Feasiable Path57:
+Self = [ 9420, 2, 11 ]
+Arg_1 = 9420
+Arg_2 = 2
+Arg_3 = 11
+
+Feasiable Path58:
+Arg_1 = -583
+Arg_2 = 1
+Arg_3 = 29
+Result = DateErrorException
+
+Feasiable Path59:
+Arg_1 = -32173
+Arg_2 = 3
+Arg_3 = 16
+Result = DateErrorException
+
+Feasiable Path62:
+Arg_1 = 22972
+Arg_2 = 2
+Arg_3 = 6765
+Result = DateErrorException
+
+Feasiable Path63:
+Self = [ 1715, 2, 19 ]
+Arg_1 = 1715
+Arg_2 = 2
+Arg_3 = 19
+
+Feasiable Path64:
+Self = [ 24600, 2, 10 ]
+Arg_1 = 24600
+Arg_2 = 2
+Arg_3 = 10
+
+Feasiable Path65:
+Arg_1 = -7727
+Arg_2 = 9
+Arg_3 = 11
+Result = DateErrorException
+
+Feasiable Path69:
+Arg_1 = 17200
+Arg_2 = 2
+Arg_3 = -16721
+Result = DateErrorException
+
+Feasiable Path70:
+Arg_1 = 10410
+Arg_2 = 2
+Arg_3 = 28024
+Result = DateErrorException
+
+Feasiable Path71:
+Arg_1 = 31000
+Arg_2 = 2
+Arg_3 = 7884
+Result = DateErrorException
+
+Feasiable Path72:
+Arg_1 = 3720
+Arg_2 = 2
+Arg_3 = -5801
+Result = DateErrorException
+
+Feasiable Path73:
+Arg_1 = -4518
+Arg_2 = 4
+Arg_3 = 20
+Result = DateErrorException
+
+Feasiable Path74:
+Arg_1 = -27954
+Arg_2 = 6
+Arg_3 = 28
+Result = DateErrorException
+
+Feasiable Path77:
+Arg_1 = 16000
+Arg_2 = 24971
+Arg_3 = 29
+Result = DateErrorException
+
+Feasiable Path78:
+Arg_1 = 5041
+Arg_2 = 2
+Arg_3 = -17611
+Result = DateErrorException
+
+Feasiable Path79:
+Arg_1 = 7100
+Arg_2 = 2
+Arg_3 = -27498
+Result = DateErrorException
+
+Feasiable Path80:
+Arg_1 = 32336
+Arg_2 = 22202
+Arg_3 = 21
+Result = DateErrorException
+
+Feasiable Path81:
+Arg_1 = -31200
+Arg_2 = 2
+Arg_3 = 20
+Result = DateErrorException
+
+Feasiable Path82:
+Arg_1 = 20800
+Arg_2 = -28434
+Arg_3 = 19
+Result = DateErrorException
+
+Feasiable Path83:
+Arg_1 = 13049
+Arg_2 = 24251
+Arg_3 = 23
+Result = DateErrorException
+
+Feasiable Path84:
+Arg_1 = 8200
+Arg_2 = 21038
+Arg_3 = 12
+Result = DateErrorException
+
+Feasiable Path85:
+Arg_1 = -30148
+Arg_2 = 2
+Arg_3 = 1
+Result = DateErrorException
+
+Feasiable Path86:
+Arg_1 = 12824
+Arg_2 = -2664
+Arg_3 = 24
+Result = DateErrorException
+
+Feasiable Path87:
+Arg_1 = -16070
+Arg_2 = 2
+Arg_3 = 28
+Result = DateErrorException
+
+Feasiable Path88:
+Arg_1 = -10900
+Arg_2 = 2
+Arg_3 = 23
+Result = DateErrorException
+
+Feasiable Path89:
+Arg_1 = 25325
+Arg_2 = -26069
+Arg_3 = 16
+Result = DateErrorException
+
+Feasiable Path90:
+Arg_1 = 25000
+Arg_2 = -4848
+Arg_3 = 21
+Result = DateErrorException
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: next, Test Case Number: 30
+Feasiable Path1:
+Self = [ 15558, 12, 31 ]
+Result = [ 15559, 1, 1 ]
+
+Feasiable Path2:
+Self = [ 21546, 12, 30 ]
+Result = [ 21546, 12, 31 ]
+
+Feasiable Path3:
+Self = [ 5403, 10, 31 ]
+Result = [ 5403, 11, 1 ]
+
+Feasiable Path4:
+Self = [ 25309, 10, 9 ]
+Result = [ 25309, 10, 10 ]
+
+Feasiable Path5:
+Self = [ 32163, 8, 31 ]
+Result = [ 32163, 9, 1 ]
+
+Feasiable Path6:
+Self = [ 10746, 8, 28 ]
+Result = [ 10746, 8, 29 ]
+
+Feasiable Path7:
+Self = [ 13490, 7, 31 ]
+Result = [ 13490, 8, 1 ]
+
+Feasiable Path8:
+Self = [ 5488, 7, 15 ]
+Result = [ 5488, 7, 16 ]
+
+Feasiable Path9:
+Self = [ 23351, 5, 31 ]
+Result = [ 23351, 6, 1 ]
+
+Feasiable Path10:
+Self = [ 709, 5, 27 ]
+Result = [ 709, 5, 28 ]
+
+Feasiable Path11:
+Self = [ 23057, 1, 31 ]
+Result = [ 23057, 2, 1 ]
+
+Feasiable Path12:
+Self = [ 27556, 3, 31 ]
+Result = [ 27556, 4, 1 ]
+
+Feasiable Path13:
+Self = [ 25770, 11, 30 ]
+Result = [ 25770, 12, 1 ]
+
+Feasiable Path14:
+Self = [ 18177, 1, 23 ]
+Result = [ 18177, 1, 24 ]
+
+Feasiable Path15:
+Self = [ 26765, 3, 4 ]
+Result = [ 26765, 3, 5 ]
+
+Feasiable Path16:
+Self = [ 4864, 11, 13 ]
+Result = [ 4864, 11, 14 ]
+
+Feasiable Path17:
+Self = [ 8810, 9, 30 ]
+Result = [ 8810, 10, 1 ]
+
+Feasiable Path18:
+Self = [ 32170, 9, 2 ]
+Result = [ 32170, 9, 3 ]
+
+Feasiable Path19:
+Self = [ 4301, 4, 30 ]
+Result = [ 4301, 5, 1 ]
+
+Feasiable Path20:
+Self = [ 17688, 6, 30 ]
+Result = [ 17688, 7, 1 ]
+
+Feasiable Path21:
+Self = [ 28589, 4, 18 ]
+Result = [ 28589, 4, 19 ]
+
+Feasiable Path22:
+Self = [ 3453, 6, 24 ]
+Result = [ 3453, 6, 25 ]
+
+Feasiable Path23:
+Self = [ 6800, 2, 29 ]
+Result = [ 6800, 3, 1 ]
+
+Feasiable Path24:
+Self = [ 2800, 2, 13 ]
+Result = [ 2800, 2, 14 ]
+
+Feasiable Path25:
+Self = [ 4756, 2, 29 ]
+Result = [ 4756, 3, 1 ]
+
+Feasiable Path26:
+Self = [ 4480, 2, 15 ]
+Result = [ 4480, 2, 16 ]
+
+Feasiable Path27:
+Self = [ 17661, 2, 28 ]
+Result = [ 17661, 3, 1 ]
+
+Feasiable Path28:
+Self = [ 15900, 2, 28 ]
+Result = [ 15900, 3, 1 ]
+
+Feasiable Path29:
+Self = [ 15206, 2, 4 ]
+Result = [ 15206, 2, 5 ]
+
+Feasiable Path30:
+Self = [ 6300, 2, 18 ]
+Result = [ 6300, 2, 19 ]
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: getYear, Test Case Number: 30
+Feasiable Path1:
+Self = [ 21571, 12, 21 ]
+Result = 21571
+
+Feasiable Path2:
+Self = [ 7394, 10, 6 ]
+Result = 7394
+
+Feasiable Path3:
+Self = [ 13956, 12, 26793 ]
+Result = DateErrorException
+
+Feasiable Path4:
+Self = [ 28528, 8, 4 ]
+Result = 28528
+
+Feasiable Path6:
+Self = [ 21398, 10, 18884 ]
+Result = DateErrorException
+
+Feasiable Path7:
+Self = [ 296, 7, 5 ]
+Result = 296
+
+Feasiable Path10:
+Self = [ 5007, 8, 1674 ]
+Result = DateErrorException
+
+Feasiable Path11:
+Self = [ 9411, 5, 20 ]
+Result = 9411
+
+Feasiable Path16:
+Self = [ 29655, 7, 31315 ]
+Result = DateErrorException
+
+Feasiable Path17:
+Self = [ 20315, 11, 5 ]
+Result = 20315
+
+Feasiable Path18:
+Self = [ 2038, 1, 7 ]
+Result = 2038
+
+Feasiable Path19:
+Self = [ 3656, 3, 25 ]
+Result = 3656
+
+Feasiable Path24:
+Self = [ 4465, 5, 18234 ]
+Result = DateErrorException
+
+Feasiable Path25:
+Self = [ 8630, 9, 1 ]
+Result = 8630
+
+Feasiable Path26:
+Self = [ 32582, 11, 5094 ]
+Result = DateErrorException
+
+Feasiable Path31:
+Self = [ 31250, 1, 23339 ]
+Result = DateErrorException
+
+Feasiable Path32:
+Self = [ 14851, 3, 26479 ]
+Result = DateErrorException
+
+Feasiable Path33:
+Self = [ 5817, 4, 12 ]
+Result = 5817
+
+Feasiable Path34:
+Self = [ 1527, 6, 9 ]
+Result = 1527
+
+Feasiable Path36:
+Self = [ 22315, 9, 10075 ]
+Result = DateErrorException
+
+Feasiable Path42:
+Self = [ 30000, 2, 4 ]
+Result = 30000
+
+Feasiable Path45:
+Self = [ 6082, 4, 9343 ]
+Result = DateErrorException
+
+Feasiable Path46:
+Self = [ 28273, 6, 18886 ]
+Result = DateErrorException
+
+Feasiable Path47:
+Self = [ 6732, 2, 24 ]
+Result = 6732
+
+Feasiable Path52:
+Self = [ 32517, 2, 2 ]
+Result = 32517
+
+Feasiable Path53:
+Self = [ 17400, 2, 7 ]
+Result = 17400
+
+Feasiable Path59:
+Self = [ 17600, 2, 24843 ]
+Result = DateErrorException
+
+Feasiable Path64:
+Self = [ 13480, 2, 12116 ]
+Result = DateErrorException
+
+Feasiable Path70:
+Self = [ 6399, 2, 15159 ]
+Result = DateErrorException
+
+Feasiable Path71:
+Self = [ 27000, 2, 25249 ]
+Result = DateErrorException
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: getMonth, Test Case Number: 30
+Feasiable Path1:
+Self = [ 16091, 12, 24 ]
+Result = 12
+
+Feasiable Path2:
+Self = [ 15820, 10, 21 ]
+Result = 10
+
+Feasiable Path3:
+Self = [ 22028, 12, 26690 ]
+Result = DateErrorException
+
+Feasiable Path4:
+Self = [ 18556, 8, 2 ]
+Result = 8
+
+Feasiable Path6:
+Self = [ 18973, 10, 2067 ]
+Result = DateErrorException
+
+Feasiable Path7:
+Self = [ 15809, 7, 11 ]
+Result = 7
+
+Feasiable Path10:
+Self = [ 26216, 8, 19413 ]
+Result = DateErrorException
+
+Feasiable Path11:
+Self = [ 29333, 5, 18 ]
+Result = 5
+
+Feasiable Path16:
+Self = [ 15656, 7, 2196 ]
+Result = DateErrorException
+
+Feasiable Path17:
+Self = [ 26050, 11, 13 ]
+Result = 11
+
+Feasiable Path18:
+Self = [ 19881, 1, 16 ]
+Result = 1
+
+Feasiable Path19:
+Self = [ 29868, 3, 16 ]
+Result = 3
+
+Feasiable Path24:
+Self = [ 28568, 5, 20732 ]
+Result = DateErrorException
+
+Feasiable Path25:
+Self = [ 9355, 9, 8 ]
+Result = 9
+
+Feasiable Path26:
+Self = [ 811, 11, 25035 ]
+Result = DateErrorException
+
+Feasiable Path31:
+Self = [ 15628, 1, 30565 ]
+Result = DateErrorException
+
+Feasiable Path32:
+Self = [ 26712, 3, 19745 ]
+Result = DateErrorException
+
+Feasiable Path33:
+Self = [ 31712, 4, 21 ]
+Result = 4
+
+Feasiable Path34:
+Self = [ 27143, 6, 30 ]
+Result = 6
+
+Feasiable Path36:
+Self = [ 5867, 9, 1670 ]
+Result = DateErrorException
+
+Feasiable Path42:
+Self = [ 9200, 2, 2 ]
+Result = 2
+
+Feasiable Path45:
+Self = [ 19908, 4, 25767 ]
+Result = DateErrorException
+
+Feasiable Path46:
+Self = [ 11887, 6, 13238 ]
+Result = DateErrorException
+
+Feasiable Path47:
+Self = [ 27532, 2, 18 ]
+Result = 2
+
+Feasiable Path52:
+Self = [ 2667, 2, 8 ]
+Result = 2
+
+Feasiable Path53:
+Self = [ 9000, 2, 6 ]
+Result = 2
+
+Feasiable Path59:
+Self = [ 20800, 2, 13674 ]
+Result = DateErrorException
+
+Feasiable Path64:
+Self = [ 19332, 2, 2885 ]
+Result = DateErrorException
+
+Feasiable Path70:
+Self = [ 29394, 2, 26334 ]
+Result = DateErrorException
+
+Feasiable Path71:
+Self = [ 27400, 2, 2861 ]
+Result = DateErrorException
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: getDay, Test Case Number: 30
+Feasiable Path1:
+Self = [ 17011, 12, 26 ]
+Result = 26
+
+Feasiable Path2:
+Self = [ 26038, 10, 27 ]
+Result = 27
+
+Feasiable Path3:
+Self = [ 6204, 12, 24624 ]
+Result = DateErrorException
+
+Feasiable Path4:
+Self = [ 30303, 8, 13 ]
+Result = 13
+
+Feasiable Path6:
+Self = [ 21723, 10, 21998 ]
+Result = DateErrorException
+
+Feasiable Path7:
+Self = [ 2155, 7, 15 ]
+Result = 15
+
+Feasiable Path10:
+Self = [ 20370, 8, 7575 ]
+Result = DateErrorException
+
+Feasiable Path11:
+Self = [ 2891, 5, 11 ]
+Result = 11
+
+Feasiable Path16:
+Self = [ 4852, 7, 29464 ]
+Result = DateErrorException
+
+Feasiable Path17:
+Self = [ 14309, 11, 23 ]
+Result = 23
+
+Feasiable Path18:
+Self = [ 32694, 1, 14 ]
+Result = 14
+
+Feasiable Path19:
+Self = [ 30725, 3, 16 ]
+Result = 16
+
+Feasiable Path24:
+Self = [ 21181, 5, 10711 ]
+Result = DateErrorException
+
+Feasiable Path25:
+Self = [ 12733, 9, 23 ]
+Result = 23
+
+Feasiable Path26:
+Self = [ 9268, 11, 25003 ]
+Result = DateErrorException
+
+Feasiable Path31:
+Self = [ 2670, 1, 14204 ]
+Result = DateErrorException
+
+Feasiable Path32:
+Self = [ 13913, 3, 10289 ]
+Result = DateErrorException
+
+Feasiable Path33:
+Self = [ 12841, 4, 26 ]
+Result = 26
+
+Feasiable Path34:
+Self = [ 30642, 6, 4 ]
+Result = 4
+
+Feasiable Path36:
+Self = [ 20446, 9, 19969 ]
+Result = DateErrorException
+
+Feasiable Path42:
+Self = [ 12800, 2, 9 ]
+Result = 9
+
+Feasiable Path45:
+Self = [ 4890, 4, 32314 ]
+Result = DateErrorException
+
+Feasiable Path46:
+Self = [ 26911, 6, 5585 ]
+Result = DateErrorException
+
+Feasiable Path47:
+Self = [ 19188, 2, 20 ]
+Result = 20
+
+Feasiable Path52:
+Self = [ 11209, 2, 26 ]
+Result = 26
+
+Feasiable Path53:
+Self = [ 30600, 2, 22 ]
+Result = 22
+
+Feasiable Path59:
+Self = [ 4400, 2, 5339 ]
+Result = DateErrorException
+
+Feasiable Path64:
+Self = [ 23956, 2, 9511 ]
+Result = DateErrorException
+
+Feasiable Path70:
+Self = [ 12234, 2, 9711 ]
+Result = DateErrorException
+
+Feasiable Path71:
+Self = [ 10900, 2, 17432 ]
+Result = DateErrorException
+
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

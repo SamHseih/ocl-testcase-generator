@@ -1,0 +1,16 @@
+digraph AST {
+  node [shape=box];
+  n108 [label="ContextDecl: node(102) Context: node (107)", xlabel="(108)"];
+  n108 -> n102;
+  n108 -> n107;
+  n102 [label="Matrix::getDatas() : int[2][2]", xlabel="(102)"];
+  n107 [label=" post:", xlabel="(107)Boolean"];
+  n107 -> n106;
+  n106 [label="=", xlabel="(106)Boolean"];
+  n106 -> n103;
+  n106 -> n105;
+  n103 [label="result", xlabel="(103)int[2][2]"];
+  n105 [label="self.datas", xlabel="(105)int[2][2]"];
+  n105 -> n104;
+  n104 [label="self", xlabel="(104)Matrix"];
+}

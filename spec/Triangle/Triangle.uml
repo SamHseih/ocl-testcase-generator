@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_mzKvoGF6EfCJELX31WWH2g" name="Triangle">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_m1Y9MGF6EfCJELX31WWH2g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_n3yOUGF6EfCJELX31WWH2g" name="Triangle">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4pmlsGF6EfCJELX31WWH2g" name="sideA" type="_702ZsGF6EfCJELX31WWH2g"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_5sqlMGF6EfCJELX31WWH2g" name="sideB" type="_702ZsGF6EfCJELX31WWH2g"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_CKMyMGF7EfCJELX31WWH2g" name="sideC" type="_702ZsGF6EfCJELX31WWH2g"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_t2r1sGF6EfCJELX31WWH2g" name="Triangle">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_GT3WQGF7EfCJELX31WWH2g" name="sa" type="_702ZsGF6EfCJELX31WWH2g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_HLcegGF7EfCJELX31WWH2g" name="sb" type="_702ZsGF6EfCJELX31WWH2g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_IDYMEGF7EfCJELX31WWH2g" name="sc" type="_702ZsGF6EfCJELX31WWH2g"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yhI9MGF7EfCFv_VHynvULw" name="category">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5QDsQGF7EfCFv_VHynvULw" type="_8l6DMGF6EfCJELX31WWH2g" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_MDM3oGF7EfCJELX31WWH2g" name="PrimitiveType">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_702ZsGF6EfCJELX31WWH2g" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_8l6DMGF6EfCJELX31WWH2g" name="String"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-uA_MGF6EfCJELX31WWH2g" name="Boolean"/>
+  </packagedElement>
+</uml:Model>

@@ -51,7 +51,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C8ZhwRxPEfCkuu2vytGR7A"/>
     </children>
     <element xmi:type="uml:Class" href="Cube.uml#_C8VQQBxPEfCkuu2vytGR7A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C8XsgRxPEfCkuu2vytGR7A" x="120" y="80" width="381" height="261"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C8XsgRxPEfCkuu2vytGR7A" x="120" y="100" width="261" height="221"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_EaFAoBxPEfCkuu2vytGR7A" type="Package_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_EaFAohxPEfCkuu2vytGR7A" type="Package_NameLabel"/>
@@ -120,7 +120,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EaFApRxPEfCkuu2vytGR7A"/>
     </children>
     <element xmi:type="uml:Package" href="Cube.uml#_EaDygBxPEfCkuu2vytGR7A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EaFAoRxPEfCkuu2vytGR7A" x="520" y="320" width="381" height="161"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EaFAoRxPEfCkuu2vytGR7A" x="200" y="340" width="381" height="161"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_eH6QwBxPEfCkuu2vytGR7A" type="DataType_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_eH6QwhxPEfCkuu2vytGR7A" type="DataType_NameLabel"/>
@@ -208,7 +208,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eH632xxPEfCkuu2vytGR7A"/>
     </children>
     <element xmi:type="uml:DataType" href="Cube.uml#_eH5psBxPEfCkuu2vytGR7A"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eH6QwRxPEfCkuu2vytGR7A" x="520" y="100" width="381" height="221"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eH6QwRxPEfCkuu2vytGR7A" x="400" y="100" width="261" height="221"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_A9HKgRxPEfCkuu2vytGR7A" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_A9HKghxPEfCkuu2vytGR7A"/>

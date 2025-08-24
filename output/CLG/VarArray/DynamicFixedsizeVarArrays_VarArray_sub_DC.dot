@@ -1,0 +1,45 @@
+digraph CLG {
+  64 [shape="box", label="dim1 = arg.data.getDimensionSizes(1)", style=filled, fillcolor=yellow, xlabel="[64]"];
+  67 [shape="box", label="idx0 = 1", style=filled, fillcolor=yellow, xlabel="[67]"];
+  70 [shape="box", label="acc = true", style=filled, fillcolor=yellow, xlabel="[70]"];
+  73 [shape="box", label="idx0 > dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[73]"];
+  76 [shape="box", label="idx0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[76]"];
+  79 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[79]"];
+  82 [shape="box", label="result.data[it] = self.data[it] - arg.data[it]", style=filled, fillcolor=yellow, xlabel="[82]"];
+  52 [shape="box", label="arg.data.getDimension() <> self.data.getDimension() or
+arg.data.getDimensionSizes(1) <> self.data.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[52]"];
+  85 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[85]"];
+  87 [shape="diamond", label="", xlabel="<87>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  55 [shape="box", label="Result = 'IllegalDimensionSize'", style=filled, fillcolor=yellow, xlabel="[55]"];
+  88 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
+  56 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
+  89 [shape="box", label="self.data.getDimensionSizes(1) > 0", style=filled, fillcolor=yellow, xlabel="[89]"];
+  58 [shape="box", label="arg.data.getDimension() = self.data.getDimension() and
+arg.data.getDimensionSizes(1) = self.data.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[58]"];
+  91 [shape="diamond", label="", xlabel="<91>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  92 [shape="diamond", label="", xlabel="<92>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
+  61 [shape="box", label="self.data.getDimension() = result.data.getDimension() and
+self.data.getDimensionSizes(1) = result.data.getDimensionSizes(1)
+", style=filled, fillcolor=yellow, xlabel="[61]"];
+  91 -> 52[label="split2#96"];
+  73 -> 92[label="merge1#97"];
+  55 -> 92[label="merge2#98"];
+  92 -> 56[label="graphOr_end#99"];
+  70 -> 67[label="graphAnd#68"];
+  89 -> 91[label="graphAnd#100"];
+  76 -> 79[label="graphAnd#79"];
+  79 -> 82[label="graphAnd#80"];
+  82 -> 85[label="graphAnd#81"];
+  87 -> 76[label="iterate#83"];
+  85 -> 87[label="iterate#84"];
+  87 -> 73[label="graphAnd#86"];
+  67 -> 87[label="graphAnd#87"];
+  64 -> 70[label="graphAnd#88"];
+  61 -> 64[label="graphAnd#89"];
+  52 -> 55[label="graphAnd#90"];
+  58 -> 61[label="graphAnd#91"];
+  88 -> 89;
+  91 -> 58[label="split1#95"];
+}

@@ -1,0 +1,65 @@
+digraph AST {
+  node [shape=box];
+  n97 [label="ContextDecl: node(69) Context: node (96)", xlabel="(97)"];
+  n97 -> n69;
+  n97 -> n96;
+  n69 [label="Array::mul(node (68)) : Array", xlabel="(69)"];
+  n69 -> n68;
+  n96 [label=" post:", xlabel="(96)Boolean"];
+  n96 -> n95;
+  n68 [label="arg : Array", xlabel="(68)Array"];
+  n95 [label="LetExp 
+Let node(75), node(94) in node(94)", xlabel="(95)Boolean"];
+  n95 -> n75;
+  n95 -> n94;
+  n75 [label="=", xlabel="(75)Boolean"];
+  n75 -> n74;
+  n75 -> n73;
+  n94 [label="IterateExp
+source=node(78) Iterator=node(79)
+Result=node(82) Body=node(93)", xlabel="(94)Boolean"];
+  n94 -> n78;
+  n94 -> n79;
+  n94 -> n82;
+  n94 -> n93;
+  n74 [label="dim1 : int", xlabel="(74)int"];
+  n73 [label="arg.datas.getDimensionSizes(1)", xlabel="(73)int"];
+  n73 -> n71;
+  n73 -> n72;
+  n78 [label="Sequence{ node(76) .. node(77) }", xlabel="(78)int"];
+  n78 -> n76;
+  n78 -> n77;
+  n79 [label="it : int", xlabel="(79)int"];
+  n82 [label="=", xlabel="(82)Boolean"];
+  n82 -> n81;
+  n82 -> n80;
+  n93 [label="=", xlabel="(93)Boolean"];
+  n93 -> n85;
+  n93 -> n92;
+  n71 [label="arg.datas", xlabel="(71)int[5]"];
+  n71 -> n70;
+  n72 [label="1", xlabel="(72)int"];
+  n76 [label="1", xlabel="(76)int"];
+  n77 [label="dim1", xlabel="(77)int"];
+  n81 [label="acc : Boolean", xlabel="(81)Boolean"];
+  n80 [label="true", xlabel="(80)Boolean"];
+  n85 [label="result.datas[it]", xlabel="(85)int"];
+  n85 -> n83;
+  n85 -> n84;
+  n92 [label="*", xlabel="(92)int"];
+  n92 -> n88;
+  n92 -> n91;
+  n70 [label="arg", xlabel="(70)Array"];
+  n83 [label="result", xlabel="(83)Array"];
+  n84 [label="it", xlabel="(84)int"];
+  n88 [label="self.datas[it]", xlabel="(88)int"];
+  n88 -> n86;
+  n88 -> n87;
+  n91 [label="arg.datas[it]", xlabel="(91)int"];
+  n91 -> n89;
+  n91 -> n90;
+  n86 [label="self", xlabel="(86)Array"];
+  n87 [label="it", xlabel="(87)int"];
+  n89 [label="arg", xlabel="(89)Array"];
+  n90 [label="it", xlabel="(90)int"];
+}
