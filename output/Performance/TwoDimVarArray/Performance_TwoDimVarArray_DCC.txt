@@ -240,3 +240,30 @@ DynamicFixedsizeArrays_TwoDimVarArray_getData_DCC CLG Info :  CLGNodes Size: 5  
 ======================================================================
 ============== 2025/08/22 19:29 TestCase output Finish. ==============
 =====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:175 ms
+Total CLGBuild Using Time:18 ms
+Total TestCase Generation Using Time:3265 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_TwoDimVarArray_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_TwoDimVarArray_DCC Using Time:33 ms
+  DynamicFixedsizeArrays_TwoDimVarArray_TwoDimVarArray_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_TwoDimVarArray_TwoDimVarArray_DCC Using Time:15 ms
+  DynamicFixedsizeArrays_TwoDimVarArray_add_DCC:
+	PathNum: 69, TestCaseNum: 12  Generate DynamicFixedsizeArrays_TwoDimVarArray_add_DCC Using Time:1400 ms
+  DynamicFixedsizeArrays_TwoDimVarArray_sub_DCC:
+	PathNum: 69, TestCaseNum: 12  Generate DynamicFixedsizeArrays_TwoDimVarArray_sub_DCC Using Time:1297 ms
+  DynamicFixedsizeArrays_TwoDimVarArray_getData_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_TwoDimVarArray_getData_DCC Using Time:15 ms
+
+Total System Generation Using Time:11545 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_TwoDimVarArray_DCC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeArrays_TwoDimVarArray_TwoDimVarArray_DCC CLG Info :  CLGNodes Size: 5  CLGEdges Size: 4
+DynamicFixedsizeArrays_TwoDimVarArray_add_DCC CLG Info :  CLGNodes Size: 43  CLGEdges Size: 47
+DynamicFixedsizeArrays_TwoDimVarArray_sub_DCC CLG Info :  CLGNodes Size: 43  CLGEdges Size: 47
+DynamicFixedsizeArrays_TwoDimVarArray_getData_DCC CLG Info :  CLGNodes Size: 5  CLGEdges Size: 4
+======================================================================
+============== 2025/08/27 1:17 TestCase output Finish. ==============
+=====================================================================

@@ -36,7 +36,6 @@ public class CLGTestDatas {
     return testDatas;
   }
 
-
   @Override
   public String toString() {
 
@@ -70,6 +69,7 @@ public class CLGTestDatas {
   public String getMethodName() {
     return methodname;
   }
+
 
 
 }

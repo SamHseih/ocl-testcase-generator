@@ -1,7 +1,4 @@
-:- lib(ic).
-:- lib(listut).
-:- lib(random).
-:- lib(timeout).
+:- lib(ic).:- lib(listut).:- lib(random).:- lib(timeout).
 
 staticFixedsizeArrays_Cube_add_DCC_Path_1391(Self,Arg,Result):-
 

@@ -12,6 +12,7 @@ Self=[Self_data,Self_dimensionSizes],Self_dimensionSizes = [Self_dim1, Self_dim2
 decl_Array(Self_data,Self_dimensionSizes),
 
 
+[]#::(-32768)..32767,
 %CLG Path Constrints,
 nth1(3,Self_dimensionSizes,Var_482082765),
 nth1(2,Self_dimensionSizes,Var_1754894440),

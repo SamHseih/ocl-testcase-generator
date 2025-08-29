@@ -104,3 +104,45 @@ DynamicFixedsizeArrays_ThreeDimVarArray_getData_DCC CLG Info :  CLGNodes Size: 6
 ======================================================================
 ============== 2025/08/22 19:25 TestCase output Finish. ==============
 =====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:172 ms
+Total CLGBuild Using Time:14 ms
+Total TestCase Generation Using Time:3496 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DCC:
+	PathNum: 137, BoundaryPathNum: 13, TestCaseNum: 13  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DCC Using Time:2988 ms
+
+Total System Generation Using Time:6004 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DCC CLG Info :  CLGNodes Size: 60  CLGEdges Size: 66
+======================================================================
+============== 2025/08/27 1:23 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:184 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:6506 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_DCC Using Time:58 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DCC Using Time:32 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DCC:
+	PathNum: 137, BoundaryPathNum: 13, TestCaseNum: 13  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DCC Using Time:3012 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_sub_DCC:
+	PathNum: 137, BoundaryPathNum: 13, TestCaseNum: 13  Generate DynamicFixedsizeArrays_ThreeDimVarArray_sub_DCC Using Time:2855 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_getData_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_getData_DCC Using Time:33 ms
+
+Total System Generation Using Time:15099 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_DCC CLG Info :  CLGNodes Size: 5  CLGEdges Size: 4
+DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DCC CLG Info :  CLGNodes Size: 63  CLGEdges Size: 69
+DynamicFixedsizeArrays_ThreeDimVarArray_sub_DCC CLG Info :  CLGNodes Size: 63  CLGEdges Size: 69
+DynamicFixedsizeArrays_ThreeDimVarArray_getData_DCC CLG Info :  CLGNodes Size: 6  CLGEdges Size: 5
+======================================================================
+============== 2025/08/27 1:24 TestCase output Finish. ==============
+=====================================================================

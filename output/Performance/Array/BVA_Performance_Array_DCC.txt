@@ -90,4 +90,27 @@ StaticFixedsizeArrays_Array_sub_DCC CLG Info :  CLGNodes Size: 11  CLGEdges Size
 StaticFixedsizeArrays_Array_getData_DCC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
 ======================================================================
 ============== 2025/08/20 15:59 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:176 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:825 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  StaticFixedsizeArrays_Array_Array_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_Array_DCC Using Time:50 ms
+  StaticFixedsizeArrays_Array_add_DCC:
+	PathNum: 6, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_add_DCC Using Time:123 ms
+  StaticFixedsizeArrays_Array_sub_DCC:
+	PathNum: 6, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_sub_DCC Using Time:117 ms
+  StaticFixedsizeArrays_Array_getData_DCC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_getData_DCC Using Time:24 ms
+
+Total System Generation Using Time:1018 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+StaticFixedsizeArrays_Array_Array_DCC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+StaticFixedsizeArrays_Array_add_DCC CLG Info :  CLGNodes Size: 11  CLGEdges Size: 11
+StaticFixedsizeArrays_Array_sub_DCC CLG Info :  CLGNodes Size: 11  CLGEdges Size: 11
+StaticFixedsizeArrays_Array_getData_DCC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
 ======================================================================
+============== 2025/08/26 18:20 TestCase output Finish. ==============
+=====================================================================

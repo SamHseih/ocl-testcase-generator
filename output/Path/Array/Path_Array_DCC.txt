@@ -29,33 +29,9 @@
 , [38] , EndNode]
 
   
-  StaticFixedsizeArrays_Array_mul_DCC:
-	
-    Feasiable Path 6:
-	[StartNode, [54] , [60] , [57] , <77>*
-, [66] , [69] , [72] , [75] , <77>*
-, [66] , [69] , [72] , [75] , <77>*
-, [66] , [69] , [72] , [75] , <77>*
-, [66] , [69] , [72] , [75] , <77>*
-, [66] , [69] , [72] , [75] , <77>*
-, [63] , EndNode]
-
-  
-  StaticFixedsizeArrays_Array_div_DCC:
-	
-    Feasiable Path 6:
-	[StartNode, [79] , [85] , [82] , <102>*
-, [91] , [94] , [97] , [100] , <102>*
-, [91] , [94] , [97] , [100] , <102>*
-, [91] , [94] , [97] , [100] , <102>*
-, [91] , [94] , [97] , [100] , <102>*
-, [91] , [94] , [97] , [100] , <102>*
-, [88] , EndNode]
-
-  
   StaticFixedsizeArrays_Array_getData_DCC:
 	
     Feasiable Path 1:
-	[StartNode, [104] , EndNode]
+	[StartNode, [54] , EndNode]
 
   

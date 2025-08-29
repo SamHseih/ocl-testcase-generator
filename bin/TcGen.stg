@@ -1,0 +1,39 @@
+testClass(className, imports, methods) ::= <<
+package tcgen3;
+
+<imports; separator="\n">
+public class <className>Test {
+<methods; separator="\n\n">
+}
+>>
+
+imports()::=<<
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+
+>>
+
+methodNormal(displayName, methodName, pathId, selfDecl, callStmt, expectedDecl, assertion) ::= <<
+@Test
+@DisplayName("<displayName>")
+void test<methodName>_<pathId>() throws Exception {
+	<if(selfDecl)><selfDecl>
+	<endif>
+	<callStmt>
+			
+	<if(expectedDecl)><expectedDecl>
+	<endif>
+	<assertion>
+}
+>>
+
+methodThrows(displayName, methodName, pathId, exceptionClass, lambdaCall) ::= <<
+@Test
+@DisplayName("<displayName>")
+void test<methodName>_<pathId>() {
+	assertThrows(<exceptionClass>.class, () -> { <lambdaCall>; });
+}
+>>

@@ -15,6 +15,7 @@ decl_Array(Self_datas,Self_dimensionSizes),
 decl_Array(Arg_datas,Arg_dimensionSizes),
 decl_Array(Result_datas,Result_dimensionSizes),
 
+[]#::(-32768)..32767,
 %CLG Path Constrints,
 nth1(1,Arg_dimensionSizes,Var_1932831450),
 (Dim1 = Var_1932831450),

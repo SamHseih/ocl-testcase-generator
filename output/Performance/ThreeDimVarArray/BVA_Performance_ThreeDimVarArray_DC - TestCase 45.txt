@@ -1,0 +1,121 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:231 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:13748 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_DC Using Time:233 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC Using Time:809 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DC:
+	TestCaseNum: 11, PathNum: 134, BoundaryPathNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DC Using Time:8548 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC:
+	TestCaseNum: 11, PathNum: 134, BoundaryPathNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC Using Time:3632 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC Using Time:26 ms
+
+Total System Generation Using Time:21893 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/14 17:17 TestCase output Finish. ==============
+======================================================================----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:229 ms
+Total CLGBuild Using Time:17 ms
+Total TestCase Generation Using Time:8870 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_DC Using Time:124 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC Using Time:359 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DC:
+	TestCaseNum: 11, PathNum: 134, BoundaryPathNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DC Using Time:3361 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC:
+	TestCaseNum: 11, PathNum: 134, BoundaryPathNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC Using Time:4254 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC:
+	TestCaseNum: 1, PathNum: 1, BoundaryPathNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC Using Time:266 ms
+
+Total System Generation Using Time:9118 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/19 13:50 TestCase output Finish. ==============
+======================================================================---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:185 ms
+Total CLGBuild Using Time:16 ms
+Total TestCase Generation Using Time:6503 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_DC Using Time:64 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC Using Time:38 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DC:
+	PathNum: 134, BoundaryPathNum: 11, TestCaseNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DC Using Time:2910 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC:
+	PathNum: 134, BoundaryPathNum: 11, TestCaseNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC Using Time:2912 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC Using Time:40 ms
+
+Total System Generation Using Time:14854 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/22 16:20 TestCase output Finish. ==============
+=====================================================================
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:187 ms
+Total CLGBuild Using Time:22 ms
+Total TestCase Generation Using Time:6465 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_DC Using Time:56 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC Using Time:38 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DC:
+	PathNum: 134, BoundaryPathNum: 11, TestCaseNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DC Using Time:2840 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC:
+	PathNum: 134, BoundaryPathNum: 11, TestCaseNum: 11  Generate DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC Using Time:2972 ms
+  DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC Using Time:29 ms
+
+Total System Generation Using Time:6675 ms
+---------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+DynamicFixedsizeArrays_ThreeDimVarArray_ThreeDimVarArray_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_sub_DC CLG Info :  CLGNodes Size: 34  CLGEdges Size: 37
+DynamicFixedsizeArrays_ThreeDimVarArray_getData_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/08/22 19:25 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:214 ms
+Total CLGBuild Using Time:18 ms
+Total TestCase Generation Using Time:59431666 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeArrays_ThreeDimVarArray_add_DC:
+	PathNum: 342426, BoundaryPathNum: 46, TestCaseNum: 46  Generate DynamicFixedsizeArrays_ThreeDimVarArray_add_DC Using Time:59431347 ms
+
+Total System Generation Using Time:59431901 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeArrays_ThreeDimVarArray_add_DC CLG Info :  CLGNodes Size: 33  CLGEdges Size: 36
+======================================================================
+============== 2025/08/26 0:48 TestCase output Finish. ==============
+=====================================================================

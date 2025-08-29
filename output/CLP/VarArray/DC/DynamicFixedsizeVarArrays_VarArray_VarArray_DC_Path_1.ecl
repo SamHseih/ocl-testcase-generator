@@ -13,9 +13,10 @@ decl_Array(Self_data,Self_dimensionSizes),
 decl_Array(InputArray,InputArray_dimensionSizes),
 
 
+[]#::(-32768)..32767,
 %CLG Path Constrints,
-nth1(1,Self_dimensionSizes,Var_482082765),
-(Var_482082765 #> 0),
+nth1(1,Self_dimensionSizes,Var_2143431083),
+(Var_2143431083 #> 0),
 (Self_data = InputArray),
 
 %DimensionSizes Labeling Parts

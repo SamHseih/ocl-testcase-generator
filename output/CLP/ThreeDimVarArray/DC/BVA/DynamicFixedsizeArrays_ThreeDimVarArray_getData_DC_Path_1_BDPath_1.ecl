@@ -12,11 +12,12 @@ Self=[Self_data,Self_dimensionSizes],Self_dimensionSizes = [Self_dim1, Self_dim2
 decl_Array(Self_data,Self_dimensionSizes),
 
 
+[]#::(-32768)..32767,
 %CLG Path Constrints,
-nth1(3,Self_dimensionSizes,Var_482082765),
-nth1(2,Self_dimensionSizes,Var_1754894440),
-nth1(1,Self_dimensionSizes,Var_1998767043),
-(((Var_1998767043 #> 0) , (Var_1754894440 #> 0)) , (Var_482082765 #> 0)),
+nth1(3,Self_dimensionSizes,Var_2147046752),
+nth1(2,Self_dimensionSizes,Var_1262773598),
+nth1(1,Self_dimensionSizes,Var_715378067),
+(((Var_715378067 #> 0) , (Var_1262773598 #> 0)) , (Var_2147046752 #> 0)),
 (Result = Self_data),
 
 %DimensionSizes Labeling Parts

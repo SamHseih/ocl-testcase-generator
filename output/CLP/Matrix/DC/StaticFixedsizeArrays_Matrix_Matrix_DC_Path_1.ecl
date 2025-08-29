@@ -13,6 +13,7 @@ decl_Array(Self_datas,Self_dimensionSizes),
 decl_Array(InputArray,InputArray_dimensionSizes),
 
 
+[]#::(-32768)..32767,
 %CLG Path Constrints,
 (Self_datas = InputArray),
 

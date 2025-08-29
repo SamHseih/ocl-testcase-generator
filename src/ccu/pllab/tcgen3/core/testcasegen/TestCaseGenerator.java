@@ -25,6 +25,7 @@ public class TestCaseGenerator {
   private String PROHECT_DIR = System.getProperty("user.dir");
   private Map<String, String> tesecasemessage = new LinkedHashMap<>();
   private Map<String, Map<String, String>> fesiablePaths = new LinkedHashMap<>();
+  private List<String> specCLGList;
 
   public TestCaseGenerator(Scope SymbolTable, int maxTestCaseNum, boolean BA) {
     this.globalSymbolTable = SymbolTable;
@@ -35,6 +36,7 @@ public class TestCaseGenerator {
     clgEdgeSize = 0;
     timeLimit = 10;
     isKeepInfeasiableInfo = false;
+    specCLGList = new ArrayList<>();
   }
 
   public Map<String, String> getTestCaseMessage() {
@@ -63,6 +65,10 @@ public class TestCaseGenerator {
 
   public void setTimeLimit(int timeLimit) {
     this.timeLimit = timeLimit;
+  }
+
+  public List<String> getSpecCLGList() {
+    return specCLGList;
   }
 
   public void setKeepInfeasiableInfo(boolean isKeepInfeasiablePathEcl) {
@@ -105,7 +111,7 @@ public class TestCaseGenerator {
 
         AlltestCase.put(clg.getFilename(), coverageCriterionManager.getClgTestDatas());
         fesiablePaths.put(clg.getFilename(), coverageCriterionManager.getFeasiablePathMessage());
-
+        specCLGList.add(clg.getFilename());
         clgNodeSize += clg.getNodes().size();
         clgEdgeSize += clg.getEdges().size();
 

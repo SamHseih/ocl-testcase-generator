@@ -18,10 +18,10 @@ public class TCGenBlackBoxLauncher {
 
   public static void main(String[] args) {
     // User Defined
-    int testCaseNum = 50; // default maxTestCaseNum for dynamicArray TestCase generate
-    boolean isBoundaryAnalysis = true;
+    int testCaseNum = 10; // default maxTestCaseNum for dynamicArray TestCase generate
+    boolean isBoundaryAnalysis = false;
 
-    boolean keepInfeasiablePathInfo = true; // default=false, not keep infeasiable path in ecl file
+    boolean keepInfeasiablePathInfo = false; // default=false, not keep infeasiable path in ecl file
     int solverlimitTime = 10;
     boolean isgenASTandCLG_Graph = false;
 

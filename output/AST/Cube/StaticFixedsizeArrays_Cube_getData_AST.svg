@@ -20,7 +20,7 @@
 <g id="node2" class="node">
 <title>n136</title>
 <polygon fill="none" stroke="black" points="205,-252 29.25,-252 29.25,-216 205,-216 205,-252"/>
-<text text-anchor="middle" x="117.12" y="-228.95" font-family="Times New Roman,serif" font-size="14.00">Cube::getData() : int[2][2][2]</text>
+<text text-anchor="middle" x="117.12" y="-228.95" font-family="Times New Roman,serif" font-size="14.00">Cube::getData() : int[1][2][4]</text>
 <text text-anchor="middle" x="14.62" y="-255.2" font-family="Times New Roman,serif" font-size="14.00">(136)</text>
 </g>
 <!-- n142&#45;&gt;n136 -->
@@ -60,7 +60,7 @@
 <title>n137</title>
 <polygon fill="none" stroke="black" points="239.12,-108 185.12,-108 185.12,-72 239.12,-72 239.12,-108"/>
 <text text-anchor="middle" x="212.12" y="-84.95" font-family="Times New Roman,serif" font-size="14.00">result</text>
-<text text-anchor="middle" x="139.75" y="-111.2" font-family="Times New Roman,serif" font-size="14.00">(137)int[2][2][2]</text>
+<text text-anchor="middle" x="139.75" y="-111.2" font-family="Times New Roman,serif" font-size="14.00">(137)int[1][2][4]</text>
 </g>
 <!-- n140&#45;&gt;n137 -->
 <g id="edge4" class="edge">
@@ -73,7 +73,7 @@
 <title>n139</title>
 <polygon fill="none" stroke="black" points="319,-108 257.25,-108 257.25,-72 319,-72 319,-108"/>
 <text text-anchor="middle" x="288.12" y="-84.95" font-family="Times New Roman,serif" font-size="14.00">self.data</text>
-<text text-anchor="middle" x="211.88" y="-58.7" font-family="Times New Roman,serif" font-size="14.00">(139)int[2][2][2]</text>
+<text text-anchor="middle" x="211.88" y="-58.7" font-family="Times New Roman,serif" font-size="14.00">(139)int[1][2][4]</text>
 </g>
 <!-- n140&#45;&gt;n139 -->
 <g id="edge5" class="edge">

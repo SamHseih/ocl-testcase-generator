@@ -226,6 +226,19 @@ public abstract class StringTool {
     return "[" + String.join(",", parts) + "]";
   }
 
+  /** Input String "[1,2,3]" Output String : 1,2,3 */
+  public static String formatListString(String input) {
+    if (input == null || input.isEmpty()) {
+      return "";
+    }
+    // 去掉開頭和結尾的 [ ]
+    String trimmed = input.replaceAll("[\\[\\]]", "");
+    // 去掉多餘空白
+    trimmed = trimmed.replaceAll("\\s+", "");
+    return trimmed;
+  }
+
+
   public static void main(String[] args) {
     String original = "[dim, var, sam]";
     String result = capitalizeElements(original);

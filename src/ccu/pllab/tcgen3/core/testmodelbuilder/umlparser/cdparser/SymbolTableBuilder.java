@@ -1,6 +1,8 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -24,12 +26,18 @@ public class SymbolTableBuilder {
   public static Type BooleanType;
   public static Type StringType;
   public static Type IntType;
+  public List<String> errorMessages = new ArrayList<>();
 
   public SymbolTableBuilder(Document document) {
     if (document == null) {
+      errorMessages.add("Error: Document cannot be null.");
       throw new IllegalArgumentException("Document cannot be null");
     }
     this.document = document;
+  }
+
+  public List<String> getErrorMessages() {
+    return errorMessages;
   }
 
   public Scope build() {
@@ -42,6 +50,7 @@ public class SymbolTableBuilder {
 
   public Scope getSymbolTable() {
     if (globalsymbolTable == null) {
+      errorMessages.add("Error: Symbol table has not been built. Call build() first.");
       throw new IllegalStateException("Symbol table has not been built. Call build() first.");
     }
     return globalsymbolTable;
@@ -85,6 +94,9 @@ public class SymbolTableBuilder {
           symbolTable.define(primitiveType);
           symbolTable.defineByClassSymTypeId(primitiveType);
           StringType = primitiveType;
+        } else if ("uml:PrimitiveType".equals(xmiType)) {
+          errorMessages
+              .add("Warning: Unrecognized primitive type '" + name + "' with xmi:id '" + id + "'.");
         }
       }
     }
@@ -100,7 +112,7 @@ public class SymbolTableBuilder {
         String datatypename = element.getAttribute("name");
         String dataid = element.getAttribute("xmi:id");
 
-        /* dataTypeFor ArrayList */
+        /* dataType For ArrayList */
         if ("uml:DataType".equals(xmiType) && datatypename.contains("ArrayList")) {
           ArrayListTypeClassSymbol classSymbol = new ArrayListTypeClassSymbol(datatypename, dataid);
           classSymbol.setScope(globalsymbolTable);
@@ -110,7 +122,7 @@ public class SymbolTableBuilder {
           // processAttributes(element, classSymbol, datatypename);
           // Process operations 待修改
           // processOperations(element, classSymbol, datatypename);
-        } /* dataTypeFor Array */
+        } /* dataType For staitc Array */
         else if ("uml:DataType".equals(xmiType)) {
           ArrayTypeClassSymbol classSymbol = new ArrayTypeClassSymbol(datatypename, dataid);
           classSymbol.setScope(globalsymbolTable);
@@ -137,6 +149,7 @@ public class SymbolTableBuilder {
     if (symbol != null) {
       return (Type) symbol;
     } else {
+      errorMessages.add("Error: Type with ID " + arrelementTypeId + " not found.");
       throw new IllegalArgumentException("Type with ID " + arrelementTypeId + " not found.");
     }
   }
@@ -273,6 +286,7 @@ public class SymbolTableBuilder {
   }
 
   private void processOperations(Element classElement, ClassSymbol classSymbol, String classname) {
+    boolean hasConstructor = false;
     NodeList ownedOperations = classElement.getElementsByTagName("ownedOperation");
     for (int j = 0; j < ownedOperations.getLength(); j++) {
       Node opNode = ownedOperations.item(j);
@@ -285,6 +299,10 @@ public class SymbolTableBuilder {
 
         MethodSymbol methodSymbol = new MethodSymbol(opName, opId);
         methodSymbol.setScope(classSymbol);
+
+        if (classname.equals(opName)) {
+          hasConstructor = true;
+        }
 
 
 
@@ -330,6 +348,10 @@ public class SymbolTableBuilder {
         }
         classSymbol.define(methodSymbol);
       }
+    }
+
+    if (!hasConstructor) {
+      errorMessages.add("Warning: Class '" + classname + "' does not have a constructor.");
     }
   }
 

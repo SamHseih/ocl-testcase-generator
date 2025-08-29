@@ -1,7 +1,4 @@
-:- lib(ic).
-:- lib(listut).
-:- lib(random).
-:- lib(timeout).
+:- lib(ic).:- lib(listut).:- lib(random).:- lib(timeout).
 
 tcgen_Date_next_DC_Path_7(Self,Result):-
 
@@ -17,10 +14,10 @@ Self=[Self_year,Self_month,Self_day],Result = [Result_year,Result_month,Result_d
 (Self_month #\= 12),
 ((((((Self_month #\= 1) , (Self_month #\= 3)) , (Self_month #\= 5)) , (Self_month #\= 7)) , (Self_month #\= 8)) , (Self_month #\= 10)),
 ((((Self_month #\= 4) , (Self_month #\= 6)) , (Self_month #\= 9)) , (Self_month #\= 11)),
-delay_mod(Self_year,100, Var_1686100174),
-delay_mod(Self_year,4, Var_1907431275),
-delay_mod(Self_year,400, Var_349420578),
-((Var_349420578 #= 0) ; ((Var_1907431275 #= 0) , (Var_1686100174 #\= 0))),
+delay_mod(Self_year,100, Var_1534754611),
+delay_mod(Self_year,4, Var_2030937207),
+delay_mod(Self_year,400, Var_1551446957),
+((Var_1551446957 #= 0) ; ((Var_2030937207 #= 0) , (Var_1534754611 #\= 0))),
 (Self_day #= 29),
 (((Result_year #= Self_year) , (Result_month #= (Self_month+1))) , (Result_day #= 1)),
 

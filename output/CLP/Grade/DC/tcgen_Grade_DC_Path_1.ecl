@@ -9,6 +9,8 @@ tcgen_Grade_DC_Path_1(Self):-
 % dim/3 is called if the attribute is an array type.
 Self=[Self_number],
 
+%domiain for int Type
+[Self_number]#::(-32768)..32767,
 %CLG Path Constrints,
 ((Self_number #>= 0) , (Self_number #=< 100)),
 

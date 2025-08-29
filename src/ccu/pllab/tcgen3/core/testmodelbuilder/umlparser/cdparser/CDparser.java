@@ -1,7 +1,6 @@
 package ccu.pllab.tcgen3.core.testmodelbuilder.umlparser.cdparser;
 
 import java.nio.file.Path;
-
 import ccu.pllab.tcgen3.symboltable.scope.Scope;
 
 public class CDparser {
@@ -20,11 +19,20 @@ public class CDparser {
     SymbolTableBuilder symbolTableBuilder = new SymbolTableBuilder(parser.getDocument());
     // System.out.println(parser);
     this.symboltable = symbolTableBuilder.build();
-    System.out.println("======================================================================");
-    System.out.println("================ Symbol table was built successfully. ================");
-    System.out.println("======================================================================");
-    System.out.println("If you want to see class info, please call XmlParser.toString() method.");
-    return this.symboltable;
+
+    if (symbolTableBuilder.getErrorMessages().isEmpty()) {
+      System.out.println("======================================================================");
+      System.out.println("================ Symbol table was built successfully. ================");
+      System.out.println("======================================================================");
+      System.out.println("If you want to see class info, please call XmlParser.toString() method.");
+      return this.symboltable;
+    } else {
+      System.out.println("======================================================================");
+      System.out.println("================ Symbol table build failed. ==========================");
+      System.out.println("======================================================================");
+      symbolTableBuilder.getErrorMessages().forEach(System.out::println);
+      throw new IllegalStateException("Symbol table build failed due to errors.");
+    }
   }
 
   public Scope getSymboltable() {

@@ -2,7 +2,9 @@ digraph CLG {
   34 [shape="box", label="idx0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[34]"];
   37 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[37]"];
   40 [shape="box", label="result.data[it] = self.data[it] + arg.data[it]", style=filled, fillcolor=yellow, xlabel="[40]"];
-  10 [shape="box", label="self.data.getDimension() <> arg.data.getDimension() or
+  10 [shape="box", label="self.data.getDimension() <> arg.data.getDimension() and
+self.data.getDimensionSizes(1) = arg.data.getDimensionSizes(1) or
+self.data.getDimension() = arg.data.getDimension() and
 self.data.getDimensionSizes(1) <> arg.data.getDimensionSizes(1)
 ", style=filled, fillcolor=yellow, xlabel="[10]"];
   43 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[43]"];

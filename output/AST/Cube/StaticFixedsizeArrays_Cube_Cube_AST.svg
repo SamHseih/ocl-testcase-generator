@@ -46,8 +46,8 @@
 <g id="node4" class="node">
 <title>n0</title>
 <polygon fill="none" stroke="black" points="225.25,-180 77.25,-180 77.25,-144 225.25,-144 225.25,-180"/>
-<text text-anchor="middle" x="151.25" y="-156.95" font-family="Times New Roman,serif" font-size="14.00">inputArray : int[2][2][2]</text>
-<text text-anchor="middle" x="38.62" y="-183.2" font-family="Times New Roman,serif" font-size="14.00">(0)int[2][2][2]</text>
+<text text-anchor="middle" x="151.25" y="-156.95" font-family="Times New Roman,serif" font-size="14.00">inputArray : int[1][2][4]</text>
+<text text-anchor="middle" x="38.62" y="-183.2" font-family="Times New Roman,serif" font-size="14.00">(0)int[1][2][4]</text>
 </g>
 <!-- n1&#45;&gt;n0 -->
 <g id="edge3" class="edge">
@@ -73,7 +73,7 @@
 <title>n3</title>
 <polygon fill="none" stroke="black" points="257.12,-108 195.38,-108 195.38,-72 257.12,-72 257.12,-108"/>
 <text text-anchor="middle" x="226.25" y="-84.95" font-family="Times New Roman,serif" font-size="14.00">self.data</text>
-<text text-anchor="middle" x="156.75" y="-111.2" font-family="Times New Roman,serif" font-size="14.00">(3)int[2][2][2]</text>
+<text text-anchor="middle" x="156.75" y="-111.2" font-family="Times New Roman,serif" font-size="14.00">(3)int[1][2][4]</text>
 </g>
 <!-- n5&#45;&gt;n3 -->
 <g id="edge5" class="edge">
@@ -86,7 +86,7 @@
 <title>n4</title>
 <polygon fill="none" stroke="black" points="350.88,-108 275.62,-108 275.62,-72 350.88,-72 350.88,-108"/>
 <text text-anchor="middle" x="313.25" y="-84.95" font-family="Times New Roman,serif" font-size="14.00">inputArray</text>
-<text text-anchor="middle" x="237" y="-111.2" font-family="Times New Roman,serif" font-size="14.00">(4)int[2][2][2]</text>
+<text text-anchor="middle" x="237" y="-111.2" font-family="Times New Roman,serif" font-size="14.00">(4)int[1][2][4]</text>
 </g>
 <!-- n5&#45;&gt;n4 -->
 <g id="edge6" class="edge">

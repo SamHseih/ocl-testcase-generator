@@ -6,7 +6,9 @@ digraph CLG {
   76 [shape="box", label="idx0 <= dim1 - 1+ 1", style=filled, fillcolor=yellow, xlabel="[76]"];
   79 [shape="box", label="it = Sequence{1..dim1}", style=filled, fillcolor=yellow, xlabel="[79]"];
   82 [shape="box", label="result.data[it] = self.data[it] - arg.data[it]", style=filled, fillcolor=yellow, xlabel="[82]"];
-  52 [shape="box", label="arg.data.getDimension() <> self.data.getDimension() or
+  52 [shape="box", label="arg.data.getDimension() <> self.data.getDimension() and
+arg.data.getDimensionSizes(1) = self.data.getDimensionSizes(1) or
+arg.data.getDimension() = self.data.getDimension() and
 arg.data.getDimensionSizes(1) <> self.data.getDimensionSizes(1)
 ", style=filled, fillcolor=yellow, xlabel="[52]"];
   85 [shape="box", label="idx0 = idx0 + 1", style=filled, fillcolor=yellow, xlabel="[85]"];
