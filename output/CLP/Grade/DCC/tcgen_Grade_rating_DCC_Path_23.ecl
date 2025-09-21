@@ -10,7 +10,8 @@ tcgen_Grade_rating_DCC_Path_23(Self,Result):-
 Self=[Self_number],
 
 
-%domiain for int Type[Self_number]#::(-32768)..32767,
+%domiain for int Type
+[Self_number]#::(-32768)..32767,
 %CLG Path Constrints,
 (Self_number #>= 0),
 (Self_number #=< 100),

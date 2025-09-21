@@ -1,5 +1,6 @@
 package ccu.pllab.tcgen3.core.main;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,16 +13,20 @@ import java.util.Map;
 import ccu.pllab.tcgen3.core.testcasegen.TestCaseGenerator;
 import ccu.pllab.tcgen3.core.testmodelbuilder.TestmodelBuilder;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;
+import ccu.pllab.tcgen3.core.testscriptgen.TestScriptGenerator;
+import ccu.pllab.tcgen3.symboltable.ClassSymbol;
 import ccu.pllab.tcgen3.util.StringTool;
 
 public class TCGenBlackBoxLauncher {
 
   public static void main(String[] args) {
+
     // User Defined
     int testCaseNum = 10; // default maxTestCaseNum for dynamicArray TestCase generate
     boolean isBoundaryAnalysis = false;
 
-    boolean keepInfeasiablePathInfo = false; // default=false, not keep infeasiable path in ecl file
+    // used to debug output, can set if do not keep infeasiable path in ecl file
+    boolean keepInfeasiablePathInfo = false;
     int solverlimitTime = 10;
     boolean isgenASTandCLG_Graph = false;
 
@@ -63,26 +68,42 @@ public class TCGenBlackBoxLauncher {
         new TestCaseGenerator(testmodelbuilder.getSymbolTable(), testCaseNum, isBoundaryAnalysis);
     tcgen.setTimeLimit(solverlimitTime);
     tcgen.setKeepInfeasiableInfo(keepInfeasiablePathInfo);
-
     tcgen.generateTestCases(testmodelbuilder.getCLGs());
-
-    Map<String, String> tcgenm = tcgen.getTestCaseMessage();
-
     performancesb.append("Total TestCase Generation Using Time:")
         .append(System.currentTimeMillis() - testcasestartTime).append(" ms\n");
+
+    /* JUnit Test Gen */
+    ClassSymbol classsymbol =
+        (ClassSymbol) testmodelbuilder.getSymbolTable().resolve(testmodelbuilder.getProjectName());
+
+    if (classsymbol == null) {
+      System.out.print("Error !!! Unknow Class or Method : " + testmodelbuilder.getProjectName());
+      System.exit(1);
+    }
+    TestScriptGenerator genScript =
+        new TestScriptGenerator(tcgen.getSpecCLGList(), tcgen.getAllCLGTestDatas(), classsymbol,
+            isBoundaryAnalysis, testmodelbuilder.getProjectName());
+    // Path outputdir = projectpath.resolve("output").resolve("Test Script")
+    // .resolve(testmodelbuilder.getProjectName());
+    Path outputdir = projectpath.resolve("output_Junit").resolve("test")
+        .resolve(testmodelbuilder.getProjectName());
+    long testScriptstartTime = System.currentTimeMillis();
+    try {
+      genScript.genTestScript(outputdir);
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    performancesb.append("TestScript Generation Using Time:")
+        .append(System.currentTimeMillis() - testScriptstartTime).append(" ms\n");
+
+    Map<String, String> tcgenm = tcgen.getTestCaseMessage();
     performancesb.append(seprater);
     performancesb.append("TestCase Information:");
     performancesb.append(StringTool.mapToString(tcgenm, 0)).append("\n");
     performancesb.append("Total System Generation Using Time:")
         .append(System.currentTimeMillis() - aststartTime).append(" ms\n");
-
     performancesb.append(seprater);
-
-    /* Generate Test Script Not Yet */
-    // TestScriptGenerator scriptGenerator = new
-    // TestScriptGenerator(generator.getAllCLGTestDatas());
-    // scriptGenerator.generateScripts();
-    // System.out.println("Test case scripts generated successfully.");
 
     /* Output CLG Edges & nodes */
     StringBuilder testsb = new StringBuilder();
@@ -135,5 +156,13 @@ public class TCGenBlackBoxLauncher {
       e.printStackTrace();
     }
 
+  }
+
+  private static void printHelp() {
+    System.out.println("用法: java MyApp <指令> [選項]");
+    System.out.println("可用指令:");
+    System.out.println("  -help, --help    顯示說明");
+    System.out.println("  run              執行程式");
+    System.out.println("  version, -v      顯示版本");
   }
 }

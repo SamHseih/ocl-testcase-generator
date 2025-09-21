@@ -10,6 +10,8 @@ tcgen_Grade_rating_DC_Path_2_BDPath_4(Self,Result):-
 Self=[Self_number],
 
 
+%domiain for int Type
+[Self_number]#::(-32768)..32767,
 %CLG Path Constrints,
 ((Self_number #>= 0) , (Self_number #=< 100)),
 (Self_number #> 59),

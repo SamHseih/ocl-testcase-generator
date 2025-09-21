@@ -44,7 +44,7 @@
 	 Same as in the Feasible Path : 31
 
   
-  StaticFixedsizeArrays_Matrix_getDatas_DC:
+  StaticFixedsizeArrays_Matrix_getData_DC:
 	
     Feasiable Path 1:
 	[StartNode, [98] , EndNode]

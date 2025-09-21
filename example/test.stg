@@ -1,7 +1,0 @@
-testscript(name) ::= <<
-Hello, <name>!
->>
-
-greeting(greetee) ::= <<
-Greetings, <greetee>!
->>

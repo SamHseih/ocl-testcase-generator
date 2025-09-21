@@ -43,6 +43,7 @@ import ccu.pllab.tcgen3.symboltable.scope.Scope;
 import ccu.pllab.tcgen3.symboltable.type.ArrayTypeClassSymbol;
 import ccu.pllab.tcgen3.symboltable.type.PrimitiveTypeSymbol;
 import ccu.pllab.tcgen3.symboltable.type.Type;
+import ccu.pllab.tcgen3.util.AstUtil;
 import ccu.pllab.tcgen3.util.StringTool;
 
 public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
@@ -174,9 +175,65 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
     return new ClpCode(finalreturn, finalmethod);
   }
 
-  @Override
+  @Override // Optimization option
   public ClpCode visitIfExpContext(IfExp node) {
-    return new ClpCode("true", "");
+    ClpCode truecondclp = node.getCondition().accept(this);
+    ClpCode falsecondclp = AstUtil.DeMorgan(node.getCondition()).accept(this);
+    ClpCode thencondclp = node.getThenBranch().accept(this);
+    ClpCode elsecondclp = node.getElseBranch().accept(this);
+
+    StringBuilder truemethod = new StringBuilder();
+    if (!truecondclp.methodString().isEmpty()) {
+      truemethod.append(truecondclp.methodString());
+      if (!thencondclp.methodString().isEmpty())
+        truemethod.append(thencondclp.methodString());
+    } else
+      truemethod.append(thencondclp.methodString());
+
+
+    StringBuilder truereturn = new StringBuilder();
+    if (!truecondclp.returnString().isEmpty()) {
+      truereturn.append(truecondclp.returnString());
+      if (!thencondclp.returnString().isEmpty())
+        truereturn.append("," + thencondclp.returnString());
+    } else
+      truereturn.append(thencondclp.returnString());
+
+    StringBuilder falsemethod = new StringBuilder();
+    if (!falsecondclp.methodString().isEmpty()) {
+      falsemethod.append(falsecondclp.methodString());
+      if (!elsecondclp.methodString().isEmpty())
+        falsemethod.append(elsecondclp.methodString());
+    } else
+      falsemethod.append(elsecondclp.methodString());
+
+    StringBuilder falsereturn = new StringBuilder();
+    if (!falsecondclp.returnString().isEmpty()) {
+      falsereturn.append(falsecondclp.returnString());
+      if (!elsecondclp.returnString().isEmpty())
+        falsereturn.append("," + elsecondclp.returnString());
+    } else
+      falsereturn.append(elsecondclp.returnString());
+
+    StringBuilder t = new StringBuilder();
+    if (!truemethod.isEmpty()) {
+      t.append(truemethod);
+      if (!truereturn.isEmpty())
+        t.append(truereturn);
+    } else
+      t.append(truereturn);
+
+    StringBuilder f = new StringBuilder();
+    if (!falsemethod.isEmpty()) {
+      f.append(falsemethod);
+      if (!falsereturn.isEmpty())
+        f.append(falsereturn);
+    } else
+      f.append(falsereturn);
+
+    String finalStr = "(" + t.toString() + ")" + ";" + "(" + f.toString() + ")";
+
+    return new ClpCode("(" + finalStr + ")", "");
   }
 
   @Override
@@ -275,7 +332,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
         sourcenames.push(v.getName());
         break;
       } else if (current instanceof VariableExp v) {// source root case 3
-        if (this.currentScope.resolve(v.getName()) instanceof ParameterSymbol p) {
+        if (this.currentScope.resolve(v.getName()) instanceof ParameterSymbol) {
           // ParameterExp Case
           sourcenames.push(v.getName());
           break;
@@ -392,6 +449,7 @@ public class ASTtoCLP<T> implements AstVisitor<ClpCode> {
   }
 
   @Override
+
   public ClpCode visitIntegerLiteralExpContext(IntegerLiteralExp node) {
     return new ClpCode(String.valueOf(node.getValue()), "");
   }

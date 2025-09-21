@@ -1,0 +1,145 @@
+package tcgen
+	context Date
+	inv:
+		year >= 1  and month >= 1 and month <= 12 and day >= 1 
+
+	context Date::Date(y : int, m : int, d : int)
+	pre DateErrorException:
+		y >= 1 and m >= 1 and m <= 12  and d >= 1 and
+		if (m = 1 or m = 3 or m = 5 or m = 7 or m = 8 or m = 10 or m = 12 )
+		then 
+			d <= 31 
+		else if (m = 4 or m = 6 or m = 9 or m = 11)
+			 then 
+				d <= 30 
+			 else  
+				if (y.mod(400) = 0 or ( y.mod(4) = 0 and y.mod(100) <> 0 ))
+				then 
+					d < 30 
+				else 
+					d  < 29 
+				endif
+			 endif
+		endif
+	
+	post : year = y and month = m and day = d 
+
+	context Date::next():Date
+	post :
+	if (month = 12)
+	then if (day = 31)
+		then
+			result.year = self.year + 1 and
+			result.month = 1 and
+			result.day = 1
+		else 
+			day < 31 and
+			result.year = self.year and
+			result.month = self.month and
+			result.day =  self.day + 1
+		endif
+	else if (month = 1 or month = 3 or month = 5 or month = 7 or month = 8 or month = 10)
+		then if (day = 31)
+			then
+				result.year = self.year and
+				result.month = self.month+1 and
+				result.day = 1
+			else 
+				day < 31 and
+				result.year = self.year and
+				result.month = self.month and
+				result.day = self.day + 1
+			endif
+	else if (month = 4 or month = 6 or month = 9 or month = 11)
+			then if (day = 30)
+				then
+					result.year = self.year and
+					result.month = self.month + 1 and
+					result.day = 1
+				else
+					day < 30 and
+					result.year = self.year and
+					result.month = self.month and
+					result.day = self.day + 1
+				endif
+	else if ( year.mod(400) = 0 or (year.mod(4) = 0 and year.mod(100) <> 0) )
+			then if (day = 29 )
+				then
+					result.year = self.year and						
+					result.month = self.month + 1 and
+					result.day = 1
+				else 
+					day < 29 and
+					result.year = self.year and
+					result.month = self.month and
+					result.day = self.day + 1 
+				endif
+	else if (day = 28)
+				then
+					result.year = self.year and
+					result.month = self.month + 1 and
+					result.day = 1
+				else
+					day < 28 and
+					result.year = self.year and
+					result.month = self.month and
+					result.day = self.day + 1 
+				endif
+			endif
+		endif
+	endif
+	endif
+	
+
+	context Date::getYear() : int
+	pre DateErrorException: 
+	self.year >= 1 and self.month >= 1 and self.month <= 12 and self.day >= 1 and 
+		if ( self.month = 1 or self.month = 3 or self.month = 5 or self.month = 7 or self.month = 8 or
+		self.month = 10 or self.month = 12 )
+		then self.day <= 31
+		else if (self.month = 4 or self.month = 6 or self.month = 9 or self.month = 11 )
+			then self.day <= 30
+			else if ((self.year.mod(400) = 0) or (self.year.mod(4) = 0 and self.year.mod(100) <> 0) )
+				then self.day <= 29
+				else self.day <= 28
+				endif
+			endif
+		endif
+	post:
+	result = year
+
+	context Date::getMonth() : int
+	pre DateErrorException: 
+	self.year >= 1 and self.month >= 1 and self.month <= 12 and self.day >= 1 and 
+		if ( self.month = 1 or self.month = 3 or self.month = 5 or self.month = 7 or self.month = 8 or
+		self.month = 10 or self.month = 12 )
+		then self.day <= 31
+		else if (self.month = 4 or self.month = 6 or self.month = 9 or self.month = 11 )
+			then self.day <= 30
+			else if ((self.year.mod(400) = 0) or (self.year.mod(4) = 0 and self.year.mod(100) <> 0) )
+				then self.day <= 29
+				else self.day <= 28
+				endif
+			endif
+		endif
+	post:
+	result = month
+
+	context Date::getDay() : int
+	pre DateErrorException: 
+	self.year >= 1 and self.month >= 1 and self.month <= 12 and self.day >= 1 and 
+		if ( self.month = 1 or self.month = 3 or self.month = 5 or self.month = 7 or self.month = 8 or
+		self.month = 10 or self.month = 12 )
+		then self.day <= 31
+		else if (self.month = 4 or self.month = 6 or self.month = 9 or self.month = 11 )
+			then self.day <= 30
+			else if ((self.year.mod(400) = 0) or (self.year.mod(4) = 0 and self.year.mod(100) <> 0) )
+				then self.day <= 29
+				else self.day <= 28
+				endif
+			endif
+		endif
+	post:
+	result = day
+
+endpackage

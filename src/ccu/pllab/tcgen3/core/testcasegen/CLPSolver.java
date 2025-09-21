@@ -17,7 +17,9 @@ public class CLPSolver implements AutoCloseable {
   private boolean iskeepinfeasiablePathEcl; // default not keep infeasiable path in ecl file
   // -Declipse.directory=<eclipse_dir>
   // https://www.eclipseclp.org/doc/embedding/embroot042.html
-  private static final File ECLIPSE_HOME = new File("C:\\ECLiPSe"); // ECLiPSe installation path
+  private static final File ECLIPSE_HOME = new File("C:\\Program Files\\ECLiPSe 7.1"); // ECLiPSe
+  // installation
+  // path
 
   public CLPSolver(List<String> errMessage) {
     EclipseEngineOptions opt = new EclipseEngineOptions(ECLIPSE_HOME);

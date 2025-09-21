@@ -3,27 +3,97 @@ digraph CLG {
 self.month >= 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(2982) thenNode: (2986) elseNode: (3039) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month < 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(3094) thenNode: (3098) elseNode: (3151) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month >= 1 and
 self.month > 12 and
 self.day >= 1 and
-IfExp ConditionNode:(3206) thenNode: (3210) elseNode: (3263) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month >= 1 and
 self.month <= 12 and
 self.day < 1 and
-IfExp ConditionNode:(3318) thenNode: (3322) elseNode: (3375) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month >= 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(3574) thenNode: (3434) elseNode: (3540)
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day > 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day > 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day > 29) elseNode: (self.day > 28)))
 ", style=filled, fillcolor=yellow, xlabel="[268]"];
   271 [shape="box", label="Result = 'DateErrorException'", style=filled, fillcolor=yellow, xlabel="[271]"];
   272 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];
@@ -77,7 +147,21 @@ self.year.mod(100) = 0
 self.month >= 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(706) thenNode: (710) elseNode: (763)
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28)))
 ", style=filled, fillcolor=yellow, xlabel="[310]"];
   313 [shape="box", label="result = day", style=filled, fillcolor=yellow, xlabel="[313]"];
   315 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];

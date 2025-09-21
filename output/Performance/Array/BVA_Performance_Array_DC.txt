@@ -229,3 +229,28 @@ StaticFixedsizeArrays_Array_getData_DC CLG Info :  CLGNodes Size: 3  CLGEdges Si
 ======================================================================
 ============== 2025/08/26 18:20 TestCase output Finish. ==============
 =====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:1026 ms
+Total CLGBuild Using Time:79 ms
+Total TestCase Generation Using Time:2742 ms
+TestScript Generation Using Time:121 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  StaticFixedsizeArrays_Array_Array_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_Array_DC Using Time:270 ms
+  StaticFixedsizeArrays_Array_add_DC:
+	PathNum: 6, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_add_DC Using Time:404 ms
+  StaticFixedsizeArrays_Array_sub_DC:
+	PathNum: 6, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_sub_DC Using Time:387 ms
+  StaticFixedsizeArrays_Array_getData_DC:
+	PathNum: 1, BoundaryPathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Array_getData_DC Using Time:83 ms
+
+Total System Generation Using Time:4012 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+StaticFixedsizeArrays_Array_Array_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+StaticFixedsizeArrays_Array_add_DC CLG Info :  CLGNodes Size: 11  CLGEdges Size: 11
+StaticFixedsizeArrays_Array_sub_DC CLG Info :  CLGNodes Size: 11  CLGEdges Size: 11
+StaticFixedsizeArrays_Array_getData_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+======================================================================
+============== 2025/09/21 23:10 TestCase output Finish. ==============
+=====================================================================

@@ -188,3 +188,53 @@ tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
 ======================================================================
 ============== 2025/08/22 14:03 TestCase output Finish. ==============
 =====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:2215 ms
+Total CLGBuild Using Time:252 ms
+Total TestCase Generation Using Time:4974 ms
+TestScript Generation Using Time:193 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	PathNum: 1, BoundaryPathNum: 3, TestCaseNum: 3  Generate tcgen_Grade_DC Using Time:570 ms
+  tcgen_Grade_Grade_DC:
+	PathNum: 2, BoundaryPathNum: 4, TestCaseNum: 4  Generate tcgen_Grade_Grade_DC Using Time:292 ms
+  tcgen_Grade_rating_DC:
+	PathNum: 6, BoundaryPathNum: 23, TestCaseNum: 15  Generate tcgen_Grade_rating_DC Using Time:1465 ms
+  tcgen_Grade_getNumber_DC:
+	PathNum: 1, BoundaryPathNum: 3, TestCaseNum: 3  Generate tcgen_Grade_getNumber_DC Using Time:172 ms
+
+Total System Generation Using Time:7748 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/09/20 21:47 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:579 ms
+Total CLGBuild Using Time:46 ms
+Total TestCase Generation Using Time:3330 ms
+TestScript Generation Using Time:129 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  tcgen_Grade_DC:
+	PathNum: 1, BoundaryPathNum: 3, TestCaseNum: 3  Generate tcgen_Grade_DC Using Time:259 ms
+  tcgen_Grade_Grade_DC:
+	PathNum: 2, BoundaryPathNum: 4, TestCaseNum: 4  Generate tcgen_Grade_Grade_DC Using Time:265 ms
+  tcgen_Grade_rating_DC:
+	PathNum: 6, BoundaryPathNum: 23, TestCaseNum: 15  Generate tcgen_Grade_rating_DC Using Time:1368 ms
+  tcgen_Grade_getNumber_DC:
+	PathNum: 1, BoundaryPathNum: 3, TestCaseNum: 3  Generate tcgen_Grade_getNumber_DC Using Time:169 ms
+
+Total System Generation Using Time:4105 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tcgen_Grade_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+tcgen_Grade_Grade_DC CLG Info :  CLGNodes Size: 8  CLGEdges Size: 8
+tcgen_Grade_rating_DC CLG Info :  CLGNodes Size: 29  CLGEdges Size: 33
+tcgen_Grade_getNumber_DC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/09/21 16:04 TestCase output Finish. ==============
+=====================================================================

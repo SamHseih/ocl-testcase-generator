@@ -105,3 +105,59 @@ DynamicFixedsizeVarArrays_VarArray_getData_DCC CLG Info :  CLGNodes Size: 4  CLG
 ======================================================================
 ============== 2025/08/26 21:03 TestCase output Finish. ==============
 =====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:676 ms
+Total CLGBuild Using Time:57 ms
+Total TestCase Generation Using Time:3137 ms
+TestScript Generation Using Time:126 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeVarArrays_VarArray_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeVarArrays_VarArray_DCC Using Time:104 ms
+  DynamicFixedsizeVarArrays_VarArray_VarArray_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeVarArrays_VarArray_VarArray_DCC Using Time:49 ms
+  DynamicFixedsizeVarArrays_VarArray_add_DCC:
+	PathNum: 13, TestCaseNum: 11  Generate DynamicFixedsizeVarArrays_VarArray_add_DCC Using Time:862 ms
+  DynamicFixedsizeVarArrays_VarArray_sub_DCC:
+	PathNum: 13, TestCaseNum: 11  Generate DynamicFixedsizeVarArrays_VarArray_sub_DCC Using Time:822 ms
+  DynamicFixedsizeVarArrays_VarArray_getData_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeVarArrays_VarArray_getData_DCC Using Time:44 ms
+
+Total System Generation Using Time:4018 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeVarArrays_VarArray_DCC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+DynamicFixedsizeVarArrays_VarArray_VarArray_DCC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeVarArrays_VarArray_add_DCC CLG Info :  CLGNodes Size: 25  CLGEdges Size: 27
+DynamicFixedsizeVarArrays_VarArray_sub_DCC CLG Info :  CLGNodes Size: 25  CLGEdges Size: 27
+DynamicFixedsizeVarArrays_VarArray_getData_DCC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/09/20 0:23 TestCase output Finish. ==============
+=====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:615 ms
+Total CLGBuild Using Time:56 ms
+Total TestCase Generation Using Time:3100 ms
+TestScript Generation Using Time:176 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  DynamicFixedsizeVarArrays_VarArray_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeVarArrays_VarArray_DCC Using Time:156 ms
+  DynamicFixedsizeVarArrays_VarArray_VarArray_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeVarArrays_VarArray_VarArray_DCC Using Time:48 ms
+  DynamicFixedsizeVarArrays_VarArray_add_DCC:
+	PathNum: 13, TestCaseNum: 11  Generate DynamicFixedsizeVarArrays_VarArray_add_DCC Using Time:792 ms
+  DynamicFixedsizeVarArrays_VarArray_sub_DCC:
+	PathNum: 13, TestCaseNum: 11  Generate DynamicFixedsizeVarArrays_VarArray_sub_DCC Using Time:800 ms
+  DynamicFixedsizeVarArrays_VarArray_getData_DCC:
+	PathNum: 1, TestCaseNum: 1  Generate DynamicFixedsizeVarArrays_VarArray_getData_DCC Using Time:44 ms
+
+Total System Generation Using Time:3969 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DynamicFixedsizeVarArrays_VarArray_DCC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+DynamicFixedsizeVarArrays_VarArray_VarArray_DCC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+DynamicFixedsizeVarArrays_VarArray_add_DCC CLG Info :  CLGNodes Size: 25  CLGEdges Size: 27
+DynamicFixedsizeVarArrays_VarArray_sub_DCC CLG Info :  CLGNodes Size: 25  CLGEdges Size: 27
+DynamicFixedsizeVarArrays_VarArray_getData_DCC CLG Info :  CLGNodes Size: 4  CLGEdges Size: 3
+======================================================================
+============== 2025/09/21 22:40 TestCase output Finish. ==============
+=====================================================================

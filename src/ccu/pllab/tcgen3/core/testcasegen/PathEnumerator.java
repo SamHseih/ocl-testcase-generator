@@ -9,7 +9,6 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
-
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGEdge;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGEdgeType;
 import ccu.pllab.tcgen3.core.testmodelbuilder.clg.CLGGraph;

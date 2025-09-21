@@ -35,7 +35,7 @@
 , [63] , EndNode]
 
   
-  StaticFixedsizeArrays_Matrix_getDatas_DCC:
+  StaticFixedsizeArrays_Matrix_getData_DCC:
 	
     Feasiable Path 1:
 	[StartNode, [98] , EndNode]

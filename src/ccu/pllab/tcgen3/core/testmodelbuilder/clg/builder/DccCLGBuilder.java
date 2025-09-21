@@ -309,14 +309,12 @@ public class DccCLGBuilder<T> implements AstVisitor<CLGGraph> {
     CLGGraph condclg = node.getCondition().accept(this);
     CLGGraph thenclg = node.getThenBranch().accept(this);
     CLGGraph negatecondclg = AstUtil.DeMorgan(node.getCondition()).accept(this);
-
     CLGGraph elseclg = node.getElseBranch().accept(this);
 
     condclg.graphAnd(thenclg);
     negatecondclg.graphAnd(elseclg);
 
     condclg.graphOr(negatecondclg);
-    condclg.validate();
     return condclg;
   }
 

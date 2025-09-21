@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_tlzJwFBSEfCazayHoYWa5g" name="Matrix">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_tnJ0oFBSEfCazayHoYWa5g">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wjXHEFBSEfCazayHoYWa5g" name="Matrix">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oA79kFBTEfCazayHoYWa5g" name="data" type="_xkS_oFBSEfCazayHoYWa5g"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_oPZQUFBTEfCazayHoYWa5g" name="Matrix">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_yUssYFBTEfCazayHoYWa5g" name="inputArray" type="_xkS_oFBSEfCazayHoYWa5g"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_od4YQFBTEfCazayHoYWa5g" name="add">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2M2psFBTEfCazayHoYWa5g" name="arg" type="_wjXHEFBSEfCazayHoYWa5g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3rcHkFBTEfCazayHoYWa5g" type="_wjXHEFBSEfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ooRqYFBTEfCazayHoYWa5g" name="sub">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_6QO_kFBTEfCazayHoYWa5g" name="arg" type="_wjXHEFBSEfCazayHoYWa5g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8KUtsFBTEfCazayHoYWa5g" type="_wjXHEFBSEfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_o6usUFBTEfCazayHoYWa5g" name="getData">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZcSWcFBVEfCazayHoYWa5g" type="_xkS_oFBSEfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_xkS_oFBSEfCazayHoYWa5g" name="int[2][2]">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_CD-eIFBTEfCazayHoYWa5g" name="dimension" type="_0JaAsFBSEfCazayHoYWa5g">
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_QQEJYFBTEfCazayHoYWa5g" value="2"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_DttcEFBTEfCazayHoYWa5g" name="dimensionSizes" type="_0JaAsFBSEfCazayHoYWa5g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XwbjgFBTEfCazayHoYWa5g" value="*"/>
+      <defaultValue xmi:type="uml:Expression" xmi:id="_WSCS4FBTEfCazayHoYWa5g" symbol="[2,2]"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_D8p3AFBTEfCazayHoYWa5g" name="elements" type="_0JaAsFBSEfCazayHoYWa5g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y054QFBTEfCazayHoYWa5g" value="*"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_EcLroFBTEfCazayHoYWa5g" name="int[2][2]"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Epl1gFBTEfCazayHoYWa5g" name="getDimension">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_f-ETUFBTEfCazayHoYWa5g" type="_0JaAsFBSEfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_E5xmkFBTEfCazayHoYWa5g" name="getDimensionSizes">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ieawMFBTEfCazayHoYWa5g" name="value" type="_0JaAsFBSEfCazayHoYWa5g"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jsnosFBTEfCazayHoYWa5g" type="_0JaAsFBSEfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_FE7tsFBTEfCazayHoYWa5g" name="getElements">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_lhb1QFBTEfCazayHoYWa5g" type="_0JaAsFBSEfCazayHoYWa5g" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4BY-4FBSEfCazayHoYWa5g" name="PrimitiveType">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_0JaAsFBSEfCazayHoYWa5g" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_z1MEMFBSEfCazayHoYWa5g" name="String"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_z9u8MFBSEfCazayHoYWa5g" name="Boolean"/>
+  </packagedElement>
+</uml:Model>

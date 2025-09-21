@@ -1,595 +1,493 @@
 Class: Date, Method: , Test Case Number: 5
 Boundaray Feasiable Path1_1:
-Invariant Self = [ 1, 2, 1316 ]
+Invariant Self = [ 1, 5, 21600 ]
 
 Boundaray Feasiable Path1_2:
-Invariant Self = [ 17421, 1, 5244 ]
+Invariant Self = [ 20442, 1, 3969 ]
 
 Boundaray Feasiable Path1_3:
-Invariant Self = [ 31490, 12, 21142 ]
+Invariant Self = [ 22344, 12, 14453 ]
 
 Boundaray Feasiable Path1_4:
-Invariant Self = [ 20792, 10, 1 ]
+Invariant Self = [ 8866, 7, 1 ]
 
 Boundaray Feasiable Path1_5:
-Invariant Self = [ 3851, 10, 32684 ]
+Invariant Self = [ 29465, 9, 20914 ]
 
----------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Class: Date, Method: Date, Test Case Number: 16
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: Date, Test Case Number: 13
 Boundaray Feasiable Path1_1:
-Arg_1 = -3297
-Arg_2 = 6
-Arg_3 = 21486
+Arg_1 = -12161
+Arg_2 = 3
+Arg_3 = 4
 Result = DateErrorException
 
 Boundaray Feasiable Path2_1:
-Self = [ 1, 1, 4 ]
+Self = [ 1, 1, 26 ]
 Arg_1 = 1
 Arg_2 = 1
-Arg_3 = 4
+Arg_3 = 26
 
 Boundaray Feasiable Path2_2:
-Self = [ 125, 1, 17 ]
-Arg_1 = 125
+Self = [ 16240, 1, 1 ]
+Arg_1 = 16240
 Arg_2 = 1
-Arg_3 = 17
+Arg_3 = 1
 
 Boundaray Feasiable Path2_3:
-Self = [ 2941, 12, 30 ]
-Arg_1 = 2941
+Self = [ 22124, 12, 6 ]
+Arg_1 = 22124
 Arg_2 = 12
-Arg_3 = 30
+Arg_3 = 6
 
 Boundaray Feasiable Path2_4:
-Self = [ 29611, 1, 1 ]
-Arg_1 = 29611
+Self = [ 11849, 1, 1 ]
+Arg_1 = 11849
 Arg_2 = 1
 Arg_3 = 1
 
 Boundaray Feasiable Path2_5:
-Self = [ 9410, 1, 31 ]
-Arg_1 = 9410
+Self = [ 5653, 1, 31 ]
+Arg_1 = 5653
 Arg_2 = 1
 Arg_3 = 31
 
 Boundaray Feasiable Path2_6:
-Self = [ 5838, 3, 19 ]
-Arg_1 = 5838
+Self = [ 22840, 3, 25 ]
+Arg_1 = 22840
 Arg_2 = 3
-Arg_3 = 19
+Arg_3 = 25
 
 Boundaray Feasiable Path3_1:
-Self = [ 1, 4, 23 ]
+Self = [ 1, 4, 17 ]
 Arg_1 = 1
 Arg_2 = 4
-Arg_3 = 23
+Arg_3 = 17
 
 Boundaray Feasiable Path3_4:
-Self = [ 12806, 4, 1 ]
-Arg_1 = 12806
+Self = [ 17162, 4, 1 ]
+Arg_1 = 17162
 Arg_2 = 4
 Arg_3 = 1
 
 Boundaray Feasiable Path3_5:
-Self = [ 25831, 4, 30 ]
-Arg_1 = 25831
+Self = [ 13614, 4, 30 ]
+Arg_1 = 13614
 Arg_2 = 4
 Arg_3 = 30
 
 Boundaray Feasiable Path3_6:
-Self = [ 6148, 4, 11 ]
-Arg_1 = 6148
+Self = [ 30426, 4, 18 ]
+Arg_1 = 30426
 Arg_2 = 4
-Arg_3 = 11
+Arg_3 = 18
 
 Boundaray Feasiable Path4_4:
-Self = [ 3200, 2, 1 ]
-Arg_1 = 3200
+Self = [ 20400, 2, 1 ]
+Arg_1 = 20400
 Arg_2 = 2
 Arg_3 = 1
 
 Boundaray Feasiable Path4_5:
-Self = [ 20000, 2, 14 ]
-Arg_1 = 20000
+Self = [ 30000, 2, 28 ]
+Arg_1 = 30000
 Arg_2 = 2
-Arg_3 = 14
+Arg_3 = 28
 
-Boundaray Feasiable Path5_1:
-Self = [ 1, 2, 5 ]
-Arg_1 = 1
-Arg_2 = 2
-Arg_3 = 5
-
-Boundaray Feasiable Path5_4:
-Self = [ 841, 2, 1 ]
-Arg_1 = 841
-Arg_2 = 2
-Arg_3 = 1
-
-Boundaray Feasiable Path5_5:
-Self = [ 31494, 2, 7 ]
-Arg_1 = 31494
-Arg_2 = 2
-Arg_3 = 7
-
----------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Class: Date, Method: next, Test Case Number: 25
 Boundaray Feasiable Path1_1:
 Self = [ 1, 12, 31 ]
 Result = [ 2, 1, 1 ]
 
 Boundaray Feasiable Path1_3:
-Self = [ 28994, 12, 31 ]
-Result = [ 28995, 1, 1 ]
+Self = [ 2853, 12, 31 ]
+Result = [ 2854, 1, 1 ]
 
 Boundaray Feasiable Path2_1:
-Self = [ 1, 12, 22 ]
-Result = [ 1, 12, 23 ]
+Self = [ 1, 12, 19 ]
+Result = [ 1, 12, 20 ]
 
 Boundaray Feasiable Path2_3:
-Self = [ 28687, 12, 14 ]
-Result = [ 28687, 12, 15 ]
+Self = [ 27239, 12, 18 ]
+Result = [ 27239, 12, 19 ]
 
 Boundaray Feasiable Path2_4:
-Self = [ 27095, 12, 1 ]
-Result = [ 27095, 12, 2 ]
+Self = [ 30876, 12, 1 ]
+Result = [ 30876, 12, 2 ]
 
 Boundaray Feasiable Path3_1:
 Self = [ 1, 1, 31 ]
 Result = [ 1, 2, 1 ]
 
 Boundaray Feasiable Path3_2:
-Self = [ 29033, 1, 31 ]
-Result = [ 29033, 2, 1 ]
+Self = [ 24194, 1, 31 ]
+Result = [ 24194, 2, 1 ]
 
 Boundaray Feasiable Path3_5:
-Self = [ 18133, 3, 31 ]
-Result = [ 18133, 4, 1 ]
+Self = [ 6309, 3, 31 ]
+Result = [ 6309, 4, 1 ]
 
 Boundaray Feasiable Path4_1:
-Self = [ 1, 1, 2 ]
-Result = [ 1, 1, 3 ]
+Self = [ 1, 1, 14 ]
+Result = [ 1, 1, 15 ]
 
 Boundaray Feasiable Path4_2:
-Self = [ 16501, 1, 18 ]
-Result = [ 16501, 1, 19 ]
+Self = [ 20549, 1, 6 ]
+Result = [ 20549, 1, 7 ]
 
 Boundaray Feasiable Path4_4:
-Self = [ 4853, 1, 1 ]
-Result = [ 4853, 1, 2 ]
+Self = [ 23312, 1, 1 ]
+Result = [ 23312, 1, 2 ]
 
 Boundaray Feasiable Path4_5:
-Self = [ 14707, 3, 30 ]
-Result = [ 14707, 3, 31 ]
+Self = [ 5616, 3, 23 ]
+Result = [ 5616, 3, 24 ]
 
 Boundaray Feasiable Path5_1:
 Self = [ 1, 4, 30 ]
 Result = [ 1, 5, 1 ]
 
 Boundaray Feasiable Path5_5:
-Self = [ 14684, 4, 30 ]
-Result = [ 14684, 5, 1 ]
+Self = [ 162, 4, 30 ]
+Result = [ 162, 5, 1 ]
 
 Boundaray Feasiable Path6_1:
-Self = [ 1, 4, 3 ]
-Result = [ 1, 4, 4 ]
+Self = [ 1, 4, 22 ]
+Result = [ 1, 4, 23 ]
 
 Boundaray Feasiable Path6_4:
-Self = [ 23476, 4, 1 ]
-Result = [ 23476, 4, 2 ]
+Self = [ 21060, 4, 1 ]
+Result = [ 21060, 4, 2 ]
 
 Boundaray Feasiable Path6_5:
-Self = [ 2381, 4, 22 ]
-Result = [ 2381, 4, 23 ]
+Self = [ 23089, 4, 3 ]
+Result = [ 23089, 4, 4 ]
 
 Boundaray Feasiable Path7_5:
-Self = [ 10000, 2, 29 ]
-Result = [ 10000, 3, 1 ]
+Self = [ 23600, 2, 29 ]
+Result = [ 23600, 3, 1 ]
 
 Boundaray Feasiable Path8_4:
-Self = [ 3600, 2, 1 ]
-Result = [ 3600, 2, 2 ]
+Self = [ 9600, 2, 1 ]
+Result = [ 9600, 2, 2 ]
 
 Boundaray Feasiable Path8_5:
-Self = [ 18800, 2, 24 ]
-Result = [ 18800, 2, 25 ]
+Self = [ 12000, 2, 26 ]
+Result = [ 12000, 2, 27 ]
 
 Boundaray Feasiable Path9_1:
 Self = [ 1, 2, 28 ]
 Result = [ 1, 3, 1 ]
 
 Boundaray Feasiable Path9_5:
-Self = [ 23559, 2, 28 ]
-Result = [ 23559, 3, 1 ]
+Self = [ 23615, 2, 28 ]
+Result = [ 23615, 3, 1 ]
 
 Boundaray Feasiable Path10_1:
-Self = [ 1, 2, 15 ]
-Result = [ 1, 2, 16 ]
+Self = [ 1, 2, 27 ]
+Result = [ 1, 2, 28 ]
 
 Boundaray Feasiable Path10_4:
-Self = [ 3305, 2, 1 ]
-Result = [ 3305, 2, 2 ]
+Self = [ 11650, 2, 1 ]
+Result = [ 11650, 2, 2 ]
 
 Boundaray Feasiable Path10_5:
-Self = [ 3053, 2, 10 ]
-Result = [ 3053, 2, 11 ]
+Self = [ 28539, 2, 15 ]
+Result = [ 28539, 2, 16 ]
 
----------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Class: Date, Method: getYear, Test Case Number: 31
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: getYear, Test Case Number: 24
 Boundaray Feasiable Path1_1:
-Self = [ 1, 12, 12197 ]
+Self = [ 1, 1, 194 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path1_2:
-Self = [ 22672, 1, 8417 ]
+Self = [ 14681, 1, 14135 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path1_3:
-Self = [ 21993, 12, 30470 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path1_4:
-Self = [ 24685, 3, 1 ]
+Self = [ 11910, 12, 31704 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path1_5:
-Self = [ 24728, 5, 5236 ]
+Self = [ 21999, 3, 8468 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path2_1:
-Self = [ 1, 1, 9 ]
+Self = [ 1, 1, 14 ]
 Result = 1
 
 Boundaray Feasiable Path2_2:
-Self = [ 6118, 1, 22 ]
-Result = 6118
+Self = [ 14232, 1, 8 ]
+Result = 14232
 
 Boundaray Feasiable Path2_3:
-Self = [ 17304, 12, 10 ]
-Result = 17304
+Self = [ 21685, 12, 25 ]
+Result = 21685
 
 Boundaray Feasiable Path2_4:
-Self = [ 23794, 1, 1 ]
-Result = 23794
+Self = [ 20020, 1, 1 ]
+Result = 20020
 
 Boundaray Feasiable Path2_5:
-Self = [ 1, 1, 21 ]
+Self = [ 1, 1, 22 ]
 Result = 1
 
 Boundaray Feasiable Path2_6:
-Self = [ 23908, 1, 27 ]
-Result = 23908
+Self = [ 9575, 1, 21 ]
+Result = 9575
 
 Boundaray Feasiable Path2_7:
-Self = [ 17622, 12, 11 ]
-Result = 17622
+Self = [ 1716, 12, 6 ]
+Result = 1716
 
 Boundaray Feasiable Path2_8:
-Self = [ 25527, 1, 1 ]
-Result = 25527
+Self = [ 19640, 1, 1 ]
+Result = 19640
 
 Boundaray Feasiable Path2_9:
-Self = [ 7318, 1, 31 ]
-Result = 7318
+Self = [ 24555, 1, 31 ]
+Result = 24555
 
 Boundaray Feasiable Path2_10:
-Self = [ 27016, 3, 26 ]
-Result = 27016
+Self = [ 2047, 3, 22 ]
+Result = 2047
 
 Boundaray Feasiable Path3_1:
-Self = [ 1, 4, 15 ]
+Self = [ 1, 4, 6 ]
 Result = 1
 
 Boundaray Feasiable Path3_4:
-Self = [ 17898, 4, 1 ]
-Result = 17898
+Self = [ 28555, 4, 1 ]
+Result = 28555
 
 Boundaray Feasiable Path3_5:
-Self = [ 1, 4, 17 ]
+Self = [ 1, 4, 11 ]
 Result = 1
 
 Boundaray Feasiable Path3_8:
-Self = [ 27768, 4, 1 ]
-Result = 27768
+Self = [ 31393, 4, 1 ]
+Result = 31393
 
 Boundaray Feasiable Path3_9:
-Self = [ 24301, 4, 30 ]
-Result = 24301
+Self = [ 27970, 4, 30 ]
+Result = 27970
 
 Boundaray Feasiable Path3_10:
-Self = [ 23142, 4, 4 ]
-Result = 23142
+Self = [ 17398, 4, 13 ]
+Result = 17398
 
 Boundaray Feasiable Path4_4:
-Self = [ 31600, 2, 1 ]
-Result = 31600
+Self = [ 22000, 2, 1 ]
+Result = 22000
 
 Boundaray Feasiable Path4_8:
-Self = [ 8400, 2, 1 ]
-Result = 8400
+Self = [ 2400, 2, 1 ]
+Result = 2400
 
 Boundaray Feasiable Path4_9:
-Self = [ 21200, 2, 29 ]
-Result = 21200
+Self = [ 1200, 2, 29 ]
+Result = 1200
 
 Boundaray Feasiable Path4_10:
-Self = [ 24400, 2, 13 ]
-Result = 24400
+Self = [ 5200, 2, 11 ]
+Result = 5200
 
-Boundaray Feasiable Path5_1:
-Self = [ 1, 2, 26 ]
-Result = 1
-
-Boundaray Feasiable Path5_4:
-Self = [ 20782, 2, 1 ]
-Result = 20782
-
-Boundaray Feasiable Path5_5:
-Self = [ 1, 2, 4 ]
-Result = 1
-
-Boundaray Feasiable Path5_8:
-Self = [ 19149, 2, 1 ]
-Result = 19149
-
-Boundaray Feasiable Path5_9:
-Self = [ 28902, 2, 28 ]
-Result = 28902
-
-Boundaray Feasiable Path5_10:
-Self = [ 22979, 2, 26 ]
-Result = 22979
-
----------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Class: Date, Method: getMonth, Test Case Number: 31
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: getMonth, Test Case Number: 24
 Boundaray Feasiable Path1_1:
-Self = [ 1, 6, 12231 ]
+Self = [ 1, 1, 32507 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path1_2:
-Self = [ 14486, 1, 13103 ]
+Self = [ 2712, 1, 12777 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path1_3:
-Self = [ 32159, 12, 9794 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path1_4:
-Self = [ 18362, 10, 1 ]
+Self = [ 1670, 12, 11295 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path1_5:
-Self = [ 18025, 10, 7695 ]
+Self = [ 4994, 3, 4225 ]
+Result = DateErrorException
+
+Boundaray Feasiable Path2_1:
+Self = [ 1, 1, 26 ]
+Result = 1
+
+Boundaray Feasiable Path2_2:
+Self = [ 28555, 1, 22 ]
+Result = 1
+
+Boundaray Feasiable Path2_3:
+Self = [ 20536, 12, 2 ]
+Result = 12
+
+Boundaray Feasiable Path2_4:
+Self = [ 23413, 1, 1 ]
+Result = 1
+
+Boundaray Feasiable Path2_5:
+Self = [ 1, 1, 2 ]
+Result = 1
+
+Boundaray Feasiable Path2_6:
+Self = [ 28982, 1, 18 ]
+Result = 1
+
+Boundaray Feasiable Path2_7:
+Self = [ 7826, 12, 13 ]
+Result = 12
+
+Boundaray Feasiable Path2_8:
+Self = [ 30766, 1, 1 ]
+Result = 1
+
+Boundaray Feasiable Path2_9:
+Self = [ 5001, 1, 31 ]
+Result = 1
+
+Boundaray Feasiable Path2_10:
+Self = [ 14397, 3, 3 ]
+Result = 3
+
+Boundaray Feasiable Path3_1:
+Self = [ 1, 4, 24 ]
+Result = 4
+
+Boundaray Feasiable Path3_4:
+Self = [ 31851, 4, 1 ]
+Result = 4
+
+Boundaray Feasiable Path3_5:
+Self = [ 1, 4, 5 ]
+Result = 4
+
+Boundaray Feasiable Path3_8:
+Self = [ 21180, 4, 1 ]
+Result = 4
+
+Boundaray Feasiable Path3_9:
+Self = [ 5906, 4, 30 ]
+Result = 4
+
+Boundaray Feasiable Path3_10:
+Self = [ 5574, 4, 2 ]
+Result = 4
+
+Boundaray Feasiable Path4_4:
+Self = [ 30000, 2, 1 ]
+Result = 2
+
+Boundaray Feasiable Path4_8:
+Self = [ 30400, 2, 1 ]
+Result = 2
+
+Boundaray Feasiable Path4_9:
+Self = [ 31600, 2, 29 ]
+Result = 2
+
+Boundaray Feasiable Path4_10:
+Self = [ 20400, 2, 13 ]
+Result = 2
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class: Date, Method: getDay, Test Case Number: 24
+Boundaray Feasiable Path1_1:
+Self = [ 1, 1, 479 ]
+Result = DateErrorException
+
+Boundaray Feasiable Path1_2:
+Self = [ 1433, 1, 1525 ]
+Result = DateErrorException
+
+Boundaray Feasiable Path1_3:
+Self = [ 24761, 12, 30290 ]
+Result = DateErrorException
+
+Boundaray Feasiable Path1_5:
+Self = [ 2101, 3, 18028 ]
 Result = DateErrorException
 
 Boundaray Feasiable Path2_1:
 Self = [ 1, 1, 31 ]
-Result = 1
+Result = 31
 
 Boundaray Feasiable Path2_2:
-Self = [ 28654, 1, 23 ]
-Result = 1
+Self = [ 3591, 1, 15 ]
+Result = 15
 
 Boundaray Feasiable Path2_3:
-Self = [ 25867, 12, 11 ]
-Result = 12
+Self = [ 5065, 12, 19 ]
+Result = 19
 
 Boundaray Feasiable Path2_4:
-Self = [ 16637, 1, 1 ]
+Self = [ 8604, 1, 1 ]
 Result = 1
 
 Boundaray Feasiable Path2_5:
-Self = [ 1, 1, 3 ]
-Result = 1
+Self = [ 1, 1, 17 ]
+Result = 17
 
 Boundaray Feasiable Path2_6:
-Self = [ 16490, 1, 27 ]
-Result = 1
+Self = [ 31395, 1, 28 ]
+Result = 28
 
 Boundaray Feasiable Path2_7:
-Self = [ 32056, 12, 11 ]
-Result = 12
+Self = [ 6912, 12, 11 ]
+Result = 11
 
 Boundaray Feasiable Path2_8:
-Self = [ 5304, 1, 1 ]
+Self = [ 20994, 1, 1 ]
 Result = 1
 
 Boundaray Feasiable Path2_9:
-Self = [ 20492, 1, 31 ]
-Result = 1
-
-Boundaray Feasiable Path2_10:
-Self = [ 19427, 3, 14 ]
-Result = 3
-
-Boundaray Feasiable Path3_1:
-Self = [ 1, 4, 20 ]
-Result = 4
-
-Boundaray Feasiable Path3_4:
-Self = [ 8265, 4, 1 ]
-Result = 4
-
-Boundaray Feasiable Path3_5:
-Self = [ 1, 4, 6 ]
-Result = 4
-
-Boundaray Feasiable Path3_8:
-Self = [ 10772, 4, 1 ]
-Result = 4
-
-Boundaray Feasiable Path3_9:
-Self = [ 3553, 4, 30 ]
-Result = 4
-
-Boundaray Feasiable Path3_10:
-Self = [ 9108, 4, 7 ]
-Result = 4
-
-Boundaray Feasiable Path4_4:
-Self = [ 23600, 2, 1 ]
-Result = 2
-
-Boundaray Feasiable Path4_8:
-Self = [ 20000, 2, 1 ]
-Result = 2
-
-Boundaray Feasiable Path4_9:
-Self = [ 10000, 2, 29 ]
-Result = 2
-
-Boundaray Feasiable Path4_10:
-Self = [ 22400, 2, 24 ]
-Result = 2
-
-Boundaray Feasiable Path5_1:
-Self = [ 1, 2, 4 ]
-Result = 2
-
-Boundaray Feasiable Path5_4:
-Self = [ 7731, 2, 1 ]
-Result = 2
-
-Boundaray Feasiable Path5_5:
-Self = [ 1, 2, 26 ]
-Result = 2
-
-Boundaray Feasiable Path5_8:
-Self = [ 15822, 2, 1 ]
-Result = 2
-
-Boundaray Feasiable Path5_9:
-Self = [ 7767, 2, 28 ]
-Result = 2
-
-Boundaray Feasiable Path5_10:
-Self = [ 28586, 2, 23 ]
-Result = 2
-
----------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Class: Date, Method: getDay, Test Case Number: 31
-Boundaray Feasiable Path1_1:
-Self = [ 1, 11, 13089 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path1_2:
-Self = [ 3711, 1, 12090 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path1_3:
-Self = [ 22431, 12, 893 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path1_4:
-Self = [ 1745, 4, 1 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path1_5:
-Self = [ 10253, 6, 22765 ]
-Result = DateErrorException
-
-Boundaray Feasiable Path2_1:
-Self = [ 1, 1, 5 ]
-Result = 5
-
-Boundaray Feasiable Path2_2:
-Self = [ 10847, 1, 7 ]
-Result = 7
-
-Boundaray Feasiable Path2_3:
-Self = [ 27742, 12, 1 ]
-Result = 1
-
-Boundaray Feasiable Path2_4:
-Self = [ 12109, 1, 1 ]
-Result = 1
-
-Boundaray Feasiable Path2_5:
-Self = [ 1, 1, 16 ]
-Result = 16
-
-Boundaray Feasiable Path2_6:
-Self = [ 1968, 1, 12 ]
-Result = 12
-
-Boundaray Feasiable Path2_7:
-Self = [ 27578, 12, 9 ]
-Result = 9
-
-Boundaray Feasiable Path2_8:
-Self = [ 9584, 1, 1 ]
-Result = 1
-
-Boundaray Feasiable Path2_9:
-Self = [ 27477, 1, 31 ]
+Self = [ 5917, 1, 31 ]
 Result = 31
 
 Boundaray Feasiable Path2_10:
-Self = [ 7590, 3, 11 ]
-Result = 11
+Self = [ 31365, 3, 9 ]
+Result = 9
 
 Boundaray Feasiable Path3_1:
 Self = [ 1, 4, 27 ]
 Result = 27
 
 Boundaray Feasiable Path3_4:
-Self = [ 3795, 4, 1 ]
+Self = [ 25330, 4, 1 ]
 Result = 1
 
 Boundaray Feasiable Path3_5:
-Self = [ 1, 4, 23 ]
-Result = 23
+Self = [ 1, 4, 17 ]
+Result = 17
 
 Boundaray Feasiable Path3_8:
-Self = [ 10280, 4, 1 ]
+Self = [ 6318, 4, 1 ]
 Result = 1
 
 Boundaray Feasiable Path3_9:
-Self = [ 31557, 4, 30 ]
+Self = [ 7214, 4, 30 ]
 Result = 30
 
 Boundaray Feasiable Path3_10:
-Self = [ 17637, 4, 15 ]
-Result = 15
+Self = [ 5752, 4, 16 ]
+Result = 16
 
 Boundaray Feasiable Path4_4:
 Self = [ 25200, 2, 1 ]
 Result = 1
 
 Boundaray Feasiable Path4_8:
-Self = [ 20800, 2, 1 ]
+Self = [ 31200, 2, 1 ]
 Result = 1
 
 Boundaray Feasiable Path4_9:
-Self = [ 24800, 2, 29 ]
+Self = [ 8400, 2, 29 ]
 Result = 29
 
 Boundaray Feasiable Path4_10:
-Self = [ 5200, 2, 18 ]
-Result = 18
+Self = [ 3200, 2, 5 ]
+Result = 5
 
-Boundaray Feasiable Path5_1:
-Self = [ 1, 2, 23 ]
-Result = 23
-
-Boundaray Feasiable Path5_4:
-Self = [ 32422, 2, 1 ]
-Result = 1
-
-Boundaray Feasiable Path5_5:
-Self = [ 1, 2, 2 ]
-Result = 2
-
-Boundaray Feasiable Path5_8:
-Self = [ 19619, 2, 1 ]
-Result = 1
-
-Boundaray Feasiable Path5_9:
-Self = [ 21631, 2, 28 ]
-Result = 28
-
-Boundaray Feasiable Path5_10:
-Self = [ 10741, 2, 26 ]
-Result = 26
-
----------------------------------------    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

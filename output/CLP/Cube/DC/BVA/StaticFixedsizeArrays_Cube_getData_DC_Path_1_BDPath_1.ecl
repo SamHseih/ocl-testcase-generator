@@ -7,7 +7,7 @@ staticFixedsizeArrays_Cube_getData_DC_Path_1_BDPath_1(Self,Result):-
 
 % Class and attribute combined as Class_Attr.
 % dim/3 is called if the attribute is an array type.
-Self=[Self_data,Self_dimensionSizes],Self_dimensionSizes = [2, 2, 2],
+Self=[Self_data,Self_dimensionSizes],Self_dimensionSizes = [1, 2, 4],
 
 decl_Array(Self_data,Self_dimensionSizes),
 

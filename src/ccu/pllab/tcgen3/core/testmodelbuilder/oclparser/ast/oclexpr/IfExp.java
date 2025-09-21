@@ -2,7 +2,6 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.oclexpr;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTList;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.AstVisitor;
@@ -53,8 +52,8 @@ public class IfExp extends ASTList implements Expression {
 
   @Override
   public String toClgString() {
-    return "IfExp ConditionNode:(" + child(0).id() + ") thenNode: (" + child(1).id()
-        + ") elseNode: (" + child(2).id() + ")";
+    return "IfExp ConditionNode:(" + child(0).toClgString() + ") thenNode: ("
+        + child(1).toClgString() + ") elseNode: (" + child(2).toClgString() + ")";
   }
 
   @Override

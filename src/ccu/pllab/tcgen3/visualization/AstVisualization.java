@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
-
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.ast.ASTree;
 
 public class AstVisualization {
@@ -66,6 +65,9 @@ public class AstVisualization {
       System.out.println("AST SVG file output successfully¡G" + svgpath);
     } catch (Exception e) {
       System.err.println("CLG Write file fail¡G" + e.getMessage());
+      System.err.println("dot dir¡G" + dotpath);
+      System.err.println("svg dir¡G" + svgpath);
+      System.err.println("Check GraphViz set  ?  https://graphviz.org/");
       e.printStackTrace();
     }
   }

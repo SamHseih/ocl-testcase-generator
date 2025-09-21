@@ -92,3 +92,28 @@ StaticFixedsizeArrays_Cube_getData_DC CLG Info :  CLGNodes Size: 3  CLGEdges Siz
 ======================================================================
 ============== 2025/08/26 20:35 TestCase output Finish. ==============
 =====================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AST Build Using Time:653 ms
+Total CLGBuild Using Time:52 ms
+Total TestCase Generation Using Time:293449 ms
+TestScript Generation Using Time:168 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TestCase Information:
+  StaticFixedsizeArrays_Cube_Cube_DC:
+	PathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Cube_Cube_DC Using Time:98 ms
+  StaticFixedsizeArrays_Cube_add_DC:
+	PathNum: 1391, TestCaseNum: 1  Generate StaticFixedsizeArrays_Cube_add_DC Using Time:157338 ms
+  StaticFixedsizeArrays_Cube_sub_DC:
+	PathNum: 1391, TestCaseNum: 1  Generate StaticFixedsizeArrays_Cube_sub_DC Using Time:134648 ms
+  StaticFixedsizeArrays_Cube_getData_DC:
+	PathNum: 1, TestCaseNum: 1  Generate StaticFixedsizeArrays_Cube_getData_DC Using Time:47 ms
+
+Total System Generation Using Time:294408 ms
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+StaticFixedsizeArrays_Cube_Cube_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+StaticFixedsizeArrays_Cube_add_DC CLG Info :  CLGNodes Size: 27  CLGEdges Size: 29
+StaticFixedsizeArrays_Cube_sub_DC CLG Info :  CLGNodes Size: 27  CLGEdges Size: 29
+StaticFixedsizeArrays_Cube_getData_DC CLG Info :  CLGNodes Size: 3  CLGEdges Size: 2
+======================================================================
+============== 2025/09/21 19:06 TestCase output Finish. ==============
+=====================================================================

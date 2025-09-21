@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Matrix.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package program;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Arrays;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Objects;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Matrix {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private final int[][] data;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  public Matrix(int[][] data) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_10'/>
+10
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_10'>2</a>
+<span>
+
+1. &#60;init&#62; : replaced call to java/util/Objects::requireNonNull with argument &rarr; SURVIVED<br/>
+
+2. &#60;init&#62; : removed call to java/util/Objects::requireNonNull &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    Objects.requireNonNull(data, &#34;data &#65533;&#65533; null&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_11'/>
+11
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_11'>1</a>
+<span>
+
+1. &#60;init&#62; : Removed assignment to member variable data &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    this.data = data;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public Matrix add(Matrix other) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_15'/>
+15
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_15'>5</a>
+<span>
+
+1. add : Substituted 0 with 1 &rarr; SURVIVED<br/>
+
+2. add : Substituted 0 with 1 &rarr; SURVIVED<br/>
+
+3. add : Substituted 0 with 1 &rarr; SURVIVED<br/>
+
+4. add : Substituted 0 with -1 &rarr; KILLED<br/>
+
+5. add : Substituted 0 with -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    int[][] result = new int[data.length][data[0].length];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_16'/>
+16
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_16'>21</a>
+<span>
+
+1. add : Less than to not equal &rarr; SURVIVED<br/>
+
+2. add : Removed increment 1 &rarr; TIMED_OUT<br/>
+
+3. add : changed conditional boundary &rarr; KILLED<br/>
+
+4. add : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+5. add : Substituted 0 with 1 &rarr; KILLED<br/>
+
+6. add : negated conditional &rarr; KILLED<br/>
+
+7. add : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+8. add : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+9. add : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+10. add : Substituted 0 with 1 &rarr; KILLED<br/>
+
+11. add : Substituted 0 with -1 &rarr; KILLED<br/>
+
+12. add : Substituted 0 with 1 &rarr; KILLED<br/>
+
+13. add : Substituted 0 with -1 &rarr; KILLED<br/>
+
+14. add : Less than to less or equal &rarr; KILLED<br/>
+
+15. add : Less than to greater than &rarr; KILLED<br/>
+
+16. add : Less than to greater or equal &rarr; KILLED<br/>
+
+17. add : Less than to equal &rarr; KILLED<br/>
+
+18. add : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+19. add : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+20. add : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+21. add : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    for (int i = 0; i &#60; data.length; i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_17'/>
+17
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_17'>24</a>
+<span>
+
+1. add : Less than to not equal &rarr; SURVIVED<br/>
+
+2. add : changed conditional boundary &rarr; KILLED<br/>
+
+3. add : Substituted 0 with 1 &rarr; KILLED<br/>
+
+4. add : negated conditional &rarr; KILLED<br/>
+
+5. add : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+6. add : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+7. add : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+8. add : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+9. add : Substituted 0 with 1 &rarr; KILLED<br/>
+
+10. add : Substituted 0 with -1 &rarr; KILLED<br/>
+
+11. add : Substituted 0 with 1 &rarr; KILLED<br/>
+
+12. add : Substituted 0 with -1 &rarr; KILLED<br/>
+
+13. add : Less than to less or equal &rarr; KILLED<br/>
+
+14. add : Less than to greater than &rarr; KILLED<br/>
+
+15. add : Less than to greater or equal &rarr; KILLED<br/>
+
+16. add : Less than to equal &rarr; KILLED<br/>
+
+17. add : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+18. add : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+19. add : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+
+20. add : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+21. add : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+22. add : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+23. add : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+24. add : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      for (int j = 0; j &#60; data[i].length; j++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_18'/>
+18
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_18'>47</a>
+<span>
+
+1. add : Incremented (a++) integer array field &rarr; SURVIVED<br/>
+
+2. add : Incremented (a++) integer array field &rarr; SURVIVED<br/>
+
+3. add : Decremented (a--) integer array field &rarr; SURVIVED<br/>
+
+4. add : Decremented (a--) integer array field &rarr; SURVIVED<br/>
+
+5. add : Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT<br/>
+
+6. add : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+7. add : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+8. add : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+9. add : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+10. add : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+11. add : Negated integer array field &rarr; KILLED<br/>
+
+12. add : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+13. add : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+14. add : Negated integer array field &rarr; KILLED<br/>
+
+15. add : Replaced integer operation with first member &rarr; KILLED<br/>
+
+16. add : Replaced integer operation by second member &rarr; KILLED<br/>
+
+17. add : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+18. add : Replaced integer addition with multiplication &rarr; KILLED<br/>
+
+19. add : Replaced integer addition with division &rarr; KILLED<br/>
+
+20. add : Replaced integer addition with modulus &rarr; KILLED<br/>
+
+21. add : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+22. add : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+23. add : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+24. add : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+25. add : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+26. add : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+27. add : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+28. add : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+
+29. add : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+30. add : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+
+31. add : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+32. add : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+33. add : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+34. add : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+35. add : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+36. add : Incremented (++a) integer array field &rarr; KILLED<br/>
+
+37. add : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+38. add : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+39. add : Incremented (++a) integer array field &rarr; KILLED<br/>
+
+40. add : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+41. add : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+42. add : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+43. add : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+44. add : Decremented (--a) integer array field &rarr; KILLED<br/>
+
+45. add : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+46. add : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+47. add : Decremented (--a) integer array field &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        result[i][j] = data[i][j] + other.data[i][j];</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>      }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_22'/>
+22
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_22'>3</a>
+<span>
+
+1. add : removed call to program/Matrix::&#60;init&#62; &rarr; KILLED<br/>
+
+2. add : replaced return value with null for program/Matrix::add &rarr; KILLED<br/>
+
+3. add : mutated return of Object value for program/Matrix::add to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return new Matrix(result);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public Matrix sub(Matrix other) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_26'/>
+26
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_26'>5</a>
+<span>
+
+1. sub : Substituted 0 with 1 &rarr; SURVIVED<br/>
+
+2. sub : Substituted 0 with 1 &rarr; SURVIVED<br/>
+
+3. sub : Substituted 0 with 1 &rarr; SURVIVED<br/>
+
+4. sub : Substituted 0 with -1 &rarr; KILLED<br/>
+
+5. sub : Substituted 0 with -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    int[][] result = new int[data.length][data[0].length];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_27'/>
+27
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_27'>21</a>
+<span>
+
+1. sub : Less than to not equal &rarr; SURVIVED<br/>
+
+2. sub : Removed increment 1 &rarr; TIMED_OUT<br/>
+
+3. sub : changed conditional boundary &rarr; KILLED<br/>
+
+4. sub : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+5. sub : Substituted 0 with 1 &rarr; KILLED<br/>
+
+6. sub : negated conditional &rarr; KILLED<br/>
+
+7. sub : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+8. sub : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+9. sub : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+10. sub : Substituted 0 with 1 &rarr; KILLED<br/>
+
+11. sub : Substituted 0 with -1 &rarr; KILLED<br/>
+
+12. sub : Substituted 0 with 1 &rarr; KILLED<br/>
+
+13. sub : Substituted 0 with -1 &rarr; KILLED<br/>
+
+14. sub : Less than to less or equal &rarr; KILLED<br/>
+
+15. sub : Less than to greater than &rarr; KILLED<br/>
+
+16. sub : Less than to greater or equal &rarr; KILLED<br/>
+
+17. sub : Less than to equal &rarr; KILLED<br/>
+
+18. sub : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+19. sub : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+20. sub : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+21. sub : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    for (int i = 0; i &#60; data.length; i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_28'/>
+28
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_28'>24</a>
+<span>
+
+1. sub : Less than to not equal &rarr; SURVIVED<br/>
+
+2. sub : changed conditional boundary &rarr; KILLED<br/>
+
+3. sub : Substituted 0 with 1 &rarr; KILLED<br/>
+
+4. sub : negated conditional &rarr; KILLED<br/>
+
+5. sub : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+6. sub : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+7. sub : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+8. sub : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+9. sub : Substituted 0 with 1 &rarr; KILLED<br/>
+
+10. sub : Substituted 0 with -1 &rarr; KILLED<br/>
+
+11. sub : Substituted 0 with 1 &rarr; KILLED<br/>
+
+12. sub : Substituted 0 with -1 &rarr; KILLED<br/>
+
+13. sub : Less than to less or equal &rarr; KILLED<br/>
+
+14. sub : Less than to greater than &rarr; KILLED<br/>
+
+15. sub : Less than to greater or equal &rarr; KILLED<br/>
+
+16. sub : Less than to equal &rarr; KILLED<br/>
+
+17. sub : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+18. sub : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+19. sub : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+
+20. sub : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+21. sub : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+22. sub : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+23. sub : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+24. sub : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      for (int j = 0; j &#60; data[i].length; j++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_29'/>
+29
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_29'>47</a>
+<span>
+
+1. sub : Incremented (a++) integer array field &rarr; SURVIVED<br/>
+
+2. sub : Incremented (a++) integer array field &rarr; SURVIVED<br/>
+
+3. sub : Decremented (a--) integer array field &rarr; SURVIVED<br/>
+
+4. sub : Decremented (a--) integer array field &rarr; SURVIVED<br/>
+
+5. sub : Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT<br/>
+
+6. sub : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+7. sub : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+8. sub : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+9. sub : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+10. sub : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+11. sub : Negated integer array field &rarr; KILLED<br/>
+
+12. sub : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+13. sub : Negated integer local variable number 4 &rarr; KILLED<br/>
+
+14. sub : Negated integer array field &rarr; KILLED<br/>
+
+15. sub : Replaced integer operation with first member &rarr; KILLED<br/>
+
+16. sub : Replaced integer operation by second member &rarr; KILLED<br/>
+
+17. sub : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+18. sub : Replaced integer subtraction with multiplication &rarr; KILLED<br/>
+
+19. sub : Replaced integer subtraction with division &rarr; KILLED<br/>
+
+20. sub : Replaced integer subtraction with modulus &rarr; KILLED<br/>
+
+21. sub : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+22. sub : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+23. sub : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+24. sub : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+25. sub : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+26. sub : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+
+27. sub : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+28. sub : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+
+29. sub : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+30. sub : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+
+31. sub : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+32. sub : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+33. sub : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+34. sub : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+35. sub : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+36. sub : Incremented (++a) integer array field &rarr; KILLED<br/>
+
+37. sub : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+38. sub : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+
+39. sub : Incremented (++a) integer array field &rarr; KILLED<br/>
+
+40. sub : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+41. sub : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+42. sub : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+43. sub : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+44. sub : Decremented (--a) integer array field &rarr; KILLED<br/>
+
+45. sub : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+46. sub : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+47. sub : Decremented (--a) integer array field &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        result[i][j] = data[i][j] - other.data[i][j];</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>      }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_32'/>
+32
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_32'>3</a>
+<span>
+
+1. sub : removed call to program/Matrix::&#60;init&#62; &rarr; KILLED<br/>
+
+2. sub : replaced return value with null for program/Matrix::sub &rarr; KILLED<br/>
+
+3. sub : mutated return of Object value for program/Matrix::sub to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return new Matrix(result);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public String getData() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_36'>3</a>
+<span>
+
+1. getData : replaced return value with &#34;&#34; for program/Matrix::getData &rarr; KILLED<br/>
+
+2. getData : removed call to java/util/Arrays::deepToString &rarr; KILLED<br/>
+
+3. getData : mutated return of Object value for program/Matrix::getData to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return Arrays.deepToString(data);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_41'>3</a>
+<span>
+
+1. toString : replaced return value with &#34;&#34; for program/Matrix::toString &rarr; KILLED<br/>
+
+2. toString : removed call to java/util/Arrays::deepToString &rarr; KILLED<br/>
+
+3. toString : mutated return of Object value for program/Matrix::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    return Arrays.deepToString(data);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@5466a819_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_10'>10</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_10'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> replaced call to java/util/Objects::requireNonNull with argument &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to java/util/Objects::requireNonNull &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_11'>11</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_11'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testgetData_1()]</span></span> Removed assignment to member variable data &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_15'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Substituted 0 with 1 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Substituted 0 with 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Substituted 0 with 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_16'>16</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_16'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Removed increment 1 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Less than to not equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_17'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Less than to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Less than to not equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Negated integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer operation with first member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer operation by second member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer addition with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer addition with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Replaced integer addition with modulus &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>26.<span><b>26</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>27.<span><b>27</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>28.<span><b>28</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>29.<span><b>29</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>30.<span><b>30</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT</p> <p class='SURVIVED'><span class='pop'>31.<span><b>31</b><br/><b>Location : </b>add<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>32.<span><b>32</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>33.<span><b>33</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>34.<span><b>34</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>35.<span><b>35</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>36.<span><b>36</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>37.<span><b>37</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>38.<span><b>38</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>39.<span><b>39</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Incremented (++a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>40.<span><b>40</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>41.<span><b>41</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>42.<span><b>42</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>43.<span><b>43</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>44.<span><b>44</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>45.<span><b>45</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>46.<span><b>46</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>47.<span><b>47</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> Decremented (--a) integer array field &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> removed call to program/Matrix::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> replaced return value with null for program/Matrix::add &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>add<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()]</span></span> mutated return of Object value for program/Matrix::add to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_26'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Substituted 0 with 1 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Substituted 0 with 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Substituted 0 with 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Removed increment 1 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Less than to not equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_28'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Less than to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Less than to not equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Negated integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer operation with first member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer operation by second member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer subtraction with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer subtraction with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Replaced integer subtraction with modulus &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>26.<span><b>26</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>27.<span><b>27</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>28.<span><b>28</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>29.<span><b>29</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>30.<span><b>30</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT</p> <p class='SURVIVED'><span class='pop'>31.<span><b>31</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer array field &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>32.<span><b>32</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>33.<span><b>33</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>34.<span><b>34</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>35.<span><b>35</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>36.<span><b>36</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>37.<span><b>37</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>38.<span><b>38</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>39.<span><b>39</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Incremented (++a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>40.<span><b>40</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>41.<span><b>41</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>42.<span><b>42</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>43.<span><b>43</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>44.<span><b>44</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>45.<span><b>45</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>46.<span><b>46</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>47.<span><b>47</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> Decremented (--a) integer array field &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_32'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> removed call to program/Matrix::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> replaced return value with null for program/Matrix::sub &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>sub<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()]</span></span> mutated return of Object value for program/Matrix::sub to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testgetData_1()]</span></span> replaced return value with &#34;&#34; for program/Matrix::getData &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testgetData_1()]</span></span> removed call to java/util/Arrays::deepToString &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testgetData_1()]</span></span> mutated return of Object value for program/Matrix::getData to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@5466a819_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@5466a819_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testMatrix_1_1()]</span></span> replaced return value with &#34;&#34; for program/Matrix::toString &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testMatrix_1_1()]</span></span> removed call to java/util/Arrays::deepToString &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testMatrix_1_1()]</span></span> mutated return of Object value for program/Matrix::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>ABS_MUTATOR</li>
+
+<li class='mutator'>AOD_1_MUTATOR</li>
+
+<li class='mutator'>AOD_2_MUTATOR</li>
+
+<li class='mutator'>AOR_1_MUTATOR</li>
+
+<li class='mutator'>AOR_2_MUTATOR</li>
+
+<li class='mutator'>AOR_3_MUTATOR</li>
+
+<li class='mutator'>AOR_4_MUTATOR</li>
+
+<li class='mutator'>ARGUMENT_PROPAGATION_MUTATOR</li>
+
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+<li class='mutator'>CONSTRUCTOR_CALL_MUTATOR</li>
+
+<li class='mutator'>CRCR_1_MUTATOR</li>
+
+<li class='mutator'>CRCR_2_MUTATOR</li>
+
+<li class='mutator'>CRCR_3_MUTATOR</li>
+
+<li class='mutator'>CRCR_4_MUTATOR</li>
+
+<li class='mutator'>CRCR_5_MUTATOR</li>
+
+<li class='mutator'>CRCR_6_MUTATOR</li>
+
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+
+<li class='mutator'>EXPERIMENTAL_BIGINTEGER_MUTATOR</li>
+
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE_MUTATOR</li>
+
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+
+<li class='mutator'>EXPERIMENTAL_SWITCH_MUTATOR</li>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>INLINE_CONSTANT_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NAKED_RECEIVER</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>NON_VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>NULL_RETURN_VALUES</li>
+
+<li class='mutator'>OBBN_1_MUTATOR</li>
+
+<li class='mutator'>OBBN_2_MUTATOR</li>
+
+<li class='mutator'>OBBN_3_MUTATOR</li>
+
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF_MUTATOR</li>
+
+<li class='mutator'>REMOVE_INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>ROR_1_MUTATOR</li>
+
+<li class='mutator'>ROR_2_MUTATOR</li>
+
+<li class='mutator'>ROR_3_MUTATOR</li>
+
+<li class='mutator'>ROR_4_MUTATOR</li>
+
+<li class='mutator'>ROR_5_MUTATOR</li>
+
+<li class='mutator'>UOI_1_MUTATOR</li>
+
+<li class='mutator'>UOI_2_MUTATOR</li>
+
+<li class='mutator'>UOI_3_MUTATOR</li>
+
+<li class='mutator'>UOI_4_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testgetData_1_1()] (9 ms)</li><li>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testsub_31_1()] (8 ms)</li><li>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testsub_31()] (8 ms)</li><li>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testgetData_1_1()] (9 ms)</li><li>test.Matrix.Matrix_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DC_Test]/[method:testsub_31()] (8 ms)</li><li>test.Array.ArrayBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Array.ArrayBVA_DCC_Test]/[method:testArray_1_1()] (43 ms)</li><li>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testMatrix_1_1()] (9 ms)</li><li>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testgetData_1()] (8 ms)</li><li>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testadd_31_1()] (9 ms)</li><li>test.Matrix.Matrix_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DC_Test]/[method:testMatrix_1()] (10 ms)</li><li>test.Matrix.MatrixBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DCC_Test]/[method:testsub_31_1()] (9 ms)</li><li>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testMatrix_1_1()] (9 ms)</li><li>test.Matrix.Matrix_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DC_Test]/[method:testadd_31()] (8 ms)</li><li>test.Matrix.MatrixBVA_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.MatrixBVA_DC_Test]/[method:testadd_31_1()] (9 ms)</li><li>test.Matrix.Matrix_DC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DC_Test]/[method:testgetData_1()] (9 ms)</li><li>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testMatrix_1()] (10 ms)</li><li>test.Matrix.Matrix_DCC_Test.[engine:junit-jupiter]/[class:test.Matrix.Matrix_DCC_Test]/[method:testadd_31()] (8 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.6.8
+
+</body>
+</html>

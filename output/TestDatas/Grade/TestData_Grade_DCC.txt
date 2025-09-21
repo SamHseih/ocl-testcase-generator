@@ -1,37 +1,37 @@
 Class: Grade, Method: , Test Case Number: 1
 Feasiable Path1:
-Invariant Self = [ 22 ]
+Invariant Self = [ 70 ]
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Class: Grade, Method: Grade, Test Case Number: 3
 Feasiable Path1:
-Self = [ 91 ]
-Arg_1 = 91
+Self = [ 60 ]
+Arg_1 = 60
 
 Feasiable Path2:
-Arg_1 = -23039
+Arg_1 = -16584
 Result = illegalargumentexception
 
 Feasiable Path3:
-Arg_1 = 14098
+Arg_1 = 2816
 Result = illegalargumentexception
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Class: Grade, Method: rating, Test Case Number: 5
 Feasiable Path1:
-Self = [ 1 ]
+Self = [ 39 ]
 Result = F
 
 Feasiable Path2:
-Self = [ 69 ]
+Self = [ 64 ]
 Result = D
 
 Feasiable Path4:
-Self = [ 77 ]
+Self = [ 70 ]
 Result = C
 
 Feasiable Path8:
-Self = [ 85 ]
+Self = [ 80 ]
 Result = B
 
 Feasiable Path23:

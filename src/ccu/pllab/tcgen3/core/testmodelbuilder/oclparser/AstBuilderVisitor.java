@@ -2,7 +2,6 @@ package ccu.pllab.tcgen3.core.testmodelbuilder.oclparser;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.antlr.v4.runtime.Token;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclBaseVisitor;
 import ccu.pllab.tcgen3.core.testmodelbuilder.oclparser.antlrgen.OclParser.AdditiveExpressionContext;

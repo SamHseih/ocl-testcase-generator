@@ -1,0 +1,56 @@
+testClass(packageInfo, className, imports, methods) ::= <<
+package <packageInfo>;
+
+<imports; separator="\n">
+public class <className>{
+<methods; separator="\n\n">
+}
+>>
+
+imports()::=<<
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+
+>>
+
+methodConstructor(displayName, methodName, arryobjdecl,argdecl, pathId, assertion) ::= <<
+@Test
+@DisplayName("<displayName>")
+void test<methodName>_<pathId>() throws Exception {
+	<if(arryobjdecl)><arryobjdecl>
+	<endif>
+	<if(argdecl)><argdecl>
+	<endif>
+	<assertion>
+}
+>>
+
+methodNormal(displayName, methodName, pathId, selfDecl, arryobjdecl, argdecl, expectedDecl, assertion) ::= <<
+@Test
+@DisplayName("<displayName>")
+void test<methodName>_<pathId>() throws Exception {
+	<if(arryobjdecl)><arryobjdecl>
+	<endif>
+	<if(selfDecl)><selfDecl>
+	<endif>
+	<if(argdecl)><argdecl>
+	<endif>
+	<if(expectedDecl)><expectedDecl>
+	<endif>
+	<assertion>
+}
+>>
+
+
+methodThrows(displayName, methodName, pathId, exceptionClass, lambdaCall) ::= <<
+@Test
+@DisplayName("<displayName>")
+void test<methodName>_<pathId>() {
+	assertThrows(<exceptionClass>.class, () -> { 
+	<lambdaCall>; 
+	});
+}
+>>

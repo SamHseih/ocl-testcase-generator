@@ -1,71 +1,71 @@
 Class: Triangle, Method: , Test Case Number: 1
 Boundaray Feasiable Path1_1:
-Invariant Self = [ 12511, 27162, 30884 ]
+Invariant Self = [ 8331, 12744, 9970 ]
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Class: Triangle, Method: Triangle, Test Case Number: 7
 Boundaray Feasiable Path1_1:
-Self = [ 11323, 22604, 25097 ]
-Arg_1 = 11323
-Arg_2 = 22604
-Arg_3 = 25097
+Self = [ 1710, 32460, 32459 ]
+Arg_1 = 1710
+Arg_2 = 32460
+Arg_3 = 32459
 
 Boundaray Feasiable Path5_1:
-Arg_1 = 15922
-Arg_2 = 17917
-Arg_3 = 1995
+Arg_1 = 3057
+Arg_2 = 17906
+Arg_3 = 14849
 Result = EdgeErrorException
 
 Boundaray Feasiable Path5_2:
-Arg_1 = 10080
-Arg_2 = 27045
-Arg_3 = 4284
+Arg_1 = 19801
+Arg_2 = 26520
+Arg_3 = 4720
 Result = EdgeErrorException
 
 Boundaray Feasiable Path6_1:
-Arg_1 = 5400
-Arg_2 = 6175
-Arg_3 = 11575
+Arg_1 = 8500
+Arg_2 = 16808
+Arg_3 = 25308
 Result = EdgeErrorException
 
 Boundaray Feasiable Path6_2:
-Arg_1 = 12112
-Arg_2 = 12750
-Arg_3 = 28322
+Arg_1 = 29971
+Arg_2 = 2624
+Arg_3 = 32703
 Result = EdgeErrorException
 
 Boundaray Feasiable Path7_1:
-Arg_1 = 20326
-Arg_2 = 5422
-Arg_3 = 14904
+Arg_1 = 13022
+Arg_2 = 4866
+Arg_3 = 8156
 Result = EdgeErrorException
 
 Boundaray Feasiable Path7_2:
-Arg_1 = 8736
-Arg_2 = 8412
-Arg_3 = 286
+Arg_1 = 4555
+Arg_2 = 1994
+Arg_3 = 73
 Result = EdgeErrorException
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Class: Triangle, Method: category, Test Case Number: 5
 Boundaray Feasiable Path1_1:
-Self = [ 2734, 2734, 2734 ]
+Self = [ 32748, 32748, 32748 ]
 Result = Equilateral
 
 Boundaray Feasiable Path2_1:
-Self = [ 21897, 21897, 7555 ]
+Self = [ 31985, 31985, 30775 ]
 Result = Isosceles
 
 Boundaray Feasiable Path3_1:
-Self = [ 27194, 1579, 27194 ]
+Self = [ 2391, 346, 2391 ]
 Result = Isosceles
 
 Boundaray Feasiable Path4_1:
-Self = [ 28880, 19399, 19399 ]
+Self = [ 7298, 19852, 19852 ]
 Result = Isosceles
 
 Boundaray Feasiable Path5_1:
-Self = [ 6543, 21641, 19012 ]
+Self = [ 9035, 22263, 20674 ]
 Result = Scalene
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

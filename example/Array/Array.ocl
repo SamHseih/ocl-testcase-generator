@@ -1,0 +1,41 @@
+package StaticFixedsizeArrays 
+	
+	context Array::Array(inputArray:int[5])
+	post: 
+		self.data = inputArray
+	
+	context Array::add(arg:Array):Array
+	post:
+		let dim1:int = arg.data.getDimensionSizes(1)
+		in
+		Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			result.data[it] = self.data[it] + arg.data[it]
+					)
+			
+	context Array::sub(arg:Array):Array
+	post: 
+		let dim1:int = arg.data.getDimensionSizes(1)
+		in
+		Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			result.data[it] = self.data[it] - arg.data[it]
+					)
+	--context Array::mul(arg:Array):Array
+	--post:
+		--let dim1:int = arg.data.getDimensionSizes(1)
+		--in
+		--Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			--result.data[it] = self.data[it] * arg.data[it]
+					--)
+	
+	--context Array::div(arg:Array):Array
+	--post:
+		--let dim1:int = arg.data.getDimensionSizes(1)
+		--in
+		--Sequence{1..dim1}->iterate(it:int; acc:Boolean = true |
+			--result.data[it] = self.data[it] / arg.data[it]
+					--)
+	
+	context Array::getData():int[5]
+	post:
+		result = self.data
+endpackage 

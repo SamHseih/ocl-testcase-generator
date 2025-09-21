@@ -1,6 +1,8 @@
 package ccu.pllab.tcgen3.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -238,6 +240,184 @@ public abstract class StringTool {
     return trimmed;
   }
 
+  /**
+   * Input String "[[-25259, -7735], [2412, -6050]]" Output String : {{-25259, -7735}, {2412,
+   * -6050}}
+   */
+  public static String replaceBrackets(String input) {
+    if (input == null) {
+      return null;
+    }
+    return input.replace("[", "{").replace("]", "}");
+  }
+
+  /**
+   * 若字串符合 "[ <array> , <dimension> ]" 的固定格式，回傳 <array>； 否則回傳原字串（去除首尾空白）。
+   *
+   * 規則： 1) 最外層必須是中括號包住且只有兩個頂層元素。 2) 第一個元素必須是「至少二維」的陣列（也就是它本身的內部還含有 '['）。 3) 第二個元素必須是「一維整數陣列」，例如 [2,
+   * 2]（內部不得再有中括號）。
+   */
+  public static String extractArrayIfPair(String input) {
+    if (input == null)
+      return null;
+    String s = input.trim();
+    if (s.length() < 2 || s.charAt(0) != '[' || s.charAt(s.length() - 1) != ']') {
+      return s; // 不是以 [ ... ] 包住，直接回傳
+    }
+
+    // 取出最外層內容
+    int start = 1, end = s.length() - 1;
+
+    // 分割成「頂層元素」清單（以 depth==0 的逗號切）
+    java.util.List<int[]> spans = new java.util.ArrayList<>(); // 每個元素的 [from, to)
+    int depth = 0;
+    int tokenStart = start;
+    for (int i = start; i < end; i++) {
+      char c = s.charAt(i);
+      if (c == '[')
+        depth++;
+      else if (c == ']')
+        depth--;
+      else if (c == ',' && depth == 0) {
+        spans.add(new int[] {tokenStart, i});
+        tokenStart = i + 1;
+      }
+      if (depth < 0)
+        return s; // 括號不平衡，視為不符合，原樣回傳
+    }
+
+    // 末尾 token
+    if (tokenStart <= end) {
+      spans.add(new int[] {tokenStart, end});
+    }
+
+    // 不是恰好兩個頂層元素 -> 非 [array, dimension]，原樣回傳
+    if (spans.size() != 2)
+      return s;
+
+    String first = s.substring(spans.get(0)[0], spans.get(0)[1]).trim(); // <array>
+    String second = s.substring(spans.get(1)[0], spans.get(1)[1]).trim(); // <dimension>
+    // 條件 嚴謹：檢查維度
+    List<Integer> check = getDimensions(first);
+    StringBuilder sb = new StringBuilder();
+    sb.append("[ ");
+    for (int i = 0; i < check.size(); i++) {
+      sb.append(check.get(i));
+      if (i != check.size() - 1)
+        sb.append(", ");
+    }
+    sb.append(" ]");
+    if (second.toString().equals(sb.toString()))
+      return first;
+    else
+      return s;
+  }
+
+  /** 僅當輸入為 [ <array(至少二維)> , <dimension(一維整數陣列)> ] 時回傳 true */
+  public static boolean isArrayPairArrayAndDimension(String input) {
+    if (input == null)
+      return false;
+    String s = input.trim();
+    if (s.length() < 2 || s.charAt(0) != '[' || s.charAt(s.length() - 1) != ']')
+      return false;
+
+    // 拆掉最外層括號後，依「頂層逗號」切成兩個元素
+    int start = 1, end = s.length() - 1;
+    java.util.List<int[]> spans = splitTopLevelByComma(s, start, end);
+    if (spans.size() == 2)
+      return true;
+    else
+      return false;
+  }
+
+  // —— Helpers ——
+
+  /** 以「括號深度為 0 的逗號」切分 [start, end) 內容成頂層元素 spans：[from, to) */
+  private static java.util.List<int[]> splitTopLevelByComma(String s, int start, int end) {
+    java.util.List<int[]> res = new java.util.ArrayList<>();
+    int depth = 0, tokenStart = start;
+    for (int i = start; i < end; i++) {
+      char c = s.charAt(i);
+      if (c == '[')
+        depth++;
+      else if (c == ']')
+        depth--;
+      else if (c == ',' && depth == 0) {
+        res.add(new int[] {tokenStart, i});
+        tokenStart = i + 1;
+      }
+      if (depth < 0)
+        return java.util.Collections.emptyList(); // 括號不平衡
+    }
+    if (depth != 0)
+      return java.util.Collections.emptyList(); // 括號不平衡
+    if (tokenStart < end)
+      res.add(new int[] {tokenStart, end});
+    return res;
+  }
+
+
+  /** 回傳陣列字串的維度大小，例如 [1756, 29789] -> [2], [[-9063, 23362], [41687, -22394]] -> [2,2] */
+  private static List<Integer> getDimensions(String input) {
+    if (input == null)
+      return Collections.emptyList();
+    String s = input.trim();
+    if (s.isEmpty() || s.charAt(0) != '[' || s.charAt(s.length() - 1) != ']') {
+      return Collections.emptyList(); // 非陣列格式
+    }
+    return parseArray(s);
+  }
+
+  // 遞迴解析陣列
+  private static List<Integer> parseArray(String s) {
+    List<String> elements = splitTopLevel(s.substring(1, s.length() - 1).trim());
+    List<Integer> dims = new ArrayList<>();
+    dims.add(elements.size()); // 先記錄這一層的大小
+
+    // 檢查第一個元素是否還是陣列，如果是則遞迴（假設結構規則）
+    if (!elements.isEmpty()) {
+      String first = elements.get(0).trim();
+      if (first.startsWith("[") && first.endsWith("]")) {
+        dims.addAll(parseArray(first));
+      }
+    }
+    return dims;
+  }
+
+  // 以「深度=0 的逗號」切分字串
+  private static List<String> splitTopLevel(String inner) {
+    List<String> result = new ArrayList<>();
+    if (inner.isEmpty())
+      return result;
+
+    int depth = 0;
+    int start = 0;
+    for (int i = 0; i < inner.length(); i++) {
+      char c = inner.charAt(i);
+      if (c == '[')
+        depth++;
+      else if (c == ']')
+        depth--;
+      else if (c == ',' && depth == 0) {
+        result.add(inner.substring(start, i).trim());
+        start = i + 1;
+      }
+    }
+    result.add(inner.substring(start).trim());
+    return result;
+  }
+
+  public static boolean containsDigit(String input) {
+    if (input == null || input.isEmpty()) {
+      return false;
+    }
+    for (char c : input.toCharArray()) {
+      if (Character.isDigit(c)) {
+        return true; // 一旦找到數字就回傳 true
+      }
+    }
+    return false; // 都沒找到數字
+  }
 
   public static void main(String[] args) {
     String original = "[dim, var, sam]";
@@ -262,9 +442,15 @@ public abstract class StringTool {
     String s1 = "see ClassA :: ClassB here";
     String s2 = "see ClassA.ClassB here";
     String s3 = "ClassA123";
+    String s4 = "[1,2,3,4]";
+    String s5 = "[ [[-15516, -3624,122], [2581, 29592,132]], [ 2, 3 ] ]";
     System.out.println(mergeClassRefs(s1)); // see ClassA_ClassB here
     System.out.println(StringTool.mergeClassRefs(s2));
     System.out.println(StringTool.mergeClassRefs(s3));// see ClassA_ClassB here
+    System.out.println(StringTool.formatListString(s4));
+    System.out.println(StringTool.extractArrayIfPair(s5));
+    System.out.println(StringTool.isArrayPairArrayAndDimension(s4));
+    System.out.println(StringTool.isArrayPairArrayAndDimension(s5));
   }
 
 }

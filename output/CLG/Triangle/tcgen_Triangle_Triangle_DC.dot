@@ -1,11 +1,41 @@
 digraph CLG {
   18 [shape="diamond", label="", xlabel="<18>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
   19 [shape="diamond", label="", xlabel="<19>", style=filled, fillcolor=aquamarine, fixedsize=true, width=.2, height=.2];
-  4 [shape="box", label="sa + sb <= sc or
-sb + sc <= sa or
-sa + sc <= sb or
-sa <= 0 or
-sb <= 0 or
+  4 [shape="box", label="sa + sb <= sc and
+sb + sc > sa and
+sa + sc > sb and
+sa > 0 and
+sb > 0 and
+sc > 0 or
+sa + sb > sc and
+sb + sc <= sa and
+sa + sc > sb and
+sa > 0 and
+sb > 0 and
+sc > 0 or
+sa + sb > sc and
+sb + sc > sa and
+sa + sc <= sb and
+sa > 0 and
+sb > 0 and
+sc > 0 or
+sa + sb > sc and
+sb + sc > sa and
+sa + sc > sb and
+sa <= 0 and
+sb > 0 and
+sc > 0 or
+sa + sb > sc and
+sb + sc > sa and
+sa + sc > sb and
+sa > 0 and
+sb <= 0 and
+sc > 0 or
+sa + sb > sc and
+sb + sc > sa and
+sa + sc > sb and
+sa > 0 and
+sb > 0 and
 sc <= 0
 ", style=filled, fillcolor=yellow, xlabel="[4]"];
   7 [shape="box", label="Result = 'EdgeErrorException'", style=filled, fillcolor=yellow, xlabel="[7]"];

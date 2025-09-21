@@ -1,4 +1,7 @@
-:- lib(ic).:- lib(listut).:- lib(random).:- lib(timeout).
+:- lib(ic).
+:- lib(listut).
+:- lib(random).
+:- lib(timeout).
 
 tcgen_Date_next_DC_Path_2(Self,Result):-
 

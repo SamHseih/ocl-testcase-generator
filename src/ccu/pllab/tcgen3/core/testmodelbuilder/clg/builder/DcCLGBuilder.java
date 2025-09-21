@@ -278,7 +278,6 @@ public class DcCLGBuilder<T> implements AstVisitor<CLGGraph> {
   public CLGGraph visitIfExpContext(IfExp node) {
     CLGGraph condclg = node.getCondition().accept(this);
     CLGGraph thenclg = node.getThenBranch().accept(this);
-
     CLGGraph negatecondclg = AstUtil.DeMorgan(node.getCondition()).accept(this);
     CLGGraph elseclg = node.getElseBranch().accept(this);
 

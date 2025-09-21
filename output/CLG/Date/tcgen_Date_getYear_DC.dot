@@ -16,7 +16,21 @@ self.year.mod(100) = 0
 self.month >= 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(468) thenNode: (472) elseNode: (525)
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28)))
 ", style=filled, fillcolor=yellow, xlabel="[204]"];
   207 [shape="box", label="result = year", style=filled, fillcolor=yellow, xlabel="[207]"];
   209 [style=filled, fillcolor=black, shape="circle", label="", fixedsize=true, width=.2, height=.2, xlabel="[0]"];
@@ -31,27 +45,97 @@ day >= 1
 self.month >= 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(1504) thenNode: (1508) elseNode: (1561) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month < 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(1616) thenNode: (1620) elseNode: (1673) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month >= 1 and
 self.month > 12 and
 self.day >= 1 and
-IfExp ConditionNode:(1728) thenNode: (1732) elseNode: (1785) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month >= 1 and
 self.month <= 12 and
 self.day < 1 and
-IfExp ConditionNode:(1840) thenNode: (1844) elseNode: (1897) or
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day <= 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day <= 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day <= 29) elseNode: (self.day <= 28))) or
 self.year >= 1 and
 self.month >= 1 and
 self.month <= 12 and
 self.day >= 1 and
-IfExp ConditionNode:(2096) thenNode: (1956) elseNode: (2062)
+IfExp ConditionNode:(self.month = 1 or
+self.month = 3 or
+self.month = 5 or
+self.month = 7 or
+self.month = 8 or
+self.month = 10 or
+self.month = 12
+) thenNode: (self.day > 31) elseNode: (IfExp ConditionNode:(self.month = 4 or
+self.month = 6 or
+self.month = 9 or
+self.month = 11
+) thenNode: (self.day > 30) elseNode: (IfExp ConditionNode:(self.year.mod(400) = 0 or
+self.year.mod(4) = 0 and
+self.year.mod(100) <> 0
+) thenNode: (self.day > 29) elseNode: (self.day > 28)))
 ", style=filled, fillcolor=yellow, xlabel="[162]"];
   165 [shape="box", label="Result = 'DateErrorException'", style=filled, fillcolor=yellow, xlabel="[165]"];
   166 [style=filled, fillcolor=black, shape="doublecircle", label="", fixedsize=true, width=.2, height=.2, xlabel="[-1]"];

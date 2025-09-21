@@ -73,18 +73,6 @@
     Feasiable BVA Path 4_5:
 	 Same as in the Feasible Path : 4
 
-    Feasiable Path 5:
-	[StartNode, <54>, [46] , <43>, [16] , <41>, [25] , <39>, [34] , [37] , <40>, <42>, <44>, [49] , <55>, EndNode]
-
-    Feasiable BVA Path 5_1:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_4:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_5:
-	 Same as in the Feasible Path : 5
-
   
   tcgen_Date_next_DC:
 	
@@ -208,9 +196,6 @@
     Feasiable BVA Path 1_3:
 	 Same as in the Feasible Path : 1
 
-    Feasiable BVA Path 1_4:
-	 Same as in the Feasible Path : 1
-
     Feasiable BVA Path 1_5:
 	 Same as in the Feasible Path : 1
 
@@ -283,27 +268,6 @@
     Feasiable BVA Path 4_10:
 	 Same as in the Feasible Path : 4
 
-    Feasiable Path 5:
-	[StartNode, [210] , <212>, [204] , <201>, [174] , <199>, [183] , <197>, [192] , [195] , <198>, <200>, <202>, [207] , <213>, EndNode]
-
-    Feasiable BVA Path 5_1:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_4:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_5:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_8:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_9:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_10:
-	 Same as in the Feasible Path : 5
-
   
   tcgen_Date_getMonth_DC:
 	
@@ -317,9 +281,6 @@
 	 Same as in the Feasible Path : 1
 
     Feasiable BVA Path 1_3:
-	 Same as in the Feasible Path : 1
-
-    Feasiable BVA Path 1_4:
 	 Same as in the Feasible Path : 1
 
     Feasiable BVA Path 1_5:
@@ -394,27 +355,6 @@
     Feasiable BVA Path 4_10:
 	 Same as in the Feasible Path : 4
 
-    Feasiable Path 5:
-	[StartNode, [263] , <265>, [257] , <254>, [227] , <252>, [236] , <250>, [245] , [248] , <251>, <253>, <255>, [260] , <266>, EndNode]
-
-    Feasiable BVA Path 5_1:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_4:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_5:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_8:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_9:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_10:
-	 Same as in the Feasible Path : 5
-
   
   tcgen_Date_getDay_DC:
 	
@@ -428,9 +368,6 @@
 	 Same as in the Feasible Path : 1
 
     Feasiable BVA Path 1_3:
-	 Same as in the Feasible Path : 1
-
-    Feasiable BVA Path 1_4:
 	 Same as in the Feasible Path : 1
 
     Feasiable BVA Path 1_5:
@@ -504,26 +441,5 @@
 
     Feasiable BVA Path 4_10:
 	 Same as in the Feasible Path : 4
-
-    Feasiable Path 5:
-	[StartNode, [316] , <318>, [310] , <307>, [280] , <305>, [289] , <303>, [298] , [301] , <304>, <306>, <308>, [313] , <319>, EndNode]
-
-    Feasiable BVA Path 5_1:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_4:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_5:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_8:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_9:
-	 Same as in the Feasible Path : 5
-
-    Feasiable BVA Path 5_10:
-	 Same as in the Feasible Path : 5
 
   

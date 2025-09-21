@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Triangle.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package program;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Triangle {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private int sideA;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private int sideB;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  private int sideC;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  /** OCL pre DateErrorException&#65533;C */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  @SuppressWarnings(&#34;serial&#34;)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public static class EdgeErrorException extends Exception {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public EdgeErrorException() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>      super();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  public Triangle(int a, int b, int c) throws EdgeErrorException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_17'/>
+17
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_17'>135</a>
+<span>
+
+1. &#60;init&#62; : changed conditional boundary &rarr; SURVIVED<br/>
+
+2. &#60;init&#62; : changed conditional boundary &rarr; SURVIVED<br/>
+
+3. &#60;init&#62; : changed conditional boundary &rarr; SURVIVED<br/>
+
+4. &#60;init&#62; : removed conditional - replaced comparison check with true &rarr; SURVIVED<br/>
+
+5. &#60;init&#62; : removed conditional - replaced comparison check with true &rarr; SURVIVED<br/>
+
+6. &#60;init&#62; : removed conditional - replaced comparison check with true &rarr; SURVIVED<br/>
+
+7. &#60;init&#62; : Less or equal to less than &rarr; SURVIVED<br/>
+
+8. &#60;init&#62; : Less or equal to less than &rarr; SURVIVED<br/>
+
+9. &#60;init&#62; : Less or equal to less than &rarr; SURVIVED<br/>
+
+10. &#60;init&#62; : Less or equal to equal &rarr; SURVIVED<br/>
+
+11. &#60;init&#62; : Less or equal to equal &rarr; SURVIVED<br/>
+
+12. &#60;init&#62; : Less or equal to equal &rarr; SURVIVED<br/>
+
+13. &#60;init&#62; : changed conditional boundary &rarr; KILLED<br/>
+
+14. &#60;init&#62; : changed conditional boundary &rarr; KILLED<br/>
+
+15. &#60;init&#62; : changed conditional boundary &rarr; KILLED<br/>
+
+16. &#60;init&#62; : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+17. &#60;init&#62; : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+18. &#60;init&#62; : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+19. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+20. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+21. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+22. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+23. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+24. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+25. &#60;init&#62; : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+26. &#60;init&#62; : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+27. &#60;init&#62; : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+28. &#60;init&#62; : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+29. &#60;init&#62; : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+30. &#60;init&#62; : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+31. &#60;init&#62; : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+32. &#60;init&#62; : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+33. &#60;init&#62; : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+34. &#60;init&#62; : Negated integer local variable number 1 &rarr; KILLED<br/>
+
+35. &#60;init&#62; : Negated integer local variable number 2 &rarr; KILLED<br/>
+
+36. &#60;init&#62; : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+37. &#60;init&#62; : Negated integer local variable number 1 &rarr; KILLED<br/>
+
+38. &#60;init&#62; : Negated integer local variable number 2 &rarr; KILLED<br/>
+
+39. &#60;init&#62; : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+40. &#60;init&#62; : Negated integer local variable number 2 &rarr; KILLED<br/>
+
+41. &#60;init&#62; : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+42. &#60;init&#62; : Negated integer local variable number 1 &rarr; KILLED<br/>
+
+43. &#60;init&#62; : Negated integer local variable number 1 &rarr; KILLED<br/>
+
+44. &#60;init&#62; : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+45. &#60;init&#62; : Negated integer local variable number 2 &rarr; KILLED<br/>
+
+46. &#60;init&#62; : Replaced integer operation with first member &rarr; KILLED<br/>
+
+47. &#60;init&#62; : Replaced integer operation with first member &rarr; KILLED<br/>
+
+48. &#60;init&#62; : Replaced integer operation with first member &rarr; KILLED<br/>
+
+49. &#60;init&#62; : Replaced integer operation by second member &rarr; KILLED<br/>
+
+50. &#60;init&#62; : Replaced integer operation by second member &rarr; KILLED<br/>
+
+51. &#60;init&#62; : Replaced integer operation by second member &rarr; KILLED<br/>
+
+52. &#60;init&#62; : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+53. &#60;init&#62; : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+54. &#60;init&#62; : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+55. &#60;init&#62; : Replaced integer addition with multiplication &rarr; KILLED<br/>
+
+56. &#60;init&#62; : Replaced integer addition with multiplication &rarr; KILLED<br/>
+
+57. &#60;init&#62; : Replaced integer addition with multiplication &rarr; KILLED<br/>
+
+58. &#60;init&#62; : Replaced integer addition with division &rarr; KILLED<br/>
+
+59. &#60;init&#62; : Replaced integer addition with division &rarr; KILLED<br/>
+
+60. &#60;init&#62; : Replaced integer addition with division &rarr; KILLED<br/>
+
+61. &#60;init&#62; : Replaced integer addition with modulus &rarr; KILLED<br/>
+
+62. &#60;init&#62; : Replaced integer addition with modulus &rarr; KILLED<br/>
+
+63. &#60;init&#62; : Replaced integer addition with modulus &rarr; KILLED<br/>
+
+64. &#60;init&#62; : Less or equal to less than &rarr; KILLED<br/>
+
+65. &#60;init&#62; : Less or equal to less than &rarr; KILLED<br/>
+
+66. &#60;init&#62; : greater than to less than &rarr; KILLED<br/>
+
+67. &#60;init&#62; : Less or equal to greater than &rarr; KILLED<br/>
+
+68. &#60;init&#62; : Less or equal to greater than &rarr; KILLED<br/>
+
+69. &#60;init&#62; : Less or equal to greater than &rarr; KILLED<br/>
+
+70. &#60;init&#62; : Less or equal to greater than &rarr; KILLED<br/>
+
+71. &#60;init&#62; : Less or equal to greater than &rarr; KILLED<br/>
+
+72. &#60;init&#62; : greater than to less or equal &rarr; KILLED<br/>
+
+73. &#60;init&#62; : Less or equal to greater or equal &rarr; KILLED<br/>
+
+74. &#60;init&#62; : Less or equal to greater or equal &rarr; KILLED<br/>
+
+75. &#60;init&#62; : Less or equal to greater or equal &rarr; KILLED<br/>
+
+76. &#60;init&#62; : Less or equal to greater or equal &rarr; KILLED<br/>
+
+77. &#60;init&#62; : Less or equal to greater or equal &rarr; KILLED<br/>
+
+78. &#60;init&#62; : greater than to greater or equal &rarr; KILLED<br/>
+
+79. &#60;init&#62; : Less or equal to equal &rarr; KILLED<br/>
+
+80. &#60;init&#62; : Less or equal to equal &rarr; KILLED<br/>
+
+81. &#60;init&#62; : greater than to equal &rarr; KILLED<br/>
+
+82. &#60;init&#62; : Less or equal to not equal &rarr; KILLED<br/>
+
+83. &#60;init&#62; : Less or equal to not equal &rarr; KILLED<br/>
+
+84. &#60;init&#62; : Less or equal to not equal &rarr; KILLED<br/>
+
+85. &#60;init&#62; : Less or equal to not equal &rarr; KILLED<br/>
+
+86. &#60;init&#62; : Less or equal to not equal &rarr; KILLED<br/>
+
+87. &#60;init&#62; : greater than to not equal &rarr; KILLED<br/>
+
+88. &#60;init&#62; : Incremented (a++) integer local variable number 1 &rarr; KILLED<br/>
+
+89. &#60;init&#62; : Incremented (a++) integer local variable number 2 &rarr; KILLED<br/>
+
+90. &#60;init&#62; : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+91. &#60;init&#62; : Incremented (a++) integer local variable number 1 &rarr; KILLED<br/>
+
+92. &#60;init&#62; : Incremented (a++) integer local variable number 2 &rarr; KILLED<br/>
+
+93. &#60;init&#62; : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+94. &#60;init&#62; : Incremented (a++) integer local variable number 2 &rarr; KILLED<br/>
+
+95. &#60;init&#62; : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+96. &#60;init&#62; : Incremented (a++) integer local variable number 1 &rarr; KILLED<br/>
+
+97. &#60;init&#62; : Incremented (a++) integer local variable number 1 &rarr; KILLED<br/>
+
+98. &#60;init&#62; : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+
+99. &#60;init&#62; : Incremented (a++) integer local variable number 2 &rarr; KILLED<br/>
+
+100. &#60;init&#62; : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+
+101. &#60;init&#62; : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+
+102. &#60;init&#62; : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+103. &#60;init&#62; : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+
+104. &#60;init&#62; : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+
+105. &#60;init&#62; : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+106. &#60;init&#62; : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+
+107. &#60;init&#62; : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+108. &#60;init&#62; : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+
+109. &#60;init&#62; : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+
+110. &#60;init&#62; : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+
+111. &#60;init&#62; : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+
+112. &#60;init&#62; : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+
+113. &#60;init&#62; : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+
+114. &#60;init&#62; : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+115. &#60;init&#62; : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+
+116. &#60;init&#62; : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+
+117. &#60;init&#62; : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+118. &#60;init&#62; : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+
+119. &#60;init&#62; : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+120. &#60;init&#62; : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+
+121. &#60;init&#62; : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+
+122. &#60;init&#62; : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+123. &#60;init&#62; : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+
+124. &#60;init&#62; : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+125. &#60;init&#62; : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+126. &#60;init&#62; : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+127. &#60;init&#62; : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+128. &#60;init&#62; : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+129. &#60;init&#62; : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+130. &#60;init&#62; : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+131. &#60;init&#62; : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+132. &#60;init&#62; : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+133. &#60;init&#62; : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+134. &#60;init&#62; : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+135. &#60;init&#62; : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    if (a &#60;= 0 || b &#60;= 0 || c &#60;= 0 || a + b &#60;= c || b + c &#60;= a || a + c &#60;= b) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_18'/>
+18
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_18'>1</a>
+<span>
+
+1. &#60;init&#62; : removed call to program/Triangle$EdgeErrorException::&#60;init&#62; &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      throw new EdgeErrorException();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_20'/>
+20
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_20'>6</a>
+<span>
+
+1. &#60;init&#62; : Incremented (a++) integer local variable number 1 &rarr; SURVIVED<br/>
+
+2. &#60;init&#62; : Decremented (a--) integer local variable number 1 &rarr; SURVIVED<br/>
+
+3. &#60;init&#62; : Removed assignment to member variable sideA &rarr; KILLED<br/>
+
+4. &#60;init&#62; : Negated integer local variable number 1 &rarr; KILLED<br/>
+
+5. &#60;init&#62; : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+
+6. &#60;init&#62; : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    sideA = a;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_21'/>
+21
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_21'>6</a>
+<span>
+
+1. &#60;init&#62; : Incremented (a++) integer local variable number 2 &rarr; SURVIVED<br/>
+
+2. &#60;init&#62; : Decremented (a--) integer local variable number 2 &rarr; SURVIVED<br/>
+
+3. &#60;init&#62; : Removed assignment to member variable sideB &rarr; KILLED<br/>
+
+4. &#60;init&#62; : Negated integer local variable number 2 &rarr; KILLED<br/>
+
+5. &#60;init&#62; : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+
+6. &#60;init&#62; : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    sideB = b;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_22'/>
+22
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_22'>6</a>
+<span>
+
+1. &#60;init&#62; : Incremented (a++) integer local variable number 3 &rarr; SURVIVED<br/>
+
+2. &#60;init&#62; : Decremented (a--) integer local variable number 3 &rarr; SURVIVED<br/>
+
+3. &#60;init&#62; : Removed assignment to member variable sideC &rarr; KILLED<br/>
+
+4. &#60;init&#62; : Negated integer local variable number 3 &rarr; KILLED<br/>
+
+5. &#60;init&#62; : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+
+6. &#60;init&#62; : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    sideC = c;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public String category() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_26'/>
+26
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_26'>18</a>
+<span>
+
+1. category : negated conditional &rarr; KILLED<br/>
+
+2. category : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+3. category : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+4. category : Negated integer field sideA &rarr; KILLED<br/>
+
+5. category : Negated integer field sideB &rarr; KILLED<br/>
+
+6. category : not equal to less than &rarr; KILLED<br/>
+
+7. category : not equal to less or equal &rarr; KILLED<br/>
+
+8. category : not equal to greater than &rarr; KILLED<br/>
+
+9. category : not equal to greater or equal &rarr; KILLED<br/>
+
+10. category : not equal to equal &rarr; KILLED<br/>
+
+11. category : Incremented (a++) integer field sideA &rarr; KILLED<br/>
+
+12. category : Incremented (a++) integer field sideB &rarr; KILLED<br/>
+
+13. category : Decremented (a--) integer field sideA &rarr; KILLED<br/>
+
+14. category : Decremented (a--) integer field sideB &rarr; KILLED<br/>
+
+15. category : Incremented (++a) integer field sideA &rarr; KILLED<br/>
+
+16. category : Incremented (++a) integer field sideB &rarr; KILLED<br/>
+
+17. category : Decremented (--a) integer fieldsideA &rarr; KILLED<br/>
+
+18. category : Decremented (--a) integer fieldsideB &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    if (sideA == sideB) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_27'/>
+27
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_27'>18</a>
+<span>
+
+1. category : not equal to greater than &rarr; SURVIVED<br/>
+
+2. category : Incremented (a++) integer field sideB &rarr; SURVIVED<br/>
+
+3. category : Incremented (a++) integer field sideC &rarr; SURVIVED<br/>
+
+4. category : Decremented (a--) integer field sideB &rarr; SURVIVED<br/>
+
+5. category : Decremented (a--) integer field sideC &rarr; SURVIVED<br/>
+
+6. category : negated conditional &rarr; KILLED<br/>
+
+7. category : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+8. category : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+9. category : Negated integer field sideB &rarr; KILLED<br/>
+
+10. category : Negated integer field sideC &rarr; KILLED<br/>
+
+11. category : not equal to less than &rarr; KILLED<br/>
+
+12. category : not equal to less or equal &rarr; KILLED<br/>
+
+13. category : not equal to greater or equal &rarr; KILLED<br/>
+
+14. category : not equal to equal &rarr; KILLED<br/>
+
+15. category : Incremented (++a) integer field sideB &rarr; KILLED<br/>
+
+16. category : Incremented (++a) integer field sideC &rarr; KILLED<br/>
+
+17. category : Decremented (--a) integer fieldsideB &rarr; KILLED<br/>
+
+18. category : Decremented (--a) integer fieldsideC &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      if (sideB == sideC) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_28'/>
+28
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_28'>2</a>
+<span>
+
+1. category : replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED<br/>
+
+2. category : mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;Equilateral&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>      } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_30'>2</a>
+<span>
+
+1. category : replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED<br/>
+
+2. category : mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;Isosceles&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>      }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_33'/>
+33
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_33'>18</a>
+<span>
+
+1. category : Incremented (a++) integer field sideA &rarr; SURVIVED<br/>
+
+2. category : Decremented (a--) integer field sideA &rarr; SURVIVED<br/>
+
+3. category : negated conditional &rarr; KILLED<br/>
+
+4. category : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+5. category : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+6. category : Negated integer field sideA &rarr; KILLED<br/>
+
+7. category : Negated integer field sideC &rarr; KILLED<br/>
+
+8. category : not equal to less than &rarr; KILLED<br/>
+
+9. category : not equal to less or equal &rarr; KILLED<br/>
+
+10. category : not equal to greater than &rarr; KILLED<br/>
+
+11. category : not equal to greater or equal &rarr; KILLED<br/>
+
+12. category : not equal to equal &rarr; KILLED<br/>
+
+13. category : Incremented (a++) integer field sideC &rarr; KILLED<br/>
+
+14. category : Decremented (a--) integer field sideC &rarr; KILLED<br/>
+
+15. category : Incremented (++a) integer field sideA &rarr; KILLED<br/>
+
+16. category : Incremented (++a) integer field sideC &rarr; KILLED<br/>
+
+17. category : Decremented (--a) integer fieldsideA &rarr; KILLED<br/>
+
+18. category : Decremented (--a) integer fieldsideC &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>      if (sideA == sideC) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_34'>2</a>
+<span>
+
+1. category : replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED<br/>
+
+2. category : mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;Isosceles&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>      } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_36'/>
+36
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_36'>18</a>
+<span>
+
+1. category : Incremented (a++) integer field sideB &rarr; SURVIVED<br/>
+
+2. category : Incremented (a++) integer field sideC &rarr; SURVIVED<br/>
+
+3. category : Decremented (a--) integer field sideB &rarr; SURVIVED<br/>
+
+4. category : Decremented (a--) integer field sideC &rarr; SURVIVED<br/>
+
+5. category : negated conditional &rarr; KILLED<br/>
+
+6. category : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+7. category : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+8. category : Negated integer field sideB &rarr; KILLED<br/>
+
+9. category : Negated integer field sideC &rarr; KILLED<br/>
+
+10. category : not equal to less than &rarr; KILLED<br/>
+
+11. category : not equal to less or equal &rarr; KILLED<br/>
+
+12. category : not equal to greater than &rarr; KILLED<br/>
+
+13. category : not equal to greater or equal &rarr; KILLED<br/>
+
+14. category : not equal to equal &rarr; KILLED<br/>
+
+15. category : Incremented (++a) integer field sideB &rarr; KILLED<br/>
+
+16. category : Incremented (++a) integer field sideC &rarr; KILLED<br/>
+
+17. category : Decremented (--a) integer fieldsideB &rarr; KILLED<br/>
+
+18. category : Decremented (--a) integer fieldsideC &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (sideB == sideC) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_37'/>
+37
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_37'>2</a>
+<span>
+
+1. category : replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED<br/>
+
+2. category : mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>          return &#34;Isosceles&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_39'/>
+39
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_39'>2</a>
+<span>
+
+1. category : replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED<br/>
+
+2. category : mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>          return &#34;Scalene&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>      }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_47'/>
+47
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_47'>17</a>
+<span>
+
+1. toString : Incremented (a++) integer field sideA &rarr; SURVIVED<br/>
+
+2. toString : Incremented (a++) integer field sideB &rarr; SURVIVED<br/>
+
+3. toString : Incremented (a++) integer field sideC &rarr; SURVIVED<br/>
+
+4. toString : Decremented (a--) integer field sideA &rarr; SURVIVED<br/>
+
+5. toString : Decremented (a--) integer field sideB &rarr; SURVIVED<br/>
+
+6. toString : Decremented (a--) integer field sideC &rarr; SURVIVED<br/>
+
+7. toString : replaced return value with &#34;&#34; for program/Triangle::toString &rarr; KILLED<br/>
+
+8. toString : mutated return of Object value for program/Triangle::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+9. toString : Negated integer field sideA &rarr; KILLED<br/>
+
+10. toString : Negated integer field sideB &rarr; KILLED<br/>
+
+11. toString : Negated integer field sideC &rarr; KILLED<br/>
+
+12. toString : Incremented (++a) integer field sideA &rarr; KILLED<br/>
+
+13. toString : Incremented (++a) integer field sideB &rarr; KILLED<br/>
+
+14. toString : Incremented (++a) integer field sideC &rarr; KILLED<br/>
+
+15. toString : Decremented (--a) integer fieldsideA &rarr; KILLED<br/>
+
+16. toString : Decremented (--a) integer fieldsideB &rarr; KILLED<br/>
+
+17. toString : Decremented (--a) integer fieldsideC &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>    return &#34;[ &#34; + this.sideA + &#34;, &#34; + this.sideB + &#34;, &#34; + this.sideC + &#34; ]&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>  }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@67eabe02_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_17'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_6_1()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_7_1()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_5_1()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_5()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_2()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>26.<span><b>26</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_7()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>27.<span><b>27</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>28.<span><b>28</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>29.<span><b>29</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>30.<span><b>30</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>31.<span><b>31</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>32.<span><b>32</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>33.<span><b>33</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_2()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>34.<span><b>34</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>35.<span><b>35</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>36.<span><b>36</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_7()]</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>37.<span><b>37</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>38.<span><b>38</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>39.<span><b>39</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_5()]</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>40.<span><b>40</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Replaced integer operation with first member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>41.<span><b>41</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer operation with first member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>42.<span><b>42</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testTriangle_1_1()]</span></span> Replaced integer operation with first member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>43.<span><b>43</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer operation by second member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>44.<span><b>44</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer operation by second member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>45.<span><b>45</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testTriangle_1_1()]</span></span> Replaced integer operation by second member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>46.<span><b>46</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>47.<span><b>47</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>48.<span><b>48</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>49.<span><b>49</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_2()]</span></span> Replaced integer addition with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>50.<span><b>50</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_7()]</span></span> Replaced integer addition with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>51.<span><b>51</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_5()]</span></span> Replaced integer addition with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>52.<span><b>52</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>53.<span><b>53</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>54.<span><b>54</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>55.<span><b>55</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with modulus &rarr; KILLED</p> <p class='KILLED'><span class='pop'>56.<span><b>56</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with modulus &rarr; KILLED</p> <p class='KILLED'><span class='pop'>57.<span><b>57</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Replaced integer addition with modulus &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>58.<span><b>58</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Less or equal to less than &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>59.<span><b>59</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Less or equal to less than &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>60.<span><b>60</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Less or equal to less than &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>61.<span><b>61</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_6_1()]</span></span> Less or equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>62.<span><b>62</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_7_1()]</span></span> Less or equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>63.<span><b>63</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> greater than to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>64.<span><b>64</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>65.<span><b>65</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>66.<span><b>66</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>67.<span><b>67</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>68.<span><b>68</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>69.<span><b>69</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> greater than to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>70.<span><b>70</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>71.<span><b>71</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>72.<span><b>72</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>73.<span><b>73</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>74.<span><b>74</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>75.<span><b>75</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_5_1()]</span></span> greater than to greater or equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>76.<span><b>76</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Less or equal to equal &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>77.<span><b>77</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Less or equal to equal &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>78.<span><b>78</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Less or equal to equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>79.<span><b>79</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_2()]</span></span> Less or equal to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>80.<span><b>80</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_7()]</span></span> Less or equal to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>81.<span><b>81</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> greater than to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>82.<span><b>82</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>83.<span><b>83</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>84.<span><b>84</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>85.<span><b>85</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>86.<span><b>86</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Less or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>87.<span><b>87</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_5()]</span></span> greater than to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>88.<span><b>88</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>89.<span><b>89</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>90.<span><b>90</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>91.<span><b>91</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>92.<span><b>92</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>93.<span><b>93</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>94.<span><b>94</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>95.<span><b>95</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>96.<span><b>96</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>97.<span><b>97</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>98.<span><b>98</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>99.<span><b>99</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (a++) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>100.<span><b>100</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>101.<span><b>101</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>102.<span><b>102</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>103.<span><b>103</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>104.<span><b>104</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>105.<span><b>105</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>106.<span><b>106</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>107.<span><b>107</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>108.<span><b>108</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>109.<span><b>109</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>110.<span><b>110</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>111.<span><b>111</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>112.<span><b>112</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>113.<span><b>113</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>114.<span><b>114</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>115.<span><b>115</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>116.<span><b>116</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>117.<span><b>117</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>118.<span><b>118</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>119.<span><b>119</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>120.<span><b>120</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>121.<span><b>121</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>122.<span><b>122</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>123.<span><b>123</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>124.<span><b>124</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>125.<span><b>125</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>126.<span><b>126</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>127.<span><b>127</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>128.<span><b>128</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>129.<span><b>129</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>130.<span><b>130</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>131.<span><b>131</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>132.<span><b>132</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>133.<span><b>133</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>134.<span><b>134</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>135.<span><b>135</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_18'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to program/Triangle$EdgeErrorException::&#60;init&#62; &rarr; SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_20'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Removed assignment to member variable sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 1 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Removed assignment to member variable sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 2 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 2 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Removed assignment to member variable sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 3 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 3 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_26'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> Negated integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> Negated integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> not equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> not equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> not equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> not equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> not equal to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> Incremented (a++) integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Incremented (a++) integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> Decremented (a--) integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Decremented (a--) integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> Incremented (++a) integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> Incremented (++a) integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> Decremented (--a) integer fieldsideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> Decremented (--a) integer fieldsideB &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> Negated integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> Negated integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> not equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> not equal to less or equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> not equal to greater than &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> not equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> not equal to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideB &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideC &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideB &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideC &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> Incremented (++a) integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> Incremented (++a) integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> Decremented (--a) integer fieldsideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> Decremented (--a) integer fieldsideC &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_28'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()]</span></span> mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()]</span></span> mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_33'>33</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_33'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> Negated integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> Negated integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> not equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> not equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_5()]</span></span> not equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_5()]</span></span> not equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> not equal to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideA &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Incremented (a++) integer field sideC &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideA &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Decremented (a--) integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> Incremented (++a) integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Incremented (++a) integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> Decremented (--a) integer fieldsideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Decremented (--a) integer fieldsideC &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()]</span></span> mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Negated integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Negated integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testcategory_5_1()]</span></span> not equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> not equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> not equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> not equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> not equal to equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideB &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideC &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideB &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>category<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideC &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Incremented (++a) integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Incremented (++a) integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Decremented (--a) integer fieldsideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> Decremented (--a) integer fieldsideC &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_37'>37</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_37'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()]</span></span> mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_39'>39</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_39'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> replaced return value with &#34;&#34; for program/Triangle::category &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>category<br/><b>Killed by : </b>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()]</span></span> mutated return of Object value for program/Triangle::category to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@67eabe02_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@67eabe02_47'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> replaced return value with &#34;&#34; for program/Triangle::toString &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> mutated return of Object value for program/Triangle::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Negated integer field sideC &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideA &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideB &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field sideC &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideA &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideB &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field sideC &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer field sideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer field sideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Incremented (++a) integer field sideC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer fieldsideA &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer fieldsideB &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()]</span></span> Decremented (--a) integer fieldsideC &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>ABS_MUTATOR</li>
+
+<li class='mutator'>AOD_1_MUTATOR</li>
+
+<li class='mutator'>AOD_2_MUTATOR</li>
+
+<li class='mutator'>AOR_1_MUTATOR</li>
+
+<li class='mutator'>AOR_2_MUTATOR</li>
+
+<li class='mutator'>AOR_3_MUTATOR</li>
+
+<li class='mutator'>AOR_4_MUTATOR</li>
+
+<li class='mutator'>ARGUMENT_PROPAGATION_MUTATOR</li>
+
+<li class='mutator'>BOOLEAN_FALSE_RETURN</li>
+
+<li class='mutator'>BOOLEAN_TRUE_RETURN</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+<li class='mutator'>CONSTRUCTOR_CALL_MUTATOR</li>
+
+<li class='mutator'>CRCR_1_MUTATOR</li>
+
+<li class='mutator'>CRCR_2_MUTATOR</li>
+
+<li class='mutator'>CRCR_3_MUTATOR</li>
+
+<li class='mutator'>CRCR_4_MUTATOR</li>
+
+<li class='mutator'>CRCR_5_MUTATOR</li>
+
+<li class='mutator'>CRCR_6_MUTATOR</li>
+
+<li class='mutator'>EMPTY_RETURN_VALUES</li>
+
+<li class='mutator'>EXPERIMENTAL_BIGINTEGER_MUTATOR</li>
+
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE_MUTATOR</li>
+
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+
+<li class='mutator'>EXPERIMENTAL_SWITCH_MUTATOR</li>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>INLINE_CONSTANT_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NAKED_RECEIVER</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>NON_VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>NULL_RETURN_VALUES</li>
+
+<li class='mutator'>OBBN_1_MUTATOR</li>
+
+<li class='mutator'>OBBN_2_MUTATOR</li>
+
+<li class='mutator'>OBBN_3_MUTATOR</li>
+
+<li class='mutator'>PRIMITIVE_RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE_MUTATOR</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF_MUTATOR</li>
+
+<li class='mutator'>REMOVE_INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>ROR_1_MUTATOR</li>
+
+<li class='mutator'>ROR_2_MUTATOR</li>
+
+<li class='mutator'>ROR_3_MUTATOR</li>
+
+<li class='mutator'>ROR_4_MUTATOR</li>
+
+<li class='mutator'>ROR_5_MUTATOR</li>
+
+<li class='mutator'>UOI_1_MUTATOR</li>
+
+<li class='mutator'>UOI_2_MUTATOR</li>
+
+<li class='mutator'>UOI_3_MUTATOR</li>
+
+<li class='mutator'>UOI_4_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_5()] (8 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testcategory_3_1()] (9 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_4()] (7 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_3()] (8 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_7_1()] (9 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_5_2()] (10 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testcategory_4_1()] (10 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_3()] (8 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_2()] (8 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_7_2()] (10 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testcategory_2_1()] (8 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testcategory_1_1()] (11 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_6_1()] (9 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_2()] (7 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testcategory_5_1()] (9 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_1()] (7 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_1_1()] (10 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_7()] (7 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_1()] (8 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testTriangle_2_1()] (8 ms)</li><li>test.Array.ArrayBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Array.ArrayBVA_DCC_Test]/[method:testArray_1_1()] (43 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testcategory_3_1()] (9 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_6_2()] (10 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testcategory_4_1()] (9 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testTriangle_1()] (7 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_5()] (7 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_1()] (9 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testTriangle_6()] (8 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_4()] (7 ms)</li><li>test.Triangle.Triangle_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DC_Test]/[method:testcategory_5()] (7 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testcategory_5_1()] (8 ms)</li><li>test.Triangle.Triangle_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.Triangle_DCC_Test]/[method:testcategory_2()] (7 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testTriangle_5_1()] (10 ms)</li><li>test.Triangle.TriangleBVA_DCC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DCC_Test]/[method:testcategory_2_1()] (9 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testTriangle_1_1()] (8 ms)</li><li>test.Triangle.TriangleBVA_DC_Test.[engine:junit-jupiter]/[class:test.Triangle.TriangleBVA_DC_Test]/[method:testcategory_1_1()] (9 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.6.8
+
+</body>
+</html>
