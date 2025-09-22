@@ -22,7 +22,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Eclipse IDE Work Space/eclipse code/tcgen3/lib/eclipse.jar">
+	<classpathentry kind="lib" path="lib/eclipse.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
