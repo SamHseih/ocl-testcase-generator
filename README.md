@@ -1,5 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 # Constraint-Based Black-Box Test Case Generator 簡介
+<img width="561" height="201" alt="image" src="https://github.com/user-attachments/assets/95e84b29-3610-4fef-984d-c0f0205dedd3" />
+
 - 本系統使用Java開發的一個研究性質的自動化軟體測試系統，基於限制式測試案例產生技術，能夠從軟體規格中自動產生具 DC/DCC 覆蓋準則 的 JUnit 測試腳本，並支援邊界條件分析。
 - 本專案是碩士論文的實作系統 : [支援Java陣列型態的限制式黑箱測試案例產生](https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=rT2Se3/record?r1=1&h1=0)
 ### 輸入
@@ -26,6 +28,8 @@
 - Examples：內建 9 個範例，涵蓋 OCL + CD 的完整中間產物。
 
 # Constraint-Based Black-Box Test Case Generator Introduce
+<img width="561" height="201" alt="image" src="https://github.com/user-attachments/assets/95e84b29-3610-4fef-984d-c0f0205dedd3" />
+
 **TCGen3** is a research-oriented automated software testing system developed in Java.  
 It relies on **constraint-based test-case generation** to produce JUnit test scripts that meet **DC/DCC coverage** and supports **boundary condition analysis**.
 
