@@ -58,11 +58,12 @@ This project is the implementation system of my master’s thesis:[Constraint-Ba
 ## How do I use it?
 1. **Download & Import**  
    Clone this repository and import the **`tcgen3`** project into **Eclipse IDE**.
+   Make sure the workspace path does not contain Chinese characters !
 
-2. **Configure Build Path (if needed)**  
+3. **Configure Build Path (if needed)**  
    `Right-click project → Build Path → Configure Build Path`
 
-3. **Set Program Arguments**
+4. **Set Program Arguments**
    In **Run Configurations → Arguments → Program arguments**,
 
    set: `./example Grade DC`
