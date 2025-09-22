@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 # Constraint-Based Black-Box Test Case Generator 簡介
-- 本系統使用Java開發的一個研究性質的自動化軟體測試系統，基於限制式測試案例生成技術，能夠從軟體規格中自動產生具 DC/DCC 覆蓋準則 的 JUnit 測試腳本，並支援邊界條件分析。
+- 本系統使用Java開發的一個研究性質的自動化軟體測試系統，基於限制式測試案例產生技術，能夠從軟體規格中自動產生具 DC/DCC 覆蓋準則 的 JUnit 測試腳本，並支援邊界條件分析。
 - 本專案是碩士論文的實作系統 : [支援Java陣列型態的限制式黑箱測試案例產生](https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=rT2Se3/record?r1=1&h1=0)
 ### 輸入
 - OCL (Object Constraint Language)：可使用任意文字編輯器撰寫。
@@ -9,9 +9,9 @@
 - JUnit 測試腳本(在 output_Junit)：具自動化執行能力，符合指定覆蓋標準。
 ### 系統中間產物（輸出資料夾結構）
 - AST (Abstract Syntax Tree)
-  解析 UML/Papyrus 類別圖與 OCL 2.4 約束式後，建立抽象語法樹 (AST) 與符號表 (Symbol Table)。
+  解析 UML/Papyrus 類別圖與 OCL 2.4 後，建立抽象語法樹 (AST) 與符號表 (Symbol Table)。
 - CLG (Constraint Logic Graph)
-  將 AST 轉換為約束邏輯圖 (CLG)，作為轉譯 CLP 前的中介表示。
+  將 AST 轉換為限制邏輯圖 (CLG)，作為轉譯 CLP 前的中介表示。
 - CLP (Constraint Logic Program)
   進一步將 CLG 轉譯為 ECLiPSe CLP 程式（.ecl 檔）。
 - Path
@@ -19,7 +19,7 @@
 - Performance
   紀錄系統執行時間與 CLG 統計資訊。
 - Test Datas
-  儲存不同專案、多個類別約束條件的求解結果。
+  儲存不同專案、多個類別限制條件的求解結果。
 
 ### 範例與展示
 - Demo：包含多個 main 函式，開發並測試各模組功能。
