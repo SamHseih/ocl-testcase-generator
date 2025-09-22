@@ -21,13 +21,21 @@ public class TCGenBlackBoxLauncher {
 
   public static void main(String[] args) {
 
-    // User Defined
-    int testCaseNum = 10; // default maxTestCaseNum for dynamicArray TestCase generate
+    // User Defined Options
+
+    /* Default maximum number of test cases for dynamicArray test case */
+    int testCaseNum = 10;
+
+    /* Boundary Value Analysis */
     boolean isBoundaryAnalysis = false;
 
-    // used to debug output, can set if do not keep infeasiable path in ecl file
+    /* Used for debugging output; set true to keep infeasible paths in the ECL file */
     boolean keepInfeasiablePathInfo = false;
+
+    /* Maximum solver time limit (in seconds); increase if the solver cannot find a solution */
     int solverlimitTime = 10;
+
+    /* Output AST and CLG graph files to output/AST and output/CLG */
     boolean isgenASTandCLG_Graph = false;
 
     String seprater =
