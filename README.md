@@ -1,4 +1,3 @@
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 # Constraint-Based Black-Box Test Case Generator 簡介
 TCGen3 是一個研究性質的自動化軟體測試系統，基於限制式測試案例生成技術，能夠從軟體規格中自動產生具 DC/DCC 覆蓋準則 的 JUnit 測試腳本，並支援邊界條件分析。
@@ -112,7 +111,9 @@ Execute the main function in:
 
 TCGenBlackBoxLauncher.java
 
-# example
+# Example and PIT Result
 The example folder contains 9 specification cases.
 Their corresponding outputs can be found in the output and output_Junit directories.
 You can run these examples directly to explore the system workflow.
+![Screenshot](output/PIT%20Result/Screenshot.png)
+![Screenshot2](output/PIT%20Result/Screenshot_2.png)
