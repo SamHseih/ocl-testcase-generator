@@ -65,9 +65,9 @@ This project is the implementation system of my master’s thesis:[Constraint-Ba
 3. **Set Program Arguments**
    In **Run Configurations → Arguments → Program arguments**,
 
-   set: `/example/Grade Grade DC`
+   set: `./example Grade DC`
 
-   **Format:**  `<OCL+CD path>   <Project name>   <Coverage criterion: DC or DCC>`
+   **Format:**  `<Papyrus Workspace path>   <Project name>   <Coverage criterion: DC or DCC>`
 
 5. **Run the Launcher**  
 Execute the `main` method in:
