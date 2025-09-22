@@ -102,13 +102,9 @@ In Eclipse Run Configurations, set the arguments as:
 `./example/Grade Grade DC`
 
 Format:
+`<OCL+CD path>   <Project name>   <Coverage criterion: DC or DCC>`
 
-<OCL+CD path>   <Project name>   <Coverage criterion: DC or DCC>
-
-Run the Launcher
-
-Execute the main function in:
-
+Run the Launcher/Execute the main function  in:
 TCGenBlackBoxLauncher.java
 
 # Example and PIT Result
