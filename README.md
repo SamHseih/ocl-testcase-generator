@@ -1,4 +1,3 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 # Constraint-Based Black-Box Test Case Generator 簡介
 <img width="561" height="201" alt="image" src="https://github.com/user-attachments/assets/95e84b29-3610-4fef-984d-c0f0205dedd3" />
 
@@ -22,8 +21,6 @@
   紀錄系統執行時間與 CLG 統計資訊。
 - Test Datas
   儲存不同專案、多個類別限制條件的求解結果。
-
-### 範例與展示
 - Demo：包含多個 main 函式，開發並測試各模組功能。
 - Examples：內建 9 個範例，涵蓋 OCL + CD 的完整中間產物。
 
