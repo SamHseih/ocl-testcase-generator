@@ -6,7 +6,7 @@
 - It takes UML software specifications as input, interprets their OCL behavioral constraints, and automatically generates multiple JUnit 5 test scripts with expected inputs and outputs, realizing the concept of Behavior-Driven Development (BDD).
 - The system aims to significantly reduce manual test script development time and error rates, while improving coverage and maintainability.
 - It integrates theories and techniques from Formal Methods, Model-Based Testing, Constraint-Based Test Case Generation, Compiler Design, Symbolic Execution, and Black-Box Software Testing.
-- This project is the implementation system of my master’s thesis:[Constraint-Based Black-Box Test Case Generation for Java Array Types](https://github.com/SamHseih/ocl-testcase-generator/edit/main/README.md)
+- This project is the implementation system of my master’s thesis:[Constraint-Based Black-Box Test Case Generation for Java Array Types](https://hdl.handle.net/11296/dbcw56)
 
 ## Introduction
 ### Input
